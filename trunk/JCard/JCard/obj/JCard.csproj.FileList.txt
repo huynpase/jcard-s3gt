@@ -1,0 +1,14 @@
+obj\Debug\JCard.exe
+obj\Debug\JCard.pdb
+bin\Debug\JCard.exe
+bin\Debug\JCard.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\JCard.fControl.resources
+obj\Debug\JCard.fJCard.resources
+obj\Debug\JCard.fCLesson.resources
+obj\Debug\JCard.fSetting.resources
+obj\Debug\JCard.Properties.Resources.resources
+obj\Debug\JCard.csproj.GenerateResource.Cache
+obj\Debug\JCard.About.resources
+obj\Debug\JCard.ImportData.resources
+obj\Debug\JCard.fGrammar.resources
