@@ -50,10 +50,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vocabularyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +57,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.setting1 = new JCard.Setting();
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -280,7 +277,7 @@
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(13, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 16);
+            this.label1.Size = new System.Drawing.Size(158, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please choose  level:";
             // 
@@ -288,55 +285,12 @@
             // 
             this.tabSetting.BackColor = System.Drawing.Color.Transparent;
             this.tabSetting.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabSetting.Controls.Add(this.button4);
-            this.tabSetting.Controls.Add(this.button5);
-            this.tabSetting.Controls.Add(this.groupBox3);
-            this.tabSetting.Controls.Add(this.groupBox2);
+            this.tabSetting.Controls.Add(this.setting1);
             this.tabSetting.Location = new System.Drawing.Point(4, 22);
             this.tabSetting.Name = "tabSetting";
             this.tabSetting.Size = new System.Drawing.Size(446, 418);
             this.tabSetting.TabIndex = 2;
             this.tabSetting.Text = "Setting";
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(246, 378);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 25);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "&Cancel";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(119, 380);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 25);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "&Save";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Location = new System.Drawing.Point(5, 188);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(437, 180);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Grammar Setting";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Location = new System.Drawing.Point(5, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 181);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vocabulary Setting";
             // 
             // contextMenuStrip1
             // 
@@ -389,6 +343,14 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick_1);
             // 
+            // setting1
+            // 
+            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
+            this.setting1.Location = new System.Drawing.Point(-1, 0);
+            this.setting1.Name = "setting1";
+            this.setting1.Size = new System.Drawing.Size(454, 444);
+            this.setting1.TabIndex = 0;
+            // 
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,10 +402,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
@@ -452,6 +410,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private Setting setting1;
     }
 }
 
