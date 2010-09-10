@@ -238,7 +238,6 @@ namespace JCard
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // stop form dang chay
-
             // hien thi form setting
             this.Show();
             this.tabSetting.Select();
