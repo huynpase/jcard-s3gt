@@ -53,41 +53,101 @@ namespace JCard
 
         private void ButtStartClick(object sender, EventArgs e)
         {
-            cReduceMemory.ReduceMemory();
-            if (CheckChosedDataOfTreeView() != false)
-            {
-                //timer1.Enabled = true;
+                 cReduceMemory.ReduceMemory();
+          
                 int iFlag = 1;
                 BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
-
-                // ArrayList arrKanji = new ArrayList();
+                
                 ArrayList arrVoc = new ArrayList();
                 ArrayList arrListTopic = new ArrayList();
+                ArrayList arrListLastTopic = new ArrayList();
 
                 // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
-                arrListTopic = GetListTopicChosen();
-                arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-              
-               
-                fJCard fjcard = new fJCard(iFlag, arrVoc);
-                fjcard.Show();
+                if(radNewTopic.Checked) // is new topic
+                {
+                    if (CheckChosedDataOfTreeView() != false)
+                    {
+                        try
+                        {
+                            oJcard.ResetIsLastTopic();
+                            arrListTopic = GetListTopicChosen();
+                            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                            oJcard.UpdateIsLastTopic(arrListTopic, true);
+                            fJCard fjcard = new fJCard(iFlag, arrVoc);
+                            fjcard.Show();
+                            this.Hide();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error when connect to DB");
+                            MessageBox.Show("Please send to author contents of error below: \n" + ex);
 
-                //if (sendData != null)
-                //{
-                //    sendData(iFlag, arrVoc);
-                //}
-                //++20100903: Edit code: truyen tham so cho form fjCard
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
 
-                this.Hide();
+                }
+                else if(radLastTopic.Checked)
+                {
+                    try
+                    {
+                        arrListTopic = oJcard.GetTopicIsLastTopic();
+                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fjcard.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error when connect to DB");
+                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
 
-            }
-            else
-            {
-                MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
+                    }
+                   
+                }
+                else
+                {
+                    if (CheckChosedDataOfTreeView() != false)
+                    {
+                        try
+                        {
+                            arrListLastTopic = oJcard.GetTopicIsLastTopic();
+                            arrListTopic = GetListTopicChosen();
+                            CombineArrayList(ref arrListTopic, arrListLastTopic);
+                            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                            oJcard.UpdateIsLastTopic(arrListTopic, true);
+                            fJCard fjcard = new fJCard(iFlag, arrVoc);
+                            fjcard.Show();
+                            this.Hide();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error when connect to DB");
+                            MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                        }
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                }
+        
         }
 
+        private void CombineArrayList(ref ArrayList arrReturn,ArrayList arrNeedCopy)
+        {
+            foreach (int value in arrNeedCopy)
+            {
+                arrReturn.Add(value);
+            }
+        }
         private bool CheckChosedDataOfTreeView()
         {
             int flag = 0;

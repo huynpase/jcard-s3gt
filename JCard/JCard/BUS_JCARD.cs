@@ -43,6 +43,22 @@ namespace JCard
               DAO_JCARD dao = new DAO_JCARD(str_data);
               return dao.GetTopicGroup();
           }
+          
+        public void UpdateIsLastTopic(ArrayList arrTopic,bool isLastTopic)
+        {
+            DAO_JCARD dao = new DAO_JCARD(str_data);
+            dao.UpdateIsLastTopic(arrTopic, isLastTopic);
+        }
+        public void ResetIsLastTopic()
+        {
+            DAO_JCARD dao = new DAO_JCARD(str_data);
+            dao.ResetIsLastTopic();
+        }
+        public ArrayList GetTopicIsLastTopic()
+        {
+            DAO_JCARD dao = new DAO_JCARD(str_data);
+            return dao.GetTopicIDIsLastTopic();
+        }
         
     }
 }

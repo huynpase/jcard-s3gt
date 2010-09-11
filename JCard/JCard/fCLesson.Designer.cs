@@ -36,9 +36,9 @@
             this.cBoxCollapse = new System.Windows.Forms.CheckBox();
             this.chBoxAll = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radCombine = new System.Windows.Forms.RadioButton();
+            this.radLastTopic = new System.Windows.Forms.RadioButton();
+            this.radNewTopic = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.buttCopy = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
+            this.setting1 = new JCard.Setting();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vocabularyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.setting1 = new JCard.Setting();
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,9 +93,9 @@
             this.tabVocabulary.Controls.Add(this.cBoxCollapse);
             this.tabVocabulary.Controls.Add(this.chBoxAll);
             this.tabVocabulary.Controls.Add(this.button1);
-            this.tabVocabulary.Controls.Add(this.radioButton3);
-            this.tabVocabulary.Controls.Add(this.radioButton2);
-            this.tabVocabulary.Controls.Add(this.radioButton1);
+            this.tabVocabulary.Controls.Add(this.radCombine);
+            this.tabVocabulary.Controls.Add(this.radLastTopic);
+            this.tabVocabulary.Controls.Add(this.radNewTopic);
             this.tabVocabulary.Controls.Add(this.groupBox1);
             this.tabVocabulary.Controls.Add(this.buttCopy);
             this.tabVocabulary.Location = new System.Drawing.Point(4, 22);
@@ -139,34 +139,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton3
+            // radCombine
             // 
-            this.radioButton3.Location = new System.Drawing.Point(3, 387);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(188, 24);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.Text = "Combine new topic and  last topic";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radCombine.Location = new System.Drawing.Point(3, 387);
+            this.radCombine.Name = "radCombine";
+            this.radCombine.Size = new System.Drawing.Size(188, 24);
+            this.radCombine.TabIndex = 14;
+            this.radCombine.Text = "Combine new topic and  last topic";
+            this.radCombine.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radLastTopic
             // 
-            this.radioButton2.Location = new System.Drawing.Point(3, 357);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(128, 24);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.Text = "Load the last topic";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radLastTopic.Location = new System.Drawing.Point(3, 357);
+            this.radLastTopic.Name = "radLastTopic";
+            this.radLastTopic.Size = new System.Drawing.Size(128, 24);
+            this.radLastTopic.TabIndex = 12;
+            this.radLastTopic.Text = "Load the last topic";
+            this.radLastTopic.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radNewTopic
             // 
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 327);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(135, 24);
-            this.radioButton1.TabIndex = 13;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "New Topic";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radNewTopic.Checked = true;
+            this.radNewTopic.Location = new System.Drawing.Point(3, 327);
+            this.radNewTopic.Name = "radNewTopic";
+            this.radNewTopic.Size = new System.Drawing.Size(135, 24);
+            this.radNewTopic.TabIndex = 13;
+            this.radNewTopic.TabStop = true;
+            this.radNewTopic.Text = "New Topic";
+            this.radNewTopic.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -292,6 +292,14 @@
             this.tabSetting.TabIndex = 2;
             this.tabSetting.Text = "Setting";
             // 
+            // setting1
+            // 
+            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
+            this.setting1.Location = new System.Drawing.Point(-1, 0);
+            this.setting1.Name = "setting1";
+            this.setting1.Size = new System.Drawing.Size(454, 444);
+            this.setting1.TabIndex = 0;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -343,14 +351,6 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick_1);
             // 
-            // setting1
-            // 
-            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
-            this.setting1.Location = new System.Drawing.Point(-1, 0);
-            this.setting1.Name = "setting1";
-            this.setting1.Size = new System.Drawing.Size(454, 444);
-            this.setting1.TabIndex = 0;
-            // 
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,9 +389,9 @@
         private System.Windows.Forms.CheckBox cBoxCollapse;
         private System.Windows.Forms.CheckBox chBoxAll;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radCombine;
+        private System.Windows.Forms.RadioButton radLastTopic;
+        private System.Windows.Forms.RadioButton radNewTopic;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button buttCopy;
