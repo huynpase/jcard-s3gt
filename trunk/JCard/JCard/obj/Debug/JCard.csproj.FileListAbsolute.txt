@@ -13,3 +13,19 @@ F:\HOC TAP\BAI TU LAM\C#\JCard\JCard\obj\Debug\GenerateResource-ResGen.write.1.t
 F:\HOC TAP\BAI TU LAM\C#\JCard\JCard\obj\Debug\JCard.About.resources
 F:\HOC TAP\BAI TU LAM\C#\JCard\JCard\obj\Debug\JCard.fGrammar.resources
 F:\HOC TAP\BAI TU LAM\C#\JCard\JCard\obj\Debug\JCard.ImportData.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.exe
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.pdb
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\bin\Debug\JCard.exe
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\bin\Debug\JCard.pdb
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\ResolveAssemblyReference.cache
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.About.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.fControl.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.fGrammar.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.fJCard.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.fCLesson.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.fSetting.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.ImportData.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.Properties.Resources.resources
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\HOC TAP\CONG VIEC\Projects\J-CARD\SourceCode\JCard\JCard\JCard\obj\Debug\JCard.Setting.resources
