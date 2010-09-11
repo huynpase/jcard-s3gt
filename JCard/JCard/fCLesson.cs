@@ -38,9 +38,9 @@ namespace JCard
             {
                 ArrayList arrTopic = new ArrayList();
                 ArrayList arrTopicGroup = new ArrayList();
-                BUS_S3GT busS3gt = new BUS_S3GT(s3gtPath);
-                arrTopic = busS3gt.GetTopic();
-                arrTopicGroup = busS3gt.GetTopicGroup();
+                BUS_JCARD busJcard = new BUS_JCARD(s3gtPath);
+                arrTopic = busJcard.GetTopic();
+                arrTopicGroup = busJcard.GetTopicGroup();
                 AddToTreeView(arrTopicGroup, arrTopic);
                 treeView1.ExpandAll();
                
@@ -58,7 +58,7 @@ namespace JCard
             {
                 //timer1.Enabled = true;
                 int iFlag = 1;
-                BUS_S3GT oS3gt = new BUS_S3GT(s3gtPath);
+                BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
 
                 // ArrayList arrKanji = new ArrayList();
                 ArrayList arrVoc = new ArrayList();
@@ -66,7 +66,7 @@ namespace JCard
 
                 // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
                 arrListTopic = GetListTopicChosen();
-                arrVoc = oS3gt.GetContentTableVocByTopicID(arrListTopic);
+                arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
               
                
                 fJCard fjcard = new fJCard(iFlag, arrVoc);
