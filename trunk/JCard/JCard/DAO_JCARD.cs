@@ -78,6 +78,7 @@ namespace JCard
                 dto.IID = int.Parse(iData["Topic_ID"].ToString());
                 dto.StrName = iData["Topic_Name"].ToString();
                 dto.IGroupID = int.Parse(iData["Topic_Group_ID"].ToString());
+                dto.IsLastTopic = (bool) iData["IsLastTopic"];
                 arrLessCont.Add(dto);
             }
             iData.Close();
@@ -128,13 +129,70 @@ namespace JCard
             return arrLessCont;
             
         }
+        //++ 20100911 : PhuongHD  add function
+        /// <summary>
+        /// This function will be used for update value of column IsLastTopic
+        /// </summary>
+        /// <param name="topicID"></param>
+        /// <param name="isLastTopic"></param>
+        public void UpdateIsLastTopic(ArrayList arrTopic,bool isLastTopic)
+        {
+            DataProvider dPro = new DataProvider(str_datasource);
+            foreach (int topicID in arrTopic)
+            {
+                String sql = "UPDATE S3GT_TPC SET IsLastTopic=";
+                sql += isLastTopic;
+                sql += " WHERE Topic_ID=";
+                sql += topicID;
+                try
+                {
+                    dPro.excuteNonQuery(sql);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+         
+        }
+        /// <summary>
+        /// Reset all values of field IsLastTopic become to false
+        /// </summary>
+        public void ResetIsLastTopic()
+        {
+            DataProvider dPro = new DataProvider(str_datasource);
+            String sql = "UPDATE S3GT_TPC SET IsLastTopic=false";
+            try
+            {
+                dPro.excuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
+        }
 
-
+     /// <summary>
+     /// This function will get all topics have  value of field  IsLastTopic is true
+     /// </summary>
+     /// <returns></returns>
+        public ArrayList GetTopicIDIsLastTopic()
+        {
+            DataProvider dPro = new DataProvider(str_datasource);
+            String sql = "SELECT * from S3GT_TPC WHERE IsLastTopic=true";
+            IDataReader iData = dPro.excuteQuery(sql);
+            ArrayList arrLessCont = new ArrayList();
         
-
-
-
+            while (iData.Read())
+            {
+                //dto.IID = int.Parse(iData["Topic_ID"].ToString());
+                arrLessCont.Add(int.Parse(iData["Topic_ID"].ToString()));
+            }
+            iData.Close();
+            return arrLessCont;
+        }
 
         
         
