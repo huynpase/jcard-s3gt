@@ -74,12 +74,14 @@
     </Compile>
     <Compile Include="BUS.cs" />
     <Compile Include="BUS_JCARD.cs" />
+    <Compile Include="BUS_Setting.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="DAO.cs" />
     <Compile Include="DAO_JCARD.cs" />
+    <Compile Include="DAO_Setting.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DTO.cs" />
-    <Compile Include="DTOSetting.cs" />
+    <Compile Include="DTO_Setting.cs" />
     <Compile Include="DTO_Grammar.cs" />
     <Compile Include="DTO_KANJI.cs" />
     <Compile Include="DTO_Topic.cs" />
@@ -171,6 +173,7 @@
     </Compile>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

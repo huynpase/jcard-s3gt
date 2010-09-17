@@ -50,7 +50,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
-            this.setting1 = new JCard.Setting();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vocabularyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +57,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.setting1 = new JCard.rdbBR();
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -292,14 +292,6 @@
             this.tabSetting.TabIndex = 2;
             this.tabSetting.Text = "Setting";
             // 
-            // setting1
-            // 
-            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
-            this.setting1.Location = new System.Drawing.Point(-1, 0);
-            this.setting1.Name = "setting1";
-            this.setting1.Size = new System.Drawing.Size(454, 444);
-            this.setting1.TabIndex = 0;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -309,37 +301,37 @@
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(134, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 114);
             // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.settingToolStripMenuItem.Text = "Setting";
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // vocabularyToolStripMenuItem
             // 
             this.vocabularyToolStripMenuItem.Name = "vocabularyToolStripMenuItem";
-            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.vocabularyToolStripMenuItem.Text = "Vocabulary";
             // 
             // grammarToolStripMenuItem
             // 
             this.grammarToolStripMenuItem.Name = "grammarToolStripMenuItem";
-            this.grammarToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.grammarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.grammarToolStripMenuItem.Text = "Grammar";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -350,6 +342,14 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick_1);
+            // 
+            // setting1
+            // 
+            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
+            this.setting1.Location = new System.Drawing.Point(0, 0);
+            this.setting1.Name = "setting1";
+            this.setting1.Size = new System.Drawing.Size(454, 444);
+            this.setting1.TabIndex = 0;
             // 
             // fCLesson
             // 
@@ -364,8 +364,8 @@
             this.Name = "fCLesson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard - PhuongHD";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseHover += new System.EventHandler(this.fCLesson_MouseHover);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabVocabulary.ResumeLayout(false);
             this.tabVocabulary.PerformLayout();
@@ -396,7 +396,6 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button buttCopy;
         private System.Windows.Forms.TabPage tabGrammar;
-        private System.Windows.Forms.TabPage tabSetting;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -410,7 +409,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private Setting setting1;
+        private System.Windows.Forms.TabPage tabSetting;
+        private rdbBR setting1;
     }
 }
 

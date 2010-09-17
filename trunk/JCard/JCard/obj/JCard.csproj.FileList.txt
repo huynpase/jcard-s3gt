@@ -12,3 +12,4 @@ obj\Debug\JCard.csproj.GenerateResource.Cache
 obj\Debug\JCard.About.resources
 obj\Debug\JCard.ImportData.resources
 obj\Debug\JCard.fGrammar.resources
+obj\Debug\JCard.rdbBR.resources
