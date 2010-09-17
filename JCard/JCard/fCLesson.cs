@@ -20,15 +20,15 @@ namespace JCard
 
         public fCLesson()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-
+        
+       
         // Define a delegate
         public delegate void SendData(int flag, ArrayList arrVoc);
 
         // Delegate control event form 1
         public SendData sendData;
-
         private void Form1_Load(object sender, EventArgs e)
         {
            
@@ -73,7 +73,7 @@ namespace JCard
                             arrListTopic = GetListTopicChosen();
                             arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
                             oJcard.UpdateIsLastTopic(arrListTopic, true);
-                            fJCard fjcard = new fJCard(iFlag, arrVoc);
+                            fJCard fjcard = new fJCard(iFlag, arrVoc);                            
                             fjcard.Show();
                             this.Hide();
                         }
@@ -88,8 +88,7 @@ namespace JCard
                     {
                         MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
-                    }
-
+                    }                    
                 }
                 else if(radLastTopic.Checked)
                 {
