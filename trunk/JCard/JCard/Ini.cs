@@ -34,7 +34,7 @@ namespace JCard
 		/// Key Name
 		/// <param name="Value"></param>
 		/// Value Name
-		public void IniWriteValue(string Section,string Key,string Value)
+		public void WriteValue(string Section,string Key,string Value)
 		{
 			WritePrivateProfileString(Section,Key,Value,this.path);
 		}
@@ -46,12 +46,11 @@ namespace JCard
 		/// <param name="Key"></param>
 		/// <param name="Path"></param>
 		/// <returns></returns>
-		public string IniReadValue(string Section,string Key,string strDefault)
+		public string ReadValue(string Section,string Key,string strDefault)
 		{
-			StringBuilder temp = new StringBuilder(255);
-            int i = GetPrivateProfileString(Section, Key, strDefault, temp, 255, this.path);
-			return temp.ToString();
-
+			StringBuilder temp = new StringBuilder();
+            int i = GetPrivateProfileString(Section, Key, strDefault, temp, -1, this.path);
+			return i<=0? null : temp.ToString();
 		}
 	}
 }

@@ -58,6 +58,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.setting1 = new JCard.rdbBR();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -227,18 +229,20 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnImport);
+            this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(7, 118);
+            this.panel1.Location = new System.Drawing.Point(3, 118);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 137);
+            this.panel1.Size = new System.Drawing.Size(443, 137);
             this.panel1.TabIndex = 0;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(243, 71);
+            this.button2.Location = new System.Drawing.Point(344, 71);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 29);
             this.button2.TabIndex = 17;
@@ -248,7 +252,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(105, 71);
+            this.button3.Location = new System.Drawing.Point(243, 71);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 29);
             this.button3.TabIndex = 16;
@@ -301,37 +305,37 @@
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(134, 114);
             // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.settingToolStripMenuItem.Text = "Setting";
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // vocabularyToolStripMenuItem
             // 
             this.vocabularyToolStripMenuItem.Name = "vocabularyToolStripMenuItem";
-            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.vocabularyToolStripMenuItem.Text = "Vocabulary";
             // 
             // grammarToolStripMenuItem
             // 
             this.grammarToolStripMenuItem.Name = "grammarToolStripMenuItem";
-            this.grammarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.grammarToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.grammarToolStripMenuItem.Text = "Grammar";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -351,6 +355,27 @@
             this.setting1.Size = new System.Drawing.Size(454, 444);
             this.setting1.TabIndex = 0;
             // 
+            // btnSetting
+            // 
+            this.btnSetting.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Location = new System.Drawing.Point(103, 71);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(95, 29);
+            this.btnSetting.TabIndex = 16;
+            this.btnSetting.Text = "Se&tting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Location = new System.Drawing.Point(3, 71);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(95, 29);
+            this.btnImport.TabIndex = 16;
+            this.btnImport.Text = "&Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,8 +389,8 @@
             this.Name = "fCLesson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard - PhuongHD";
-            this.MouseHover += new System.EventHandler(this.fCLesson_MouseHover);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseHover += new System.EventHandler(this.fCLesson_MouseHover);
             this.tabControl1.ResumeLayout(false);
             this.tabVocabulary.ResumeLayout(false);
             this.tabVocabulary.PerformLayout();
@@ -411,6 +436,8 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TabPage tabSetting;
         private rdbBR setting1;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnSetting;
     }
 }
 

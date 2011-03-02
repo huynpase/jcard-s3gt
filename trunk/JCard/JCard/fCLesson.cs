@@ -30,8 +30,7 @@ namespace JCard
         // Delegate control event form 1
         public SendData sendData;
         private void Form1_Load(object sender, EventArgs e)
-        {
-           
+        {           
            // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
             try
@@ -326,6 +325,12 @@ namespace JCard
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            fGramSetting fSetting = new fGramSetting();
+            fSetting.Show();
         }
 
        
