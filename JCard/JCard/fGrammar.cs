@@ -17,7 +17,11 @@ namespace JCard
          * flag = false : Display
          */
         private bool flag;
-
+        /* Thoi gian cho phep hien thi */
+        private int display_time;
+        /* Thoi gian delay */
+        private int delay_time;
+                
         /* Vi tri example dang duoc hien thi */
         private int count_example;
         /* So example toi da trong 1 mau grammar card */
@@ -38,9 +42,12 @@ namespace JCard
             /* Khoi tao dong ho de do luong thoi gian hien thi grammar card */
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = 5000;
+            timer.Interval = 100;
             flag = false;
-
+            /* display_time va delay_time duoc doc tu db setting */
+            display_time = 5;
+            delay_time = 6;
+            
             /* Set gia tri cung */
             DTO_Grammar dto1 = new DTO_Grammar("a + b++++++++++++++++++++++++++++++++", "aaN", "aaV", 
                 new ArrayList(new string[6] { "quyen" + "\n" + "quyen", "giang", "san", "toai", "giadinh", "banbe" }));
@@ -85,54 +92,57 @@ namespace JCard
         public void timer_Tick(object o, EventArgs e)
         {
             if (flag)
-            {
-                
-                count_example++;
-                if (count_example == max_example || count_entry == max_entry)
+            {// Control sang dan va hien thi cac grammar cards
+                if (this.Opacity == 1)
                 {
-                    if (count_example == max_example)
-                    {
-                        count_entry++;
-                    }
-
-                    if (count_entry == max_entry)
-                    {
-                        count_entry = 0;
-                    }
-                    count_example = 0;
-                    max_example = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample.Count;
-                    if (example_ini < max_example)
-                    {
-                        max_example = example_ini;
-                    }
-
-                    Display(flag);
-                }
-
-                textBox1.Text = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample[count_example].ToString();
-                toolTip4.SetToolTip(textBox1, textBox1.Text);
-
-                timer.Interval = 1000;
-                flag = false;
-            }
-            else
-            {
-                timer.Interval = 2000;
-                if (count_example + 1 == max_example)
-                {
-                    Display(flag);
-                    textBox1.Text = "";
-                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    flag = false;
                 }
                 else
                 {
-                    textBox1.Text = "";
-                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    if (this.Opacity == 0)
+                    {
+                        count_example++;
+                        if (count_example == max_example || count_entry == max_entry)
+                        {
+                            if (count_example == max_example)
+                            {
+                                count_entry++;
+                            }
+
+                            if (count_entry == max_entry)
+                            {
+                                count_entry = 0;
+                            }
+                            count_example = 0;
+                            max_example = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample.Count;
+                            if (example_ini < max_example)
+                            {
+                                max_example = example_ini;
+                            }
+
+                            Display(flag);
+                        }
+
+                        textBox1.Text = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample[count_example].ToString();
+                        toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    }
+                    this.Opacity += (double) 1/(display_time*10);
                 }
-                flag = true;
+            }
+            else
+            {// Control mo dan va o trang thai delay
+                if (this.Opacity == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    this.Opacity -= (double) 1/(delay_time*10);
+                }
             }
         }
 
+        /* Set gia tri Sample, Meaning_JP, Meaning_VN, Examples */
         private void Display(bool flag)
         {
             if (!flag)
@@ -165,7 +175,6 @@ namespace JCard
         {
 
             this.FormBorderStyle = FormBorderStyle.None;
-           // setFormPosAtBottomRight();
             txtFocus.Focus();
             this.TopMost = true;
             timer.Start();
@@ -178,12 +187,14 @@ namespace JCard
             {
                 this.Dispose();
                 Application.Exit();
-            }  
+            }
         }
 
+        #region  Xu li hieu ung mouse over, mouse leave
         private void fGrammar_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void fGrammar_MouseLeave(object sender, EventArgs e)
@@ -194,6 +205,7 @@ namespace JCard
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)
@@ -204,6 +216,7 @@ namespace JCard
         private void label1_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -214,6 +227,7 @@ namespace JCard
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void panel2_MouseLeave(object sender, EventArgs e)
@@ -224,6 +238,7 @@ namespace JCard
         private void label3_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
@@ -234,6 +249,7 @@ namespace JCard
         private void panel4_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void panel4_MouseLeave(object sender, EventArgs e)
@@ -244,6 +260,7 @@ namespace JCard
         private void label4_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
@@ -254,11 +271,13 @@ namespace JCard
         private void textBox1_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
+            this.Opacity = 1;
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
             timer.Enabled = true;
         }
+        #endregion
     }
 }
