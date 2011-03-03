@@ -22,17 +22,29 @@ namespace JCard
         /* Thoi gian delay */
         private int delay_time;
                 
-        /* Vi tri example dang duoc hien thi */
+        /* So example da duoc hien thi */
         private int count_example;
+        /* Vi tri example trong 1 list example cua 1 mau grammar card */
+        private int index_example;
         /* So example toi da trong 1 mau grammar card */
         private int max_example;
+        /* Tong example can duoc hien thi voi grammar card hien tai */
+        private int sum_of_display_example;
         /* So example toi da duoc phep hien thi voi moi grammar card */
         private int example_ini;
         /* Vi tri Grammar card duoc hien thi */
-        private int count_entry;
+        private int index_entry;
         /* So grammar card duoc hien thi */
         private int max_entry;
         private ArrayList arr_Entry;
+
+        /* Lay random 1 mau grammar card hoac 1 example bat ky */
+        private Random rand;
+
+        /* List luu giu cac grammar card truoc do */
+        ArrayList arr_CardForward = new ArrayList();
+        /* List luu giu cac example truoc do */
+        ArrayList arr_ExampleForward = new ArrayList();
         
         public fGrammar()
         {
@@ -48,19 +60,6 @@ namespace JCard
             display_time = 5;
             delay_time = 6;
             
-            /* Set gia tri cung */
-            /*
-            DTO_Grammar dto1 = new DTO_Grammar("a + b++++++++++++++++++++++++++++++++", "aaN", "aaV", 
-                new ArrayList(new string[6] { "quyen" + "\n" + "quyen", "giang", "san", "toai", "giadinh", "banbe" }));
-            DTO_Grammar dto2 = new DTO_Grammar("c + d", "ccN + ddN", "ccV + ddV",
-                new ArrayList(new string[6] { "quyen" + "\n" + "quyen", "giang", "san", "toai", "giadinh", "banbe" }));
-            DTO_Grammar dto3 = new DTO_Grammar("e + f", "eeN + ffN", "eeV + ffV",
-                            new ArrayList(new string[6] { "quyen" + "\n" + "quyen", "giang", "san", "toai", "giadinh", "banbe" }));
-            arr_Entry = new ArrayList();
-            arr_Entry.Add(dto1);
-            arr_Entry.Add(dto2);
-            arr_Entry.Add(dto3);
-            */
             ///* Get grammar cards frm database
             BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
             arr_Entry = buGram.GetGrammarCarByLevel("2");
@@ -69,25 +68,29 @@ namespace JCard
             /* So example duoc phep hien thi trong moi grammar card: Set cung */
             example_ini = 3;
 
+            rand = new Random();
+            index_entry = rand.Next(0, arr_Entry.Count - 1);
+            arr_CardForward.Add(index_entry);
+            max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
             count_example = 0;
-            max_example = ((DTO_Grammar)arr_Entry[0]).ArrExample.Count;
+            index_example = rand.Next(0, max_example - 1);
+            arr_ExampleForward.Add(index_example);
             if (example_ini < max_example)
             {
-                max_example = example_ini;
+                sum_of_display_example = example_ini;
             }
-            count_entry = 0;
+            else
+            {
+                sum_of_display_example = max_example;
+            }
             max_entry = arr_Entry.Count;
 
             /* Khoi tao, hien thi grammar card dau tien khi load ung dung len */
-            Display(true);
-            textBox1.Text = ((DTO_Grammar)arr_Entry[0]).ArrExample[0].ToString();
+            SetControlValues();
+            textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
             toolTip4.SetToolTip(textBox1, textBox1.Text);
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void setFormPosAtBottomRight()
         {
             Rectangle r = Screen.PrimaryScreen.WorkingArea;
@@ -107,30 +110,7 @@ namespace JCard
                 {
                     if (this.Opacity == 0)
                     {
-                        count_example++;
-                        if (count_example == max_example || count_entry == max_entry)
-                        {
-                            if (count_example == max_example)
-                            {
-                                count_entry++;
-                            }
-
-                            if (count_entry == max_entry)
-                            {
-                                count_entry = 0;
-                            }
-                            count_example = 0;
-                            max_example = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample.Count;
-                            if (example_ini < max_example)
-                            {
-                                max_example = example_ini;
-                            }
-
-                            Display(flag);
-                        }
-
-                        textBox1.Text = ((DTO_Grammar)arr_Entry[count_entry]).ArrExample[count_example].ToString();
-                        toolTip4.SetToolTip(textBox1, textBox1.Text);
+                        Display();
                     }
                     this.Opacity += (double) 1/(display_time*10);
                 }
@@ -149,32 +129,63 @@ namespace JCard
         }
 
         /* Set gia tri Sample, Meaning_JP, Meaning_VN, Examples */
-        private void Display(bool flag)
+        private void SetControlValues()
         {
-            if (!flag)
+            label1.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Sample;
+            toolTip1.SetToolTip(panel1, label1.Text);
+            toolTip1.SetToolTip(label1, label1.Text);
+            label3.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_JP;
+            toolTip2.SetToolTip(panel2, label3.Text);
+            toolTip2.SetToolTip(label3, label3.Text);
+            label4.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_VN;
+            toolTip3.SetToolTip(panel4, label4.Text);
+            toolTip3.SetToolTip(label4, label4.Text);
+            
+        }
+        /* Display */
+        private void Display()
+        {
+            arr_CardForward.Add(index_entry);
+            arr_ExampleForward.Add(index_example);
+
+            count_example++;
+            if (count_example == sum_of_display_example)
             {
-                label1.Text = "";
-                toolTip1.SetToolTip(panel1, label1.Text);
-                toolTip1.SetToolTip(label1, label1.Text);
-                label3.Text = "";
-                toolTip2.SetToolTip(panel2, label3.Text);
-                toolTip2.SetToolTip(label3, label3.Text);
-                label4.Text = "";
-                toolTip3.SetToolTip(panel4, label4.Text);
-                toolTip3.SetToolTip(label4, label4.Text);
+                // Lay random grammar card tiep theo
+                /*
+                if (index_entry + 1 >= max_entry - 1)
+                {
+                    index_entry = -1;
+                }
+                index_entry = rand.Next(index_entry + 1, max_entry - 1);
+                */
+                index_entry = rand.Next(0, max_entry - 1);
+
+                count_example = 0;
+                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                if (example_ini < max_example)
+                {
+                    sum_of_display_example = example_ini;
+                }
+                else
+                {
+                    sum_of_display_example = max_example;
+                }
+
+                SetControlValues();
             }
-            else
+
+            // Lay random example tiep theo
+            /*
+            if (index_example + 1 >= max_example - 1)
             {
-                label1.Text = ((DTO_Grammar)arr_Entry[count_entry]).STR_Sample;
-                toolTip1.SetToolTip(panel1, label1.Text);
-                toolTip1.SetToolTip(label1, label1.Text);
-                label3.Text = ((DTO_Grammar)arr_Entry[count_entry]).STR_Meaning_JP;
-                toolTip2.SetToolTip(panel2, label3.Text);
-                toolTip2.SetToolTip(label3, label3.Text);
-                label4.Text = ((DTO_Grammar)arr_Entry[count_entry]).STR_Meaning_VN;
-                toolTip3.SetToolTip(panel4, label4.Text);
-                toolTip3.SetToolTip(label4, label4.Text);
+                index_example = -1;
             }
+            index_example = rand.Next(index_example + 1, max_example - 1);
+            */
+            index_example = rand.Next(0, max_example - 1);
+            textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+            toolTip4.SetToolTip(textBox1, textBox1.Text);
         }
 
         private void fGrammar_Load(object sender, EventArgs e)
@@ -186,6 +197,8 @@ namespace JCard
             timer.Start();
         }
 
+        #region  Exit chuong trinh
+        // Khi click exit tren contextMenuStrip
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -195,6 +208,14 @@ namespace JCard
                 Application.Exit();
             }
         }
+
+        // Khi tien hanh close chuong trinh bang cach righ-click len icon cua ch/tr tren taskbar va click [x]
+        private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
+        }
+        #endregion
 
         #region  Xu li hieu ung mouse over, mouse leave
         private void fGrammar_MouseMove(object sender, MouseEventArgs e)
@@ -284,6 +305,77 @@ namespace JCard
         {
             timer.Enabled = true;
         }
+
+        private void btnPrevious_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void btnPrevious_MouseLeave(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
+
+        private void btnNext_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void btnNext_MouseLeave(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
+
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
         #endregion
+
+        // Hien thi grammar card truoc do
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if(arr_ExampleForward.Count > 1)
+            {
+                index_entry = (int)arr_CardForward[arr_CardForward.Count - 1];
+                index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - 1];
+                SetControlValues();
+                textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                toolTip4.SetToolTip(textBox1, textBox1.Text);
+
+                arr_CardForward.RemoveAt(arr_CardForward.Count - 1);
+                arr_ExampleForward.RemoveAt(arr_ExampleForward.Count - 1);
+
+                count_example = 0;
+                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                if (example_ini < max_example)
+                {
+                    sum_of_display_example = example_ini;
+                }
+                else
+                {
+                    sum_of_display_example = max_example;
+                }
+            }
+        }
+
+        // Hien thi grammar card tiep theo
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
