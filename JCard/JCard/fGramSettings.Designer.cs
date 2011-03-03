@@ -94,7 +94,6 @@
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 2;
-            this.pnlSampleBgClr.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSampleBgClr_Paint);
             this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
@@ -264,6 +263,7 @@
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 3;
+            this.pnlExFClr.DoubleClick += new System.EventHandler(this.pnlExFClr_DoubleClick);
             // 
             // pnlExBgClr
             // 
@@ -272,6 +272,7 @@
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 3;
+            this.pnlExBgClr.DoubleClick += new System.EventHandler(this.pnlExBgClr_DoubleClick);
             // 
             // cmbDelayTim
             // 
@@ -304,7 +305,10 @@
             // 
             // cmbDisTim
             // 
+            this.cmbDisTim.DropDownHeight = 130;
             this.cmbDisTim.FormattingEnabled = true;
+            this.cmbDisTim.IntegralHeight = false;
+            this.cmbDisTim.ItemHeight = 13;
             this.cmbDisTim.Items.AddRange(new object[] {
             "1",
             "2",

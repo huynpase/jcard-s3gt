@@ -115,16 +115,12 @@ namespace JCard
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Save Settings
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void pnlSampleBgClr_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

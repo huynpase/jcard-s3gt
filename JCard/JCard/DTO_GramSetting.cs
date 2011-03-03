@@ -8,14 +8,14 @@ namespace JCard
     {
         // Set the POSITION
         #region Position
-        float _Top,_Left;
-        public float Top
+        int _Top,_Left;
+        public int Top
         {
             get { return _Top; }
             set { _Top = value; }
         }
 
-        public float Left
+        public int Left
         {
             get { return _Left; }
             set { _Left = value; }
@@ -23,20 +23,20 @@ namespace JCard
         #endregion
         //Set values for Sample Panel
         #region Sample
-        float _BackColor, _ForeColor, _Width;
-        public float BackColor
+        int _BackColor, _ForeColor, _Width;
+        public int BackColor
         {
             get { return _BackColor; }
             set { _BackColor = value; }
         }
 
-        public float ForeColor
+        public int ForeColor
         {
             get { return _ForeColor; }
             set { _ForeColor = value; }
         }
 
-        public float Width
+        public int Width
         {
             get { return _Width; }
             set { _Width = value; }
@@ -44,26 +44,28 @@ namespace JCard
         #endregion
         //Set values for Japanese Meaning Panel
         #region Japanese Meaning
-        float _JP_BackColor, _JP_ForeColor, _JP_Width, _JP_IsDiplayed;
-        public float JP_BackColor
+        int _JP_BackColor, _JP_ForeColor, _JP_Width;
+        bool _JP_IsDiplayed;
+
+        public int JP_BackColor
         {
             get { return _JP_BackColor; }
             set { _JP_BackColor = value; }
         }
 
-        public float JP_ForeColor
+        public int JP_ForeColor
         {
             get { return _JP_ForeColor; }
             set { _JP_ForeColor = value; }
         }
 
-        public float JP_Width
+        public int JP_Width
         {
             get { return _JP_Width; }
             set { _JP_Width = value; }
         }
 
-        public float JP_Isdisplayed
+        public bool JP_Isdisplayed
         {
             get { return _JP_IsDiplayed; }
             set { _JP_IsDiplayed = value; }
@@ -71,62 +73,65 @@ namespace JCard
         #endregion
         //Set values for Vietnamese Meaning Panel
         #region Vietnamese Meaning
-        float _VN_BackColor, _VN_ForeColor, _VN_Width, _VN_IsDisplayed;
+        int _VN_BackColor, _VN_ForeColor, _VN_Width;
+        bool _VN_IsDisplayed;
 
-        public float VN_BackColor
+        public int VN_BackColor
         {
             get { return _VN_BackColor; }
             set { _VN_BackColor = value; }
         }
 
-        public float VN_ForeColor
+        public int VN_ForeColor
         {
             get { return _VN_ForeColor; }
             set { _VN_ForeColor = value; }
         }
 
-        public float VN_Width
+        public int VN_Width
         {
             get { return _VN_Width; }
             set { _VN_Width = value; }
         }
 
-        public float IsDisplayed
+        public bool VN_IsDisplayed
         {
             get { return _VN_IsDisplayed; }
             set { _VN_IsDisplayed = value; }
         }
         #endregion
         //Set values for Example Panel
-        float _Ex_BackColor, _Ex_ForeColor, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
-        public float Ex_BackColor
+        #region Example
+        int _Ex_BackColor, _Ex_ForeColor, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
+        public int Ex_BackColor
         {
             get { return _Ex_BackColor; }
             set { _Ex_BackColor = value; }
         }
 
-        public float Ex_ForeColor
+        public int Ex_ForeColor
         {
             get { return _Ex_ForeColor; }
             set { _Ex_ForeColor = value; }
         }
 
-        public float Ex_NoOfDisplay
+        public int Ex_NoOfDisplay
         {
             get { return _Ex_NoOfDisplay; }
             set { _Ex_NoOfDisplay = value; }
         }
 
-        public float Ex_DisplayTime
+        public int Ex_DisplayTime
         {
             get { return _Ex_DisplayTime; }
             set { _Ex_DisplayTime = value; }
         }
 
-        public float Ex_DelayTime
+        public int Ex_DelayTime
         {
             get { return _Ex_DelayTime; }
             set { _Ex_DelayTime = value; }
         }
+        #endregion
     }
 }
