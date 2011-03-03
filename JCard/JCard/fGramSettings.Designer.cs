@@ -94,6 +94,7 @@
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 2;
+            this.pnlSampleBgClr.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSampleBgClr_Paint);
             this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
