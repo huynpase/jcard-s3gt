@@ -49,6 +49,7 @@ namespace JCard
             delay_time = 6;
             
             /* Set gia tri cung */
+            /*
             DTO_Grammar dto1 = new DTO_Grammar("a + b++++++++++++++++++++++++++++++++", "aaN", "aaV", 
                 new ArrayList(new string[6] { "quyen" + "\n" + "quyen", "giang", "san", "toai", "giadinh", "banbe" }));
             DTO_Grammar dto2 = new DTO_Grammar("c + d", "ccN + ddN", "ccV + ddV",
@@ -59,6 +60,11 @@ namespace JCard
             arr_Entry.Add(dto1);
             arr_Entry.Add(dto2);
             arr_Entry.Add(dto3);
+            */
+            ///* Get grammar cards frm database
+            BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
+            arr_Entry = buGram.GetGrammarCarByLevel("2");
+            //*/
 
             /* So example duoc phep hien thi trong moi grammar card: Set cung */
             example_ini = 3;
