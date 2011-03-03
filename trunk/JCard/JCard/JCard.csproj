@@ -17,6 +17,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,7 +30,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -99,6 +99,12 @@
     <Compile Include="fGrammar.Designer.cs">
       <DependentUpon>fGrammar.cs</DependentUpon>
     </Compile>
+    <Compile Include="fGramSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGramSettings.Designer.cs">
+      <DependentUpon>fGramSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <EmbeddedResource Include="fGrammar.resx">
       <SubType>Designer</SubType>
       <DependentUpon>fGrammar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGramSettings.resx">
+      <DependentUpon>fGramSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fJCard.resx">
       <SubType>Designer</SubType>
