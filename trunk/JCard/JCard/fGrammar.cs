@@ -17,10 +17,9 @@ namespace JCard
          * flag = false : Display
          */
         private bool flag;
-        /* Thoi gian cho phep hien thi */
-        private int display_time;
-        /* Thoi gian delay */
-        private int delay_time;
+
+        // Grammar setting
+        private DTO_GramSetting dto_gramSetting;
                 
         /* So example da duoc hien thi */
         private int count_example;
@@ -56,9 +55,13 @@ namespace JCard
             timer.Tick += new EventHandler(timer_Tick);
             timer.Interval = 100;
             flag = false;
-            /* display_time va delay_time duoc doc tu db setting */
-            display_time = 5;
-            delay_time = 6;
+
+            /* Set gia tri cung cho gramSetting */
+            dto_gramSetting = new DTO_GramSetting();
+            dto_gramSetting.Ex_DisplayTime = 5;
+            dto_gramSetting.Ex_DelayTime = 6;
+            dto_gramSetting.JP_Isdisplayed = true;
+            dto_gramSetting.IsDisplayed = true;
             
             ///* Get grammar cards frm database
             BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
@@ -114,7 +117,7 @@ namespace JCard
                     {
                         Display();
                     }
-                    this.Opacity += (double) 1/(display_time*10);
+                    this.Opacity += (double) 1/(dto_gramSetting.Ex_DisplayTime*10);
                 }
             }
             else
@@ -125,7 +128,7 @@ namespace JCard
                 }
                 else
                 {
-                    this.Opacity -= (double) 1/(delay_time*10);
+                    this.Opacity -= (double) 1/(dto_gramSetting.Ex_DelayTime*10);
                 }
             }
         }
@@ -136,13 +139,30 @@ namespace JCard
             label1.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Sample;
             toolTip1.SetToolTip(panel1, label1.Text);
             toolTip1.SetToolTip(label1, label1.Text);
-            label3.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_JP;
-            toolTip2.SetToolTip(panel2, label3.Text);
-            toolTip2.SetToolTip(label3, label3.Text);
-            label4.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_VN;
-            toolTip3.SetToolTip(panel4, label4.Text);
-            toolTip3.SetToolTip(label4, label4.Text);
-            
+            if (dto_gramSetting.JP_Isdisplayed)
+            {
+                label3.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_JP;
+                toolTip2.SetToolTip(panel2, label3.Text);
+                toolTip2.SetToolTip(label3, label3.Text);
+                if (!dto_gramSetting.IsDisplayed)
+                {
+                    label4.Text = label3.Text;
+                    toolTip3.SetToolTip(panel4, label4.Text);
+                    toolTip3.SetToolTip(label4, label4.Text);
+                }
+            }
+            if(dto_gramSetting.IsDisplayed)
+            {
+                label4.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_VN;
+                toolTip3.SetToolTip(panel4, label4.Text);
+                toolTip3.SetToolTip(label4, label4.Text);
+                if (!dto_gramSetting.JP_Isdisplayed)
+                {
+                    label3.Text = label4.Text;
+                    toolTip2.SetToolTip(panel2, label3.Text);
+                    toolTip2.SetToolTip(label3, label3.Text);
+                }
+            }
         }
         /* Display */
         private void Display()
