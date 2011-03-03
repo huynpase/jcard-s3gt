@@ -115,14 +115,8 @@
     <Compile Include="fImportData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fImportData.Designer.cs">
+    <Compile Include="fImportData.designer.cs">
       <DependentUpon>fImportData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportData.Designer.cs">
-      <DependentUpon>ImportData.cs</DependentUpon>
     </Compile>
     <Compile Include="Ini.cs" />
     <Compile Include="ReduceMemory.cs" />
@@ -169,7 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fImportData.resx">
       <DependentUpon>fImportData.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="fJCard.resx">
       <SubType>Designer</SubType>
@@ -182,10 +175,6 @@
     <EmbeddedResource Include="fSetting.resx">
       <SubType>Designer</SubType>
       <DependentUpon>fSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportData.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ImportData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
