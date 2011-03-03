@@ -329,7 +329,7 @@ namespace JCard
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            fGramSetting fSetting = new fGramSetting();
+            fGramSetts fSetting = new fGramSetts();
             fSetting.Show();
         }
 
