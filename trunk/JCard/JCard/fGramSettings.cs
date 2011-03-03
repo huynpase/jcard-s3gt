@@ -22,6 +22,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
 
         }
 
@@ -30,6 +34,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         //Japanese Meaning GroupBox
@@ -39,6 +47,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         private void pnlJapFClr_DoubleClick(object sender, EventArgs e)
@@ -46,6 +58,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         //Vietnamese Meaning GroupBox
@@ -55,6 +71,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         private void pnlVieFClr_DoubleClick(object sender, EventArgs e)
@@ -62,6 +82,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         //Examples Meaning GroupBox
@@ -71,6 +95,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         private void pnlExFClr_DoubleClick(object sender, EventArgs e)
@@ -78,6 +106,10 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Show ColorDialog for user to choose the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //TO DO
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -88,6 +120,11 @@ namespace JCard
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlSampleBgClr_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
