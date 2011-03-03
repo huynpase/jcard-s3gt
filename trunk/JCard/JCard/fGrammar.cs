@@ -176,6 +176,7 @@ namespace JCard
             toolTip4.SetToolTip(textBox1, textBox1.Text);
         }
 
+        //Form fGrammar duoc load len
         private void fGrammar_Load(object sender, EventArgs e)
         {
 
@@ -352,9 +353,11 @@ namespace JCard
         }
         #endregion
 
+        // Tro ve man hinh chinh
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
+            Application.Restart();
         }
 
         #region  Xu li Drag&Drop
