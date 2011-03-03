@@ -333,6 +333,12 @@ namespace JCard
             fSetting.Show();
         }
 
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            fImportData fImport = new fImportData();
+            fImport.Show();
+        }
+
        
     }
 }
