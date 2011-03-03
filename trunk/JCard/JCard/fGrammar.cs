@@ -91,6 +91,7 @@ namespace JCard
             toolTip4.SetToolTip(textBox1, textBox1.Text);
         }
 
+        // Set vi tri ban dau cua form
         private void setFormPosAtBottomRight()
         {
             Rectangle r = Screen.PrimaryScreen.WorkingArea;
@@ -98,6 +99,7 @@ namespace JCard
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
         }
 
+        // Ham xu ly sau moi tick dong ho
         public void timer_Tick(object o, EventArgs e)
         {
             if (flag)
@@ -152,13 +154,6 @@ namespace JCard
             if (count_example == sum_of_display_example)
             {
                 // Lay random grammar card tiep theo
-                /*
-                if (index_entry + 1 >= max_entry - 1)
-                {
-                    index_entry = -1;
-                }
-                index_entry = rand.Next(index_entry + 1, max_entry - 1);
-                */
                 index_entry = rand.Next(0, max_entry - 1);
 
                 count_example = 0;
@@ -176,13 +171,6 @@ namespace JCard
             }
 
             // Lay random example tiep theo
-            /*
-            if (index_example + 1 >= max_example - 1)
-            {
-                index_example = -1;
-            }
-            index_example = rand.Next(index_example + 1, max_example - 1);
-            */
             index_example = rand.Next(0, max_example - 1);
             textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
             toolTip4.SetToolTip(textBox1, textBox1.Text);
@@ -327,19 +315,9 @@ namespace JCard
         {
             timer.Enabled = true;
         }
-
-        private void panel5_MouseMove(object sender, MouseEventArgs e)
-        {
-            timer.Enabled = false;
-            this.Opacity = 1;
-        }
-
-        private void panel5_MouseLeave(object sender, EventArgs e)
-        {
-            timer.Enabled = true;
-        }
         #endregion
 
+        #region Next&Forward
         // Hien thi grammar card truoc do
         private void btnPrevious_Click(object sender, EventArgs e)
         {
@@ -372,10 +350,49 @@ namespace JCard
         {
             Display();
         }
+        #endregion
 
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        #region  Xu li Drag&Drop
+        private bool bClick;
+        private Point pDelta;
+        private Point PastPoint;
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            bClick = true;
+            PastPoint.X = e.X;
+            PastPoint.Y = e.Y;
+            Invalidate();
+        }
+
+        private void panel5_MouseUp(object sender, MouseEventArgs e)
+        {
+            bClick = false;
+        }
+
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+
+            if (bClick)
+            {
+                pDelta.X = e.X - PastPoint.X;
+                pDelta.Y = e.Y - PastPoint.Y;
+                int x = this.Location.X + pDelta.X;
+                int y = this.Location.Y + pDelta.Y;
+                this.Location = new Point(x, y);
+            }
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
+        #endregion
     }
 }
