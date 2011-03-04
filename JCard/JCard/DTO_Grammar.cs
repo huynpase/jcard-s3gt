@@ -70,7 +70,7 @@ namespace JCard
             str_Syntax = "";
             str_Meaning_JP = "";
             str_Meaning_VN = "";
-            arrExample = new ArrayList(new string[Constants.MAX_GRAMMAR_EXAMPLE]{"", "", "", "", "", "", "", "", "", ""});
+            arrExample = new ArrayList();
         }
 
         public DTO_Grammar(string sample, string meaning_jp,  string meaning_vn, ArrayList example)
