@@ -26,20 +26,20 @@ namespace JCard
         /// </summary>
         /// <param name="strLevel">Input Level</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCarByLevel(string strLevel)
+        public ArrayList GetGrammarCarByLevel(int intKyu)
         {
             ArrayList result = new ArrayList();
             
             DataProvider provider = new DataProvider(str_datasource);            
 
-            String sql = "Select * from S3GT_GRAM where Level='" + strLevel + "'";
+            String sql = "Select * from S3GT_GRAM where Level='" + intKyu.ToString() + "'";
             IDataReader reader = provider.excuteQuery(sql);           
 
             while (reader.Read())
             {
                 DTO_Grammar gramCard = new DTO_Grammar();
                 gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
-                gramCard.STR_Level = strLevel;
+                gramCard.INT_Kyu = intKyu;
                 gramCard.STR_Sample = reader["Sample"].ToString();
                 gramCard.STR_Syntax = reader["Syntax"].ToString();
                 gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
@@ -253,7 +253,7 @@ namespace JCard
                     result[i].STR_Meaning_VN = ds.Tables[0].Rows[i]["YNghia_VN"].ToString();
                     //Example
                     int j = 0;
-                    for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
+                    for (; j < Constants.MAX_GRAMMAR_EXAMPLE_EXCEL; j++)
                     {
                         String tmpStr = "ViDu";
                         tmpStr += (j + 1).ToString();

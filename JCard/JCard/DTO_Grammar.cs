@@ -14,12 +14,12 @@ namespace JCard
             set { lGR_ID = value; }
         }
 
-        string str_Level;
+        int int_Kyu;
 
-        public string STR_Level
+        public int INT_Kyu
         {
-            get { return str_Level; }
-            set { str_Level = value; }
+            get { return int_Kyu; }
+            set { int_Kyu = value; }
         }
 
         string str_Sample;
@@ -65,7 +65,7 @@ namespace JCard
         public DTO_Grammar()
         {
             lGR_ID = 1;
-            str_Level = "";
+            int_Kyu = 1;
             str_Sample = "";
             str_Syntax = "";
             str_Meaning_JP = "";
