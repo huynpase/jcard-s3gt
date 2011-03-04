@@ -33,9 +33,7 @@ namespace JCard
             DataProvider provider = new DataProvider(str_datasource);            
 
             String sql = "Select * from S3GT_GRAM where Level='" + strLevel + "'";
-            IDataReader reader = provider.excuteQuery(sql);
-
-            string tempEx = "";
+            IDataReader reader = provider.excuteQuery(sql);           
 
             while (reader.Read())
             {
@@ -49,8 +47,9 @@ namespace JCard
 
                 for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                 {
-                    tempEx = reader["Example" + (i+1).ToString()].ToString();
-                    gramCard.ArrExample[i] = tempEx;
+                    string tempEx = reader["Example" + (i+1).ToString()].ToString();
+                    if (tempEx != string.Empty && tempEx != null)
+                        gramCard.ArrExample.Add(tempEx);
                 }
 
                 result.Add(gramCard);
