@@ -42,9 +42,7 @@ namespace JCard
 
         /* List luu giu cac grammar card truoc do */
         ArrayList arr_CardForward = new ArrayList();
-        /* List luu giu cac example truoc do */
-        ArrayList arr_ExampleForward = new ArrayList();
-        
+                
         public fGrammar()
         {
             InitializeComponent();
@@ -72,26 +70,31 @@ namespace JCard
             example_ini = 3;
 
             rand = new Random();
-            index_entry = rand.Next(0, arr_Entry.Count - 1);
-            arr_CardForward.Add(index_entry);
-            max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
-            count_example = 0;
-            index_example = rand.Next(0, max_example - 1);
-            arr_ExampleForward.Add(index_example);
-            if (example_ini < max_example)
+            if (arr_Entry.Count >= 1)
             {
-                sum_of_display_example = example_ini;
+                index_entry = rand.Next(0, arr_Entry.Count);
+                arr_CardForward.Add(index_entry);
+                max_entry = arr_Entry.Count;
+                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                if (example_ini < max_example)
+                {
+                    sum_of_display_example = example_ini;
+                }
+                else
+                {
+                    sum_of_display_example = max_example;
+                }
+                
+                /* Khoi tao, hien thi grammar card dau tien khi load ung dung len */
+                SetControlValues();
+                count_example = 0;
+                if (max_example >= 1)
+                {
+                    index_example = rand.Next(0, max_example);
+                    textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                    toolTip4.SetToolTip(textBox1, textBox1.Text);    
+                }
             }
-            else
-            {
-                sum_of_display_example = max_example;
-            }
-            max_entry = arr_Entry.Count;
-
-            /* Khoi tao, hien thi grammar card dau tien khi load ung dung len */
-            SetControlValues();
-            textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
-            toolTip4.SetToolTip(textBox1, textBox1.Text);
         }
 
         // Set vi tri ban dau cua form
@@ -167,35 +170,44 @@ namespace JCard
         /* Display */
         private void Display()
         {
-            arr_CardForward.Add(index_entry);
-            arr_ExampleForward.Add(index_example);
-
             count_example++;
             if (count_example == sum_of_display_example)
             {
-                // Lay random grammar card tiep theo
-                index_entry = rand.Next(0, max_entry - 1);
-
-                count_example = 0;
-                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
-                if (example_ini < max_example)
+                if (max_entry >= 1)
                 {
-                    sum_of_display_example = example_ini;
-                }
-                else
-                {
-                    sum_of_display_example = max_example;
-                }
+                    arr_CardForward.Add(index_entry);
+                    // Lay random grammar card tiep theo
+                    index_entry = rand.Next(0, max_entry);
+                    
+                    count_example = 0;
+                    max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                    if (example_ini < max_example)
+                    {
+                        sum_of_display_example = example_ini;
+                    }
+                    else
+                    {
+                        sum_of_display_example = max_example;
+                    }
 
-                SetControlValues();
+                    SetControlValues();
+                }
             }
 
-            // Lay random example tiep theo
-            index_example = rand.Next(0, max_example - 1);
-            textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
-            toolTip4.SetToolTip(textBox1, textBox1.Text);
+            if (max_example >= 1)
+            {
+                // Lay random example tiep theo
+                index_example = rand.Next(0, max_example);
+                textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                toolTip4.SetToolTip(textBox1, textBox1.Text);
+            }
+            else
+            {
+                textBox1.Text = string.Empty;
+                toolTip4.SetToolTip(textBox1, textBox1.Text);
+            }
         }
-
+        
         //Form fGrammar duoc load len
         private void fGrammar_Load(object sender, EventArgs e)
         {
@@ -342,19 +354,26 @@ namespace JCard
         // Hien thi grammar card truoc do
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(arr_ExampleForward.Count > 1)
+            if(arr_CardForward.Count > 1)
             {
                 index_entry = (int)arr_CardForward[arr_CardForward.Count - 1];
-                index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - 1];
                 SetControlValues();
-                textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
-                toolTip4.SetToolTip(textBox1, textBox1.Text);
+                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                if (max_example >= 1)
+                {
+                    index_example = rand.Next(0, max_example);
+                    textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                }
+                else
+                {
+                    textBox1.Text = string.Empty;
+                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                }
 
                 arr_CardForward.RemoveAt(arr_CardForward.Count - 1);
-                arr_ExampleForward.RemoveAt(arr_ExampleForward.Count - 1);
-
+                
                 count_example = 0;
-                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
                 if (example_ini < max_example)
                 {
                     sum_of_display_example = example_ini;
@@ -369,6 +388,7 @@ namespace JCard
         // Hien thi grammar card tiep theo
         private void btnNext_Click(object sender, EventArgs e)
         {
+            count_example = sum_of_display_example - 1;
             Display();
         }
         #endregion
