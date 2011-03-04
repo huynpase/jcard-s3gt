@@ -15,6 +15,12 @@ namespace JCard
         {
             DTO_GramSetting gramSettDTO = new DTO_GramSetting();
             IniFile ini = new IniFile(iniPath);
+
+            // 1. Các hàm bên dưới chưa nhận kết quả.
+            // ví dụ: gramSettDTO.Top = int.Parse(ini.ReadValue("Position", "Top", Constants.Top));
+
+            // 2. Bỏ hết dấu "[" và "]"
+
             ini.ReadValue("[Position]", "Top", Constants.Top);
             ini.ReadValue("[Position]", "Left",Constants.Left);
             ini.ReadValue("[Sample]","BackColor",Constants.BackColor);
@@ -39,6 +45,8 @@ namespace JCard
 
         public void WriteGramSettings(DTO_GramSetting gramSettDTO, string iniPath)
         {
+            // 3. Bỏ hết dấu "[" và "]"
+
             IniFile ini = new IniFile(iniPath);
             ini.WriteValue("[Position]","Top",gramSettDTO.Top.ToString());
             ini.WriteValue("[Position]", "Left", gramSettDTO.Left.ToString());
