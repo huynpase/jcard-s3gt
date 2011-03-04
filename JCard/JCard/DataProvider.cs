@@ -31,6 +31,23 @@ namespace JCard
             return _connect;
         }
 
+        public static OleDbConnection ConnectData(String dbFile)
+        {
+            string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source =" + dbFile;
+            OleDbConnection cn = null;
+            try
+            {
+                cn = new OleDbConnection(cnStr);
+                cn.Open();
+                return cn;
+            }
+            catch (OleDbException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return cn;
+            }
+        }
+
         // Ham tao
         public DataProvider()
         {

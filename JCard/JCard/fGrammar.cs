@@ -56,10 +56,10 @@ namespace JCard
 
             /* Set gia tri cung cho gramSetting */
             dto_gramSetting = new DTO_GramSetting();
-            dto_gramSetting.Ex_DisplayTime = 5;
-            dto_gramSetting.Ex_DelayTime = 6;
+            dto_gramSetting.Ex_DisplayTime = 6;
+            dto_gramSetting.Ex_DelayTime = 5;
             dto_gramSetting.JP_Isdisplayed = true;
-            dto_gramSetting.IsDisplayed = true;
+            dto_gramSetting.VN_IsDisplayed = true;
             
             ///* Get grammar cards frm database
             BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
@@ -147,14 +147,14 @@ namespace JCard
                 label3.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_JP;
                 toolTip2.SetToolTip(panel2, label3.Text);
                 toolTip2.SetToolTip(label3, label3.Text);
-                if (!dto_gramSetting.IsDisplayed)
+                if (!dto_gramSetting.JP_Isdisplayed)
                 {
                     label4.Text = label3.Text;
                     toolTip3.SetToolTip(panel4, label4.Text);
                     toolTip3.SetToolTip(label4, label4.Text);
                 }
             }
-            if(dto_gramSetting.IsDisplayed)
+            if(dto_gramSetting.VN_IsDisplayed)
             {
                 label4.Text = ((DTO_Grammar)arr_Entry[index_entry]).STR_Meaning_VN;
                 toolTip3.SetToolTip(panel4, label4.Text);
@@ -214,7 +214,7 @@ namespace JCard
 
             this.FormBorderStyle = FormBorderStyle.None;
             txtFocus.Focus();
-            this.TopMost = true;
+            this.TopMost = true;            
             timer.Start();
         }
 

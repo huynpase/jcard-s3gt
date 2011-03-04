@@ -45,7 +45,7 @@ namespace JCard
             this.butConvert = new System.Windows.Forms.Button();
             this.openFileDialog_Excel = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_S3GTDB = new System.Windows.Forms.OpenFileDialog();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progBarImport = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -214,14 +214,14 @@ namespace JCard
             // 
             this.openFileDialog_S3GTDB.FileName = "openFileDialog_S3GTDB";
             // 
-            // progressBar1
+            // progBarImport
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 286);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(594, 23);
-            this.progressBar1.TabIndex = 8;
-            this.progressBar1.Value = 20;
+            this.progBarImport.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progBarImport.Location = new System.Drawing.Point(0, 286);
+            this.progBarImport.Name = "progBarImport";
+            this.progBarImport.Size = new System.Drawing.Size(594, 23);
+            this.progBarImport.TabIndex = 8;
+            this.progBarImport.Value = 20;
             // 
             // fImportData
             // 
@@ -229,7 +229,7 @@ namespace JCard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
             this.ClientSize = new System.Drawing.Size(594, 309);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progBarImport);
             this.Controls.Add(this.butConvert);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -274,6 +274,6 @@ namespace JCard
         private System.Windows.Forms.Button butConvert;
         private System.Windows.Forms.OpenFileDialog openFileDialog_Excel;
         private System.Windows.Forms.OpenFileDialog openFileDialog_S3GTDB;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progBarImport;
     }
 }
