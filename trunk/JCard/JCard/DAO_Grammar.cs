@@ -32,7 +32,7 @@ namespace JCard
             
             DataProvider provider = new DataProvider(str_datasource);            
 
-            String sql = "Select * from S3GT_GRAM where Level='" + intKyu.ToString() + "'";
+            String sql = "Select * from S3GT_GRAM where Kyu=" + intKyu.ToString() + "";
             IDataReader reader = provider.excuteQuery(sql);           
 
             while (reader.Read())
