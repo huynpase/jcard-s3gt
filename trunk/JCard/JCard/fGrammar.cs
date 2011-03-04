@@ -63,7 +63,7 @@ namespace JCard
             
             ///* Get grammar cards frm database
             BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
-            arr_Entry = buGram.GetGrammarCarByLevel("2");
+            arr_Entry = buGram.GetGrammarCarByLevel(2);
             //*/
 
             /* So example duoc phep hien thi trong moi grammar card: Set cung */

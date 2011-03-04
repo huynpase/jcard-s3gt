@@ -24,10 +24,10 @@ namespace JCard
         /// </summary>
         /// <param name="strLevel">Input Level</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCarByLevel(string strLevel)
+        public ArrayList GetGrammarCarByLevel(int intKyu)
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
-            return daoGram.GetGrammarCarByLevel(strLevel);
+            return daoGram.GetGrammarCarByLevel(intKyu);
         }
 
         /// <summary>
