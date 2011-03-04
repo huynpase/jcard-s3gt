@@ -61,7 +61,7 @@ namespace JCard
             /* Set gia tri cung cho gramSetting */
             dto_gramSetting = new DTO_GramSetting();
             dto_gramSetting.Ex_DisplayTime = 2;
-            dto_gramSetting.Ex_DelayTime = 6;
+            dto_gramSetting.Ex_DelayTime = 1;
             dto_gramSetting.JP_Isdisplayed = true;
             dto_gramSetting.VN_IsDisplayed = true;
             
@@ -192,7 +192,7 @@ namespace JCard
             count_example++;
             if (count_example == sum_of_display_example)
             {
-                if (max_entry >= 1)
+                if (max_entry > 1)
                 {
                     // Lay random grammar card tiep theo
                     for (int i = 0; i < arr_tempEntry.Count; i++)
