@@ -364,6 +364,11 @@ namespace JCard
             fImport.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button1_Click(null, null);
+        }
+
        
     }
 }

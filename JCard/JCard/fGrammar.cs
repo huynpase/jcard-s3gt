@@ -163,7 +163,7 @@ namespace JCard
                 pnlExample.Left = pnlSample.Left + pnlSample.Width;
 
                 // Set with of screen
-                this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width + pnlExample.Width;
+                this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width;
             }
             else
             {
@@ -189,9 +189,18 @@ namespace JCard
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
                 this.Width = pnlTitle.Width + pnlButtons.Width + 
-                    pnlSample.Width + pnlJPMeaning.Width + pnlExample.Width;                                
+                    pnlSample.Width + pnlJPMeaning.Width;                                
             }
                 
+            // Check no of display.
+            if (dto_gramSetting.Ex_NoOfDisplay == 0)
+            {
+                pnlExample.Visible = false;                
+            }
+            else
+            {
+                this.Width += pnlExample.Width;
+            }
         }
 
         // Save settings when closing
