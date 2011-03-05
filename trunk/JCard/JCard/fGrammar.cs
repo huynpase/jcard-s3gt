@@ -81,7 +81,7 @@ namespace JCard
             rand = new Random();
             if (arr_Entry.Count >= 1)
             {
-                index_entry = rand.Next(0, arr_Entry.Count);
+                index_entry = rand.Next(0, arr_Entry.Count - 1);
                 arr_CardForward.Add(index_entry);
                 max_entry = arr_Entry.Count;
                 max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
@@ -99,7 +99,7 @@ namespace JCard
                 count_example = 0;
                 if (sum_of_display_example >= 1)
                 {
-                    index_example = rand.Next(0, max_example);
+                    index_example = rand.Next(0, max_example - 1);
                     lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
@@ -302,7 +302,7 @@ namespace JCard
                     count_forward = 0;
                     arr_Entry.RemoveAt(index_entry);
                     max_entry--;
-                    index_entry = rand.Next(0, max_entry);
+                    index_entry = rand.Next(0, max_entry - 1);
 
                     count_example = 0;
                     max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
@@ -327,7 +327,7 @@ namespace JCard
             if (max_example >= 1 && sum_of_display_example >= 1)
             {
                 // Lay random example tiep theo
-                index_example = rand.Next(0, max_example);
+                index_example = rand.Next(0, max_example - 1);
                 lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
                 toolTip4.SetToolTip(lblExample, lblExample.Text);
                 ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
@@ -493,9 +493,9 @@ namespace JCard
                 int temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
                 int temp_max_example = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample.Count;
-                if (sum_of_display_example >= 1)
+                if (temp_max_example >= 1 && example_ini >= 1)
                 {
-                    int temp_index_example = rand.Next(0, temp_max_example);
+                    int temp_index_example = rand.Next(0, temp_max_example - 1);
                     lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
                 }
