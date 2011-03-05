@@ -24,6 +24,7 @@ namespace JCard
         public const string VN_IsDisplayed = "True";
         public const string Ex_BackColor = "-4144960";
         public const string Ex_ForeColor = "-16777216";
+        public const string Ex_Width = "250";
         public const string Ex_NoOfDisplay = "6";
         public const string Ex_DisplayTime = "5";
         public const string Ex_DelayTime = "3";

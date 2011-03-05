@@ -289,8 +289,12 @@ namespace JCard
         private void button3_Click(object sender, EventArgs e)
         {
             fGrammar fg = new fGrammar();
-            fg.Show();
-            this.Hide();
+            try
+            {
+                fg.Show();
+                this.Hide();
+            }
+            catch { }
         }
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
