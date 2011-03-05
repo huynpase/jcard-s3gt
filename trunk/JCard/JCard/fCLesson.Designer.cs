@@ -48,7 +48,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
             this.setting1 = new JCard.rdbBR();
@@ -223,7 +223,7 @@
             this.panel1.Controls.Add(this.btnImport);
             this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbLevel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 118);
             this.panel1.Name = "panel1";
@@ -273,19 +273,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox1
+            // cmbLevel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Items.AddRange(new object[] {
             "1kyu",
             "2kyu",
             "3kyu",
             "4kyu"});
-            this.comboBox1.Location = new System.Drawing.Point(177, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(118, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "2kyu";
+            this.cmbLevel.Location = new System.Drawing.Point(177, 3);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(118, 21);
+            this.cmbLevel.TabIndex = 1;
+            this.cmbLevel.Text = "2kyu";
             // 
             // label1
             // 
@@ -364,7 +364,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabSetting;

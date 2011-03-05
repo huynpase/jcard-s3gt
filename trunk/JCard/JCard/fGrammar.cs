@@ -47,7 +47,7 @@ namespace JCard
         /* List luu giu cac grammar card truoc do */
         ArrayList arr_CardForward = new ArrayList();
                 
-        public fGrammar()
+        public fGrammar(ArrayList arr_GramCards)
         {
             InitializeComponent();
             //setFormPosAtBottomRight();
@@ -70,24 +70,8 @@ namespace JCard
             SetDisplayProperties();            
             //*/           
             
-            ///* Get grammar cards frm database
-            try
-            {
-                BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
-                arr_Entry = buGram.GetGrammarCarByLevel(2);
-            }
-            catch (Exception ex)
-            {
-                if (MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                {
-                    // Save settings
-                    SaveSettings();
-
-                    this.Dispose();
-                    Application.Exit();
-                    return;
-                }
-            }
+            ///* Tạo một bản Copy của arr_Entry
+            arr_Entry = arr_GramCards;
             arr_tempEntry = (ArrayList) arr_Entry.Clone();
             //*/
 

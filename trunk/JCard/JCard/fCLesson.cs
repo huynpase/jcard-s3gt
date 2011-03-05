@@ -287,14 +287,35 @@ namespace JCard
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            fGrammar fg = new fGrammar();
+        {            
             try
             {
-                fg.Show();
-                this.Hide();
+                ///* Get grammar cards frm database
+                BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
+                ArrayList arr_Entry = buGram.GetGrammarCarByLevel(cmbLevel.SelectedIndex+1);
+                //*/
+
+                if (arr_Entry != null && arr_Entry.Count > 0)
+                {
+                    fGrammar fg = new fGrammar(arr_Entry);
+                    fg.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("The grammar of selected level is empty.\n Please select another level and restart displaying grammar cards.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                if (MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    this.Dispose();
+                    Application.Exit();
+                    return;
+                }
+            }
         }
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
