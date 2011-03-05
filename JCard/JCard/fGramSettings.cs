@@ -45,7 +45,7 @@ namespace JCard
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
             //Change the color
-            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OKDialogResult.OK)
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 pnlSampleBgClr.BackColor = colorDialog.Color;
             }
@@ -130,7 +130,7 @@ namespace JCard
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pnlExFClr.BackColor == colorDialog.Color;
+                //pnlExFClr.BackColor == colorDialog.Color;
             }
         }
         #endregion
