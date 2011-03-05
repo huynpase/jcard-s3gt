@@ -72,7 +72,13 @@ namespace JCard
             
             ///* Tạo một bản Copy của arr_Entry
             arr_Entry = arr_GramCards;
-            arr_tempEntry = (ArrayList) arr_Entry.Clone();
+            arr_tempEntry = new ArrayList();
+            DTO_Grammar dto;
+            for (int i = 0; i < arr_Entry.Count; i++)
+            {
+                dto = new DTO_Grammar((DTO_Grammar)arr_Entry[i]);
+                arr_tempEntry.Add(dto);
+            }
             //*/
 
             /* So example duoc phep hien thi trong moi grammar card: Set cung */
