@@ -214,7 +214,7 @@
             this.label2.Location = new System.Drawing.Point(136, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 20);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Grammar Reminder ";
             // 
             // panel1
@@ -228,7 +228,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 118);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(443, 137);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // button2
             // 
@@ -236,9 +236,10 @@
             this.button2.Location = new System.Drawing.Point(344, 71);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 29);
-            this.button2.TabIndex = 17;
+            this.button2.TabIndex = 3;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnImport
             // 
@@ -246,7 +247,7 @@
             this.btnImport.Location = new System.Drawing.Point(3, 71);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(95, 29);
-            this.btnImport.TabIndex = 16;
+            this.btnImport.TabIndex = 5;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -257,7 +258,7 @@
             this.btnSetting.Location = new System.Drawing.Point(103, 71);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(95, 29);
-            this.btnSetting.TabIndex = 16;
+            this.btnSetting.TabIndex = 4;
             this.btnSetting.Text = "Se&tting";
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -268,7 +269,7 @@
             this.button3.Location = new System.Drawing.Point(243, 71);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 29);
-            this.button3.TabIndex = 16;
+            this.button3.TabIndex = 2;
             this.button3.Text = "&Start";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
