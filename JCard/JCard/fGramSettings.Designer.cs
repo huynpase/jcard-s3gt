@@ -252,7 +252,7 @@
             this.grbEx.Controls.Add(this.lblExNoDis);
             this.grbEx.Controls.Add(this.lblExFClr);
             this.grbEx.Controls.Add(this.lblExBgClr);
-            this.grbEx.Location = new System.Drawing.Point(13, 302);
+            this.grbEx.Location = new System.Drawing.Point(13, 300);
             this.grbEx.Name = "grbEx";
             this.grbEx.Size = new System.Drawing.Size(389, 117);
             this.grbEx.TabIndex = 3;
@@ -361,6 +361,7 @@
             // btnSave
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSave.Location = new System.Drawing.Point(114, 434);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(74, 31);
@@ -373,6 +374,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCancel.Location = new System.Drawing.Point(223, 434);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(74, 31);
@@ -394,6 +396,7 @@
             this.Controls.Add(this.grbJap);
             this.Controls.Add(this.grbSample);
             this.Name = "fGramSetts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grammar Card Settings";
             this.grbSample.ResumeLayout(false);
             this.grbSample.PerformLayout();
