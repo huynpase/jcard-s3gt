@@ -102,7 +102,7 @@ namespace JCard
         #endregion
         //Set values for Example Panel
         #region Example
-        int _Ex_BackColor, _Ex_ForeColor, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
+        int _Ex_BackColor, _Ex_ForeColor, _Ex_Width, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
         public int Ex_BackColor
         {
             get { return _Ex_BackColor; }
@@ -113,6 +113,12 @@ namespace JCard
         {
             get { return _Ex_ForeColor; }
             set { _Ex_ForeColor = value; }
+        }
+
+        public int Ex_Width
+        {
+            get { return _Ex_Width; }
+            set { _Ex_Width = value; }
         }
 
         public int Ex_NoOfDisplay

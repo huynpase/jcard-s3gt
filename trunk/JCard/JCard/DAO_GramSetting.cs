@@ -30,6 +30,7 @@ namespace JCard
             gramSettDTO.VN_IsDisplayed = bool.Parse(ini.ReadValue("VNMeaning", "VN_IsDisplayed", Constants.VN_IsDisplayed));
             gramSettDTO.Ex_BackColor = int.Parse(ini.ReadValue("Example", "Ex_BackColor", Constants.Ex_BackColor));
             gramSettDTO.Ex_ForeColor = int.Parse(ini.ReadValue("Example", "Ex_ForeColor", Constants.Ex_ForeColor));
+            gramSettDTO.Ex_Width = int.Parse(ini.ReadValue("Example", "Ex_Width", Constants.Ex_Width));
             gramSettDTO.Ex_NoOfDisplay = int.Parse(ini.ReadValue("Example", "Ex_NoOfDisplay", Constants.Ex_NoOfDisplay));
             gramSettDTO.Ex_DisplayTime = int.Parse(ini.ReadValue("Example", "Ex_DisplayTime", Constants.Ex_DisplayTime));
             gramSettDTO.Ex_DelayTime = int.Parse(ini.ReadValue("Example", "Ex_DelayTime", Constants.Ex_DelayTime));
@@ -56,6 +57,7 @@ namespace JCard
             ini.WriteValue("VNMeaning", "VN_IsDisplayed", gramSettDTO.VN_IsDisplayed.ToString());
             ini.WriteValue("Example", "Ex_BackColor", gramSettDTO.Ex_BackColor.ToString());
             ini.WriteValue("Example", "Ex_ForeColor", gramSettDTO.Ex_ForeColor.ToString());
+            ini.WriteValue("Example", "Ex_Width", gramSettDTO.Ex_Width.ToString());
             ini.WriteValue("Example", "Ex_NoOfDisplay", gramSettDTO.Ex_NoOfDisplay.ToString());
             ini.WriteValue("Example", "Ex_DisplayTime", gramSettDTO.Ex_DisplayTime.ToString());
             ini.WriteValue("Example", "Ex_DelayTime", gramSettDTO.Ex_DelayTime.ToString());

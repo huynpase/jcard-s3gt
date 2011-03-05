@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +21,8 @@ namespace JCard
 
         // Grammar setting
         private DTO_GramSetting dto_gramSetting;
+
+        private string strSettingFile = @"\GramSettings.ini";   // file path of grammar setting file
                 
         /* So example da duoc hien thi */
         private int count_example;
@@ -48,7 +50,7 @@ namespace JCard
         public fGrammar()
         {
             InitializeComponent();
-            setFormPosAtBottomRight();
+            //setFormPosAtBottomRight();
 
             /* Khoi tao dong ho de do luong thoi gian hien thi grammar card */
             timer = new Timer();
@@ -58,16 +60,34 @@ namespace JCard
             timer_wait.Tick += new EventHandler(timer_wait_Tick);
             flag = false;
 
-            /* Set gia tri cung cho gramSetting */
-            dto_gramSetting = new DTO_GramSetting();
-            dto_gramSetting.Ex_DisplayTime = 2;
-            dto_gramSetting.Ex_DelayTime = 1;
-            dto_gramSetting.JP_Isdisplayed = true;
-            dto_gramSetting.VN_IsDisplayed = true;
+            ///* Get Gram Setting        
+            // Đọc setting values
+            strSettingFile = Application.StartupPath + strSettingFile;
+            BUS_GramSetting buGramSett = new BUS_GramSetting();
+            dto_gramSetting = buGramSett.ReadGramSetting(strSettingFile);
+
+            // Set thuộc tính hiển thị
+            SetDisplayProperties();            
+            //*/           
             
             ///* Get grammar cards frm database
-            BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
-            arr_Entry = buGram.GetGrammarCarByLevel(2);
+            try
+            {
+                BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
+                arr_Entry = buGram.GetGrammarCarByLevel(2);
+            }
+            catch (Exception ex)
+            {
+                if (MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    // Save settings
+                    SaveSettings();
+
+                    this.Dispose();
+                    Application.Exit();
+                    return;
+                }
+            }
             arr_tempEntry = (ArrayList) arr_Entry.Clone();
             //*/
 
@@ -96,8 +116,8 @@ namespace JCard
                 if (max_example >= 1)
                 {
                     index_example = rand.Next(0, max_example);
-                    textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
-                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                    toolTip4.SetToolTip(lblExample, lblExample.Text);
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
                     max_example--;
                 }
@@ -110,6 +130,94 @@ namespace JCard
             Rectangle r = Screen.PrimaryScreen.WorkingArea;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
+        }
+
+        // Set thuộc tính hiển thị cho các area.
+        private void SetDisplayProperties()
+        {
+            // Display position
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(dto_gramSetting.Left, dto_gramSetting.Top);
+
+            // Sample area
+            pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
+            pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
+            pnlSample.Width = dto_gramSetting.Width;
+            lblSample.Width = pnlSample.Width - 4;
+            lblSample.Top = (pnlSample.Height - lblSample.Height) / 2;
+            lblSample.Left = 2;
+
+            // JP Meaning area
+            pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
+            pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
+            pnlJPMeaning.Width = dto_gramSetting.JP_Width;
+            pnlJPMeaning.Left = pnlSample.Left + pnlSample.Width;
+            lblJPMeaning.Width = pnlJPMeaning.Width - 4;
+            lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+            lblJPMeaning.Left = 2;
+
+            // VN Meaning area
+            pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
+            pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
+            pnlVNMeaning.Width = dto_gramSetting.VN_Width;
+            pnlVNMeaning.Left = pnlJPMeaning.Left;
+            lblVNMeaning.Top = lblJPMeaning.Top;
+            lblVNMeaning.Left = lblJPMeaning.Left;
+            lblVNMeaning.Width = lblJPMeaning.Width;
+
+            // Example area
+            pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
+            pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
+            pnlExample.Width = dto_gramSetting.Ex_Width;          
+
+            // Display or Non-Display JP/VN Meaning area
+            if (!dto_gramSetting.JP_Isdisplayed && !dto_gramSetting.VN_IsDisplayed)
+            {
+                pnlJPMeaning.Visible = false;
+                pnlVNMeaning.Visible = false;
+                pnlExample.Left = pnlSample.Left + pnlSample.Width;
+
+                // Set with of screen
+                this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width + pnlExample.Width;
+            }
+            else
+            {
+                if (!dto_gramSetting.JP_Isdisplayed)
+                {
+                    pnlJPMeaning.Visible = false;
+                    pnlVNMeaning.Visible = true;
+                    pnlVNMeaning.Top = 0;
+                    pnlVNMeaning.Height = pnlVNMeaning.Height * 2;
+
+                    lblVNMeaning.Height = lblVNMeaning.Height * 2;
+                    lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+                }
+                else if (!dto_gramSetting.VN_IsDisplayed)
+                {
+                    pnlJPMeaning.Visible = true;
+                    pnlVNMeaning.Visible = false;
+                    pnlJPMeaning.Height = pnlJPMeaning.Height * 2;
+
+                    lblJPMeaning.Height = lblJPMeaning.Height * 2;
+                    lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+                }
+
+                pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
+                this.Width = pnlTitle.Width + pnlButtons.Width + 
+                    pnlSample.Width + pnlJPMeaning.Width + pnlExample.Width;                                
+            }
+                
+        }
+
+        // Save settings when closing
+        private void SaveSettings()
+        {
+            // Save settings
+            BUS_GramSetting buGramSett = new BUS_GramSetting();
+            dto_gramSetting.Top = this.Top;
+            dto_gramSetting.Left = this.Left;
+            buGramSett.SaveGramSetting(dto_gramSetting, strSettingFile);
         }
 
         // Ham xu ly sau moi tick dong ho
@@ -158,31 +266,31 @@ namespace JCard
         /* Set gia tri Sample, Meaning_JP, Meaning_VN, Examples */
         private void SetControlValues(ArrayList arr_gram, int index)
         {
-            label1.Text = ((DTO_Grammar)arr_gram[index]).STR_Sample;
-            toolTip1.SetToolTip(panel1, label1.Text);
-            toolTip1.SetToolTip(label1, label1.Text);
+            lblSample.Text = ((DTO_Grammar)arr_gram[index]).STR_Sample;
+            toolTip1.SetToolTip(pnlSample, lblSample.Text);
+            toolTip1.SetToolTip(lblSample, lblSample.Text);
             if (dto_gramSetting.JP_Isdisplayed)
             {
-                label3.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
-                toolTip2.SetToolTip(panel2, label3.Text);
-                toolTip2.SetToolTip(label3, label3.Text);
+                lblJPMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
+                toolTip2.SetToolTip(pnlJPMeaning, lblJPMeaning.Text);
+                toolTip2.SetToolTip(lblJPMeaning, lblJPMeaning.Text);
                 if (!dto_gramSetting.VN_IsDisplayed)
                 {
-                    label4.Text = label3.Text;
-                    toolTip3.SetToolTip(panel4, label4.Text);
-                    toolTip3.SetToolTip(label4, label4.Text);
+                    lblVNMeaning.Text = lblJPMeaning.Text;
+                    toolTip3.SetToolTip(pnlVNMeaning, lblVNMeaning.Text);
+                    toolTip3.SetToolTip(lblVNMeaning, lblVNMeaning.Text);
                 }
             }
             if (dto_gramSetting.VN_IsDisplayed)
             {
-                label4.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_VN;
-                toolTip3.SetToolTip(panel4, label4.Text);
-                toolTip3.SetToolTip(label4, label4.Text);
+                lblVNMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_VN;
+                toolTip3.SetToolTip(pnlVNMeaning, lblVNMeaning.Text);
+                toolTip3.SetToolTip(lblVNMeaning, lblVNMeaning.Text);
                 if (!dto_gramSetting.JP_Isdisplayed)
                 {
-                    label3.Text = label4.Text;
-                    toolTip2.SetToolTip(panel2, label3.Text);
-                    toolTip2.SetToolTip(label3, label3.Text);
+                    lblJPMeaning.Text = lblVNMeaning.Text;
+                    toolTip2.SetToolTip(pnlJPMeaning, lblJPMeaning.Text);
+                    toolTip2.SetToolTip(lblJPMeaning, lblJPMeaning.Text);
                 }
             }
         }
@@ -227,23 +335,21 @@ namespace JCard
             {
                 // Lay random example tiep theo
                 index_example = rand.Next(0, max_example);
-                textBox1.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
-                toolTip4.SetToolTip(textBox1, textBox1.Text);
+                lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                toolTip4.SetToolTip(lblExample, lblExample.Text);
                 ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
                 max_example--;
             }
             else
             {
-                textBox1.Text = string.Empty;
-                toolTip4.SetToolTip(textBox1, textBox1.Text);
+                lblExample.Text = string.Empty;
+                toolTip4.SetToolTip(lblExample, lblExample.Text);
             }
         }
         
         //Form fGrammar duoc load len
         private void fGrammar_Load(object sender, EventArgs e)
         {
-
-            this.FormBorderStyle = FormBorderStyle.None;
             txtFocus.Focus();
             this.TopMost = true;
             timer.Start();
@@ -256,6 +362,9 @@ namespace JCard
             DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.Yes)
             {
+                // Save settings
+                SaveSettings();
+
                 this.Dispose();
                 Application.Exit();
             }
@@ -264,8 +373,7 @@ namespace JCard
         // Khi tien hanh close chuong trinh bang cach righ-click len icon cua ch/tr tren taskbar va click [x]
         private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Dispose();
-            Application.Exit();
+            exitToolStripMenuItem_Click(null, null);
         }
         #endregion
 
@@ -395,13 +503,13 @@ namespace JCard
                 if (temp_max_example >= 1)
                 {
                     int temp_index_example = rand.Next(0, temp_max_example);
-                    textBox1.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
-                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
+                    toolTip4.SetToolTip(lblExample, lblExample.Text);
                 }
                 else
                 {
-                    textBox1.Text = string.Empty;
-                    toolTip4.SetToolTip(textBox1, textBox1.Text);
+                    lblExample.Text = string.Empty;
+                    toolTip4.SetToolTip(lblExample, lblExample.Text);
                 }
 
                 //arr_CardForward.RemoveAt(arr_CardForward.Count - 1);
@@ -420,6 +528,9 @@ namespace JCard
         // Tro ve man hinh chinh
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Save settings
+            SaveSettings();
+
             this.Dispose();
             Application.Restart();
         }
