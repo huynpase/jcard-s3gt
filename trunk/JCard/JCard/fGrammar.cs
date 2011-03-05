@@ -139,7 +139,7 @@ namespace JCard
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(dto_gramSetting.Left, dto_gramSetting.Top);
-
+            
             // Sample area
             pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
