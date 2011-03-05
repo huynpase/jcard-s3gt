@@ -48,20 +48,23 @@
             this.grbEx = new System.Windows.Forms.GroupBox();
             this.pnlExFClr = new System.Windows.Forms.Panel();
             this.pnlExBgClr = new System.Windows.Forms.Panel();
-            this.cmbDelayTim = new System.Windows.Forms.ComboBox();
             this.lblDelayTim = new System.Windows.Forms.Label();
-            this.cmbDisTim = new System.Windows.Forms.ComboBox();
             this.lblDisTim = new System.Windows.Forms.Label();
             this.lblExNoDis = new System.Windows.Forms.Label();
-            this.cmbNoDis = new System.Windows.Forms.ComboBox();
             this.lblExFClr = new System.Windows.Forms.Label();
             this.lblExBgClr = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.numNoDis = new System.Windows.Forms.NumericUpDown();
+            this.numDisTim = new System.Windows.Forms.NumericUpDown();
+            this.numDelayTim = new System.Windows.Forms.NumericUpDown();
             this.grbSample.SuspendLayout();
             this.grbJap.SuspendLayout();
             this.grbVie.SuspendLayout();
             this.grbEx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).BeginInit();
             this.SuspendLayout();
             // 
             // grbSample
@@ -85,7 +88,7 @@
             this.pnlSampleFClr.Name = "pnlSampleFClr";
             this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleFClr.TabIndex = 3;
-            this.pnlSampleFClr.DoubleClick += new System.EventHandler(pnlJapFClr_DoubleClick);
+            this.pnlSampleFClr.DoubleClick += new System.EventHandler(this.pnlSampleFClr_DoubleClick);
             // 
             // pnlSampleBgClr
             // 
@@ -94,8 +97,7 @@
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 2;
-            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(pnlJapBgClr_DoubleClick);
-            
+            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
             // 
@@ -137,7 +139,7 @@
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapFClr.TabIndex = 3;
-            this.pnlJapFClr.DoubleClick +=new System.EventHandler(pnlJapFClr_DoubleClick);
+            this.pnlJapFClr.DoubleClick += new System.EventHandler(this.pnlJapFClr_DoubleClick);
             // 
             // pnlJapBgClr
             // 
@@ -146,7 +148,7 @@
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapBgClr.TabIndex = 6;
-            this.pnlJapBgClr.DoubleClick +=new System.EventHandler(pnlJapBgClr_DoubleClick);
+            this.pnlJapBgClr.DoubleClick += new System.EventHandler(this.pnlJapBgClr_DoubleClick);
             // 
             // lblJapFClr
             // 
@@ -198,7 +200,7 @@
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieFClr.TabIndex = 3;
-            this.pnlVieFClr.DoubleClick +=new System.EventHandler(pnlVieFClr_DoubleClick);
+            this.pnlVieFClr.DoubleClick += new System.EventHandler(this.pnlVieFClr_DoubleClick);
             // 
             // pnlVieBgClr
             // 
@@ -207,7 +209,7 @@
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieBgClr.TabIndex = 3;
-            this.pnlVieBgClr.DoubleClick +=new System.EventHandler(pnlVieBgClr_DoubleClick);
+            this.pnlVieBgClr.DoubleClick += new System.EventHandler(this.pnlVieBgClr_DoubleClick);
             // 
             // lblVieFClr
             // 
@@ -240,14 +242,14 @@
             // grbEx
             // 
             this.grbEx.BackColor = System.Drawing.Color.Transparent;
+            this.grbEx.Controls.Add(this.numDelayTim);
+            this.grbEx.Controls.Add(this.numDisTim);
+            this.grbEx.Controls.Add(this.numNoDis);
             this.grbEx.Controls.Add(this.pnlExFClr);
             this.grbEx.Controls.Add(this.pnlExBgClr);
-            this.grbEx.Controls.Add(this.cmbDelayTim);
             this.grbEx.Controls.Add(this.lblDelayTim);
-            this.grbEx.Controls.Add(this.cmbDisTim);
             this.grbEx.Controls.Add(this.lblDisTim);
             this.grbEx.Controls.Add(this.lblExNoDis);
-            this.grbEx.Controls.Add(this.cmbNoDis);
             this.grbEx.Controls.Add(this.lblExFClr);
             this.grbEx.Controls.Add(this.lblExBgClr);
             this.grbEx.Location = new System.Drawing.Point(13, 302);
@@ -264,7 +266,7 @@
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 3;
-            this.pnlExFClr.DoubleClick +=new System.EventHandler(pnlExFClr_DoubleClick);
+            this.pnlExFClr.DoubleClick += new System.EventHandler(this.pnlExFClr_DoubleClick);
             // 
             // pnlExBgClr
             // 
@@ -273,27 +275,7 @@
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 3;
-            this.pnlExBgClr.DoubleClick +=new System.EventHandler(pnlExBgClr_DoubleClick);
-            // 
-            // cmbDelayTim
-            // 
-            this.cmbDelayTim.FormattingEnabled = true;
-            this.cmbDelayTim.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cmbDelayTim.Location = new System.Drawing.Point(299, 87);
-            this.cmbDelayTim.Name = "cmbDelayTim";
-            this.cmbDelayTim.Size = new System.Drawing.Size(71, 21);
-            this.cmbDelayTim.TabIndex = 11;
+            this.pnlExBgClr.DoubleClick += new System.EventHandler(this.pnlExBgClr_DoubleClick);
             // 
             // lblDelayTim
             // 
@@ -303,68 +285,6 @@
             this.lblDelayTim.Size = new System.Drawing.Size(74, 13);
             this.lblDelayTim.TabIndex = 10;
             this.lblDelayTim.Text = "Delay Time (s)";
-            // 
-            // cmbDisTim
-            // 
-            this.cmbDisTim.DropDownHeight = 130;
-            this.cmbDisTim.FormattingEnabled = true;
-            this.cmbDisTim.IntegralHeight = false;
-            this.cmbDisTim.ItemHeight = 13;
-            this.cmbDisTim.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50"});
-            this.cmbDisTim.Location = new System.Drawing.Point(104, 87);
-            this.cmbDisTim.Name = "cmbDisTim";
-            this.cmbDisTim.Size = new System.Drawing.Size(71, 21);
-            this.cmbDisTim.TabIndex = 9;
             // 
             // lblDisTim
             // 
@@ -383,26 +303,6 @@
             this.lblExNoDis.Size = new System.Drawing.Size(93, 13);
             this.lblExNoDis.TabIndex = 7;
             this.lblExNoDis.Text = "Number of Display";
-            // 
-            // cmbNoDis
-            // 
-            this.cmbNoDis.FormattingEnabled = true;
-            this.cmbNoDis.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cmbNoDis.Location = new System.Drawing.Point(104, 56);
-            this.cmbNoDis.Name = "cmbNoDis";
-            this.cmbNoDis.Size = new System.Drawing.Size(71, 21);
-            this.cmbNoDis.TabIndex = 6;
             // 
             // lblExFClr
             // 
@@ -445,6 +345,42 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // numNoDis
+            // 
+            this.numNoDis.Location = new System.Drawing.Point(104, 57);
+            this.numNoDis.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numNoDis.Name = "numNoDis";
+            this.numNoDis.Size = new System.Drawing.Size(71, 20);
+            this.numNoDis.TabIndex = 12;
+            // 
+            // numDisTim
+            // 
+            this.numDisTim.Location = new System.Drawing.Point(104, 88);
+            this.numDisTim.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numDisTim.Name = "numDisTim";
+            this.numDisTim.Size = new System.Drawing.Size(71, 20);
+            this.numDisTim.TabIndex = 13;
+            // 
+            // numDelayTim
+            // 
+            this.numDelayTim.Location = new System.Drawing.Point(299, 88);
+            this.numDelayTim.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDelayTim.Name = "numDelayTim";
+            this.numDelayTim.Size = new System.Drawing.Size(71, 20);
+            this.numDelayTim.TabIndex = 14;
+            // 
             // fGramSetts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +403,9 @@
             this.grbVie.PerformLayout();
             this.grbEx.ResumeLayout(false);
             this.grbEx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,9 +428,6 @@
         private System.Windows.Forms.Label lblExBgClr;
         private System.Windows.Forms.Label lblDisTim;
         private System.Windows.Forms.Label lblExNoDis;
-        private System.Windows.Forms.ComboBox cmbNoDis;
-        private System.Windows.Forms.ComboBox cmbDisTim;
-        private System.Windows.Forms.ComboBox cmbDelayTim;
         private System.Windows.Forms.Label lblDelayTim;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
@@ -503,5 +439,8 @@
         private System.Windows.Forms.Panel pnlVieBgClr;
         private System.Windows.Forms.Panel pnlExFClr;
         private System.Windows.Forms.Panel pnlExBgClr;
+        private System.Windows.Forms.NumericUpDown numDelayTim;
+        private System.Windows.Forms.NumericUpDown numDisTim;
+        private System.Windows.Forms.NumericUpDown numNoDis;
     }
 }
