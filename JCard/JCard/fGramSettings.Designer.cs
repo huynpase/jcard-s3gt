@@ -46,6 +46,9 @@
             this.lblVieBgClr = new System.Windows.Forms.Label();
             this.chkboxVie = new System.Windows.Forms.CheckBox();
             this.grbEx = new System.Windows.Forms.GroupBox();
+            this.numDelayTim = new System.Windows.Forms.NumericUpDown();
+            this.numDisTim = new System.Windows.Forms.NumericUpDown();
+            this.numNoDis = new System.Windows.Forms.NumericUpDown();
             this.pnlExFClr = new System.Windows.Forms.Panel();
             this.pnlExBgClr = new System.Windows.Forms.Panel();
             this.lblDelayTim = new System.Windows.Forms.Label();
@@ -55,16 +58,13 @@
             this.lblExBgClr = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.numNoDis = new System.Windows.Forms.NumericUpDown();
-            this.numDisTim = new System.Windows.Forms.NumericUpDown();
-            this.numDelayTim = new System.Windows.Forms.NumericUpDown();
             this.grbSample.SuspendLayout();
             this.grbJap.SuspendLayout();
             this.grbVie.SuspendLayout();
             this.grbEx.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).BeginInit();
             this.SuspendLayout();
             // 
             // grbSample
@@ -96,7 +96,7 @@
             this.pnlSampleBgClr.Location = new System.Drawing.Point(105, 13);
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlSampleBgClr.TabIndex = 2;
+            this.pnlSampleBgClr.TabIndex = 1;
             this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
@@ -105,7 +105,7 @@
             this.lblSampleFclr.Location = new System.Drawing.Point(220, 25);
             this.lblSampleFclr.Name = "lblSampleFclr";
             this.lblSampleFclr.Size = new System.Drawing.Size(55, 13);
-            this.lblSampleFclr.TabIndex = 1;
+            this.lblSampleFclr.TabIndex = 2;
             this.lblSampleFclr.Text = "Font Color";
             // 
             // lblSampleBgClr
@@ -138,7 +138,7 @@
             this.pnlJapFClr.Location = new System.Drawing.Point(300, 41);
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlJapFClr.TabIndex = 3;
+            this.pnlJapFClr.TabIndex = 4;
             this.pnlJapFClr.DoubleClick += new System.EventHandler(this.pnlJapFClr_DoubleClick);
             // 
             // pnlJapBgClr
@@ -147,7 +147,7 @@
             this.pnlJapBgClr.Location = new System.Drawing.Point(105, 41);
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlJapBgClr.TabIndex = 6;
+            this.pnlJapBgClr.TabIndex = 2;
             this.pnlJapBgClr.DoubleClick += new System.EventHandler(this.pnlJapBgClr_DoubleClick);
             // 
             // lblJapFClr
@@ -156,7 +156,7 @@
             this.lblJapFClr.Location = new System.Drawing.Point(220, 53);
             this.lblJapFClr.Name = "lblJapFClr";
             this.lblJapFClr.Size = new System.Drawing.Size(55, 13);
-            this.lblJapFClr.TabIndex = 2;
+            this.lblJapFClr.TabIndex = 3;
             this.lblJapFClr.Text = "Font Color";
             // 
             // lblJapBgClr
@@ -199,7 +199,7 @@
             this.pnlVieFClr.Location = new System.Drawing.Point(299, 41);
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlVieFClr.TabIndex = 3;
+            this.pnlVieFClr.TabIndex = 4;
             this.pnlVieFClr.DoubleClick += new System.EventHandler(this.pnlVieFClr_DoubleClick);
             // 
             // pnlVieBgClr
@@ -208,7 +208,7 @@
             this.pnlVieBgClr.Location = new System.Drawing.Point(104, 41);
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlVieBgClr.TabIndex = 3;
+            this.pnlVieBgClr.TabIndex = 2;
             this.pnlVieBgClr.DoubleClick += new System.EventHandler(this.pnlVieBgClr_DoubleClick);
             // 
             // lblVieFClr
@@ -226,7 +226,7 @@
             this.lblVieBgClr.Location = new System.Drawing.Point(5, 53);
             this.lblVieBgClr.Name = "lblVieBgClr";
             this.lblVieBgClr.Size = new System.Drawing.Size(92, 13);
-            this.lblVieBgClr.TabIndex = 4;
+            this.lblVieBgClr.TabIndex = 1;
             this.lblVieBgClr.Text = "Background Color";
             // 
             // chkboxVie
@@ -235,7 +235,7 @@
             this.chkboxVie.Location = new System.Drawing.Point(6, 19);
             this.chkboxVie.Name = "chkboxVie";
             this.chkboxVie.Size = new System.Drawing.Size(83, 17);
-            this.chkboxVie.TabIndex = 3;
+            this.chkboxVie.TabIndex = 0;
             this.chkboxVie.Text = "Is Displayed";
             this.chkboxVie.UseVisualStyleBackColor = true;
             // 
@@ -259,6 +259,42 @@
             this.grbEx.TabStop = false;
             this.grbEx.Text = "Examples";
             // 
+            // numDelayTim
+            // 
+            this.numDelayTim.Location = new System.Drawing.Point(299, 88);
+            this.numDelayTim.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDelayTim.Name = "numDelayTim";
+            this.numDelayTim.Size = new System.Drawing.Size(71, 20);
+            this.numDelayTim.TabIndex = 9;
+            // 
+            // numDisTim
+            // 
+            this.numDisTim.Location = new System.Drawing.Point(104, 88);
+            this.numDisTim.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numDisTim.Name = "numDisTim";
+            this.numDisTim.Size = new System.Drawing.Size(71, 20);
+            this.numDisTim.TabIndex = 7;
+            // 
+            // numNoDis
+            // 
+            this.numNoDis.Location = new System.Drawing.Point(104, 57);
+            this.numNoDis.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numNoDis.Name = "numNoDis";
+            this.numNoDis.Size = new System.Drawing.Size(71, 20);
+            this.numNoDis.TabIndex = 5;
+            // 
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -274,7 +310,7 @@
             this.pnlExBgClr.Location = new System.Drawing.Point(104, 14);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlExBgClr.TabIndex = 3;
+            this.pnlExBgClr.TabIndex = 1;
             this.pnlExBgClr.DoubleClick += new System.EventHandler(this.pnlExBgClr_DoubleClick);
             // 
             // lblDelayTim
@@ -283,7 +319,7 @@
             this.lblDelayTim.Location = new System.Drawing.Point(219, 90);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(74, 13);
-            this.lblDelayTim.TabIndex = 10;
+            this.lblDelayTim.TabIndex = 8;
             this.lblDelayTim.Text = "Delay Time (s)";
             // 
             // lblDisTim
@@ -292,7 +328,7 @@
             this.lblDisTim.Location = new System.Drawing.Point(5, 90);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(81, 13);
-            this.lblDisTim.TabIndex = 8;
+            this.lblDisTim.TabIndex = 6;
             this.lblDisTim.Text = "Display Time (s)";
             // 
             // lblExNoDis
@@ -301,7 +337,7 @@
             this.lblExNoDis.Location = new System.Drawing.Point(5, 59);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(93, 13);
-            this.lblExNoDis.TabIndex = 7;
+            this.lblExNoDis.TabIndex = 4;
             this.lblExNoDis.Text = "Number of Display";
             // 
             // lblExFClr
@@ -310,7 +346,7 @@
             this.lblExFClr.Location = new System.Drawing.Point(219, 26);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(55, 13);
-            this.lblExFClr.TabIndex = 5;
+            this.lblExFClr.TabIndex = 2;
             this.lblExFClr.Text = "Font Color";
             // 
             // lblExBgClr
@@ -319,7 +355,7 @@
             this.lblExBgClr.Location = new System.Drawing.Point(6, 26);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(92, 13);
-            this.lblExBgClr.TabIndex = 5;
+            this.lblExBgClr.TabIndex = 0;
             this.lblExBgClr.Text = "Background Color";
             // 
             // btnSave
@@ -345,42 +381,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // numNoDis
-            // 
-            this.numNoDis.Location = new System.Drawing.Point(104, 57);
-            this.numNoDis.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numNoDis.Name = "numNoDis";
-            this.numNoDis.Size = new System.Drawing.Size(71, 20);
-            this.numNoDis.TabIndex = 12;
-            // 
-            // numDisTim
-            // 
-            this.numDisTim.Location = new System.Drawing.Point(104, 88);
-            this.numDisTim.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numDisTim.Name = "numDisTim";
-            this.numDisTim.Size = new System.Drawing.Size(71, 20);
-            this.numDisTim.TabIndex = 13;
-            // 
-            // numDelayTim
-            // 
-            this.numDelayTim.Location = new System.Drawing.Point(299, 88);
-            this.numDelayTim.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numDelayTim.Name = "numDelayTim";
-            this.numDelayTim.Size = new System.Drawing.Size(71, 20);
-            this.numDelayTim.TabIndex = 14;
-            // 
             // fGramSetts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,9 +403,9 @@
             this.grbVie.PerformLayout();
             this.grbEx.ResumeLayout(false);
             this.grbEx.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).EndInit();
             this.ResumeLayout(false);
 
         }
