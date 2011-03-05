@@ -44,22 +44,21 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
-            if (colorDialog.ShowDialog() == DialogResult.OK)
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OKDialogResult.OK)
             {
-                //TO DO
+                pnlSampleBgClr.BackColor = colorDialog.Color;
             }
-
         }
 
         private void pnlSampleFClr_DoubleClick(object sender, EventArgs e)
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlSampleFClr.BackColor = colorDialog.Color;
             }
         }
         #endregion
@@ -69,10 +68,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlJapBgClr.BackColor = colorDialog.Color;
             }
         }
 
@@ -80,10 +79,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlJapFClr.BackColor = colorDialog.Color;
             }
         }
         #endregion
@@ -93,10 +92,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlVieBgClr.BackColor = colorDialog.Color;
             }
         }
 
@@ -104,10 +103,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlVieFClr.BackColor = colorDialog.Color;
             }
         }
         #endregion
@@ -117,10 +116,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlExBgClr.BackColor = colorDialog.Color;
             }
         }
 
@@ -128,10 +127,10 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
-            //Show ColorDialog for user to choose the color
+            //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //TO DO
+                pnlExFClr.BackColor == colorDialog.Color;
             }
         }
         #endregion
@@ -148,7 +147,7 @@ namespace JCard
             ChangeGramSett.VN_BackColor = pnlVieBgClr.BackColor.ToArgb();
             ChangeGramSett.VN_ForeColor = pnlVieFClr.BackColor.ToArgb();
             //VN Width
-            ChangeGramSett.VN_IsDisplayed = chkboxJap.Checked;
+            ChangeGramSett.VN_IsDisplayed = chkboxVie.Checked;
             ChangeGramSett.Ex_BackColor = pnlExBgClr.BackColor.ToArgb();
             ChangeGramSett.Ex_ForeColor = pnlExFClr.BackColor.ToArgb();
             ChangeGramSett.Ex_NoOfDisplay = int.Parse(cmbNoDis.Text);

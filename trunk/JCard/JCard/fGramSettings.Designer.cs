@@ -85,14 +85,17 @@
             this.pnlSampleFClr.Name = "pnlSampleFClr";
             this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleFClr.TabIndex = 3;
+            this.pnlSampleFClr.DoubleClick += new System.EventHandler(pnlJapFClr_DoubleClick);
             // 
             // pnlSampleBgClr
             // 
-            this.pnlSampleBgClr.BackColor = System.Drawing.Color.White;
+            this.pnlSampleBgClr.BackColor = System.Drawing.Color.Maroon;
             this.pnlSampleBgClr.Location = new System.Drawing.Point(105, 13);
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 2;
+            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(pnlJapBgClr_DoubleClick);
+            
             // 
             // lblSampleFclr
             // 
@@ -134,6 +137,7 @@
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapFClr.TabIndex = 3;
+            this.pnlJapFClr.DoubleClick +=new System.EventHandler(pnlJapFClr_DoubleClick);
             // 
             // pnlJapBgClr
             // 
@@ -142,6 +146,7 @@
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapBgClr.TabIndex = 6;
+            this.pnlJapBgClr.DoubleClick +=new System.EventHandler(pnlJapBgClr_DoubleClick);
             // 
             // lblJapFClr
             // 
@@ -193,6 +198,7 @@
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieFClr.TabIndex = 3;
+            this.pnlVieFClr.DoubleClick +=new System.EventHandler(pnlVieFClr_DoubleClick);
             // 
             // pnlVieBgClr
             // 
@@ -201,6 +207,7 @@
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieBgClr.TabIndex = 3;
+            this.pnlVieBgClr.DoubleClick +=new System.EventHandler(pnlVieBgClr_DoubleClick);
             // 
             // lblVieFClr
             // 
@@ -257,6 +264,7 @@
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 3;
+            this.pnlExFClr.DoubleClick +=new System.EventHandler(pnlExFClr_DoubleClick);
             // 
             // pnlExBgClr
             // 
@@ -265,6 +273,7 @@
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 3;
+            this.pnlExBgClr.DoubleClick +=new System.EventHandler(pnlExBgClr_DoubleClick);
             // 
             // cmbDelayTim
             // 
