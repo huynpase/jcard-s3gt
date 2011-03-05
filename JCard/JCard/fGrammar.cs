@@ -76,7 +76,7 @@ namespace JCard
             //*/
 
             /* So example duoc phep hien thi trong moi grammar card: Set cung */
-            example_ini = 3;
+            example_ini = dto_gramSetting.Ex_NoOfDisplay;
 
             rand = new Random();
             if (arr_Entry.Count >= 1)
