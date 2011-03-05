@@ -73,12 +73,18 @@ namespace JCard
             arrExample = new ArrayList();
         }
 
-        public DTO_Grammar(string sample, string meaning_jp,  string meaning_vn, ArrayList example)
+        public DTO_Grammar(DTO_Grammar grammar)
         {
-            str_Sample = sample;
-            str_Meaning_JP = meaning_jp;
-            str_Meaning_VN = meaning_vn;
-            arrExample = example;
+            lGR_ID = grammar.LGR_ID;
+            str_Sample = grammar.STR_Sample;
+            str_Meaning_JP = grammar.STR_Meaning_JP;
+            str_Meaning_VN = grammar.STR_Meaning_VN;
+            int_Kyu = grammar.INT_Kyu;
+            str_Syntax = grammar.STR_Syntax;
+            arrExample = new ArrayList();
+
+            for (int j = 0; j < grammar.ArrExample.Count; j++)
+                arrExample.Add(grammar.ArrExample[j].ToString());
         }
     }
 }
