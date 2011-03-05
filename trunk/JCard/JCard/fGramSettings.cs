@@ -19,23 +19,23 @@ namespace JCard
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
             ChangeGramSett = busGramSett.ReadGramSetting(filePath);
-            //Top ??
-            //Left ??
+            // Sample
             pnlSampleBgClr.BackColor = Color.FromArgb(ChangeGramSett.BackColor);
             pnlSampleFClr.BackColor = Color.FromArgb(ChangeGramSett.ForeColor);
+            //Japanese Meaning
             pnlJapBgClr.BackColor = Color.FromArgb(ChangeGramSett.JP_BackColor);
             pnlJapFClr.BackColor = Color.FromArgb(ChangeGramSett.JP_ForeColor);
-            //JP Width
             chkboxJap.Checked = ChangeGramSett.JP_Isdisplayed;
+            //Vietnamese Meaning
             pnlVieBgClr.BackColor = Color.FromArgb(ChangeGramSett.VN_BackColor);
             pnlVieFClr.BackColor = Color.FromArgb(ChangeGramSett.VN_ForeColor);
-            //VN Width
             chkboxVie.Checked = ChangeGramSett.VN_IsDisplayed;
-            pnlSampleBgClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_BackColor);
-            pnlSampleFClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_ForeColor);
-            cmbNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
-            cmbDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
-            cmbDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
+            //Example Meaning
+            pnlExBgClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_BackColor);
+            pnlExFClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_ForeColor);
+            numNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
+            numDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
+            numDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
         }
 
         //Sample GroupBox
@@ -44,6 +44,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlSampleBgClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -55,6 +56,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlSampleFClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -68,6 +70,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlJapBgClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -79,6 +82,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlJapFClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -92,6 +96,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlVieBgClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -103,6 +108,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlVieFClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -116,6 +122,7 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlExBgClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -127,10 +134,11 @@ namespace JCard
         {
             //Create a ColorDialog
             ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlExFClr.BackColor;
             //Change the color
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //pnlExFClr.BackColor == colorDialog.Color;
+                pnlExFClr.BackColor = colorDialog.Color;
             }
         }
         #endregion
@@ -150,9 +158,9 @@ namespace JCard
             ChangeGramSett.VN_IsDisplayed = chkboxVie.Checked;
             ChangeGramSett.Ex_BackColor = pnlExBgClr.BackColor.ToArgb();
             ChangeGramSett.Ex_ForeColor = pnlExFClr.BackColor.ToArgb();
-            ChangeGramSett.Ex_NoOfDisplay = int.Parse(cmbNoDis.Text);
-            ChangeGramSett.Ex_DisplayTime = int.Parse(cmbDisTim.Text);
-            ChangeGramSett.Ex_DelayTime = int.Parse(cmbDelayTim.Text);
+            ChangeGramSett.Ex_NoOfDisplay = int.Parse(numNoDis.Text);
+            ChangeGramSett.Ex_DisplayTime = int.Parse(numDisTim.Text);
+            ChangeGramSett.Ex_DelayTime = int.Parse(numDelayTim.Text);
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
             busGramSett.SaveGramSetting(ChangeGramSett, filePath);
