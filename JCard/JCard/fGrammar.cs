@@ -97,7 +97,7 @@ namespace JCard
                 /* Khoi tao, hien thi grammar card dau tien khi load ung dung len */
                 SetControlValues(arr_Entry, index_entry);
                 count_example = 0;
-                if (max_example >= 1)
+                if (sum_of_display_example >= 1)
                 {
                     index_example = rand.Next(0, max_example);
                     lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
@@ -291,7 +291,7 @@ namespace JCard
         private void Display()
         {
             count_example++;
-            if (count_example == sum_of_display_example)
+            if (count_example == sum_of_display_example || sum_of_display_example == 0)
             {
                 if (max_entry > 1)
                 {
@@ -324,7 +324,7 @@ namespace JCard
                 }
             }
 
-            if (max_example >= 1)
+            if (max_example >= 1 && sum_of_display_example >= 1)
             {
                 // Lay random example tiep theo
                 index_example = rand.Next(0, max_example);
@@ -493,7 +493,7 @@ namespace JCard
                 int temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
                 int temp_max_example = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample.Count;
-                if (temp_max_example >= 1)
+                if (sum_of_display_example >= 1)
                 {
                     int temp_index_example = rand.Next(0, temp_max_example);
                     lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
