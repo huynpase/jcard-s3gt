@@ -355,13 +355,13 @@ namespace JCard
         private void btnSetting_Click(object sender, EventArgs e)
         {
             fGramSetts fSetting = new fGramSetts();
-            fSetting.Show();
+            fSetting.ShowDialog();
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
             fImportData fImport = new fImportData();
-            fImport.Show();
+            fImport.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
