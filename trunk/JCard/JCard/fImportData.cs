@@ -10,14 +10,12 @@ namespace JCard
 {
     public partial class fImportData : Form
     {
-        private Timer proTimer = new Timer();
         /// <summary>
         /// Initializes a new instance of the <see cref="fImportData"/> class.
         /// </summary>
         public fImportData()
         {
             InitializeComponent();
-            progBarImport.Visible = false;
         }
 
         /// <summary>
@@ -53,17 +51,6 @@ namespace JCard
         }
 
         /// <summary>
-        /// Progresses the bar handle.
-        /// </summary>
-        private void progressBarHandle()
-        {
-            //start PrgressBar
-            progBarImport.Visible = true;
-            int i = 0;
-            for (; i < progBarImport.Maximum; i++)
-                progBarImport.Increment(progBarImport.Step);
-        }
-        /// <summary>
         /// Handles the Click event of the butConvert control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -72,26 +59,24 @@ namespace JCard
         {
             if (txtExcel.Text == "")
             {
-                MessageBox.Show("Excel file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Excel file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtS3GTDB.Text == "")
             {
-                MessageBox.Show("S3GT_DB file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("S3GT_DB file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+                        
+            this.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
 
-            //Read data from Excel file
-            progressBarHandle();
+            //Read data from Excel file           
             BUS_Grammar busGram = new BUS_Grammar(Constants.DATABASE_PATH);
             DTO_Grammar[] gramCards = busGram.ReadExcelFile(txtExcel.Text);
             if (gramCards == null)
             {
-                if (MessageBox.Show("Invalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                {
-                    progBarImport.Value = 0;
-                    progBarImport.Visible = false;
-                }
+                MessageBox.Show("Invalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -111,23 +96,28 @@ namespace JCard
                     busGram.DeleteGrammarCards(iKyu, txtS3GTDB.Text);
                 if (!busGram.InsertGrammarCards(gramCards, iKyu.ToString(), txtS3GTDB.Text))
                 {
-                    if (MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                    {
-                        progBarImport.Value = 0;
-                        progBarImport.Visible = false;
-                    }
+                    MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    if (MessageBox.Show("Import data sucessfull!!!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                    {
-                        progBarImport.Value = 0;
-                        progBarImport.Visible = false;
-                    }
+                    MessageBox.Show("Import data sucessfull!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
 
+            this.Cursor = Cursors.Default;
+            this.Enabled = true;
+        }
+
+        private void fImportData_Load(object sender, EventArgs e)
+        {
+            // Default file path.
+            string dbFilePath = Application.StartupPath;
+            txtS3GTDB.Text = dbFilePath + "\\" + Constants.DATABASE_PATH;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
