@@ -45,7 +45,7 @@ namespace JCard
             this.butConvert = new System.Windows.Forms.Button();
             this.openFileDialog_Excel = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_S3GTDB = new System.Windows.Forms.OpenFileDialog();
-            this.progBarImport = new System.Windows.Forms.ProgressBar();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,10 +197,10 @@ namespace JCard
             // butConvert
             // 
             this.butConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butConvert.ForeColor = System.Drawing.Color.Blue;
-            this.butConvert.Location = new System.Drawing.Point(220, 234);
+            this.butConvert.ForeColor = System.Drawing.Color.Black;
+            this.butConvert.Location = new System.Drawing.Point(190, 237);
             this.butConvert.Name = "butConvert";
-            this.butConvert.Size = new System.Drawing.Size(164, 37);
+            this.butConvert.Size = new System.Drawing.Size(95, 29);
             this.butConvert.TabIndex = 7;
             this.butConvert.Text = "&Import";
             this.butConvert.UseVisualStyleBackColor = true;
@@ -214,22 +214,24 @@ namespace JCard
             // 
             this.openFileDialog_S3GTDB.FileName = "openFileDialog_S3GTDB";
             // 
-            // progBarImport
+            // btnCancel
             // 
-            this.progBarImport.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progBarImport.Location = new System.Drawing.Point(0, 286);
-            this.progBarImport.Name = "progBarImport";
-            this.progBarImport.Size = new System.Drawing.Size(594, 23);
-            this.progBarImport.TabIndex = 8;
-            this.progBarImport.Value = 20;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.Location = new System.Drawing.Point(308, 237);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 29);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fImportData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.ClientSize = new System.Drawing.Size(594, 309);
-            this.Controls.Add(this.progBarImport);
+            this.ClientSize = new System.Drawing.Size(594, 279);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.butConvert);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -248,6 +250,7 @@ namespace JCard
             this.Name = "fImportData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Data From Excel";
+            this.Load += new System.EventHandler(this.fImportData_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -274,6 +277,6 @@ namespace JCard
         private System.Windows.Forms.Button butConvert;
         private System.Windows.Forms.OpenFileDialog openFileDialog_Excel;
         private System.Windows.Forms.OpenFileDialog openFileDialog_S3GTDB;
-        private System.Windows.Forms.ProgressBar progBarImport;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
