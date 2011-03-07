@@ -372,7 +372,11 @@ namespace JCard
         // Khi tien hanh close chuong trinh bang cach righ-click len icon cua ch/tr tren taskbar va click [x]
         private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            exitToolStripMenuItem_Click(null, null);
+            // Save settings
+            SaveSettings();
+
+            this.Dispose();
+            Application.Exit();
         }
         #endregion
 
