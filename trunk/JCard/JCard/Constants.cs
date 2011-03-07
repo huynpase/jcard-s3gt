@@ -28,5 +28,7 @@ namespace JCard
         public const string Ex_NoOfDisplay = "6";
         public const string Ex_DisplayTime = "5";
         public const string Ex_DelayTime = "3";
+        public const int MIN_WIDTH = 100;
+        public const int MAX_WIDTH = 500;
     }
 }
