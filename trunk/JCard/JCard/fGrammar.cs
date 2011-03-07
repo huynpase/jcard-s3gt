@@ -133,23 +133,39 @@ namespace JCard
             // Sample area
             pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
+            
+            // JP Meaning area
+            pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
+            pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
+            
+            // VN Meaning area
+            pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
+            pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
+            
+            // Example area
+            pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
+            pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
+           
+            // Set width
+            SetWidthOfArea();
+        }
+
+        private void SetWidthOfArea()
+        {
+            // Sample area            
             pnlSample.Width = dto_gramSetting.Width;
             lblSample.Width = pnlSample.Width - 4;
             lblSample.Top = (pnlSample.Height - lblSample.Height) / 2;
             lblSample.Left = 2;
 
-            // JP Meaning area
-            pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
-            pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
+            // JP Meaning area           
             pnlJPMeaning.Width = dto_gramSetting.JP_Width;
             pnlJPMeaning.Left = pnlSample.Left + pnlSample.Width;
             lblJPMeaning.Width = pnlJPMeaning.Width - 4;
             lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
             lblJPMeaning.Left = 2;
 
-            // VN Meaning area
-            pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
-            pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
+            // VN Meaning area            
             pnlVNMeaning.Width = dto_gramSetting.VN_Width;
             pnlVNMeaning.Left = pnlJPMeaning.Left;
             lblVNMeaning.Top = lblJPMeaning.Top;
@@ -157,15 +173,14 @@ namespace JCard
             lblVNMeaning.Width = lblJPMeaning.Width;
 
             // Example area
-            pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
-            pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
-            pnlExample.Width = dto_gramSetting.Ex_Width;          
+            pnlExample.Width = dto_gramSetting.Ex_Width;
 
             // Display or Non-Display JP/VN Meaning area
             if (!dto_gramSetting.JP_Isdisplayed && !dto_gramSetting.VN_IsDisplayed)
             {
                 pnlJPMeaning.Visible = false;
                 pnlVNMeaning.Visible = false;
+                pnlMeanWidth.Visible = false;
                 pnlExample.Left = pnlSample.Left + pnlSample.Width;
 
                 // Set with of screen
@@ -194,14 +209,14 @@ namespace JCard
                 }
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
-                this.Width = pnlTitle.Width + pnlButtons.Width + 
-                    pnlSample.Width + pnlJPMeaning.Width;                                
+                this.Width = pnlTitle.Width + pnlButtons.Width +
+                    pnlSample.Width + pnlJPMeaning.Width;
             }
-                
+
             // Check no of display.
             if (dto_gramSetting.Ex_NoOfDisplay == 0)
             {
-                pnlExample.Visible = false;                
+                pnlExample.Visible = false;
             }
             else
             {
@@ -574,6 +589,52 @@ namespace JCard
         {
             timer.Enabled = true;
         }
+
+        #region Change Width of Example
+        private void pnlExWidth_MouseDown(object sender, MouseEventArgs e)
+        {
+            bClick = true;
+            PastPoint.X = e.X;
+            PastPoint.Y = e.Y;            
+        }
+
+        private void pnlExWidth_MouseUp(object sender, MouseEventArgs e)
+        {
+            bClick = false;
+        }
+
+        private void pnlExWidth_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+
+            if (bClick)
+            {
+                pDelta.X = e.X - PastPoint.X;
+                pDelta.Y = e.Y - PastPoint.Y;
+                if ((Panel)sender == pnlExWidth)
+                {
+                    dto_gramSetting.Ex_Width += pDelta.X;
+                }
+                else if ((Panel)sender == pnlSamWidth)
+                {
+                    dto_gramSetting.Width += pDelta.X;
+                }
+                else if ((Panel)sender == pnlMeanWidth)
+                {
+                    dto_gramSetting.JP_Width += pDelta.X;
+                    dto_gramSetting.VN_Width += pDelta.X;
+                }
+                
+                SetWidthOfArea();
+            }
+        }
+
+        private void pnlExWidth_MouseLeave(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
+        #endregion
         #endregion
     }
 }
