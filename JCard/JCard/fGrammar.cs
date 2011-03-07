@@ -58,7 +58,7 @@ namespace JCard
             timer.Interval = 100;
             timer_wait = new Timer();
             timer_wait.Tick += new EventHandler(timer_wait_Tick);
-            flag = false;
+            flag = true;
 
             ///* Get Gram Setting        
             // Đọc setting values
