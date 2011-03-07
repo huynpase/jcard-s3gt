@@ -148,6 +148,25 @@ namespace JCard
            
             // Set width
             SetWidthOfArea();
+
+            // Set top, left and height of Meaning
+            lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+            lblJPMeaning.Left = 2;
+
+            lblVNMeaning.Top = lblJPMeaning.Top;
+            lblVNMeaning.Left = lblJPMeaning.Left;
+
+            // Display or Non-Display JP/VN Meaning area
+            if (!dto_gramSetting.JP_Isdisplayed && dto_gramSetting.VN_IsDisplayed)
+            {
+                lblVNMeaning.Height = lblVNMeaning.Height * 2;
+                lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+            }
+            else if (!dto_gramSetting.VN_IsDisplayed && dto_gramSetting.JP_Isdisplayed)
+            {
+                lblJPMeaning.Height = lblJPMeaning.Height * 2;
+                lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+            }
         }
 
         private void SetWidthOfArea()
@@ -162,14 +181,12 @@ namespace JCard
             pnlJPMeaning.Width = dto_gramSetting.JP_Width;
             pnlJPMeaning.Left = pnlSample.Left + pnlSample.Width;
             lblJPMeaning.Width = pnlJPMeaning.Width - 4;
-            lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-            lblJPMeaning.Left = 2;
+            //lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+            //lblJPMeaning.Left = 2;
 
             // VN Meaning area            
             pnlVNMeaning.Width = dto_gramSetting.VN_Width;
-            pnlVNMeaning.Left = pnlJPMeaning.Left;
-            lblVNMeaning.Top = lblJPMeaning.Top;
-            lblVNMeaning.Left = lblJPMeaning.Left;
+            pnlVNMeaning.Left = pnlJPMeaning.Left;            
             lblVNMeaning.Width = lblJPMeaning.Width;
 
             // Example area
@@ -180,7 +197,7 @@ namespace JCard
             {
                 pnlJPMeaning.Visible = false;
                 pnlVNMeaning.Visible = false;
-                pnlMeanWidth.Visible = false;
+                pnlJPMeanWidth.Visible = false;
                 pnlExample.Left = pnlSample.Left + pnlSample.Width;
 
                 // Set with of screen
@@ -194,18 +211,12 @@ namespace JCard
                     pnlVNMeaning.Visible = true;
                     pnlVNMeaning.Top = 0;
                     pnlVNMeaning.Height = pnlVNMeaning.Height * 2;
-
-                    lblVNMeaning.Height = lblVNMeaning.Height * 2;
-                    lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
                 }
                 else if (!dto_gramSetting.VN_IsDisplayed)
                 {
                     pnlJPMeaning.Visible = true;
                     pnlVNMeaning.Visible = false;
                     pnlJPMeaning.Height = pnlJPMeaning.Height * 2;
-
-                    lblJPMeaning.Height = lblJPMeaning.Height * 2;
-                    lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
                 }
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
@@ -612,21 +623,40 @@ namespace JCard
             {
                 pDelta.X = e.X - PastPoint.X;
                 pDelta.Y = e.Y - PastPoint.Y;
+
+                bool flUpdate = false;
+                int temp;
+
                 if ((Panel)sender == pnlExWidth)
                 {
-                    dto_gramSetting.Ex_Width += pDelta.X;
+                    temp = dto_gramSetting.Ex_Width + pDelta.X;
+                    if (temp >= Constants.MIN_WIDTH && temp <= Constants.MAX_WIDTH)
+                    {
+                        dto_gramSetting.Ex_Width = temp;
+                        flUpdate = true;
+                    }
                 }
                 else if ((Panel)sender == pnlSamWidth)
                 {
-                    dto_gramSetting.Width += pDelta.X;
+                    temp = dto_gramSetting.Width + pDelta.X;
+                    if (temp >= Constants.MIN_WIDTH && temp <= Constants.MAX_WIDTH)
+                    {
+                        dto_gramSetting.Width = temp;
+                        flUpdate = true;
+                    }
                 }
-                else if ((Panel)sender == pnlMeanWidth)
+                else if ((Panel)sender == pnlJPMeanWidth || (Panel)sender == pnlVnMeanWidth)
                 {
-                    dto_gramSetting.JP_Width += pDelta.X;
-                    dto_gramSetting.VN_Width += pDelta.X;
+                    temp = dto_gramSetting.JP_Width + pDelta.X;
+                    if (temp >= Constants.MIN_WIDTH && temp <= Constants.MAX_WIDTH)
+                    {
+                        dto_gramSetting.JP_Width = temp;
+                        dto_gramSetting.VN_Width = temp;
+                        flUpdate = true;
+                    }                                                            
                 }
                 
-                SetWidthOfArea();
+                if (flUpdate) SetWidthOfArea();
             }
         }
 
