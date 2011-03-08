@@ -29,11 +29,11 @@ namespace JCard
         public ArrayList GetGrammarCarByLevel(int intKyu)
         {
             ArrayList result = new ArrayList();
-            
-            DataProvider provider = new DataProvider(str_datasource);            
+
+            DataProvider provider = new DataProvider(str_datasource);
 
             String sql = "Select * from S3GT_GRAM where Kyu=" + intKyu.ToString() + "";
-            IDataReader reader = provider.excuteQuery(sql);           
+            IDataReader reader = provider.excuteQuery(sql);
 
             while (reader.Read())
             {
@@ -47,7 +47,7 @@ namespace JCard
 
                 for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                 {
-                    string tempEx = reader["Example" + (i+1).ToString()].ToString();
+                    string tempEx = reader["Example" + (i + 1).ToString()].ToString();
                     if (tempEx != string.Empty && tempEx != null)
                         gramCard.ArrExample.Add(tempEx);
                 }
@@ -139,14 +139,24 @@ namespace JCard
                     cmd.Parameters["@Meaning_JP"].Value = arrDTOGram[i].STR_Meaning_JP;
                     cmd.Parameters["@Meaning_VN"].Value = arrDTOGram[i].STR_Meaning_VN;
 
-                    ////Examples
+                    ////Execute Examples
                     j = 0;
-                    for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
+                    if (arrDTOGram[i].ArrExample.Count <= Constants.MAX_GRAMMAR_EXAMPLE)
                     {
-                        String tmpStr = "@Example";
-                        tmpStr += (j + 1).ToString();
-                        cmd.Parameters.Add(tmpStr, OleDbType.WChar);
-                        cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                        for (; j < arrDTOGram[i].ArrExample.Count; j++)
+                        {
+                            String tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString();
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                        }
+                        for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
+                        {
+                            String tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString();
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = "";
+                        }
                     }
                     //Execute
                     cmd.ExecuteNonQuery();
