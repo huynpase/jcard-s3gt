@@ -304,7 +304,7 @@ namespace JCard
                 else
                 {
                     MessageBox.Show("The grammar of selected level is empty.\n Please select another level and restart displaying grammar cards.",
-                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
