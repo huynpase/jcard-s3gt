@@ -158,6 +158,16 @@ namespace JCard
                             cmd.Parameters[tmpStr].Value = "";
                         }
                     }
+                    else
+                    {
+                        for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
+                        {
+                            String tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString();
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                        }
+                    }
                     //Execute
                     cmd.ExecuteNonQuery();
                 }
