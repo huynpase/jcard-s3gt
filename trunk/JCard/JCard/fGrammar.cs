@@ -149,7 +149,7 @@ namespace JCard
             // Set width
             SetWidthOfArea();
 
-            // Set top, left and height of Meaning
+            // Set top, left and height of Meaning            
             lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
             lblJPMeaning.Left = 2;
 
@@ -181,8 +181,6 @@ namespace JCard
             pnlJPMeaning.Width = dto_gramSetting.JP_Width;
             pnlJPMeaning.Left = pnlSample.Left + pnlSample.Width;
             lblJPMeaning.Width = pnlJPMeaning.Width - 4;
-            //lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-            //lblJPMeaning.Left = 2;
 
             // VN Meaning area            
             pnlVNMeaning.Width = dto_gramSetting.VN_Width;
@@ -375,7 +373,6 @@ namespace JCard
         //Form fGrammar duoc load len
         private void fGrammar_Load(object sender, EventArgs e)
         {
-            txtFocus.Focus();
             this.TopMost = true;
             timer.Start();
         }
@@ -601,19 +598,7 @@ namespace JCard
             timer.Enabled = true;
         }
 
-        #region Change Width of Example
-        private void pnlExWidth_MouseDown(object sender, MouseEventArgs e)
-        {
-            bClick = true;
-            PastPoint.X = e.X;
-            PastPoint.Y = e.Y;            
-        }
-
-        private void pnlExWidth_MouseUp(object sender, MouseEventArgs e)
-        {
-            bClick = false;
-        }
-
+        #region Change Width
         private void pnlExWidth_MouseMove(object sender, MouseEventArgs e)
         {
             timer.Enabled = false;
@@ -658,11 +643,6 @@ namespace JCard
                 
                 if (flUpdate) SetWidthOfArea();
             }
-        }
-
-        private void pnlExWidth_MouseLeave(object sender, EventArgs e)
-        {
-            timer.Enabled = true;
         }
         #endregion
         #endregion
