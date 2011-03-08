@@ -171,6 +171,8 @@ namespace JCard
 
         private void SetWidthOfArea()
         {
+            lblExample.Visible = false;
+
             // Sample area            
             pnlSample.Width = dto_gramSetting.Width;
             lblSample.Width = pnlSample.Width - 4;
@@ -231,6 +233,8 @@ namespace JCard
             {
                 this.Width += pnlExample.Width;
             }
+
+            lblExample.Visible = true;
         }
 
         // Save settings when closing
