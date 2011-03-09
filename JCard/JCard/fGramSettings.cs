@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using JCard;
 
 namespace JCard
 {
@@ -144,17 +145,13 @@ namespace JCard
         #endregion
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //Top
-            //Left
             ChangeGramSett.BackColor = pnlSampleBgClr.BackColor.ToArgb();
             ChangeGramSett.ForeColor = pnlSampleFClr.BackColor.ToArgb();
             ChangeGramSett.JP_BackColor = pnlJapBgClr.BackColor.ToArgb();
             ChangeGramSett.JP_ForeColor = pnlJapFClr.BackColor.ToArgb();
-            //JP Width
             ChangeGramSett.JP_Isdisplayed = chkboxJap.Checked;
             ChangeGramSett.VN_BackColor = pnlVieBgClr.BackColor.ToArgb();
             ChangeGramSett.VN_ForeColor = pnlVieFClr.BackColor.ToArgb();
-            //VN Width
             ChangeGramSett.VN_IsDisplayed = chkboxVie.Checked;
             ChangeGramSett.Ex_BackColor = pnlExBgClr.BackColor.ToArgb();
             ChangeGramSett.Ex_ForeColor = pnlExFClr.BackColor.ToArgb();
@@ -171,5 +168,24 @@ namespace JCard
         {
             this.Close();
         }
+
+        private void numNoDis_Leave(object sender, EventArgs e)
+        {
+            if (numNoDis.Text == "")
+                numNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
+        }
+
+        private void numDisTim_Leave(object sender, EventArgs e)
+        {
+            if (numDisTim.Text == "")
+                numDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
+        }
+
+        private void numDelayTim_Leave(object sender, EventArgs e)
+        {
+            if (numDelayTim.Text == "")
+                numDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
+        }
+
     }
 }
