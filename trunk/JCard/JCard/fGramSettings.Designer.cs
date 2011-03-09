@@ -267,9 +267,20 @@
             0,
             0,
             0});
+            this.numDelayTim.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numDelayTim.Name = "numDelayTim";
             this.numDelayTim.Size = new System.Drawing.Size(71, 20);
             this.numDelayTim.TabIndex = 9;
+            this.numDelayTim.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDelayTim.Leave += new System.EventHandler(this.numDelayTim_Leave);
             // 
             // numDisTim
             // 
@@ -279,9 +290,20 @@
             0,
             0,
             0});
+            this.numDisTim.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numDisTim.Name = "numDisTim";
             this.numDisTim.Size = new System.Drawing.Size(71, 20);
             this.numDisTim.TabIndex = 7;
+            this.numDisTim.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDisTim.Leave += new System.EventHandler(this.numDisTim_Leave);
             // 
             // numNoDis
             // 
@@ -294,6 +316,12 @@
             this.numNoDis.Name = "numNoDis";
             this.numNoDis.Size = new System.Drawing.Size(71, 20);
             this.numNoDis.TabIndex = 5;
+            this.numNoDis.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numNoDis.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // pnlExFClr
             // 
