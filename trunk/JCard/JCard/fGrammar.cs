@@ -171,8 +171,6 @@ namespace JCard
 
         private void SetWidthOfArea()
         {
-            lblExample.Visible = false;
-
             // Sample area            
             pnlSample.Width = dto_gramSetting.Width;
             lblSample.Width = pnlSample.Width - 4;
@@ -200,8 +198,19 @@ namespace JCard
                 pnlJPMeanWidth.Visible = false;
                 pnlExample.Left = pnlSample.Left + pnlSample.Width;
 
-                // Set with of screen
-                this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width;
+                // Check no of display.
+                if (dto_gramSetting.Ex_NoOfDisplay == 0)
+                {
+                    pnlExample.Visible = false;
+
+                    // Set with of screen
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width;
+                }
+                else
+                {
+                    // Set with of screen
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width + pnlExample.Width;
+                }
             }
             else
             {
@@ -220,21 +229,24 @@ namespace JCard
                 }
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
-                this.Width = pnlTitle.Width + pnlButtons.Width +
-                    pnlSample.Width + pnlJPMeaning.Width;
-            }
+                
+                // Check no of display.
+                if (dto_gramSetting.Ex_NoOfDisplay == 0)
+                {
+                    pnlExample.Visible = false;
 
-            // Check no of display.
-            if (dto_gramSetting.Ex_NoOfDisplay == 0)
-            {
-                pnlExample.Visible = false;
-            }
-            else
-            {
-                this.Width += pnlExample.Width;
-            }
-
-            lblExample.Visible = true;
+                    // Set with of screen
+                    this.Width = pnlTitle.Width + pnlButtons.Width +
+                                pnlSample.Width + pnlJPMeaning.Width;
+                }
+                else
+                {
+                    // Set with of screen
+                    this.Width = pnlTitle.Width + pnlButtons.Width +
+                                pnlSample.Width + pnlJPMeaning.Width + 
+                                pnlExample.Width;
+                }
+            }   
         }
 
         // Save settings when closing
