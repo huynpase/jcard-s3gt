@@ -169,22 +169,19 @@ namespace JCard
             this.Close();
         }
 
+        private decimal saveNumVal = 0;
         private void numNoDis_Leave(object sender, EventArgs e)
         {
-            if (numNoDis.Text == "")
-                numNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
+            NumericUpDown nudTemp = (NumericUpDown)sender;
+            if (nudTemp.Text == "" || nudTemp.Text == "-")
+            {
+                nudTemp.Text = saveNumVal.ToString();
+            }
         }
-
-        private void numDisTim_Leave(object sender, EventArgs e)
+                
+        private void numNoDis_Enter(object sender, EventArgs e)
         {
-            if (numDisTim.Text == "")
-                numDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
-        }
-
-        private void numDelayTim_Leave(object sender, EventArgs e)
-        {
-            if (numDelayTim.Text == "")
-                numDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
+            saveNumVal = ((NumericUpDown)sender).Value;
         }
 
     }

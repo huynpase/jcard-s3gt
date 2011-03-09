@@ -104,18 +104,18 @@
             this.lblSampleFclr.AutoSize = true;
             this.lblSampleFclr.Location = new System.Drawing.Point(220, 25);
             this.lblSampleFclr.Name = "lblSampleFclr";
-            this.lblSampleFclr.Size = new System.Drawing.Size(55, 13);
+            this.lblSampleFclr.Size = new System.Drawing.Size(58, 13);
             this.lblSampleFclr.TabIndex = 2;
-            this.lblSampleFclr.Text = "Font Color";
+            this.lblSampleFclr.Text = "Font Color:";
             // 
             // lblSampleBgClr
             // 
             this.lblSampleBgClr.AutoSize = true;
             this.lblSampleBgClr.Location = new System.Drawing.Point(6, 25);
             this.lblSampleBgClr.Name = "lblSampleBgClr";
-            this.lblSampleBgClr.Size = new System.Drawing.Size(92, 13);
+            this.lblSampleBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblSampleBgClr.TabIndex = 0;
-            this.lblSampleBgClr.Text = "Background Color";
+            this.lblSampleBgClr.Text = "Background Color:";
             // 
             // grbJap
             // 
@@ -155,18 +155,18 @@
             this.lblJapFClr.AutoSize = true;
             this.lblJapFClr.Location = new System.Drawing.Point(220, 53);
             this.lblJapFClr.Name = "lblJapFClr";
-            this.lblJapFClr.Size = new System.Drawing.Size(55, 13);
+            this.lblJapFClr.Size = new System.Drawing.Size(58, 13);
             this.lblJapFClr.TabIndex = 3;
-            this.lblJapFClr.Text = "Font Color";
+            this.lblJapFClr.Text = "Font Color:";
             // 
             // lblJapBgClr
             // 
             this.lblJapBgClr.AutoSize = true;
             this.lblJapBgClr.Location = new System.Drawing.Point(6, 53);
             this.lblJapBgClr.Name = "lblJapBgClr";
-            this.lblJapBgClr.Size = new System.Drawing.Size(92, 13);
+            this.lblJapBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblJapBgClr.TabIndex = 1;
-            this.lblJapBgClr.Text = "Background Color";
+            this.lblJapBgClr.Text = "Background Color:";
             // 
             // chkboxJap
             // 
@@ -216,18 +216,18 @@
             this.lblVieFClr.AutoSize = true;
             this.lblVieFClr.Location = new System.Drawing.Point(219, 53);
             this.lblVieFClr.Name = "lblVieFClr";
-            this.lblVieFClr.Size = new System.Drawing.Size(55, 13);
+            this.lblVieFClr.Size = new System.Drawing.Size(58, 13);
             this.lblVieFClr.TabIndex = 3;
-            this.lblVieFClr.Text = "Font Color";
+            this.lblVieFClr.Text = "Font Color:";
             // 
             // lblVieBgClr
             // 
             this.lblVieBgClr.AutoSize = true;
             this.lblVieBgClr.Location = new System.Drawing.Point(5, 53);
             this.lblVieBgClr.Name = "lblVieBgClr";
-            this.lblVieBgClr.Size = new System.Drawing.Size(92, 13);
+            this.lblVieBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblVieBgClr.TabIndex = 1;
-            this.lblVieBgClr.Text = "Background Color";
+            this.lblVieBgClr.Text = "Background Color:";
             // 
             // chkboxVie
             // 
@@ -280,7 +280,8 @@
             0,
             0,
             0});
-            this.numDelayTim.Leave += new System.EventHandler(this.numDelayTim_Leave);
+            this.numDelayTim.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numDelayTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // numDisTim
             // 
@@ -303,7 +304,8 @@
             0,
             0,
             0});
-            this.numDisTim.Leave += new System.EventHandler(this.numDisTim_Leave);
+            this.numDisTim.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numDisTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // numNoDis
             // 
@@ -321,6 +323,7 @@
             0,
             0,
             0});
+            this.numNoDis.Enter += new System.EventHandler(this.numNoDis_Enter);
             this.numNoDis.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // pnlExFClr
@@ -346,45 +349,45 @@
             this.lblDelayTim.AutoSize = true;
             this.lblDelayTim.Location = new System.Drawing.Point(219, 90);
             this.lblDelayTim.Name = "lblDelayTim";
-            this.lblDelayTim.Size = new System.Drawing.Size(74, 13);
+            this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
             this.lblDelayTim.TabIndex = 8;
-            this.lblDelayTim.Text = "Delay Time (s)";
+            this.lblDelayTim.Text = "Delay Time (s):";
             // 
             // lblDisTim
             // 
             this.lblDisTim.AutoSize = true;
             this.lblDisTim.Location = new System.Drawing.Point(5, 90);
             this.lblDisTim.Name = "lblDisTim";
-            this.lblDisTim.Size = new System.Drawing.Size(81, 13);
+            this.lblDisTim.Size = new System.Drawing.Size(84, 13);
             this.lblDisTim.TabIndex = 6;
-            this.lblDisTim.Text = "Display Time (s)";
+            this.lblDisTim.Text = "Display Time (s):";
             // 
             // lblExNoDis
             // 
             this.lblExNoDis.AutoSize = true;
             this.lblExNoDis.Location = new System.Drawing.Point(5, 59);
             this.lblExNoDis.Name = "lblExNoDis";
-            this.lblExNoDis.Size = new System.Drawing.Size(93, 13);
+            this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
             this.lblExNoDis.TabIndex = 4;
-            this.lblExNoDis.Text = "Number of Display";
+            this.lblExNoDis.Text = "Number of Display:";
             // 
             // lblExFClr
             // 
             this.lblExFClr.AutoSize = true;
             this.lblExFClr.Location = new System.Drawing.Point(219, 26);
             this.lblExFClr.Name = "lblExFClr";
-            this.lblExFClr.Size = new System.Drawing.Size(55, 13);
+            this.lblExFClr.Size = new System.Drawing.Size(58, 13);
             this.lblExFClr.TabIndex = 2;
-            this.lblExFClr.Text = "Font Color";
+            this.lblExFClr.Text = "Font Color:";
             // 
             // lblExBgClr
             // 
             this.lblExBgClr.AutoSize = true;
             this.lblExBgClr.Location = new System.Drawing.Point(6, 26);
             this.lblExBgClr.Name = "lblExBgClr";
-            this.lblExBgClr.Size = new System.Drawing.Size(92, 13);
+            this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblExBgClr.TabIndex = 0;
-            this.lblExBgClr.Text = "Background Color";
+            this.lblExBgClr.Text = "Background Color:";
             // 
             // btnSave
             // 
