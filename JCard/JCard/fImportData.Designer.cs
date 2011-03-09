@@ -245,9 +245,11 @@ namespace JCard
             this.Controls.Add(this.txtExcel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fImportData";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Data From Excel";
             this.Load += new System.EventHandler(this.fImportData_Load);

@@ -426,7 +426,11 @@
             this.Controls.Add(this.grbVie);
             this.Controls.Add(this.grbJap);
             this.Controls.Add(this.grbSample);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fGramSetts";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grammar Card Settings";
             this.grbSample.ResumeLayout(false);
