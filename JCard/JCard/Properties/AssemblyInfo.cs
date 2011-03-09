@@ -29,5 +29,24 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
+
+///*************************************************************************************************************************
+/// Assembly Name   : J-Card 
+/// Description     : J-Card is a tool which help people who want to study vocabulary and grammar of Japanese. 
+/// Revision        :
+///     Version     No.(@)      Comment                                         Date            Name
+///     ----------- ----------- ----------------------------------------------- --------------- ---------------------------
+///     1.0.0.0     1           Create J-card (Displaying Vocalbulary Card)     2010/09/09      PhuongHD(Fsoft HCM)
+///                                                                                             SonLT(Fsoft HCM)
+///                                                                                             NguyenTHL(Fsoft HCM)
+///
+///     1.1.0.0     2           Create J-card (Displaying Grammar Card),        2011/03/02      MinhHN(Fsoft HCM - K10/2010)
+///                             includes:                                                       QuyenNX(Fsoft HCM - K10/2010)
+///                             - Import data from Excel file                                   DungLA3(Fsoft HCM - K10/2010)
+///                             - Set setting values of Grammar Card                            VietNQ3(Fsoft HCM - K10/2010)
+///                             - Start displaying Grammar Cards                                
+///                             - Display Grammar Cards
+///                             - Change setting values on Grammar Card screen
+                                    
