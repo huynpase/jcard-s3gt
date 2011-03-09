@@ -125,9 +125,9 @@ namespace JCard
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(18, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Choose Level";
+            this.label4.Text = "Choose Level:";
             // 
             // rad2kyu
             // 

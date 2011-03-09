@@ -25,7 +25,6 @@ namespace JCard
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void butExcel_Click(object sender, EventArgs e)
         {
-            txtExcel.Clear();
             openFileDialog_Excel.Title = "Please choose excel data source file";
             openFileDialog_Excel.FileName = "";
             openFileDialog_Excel.Filter = "*.xls|*.xls";
@@ -40,7 +39,6 @@ namespace JCard
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void butS3GTDB_Click(object sender, EventArgs e)
         {
-            txtS3GTDB.Clear();
             openFileDialog_S3GTDB.Title = "Please choose database of S3GT";
             openFileDialog_S3GTDB.FileName = "";
             openFileDialog_S3GTDB.Filter = "s3gt_db*.mdb|*.mdb";
@@ -71,37 +69,44 @@ namespace JCard
             this.Enabled = false;
             this.Cursor = Cursors.WaitCursor;
 
-            //Read data from Excel file           
-            BUS_Grammar busGram = new BUS_Grammar(Constants.DATABASE_PATH);
-            DTO_Grammar[] gramCards = busGram.ReadExcelFile(txtExcel.Text);
-            if (gramCards == null)
+            try
             {
-                MessageBox.Show("Invalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                //Import to S3GT_DB    
-                //Get the kyu
-                int iKyu = 0;
-                if (rad1kyu.Checked)
-                    iKyu = 1;
-                else if (rad2kyu.Checked)
-                    iKyu = 2;
-                else if (rad3kyu.Checked)
-                    iKyu = 3;
-                else if (rad4kyu.Checked)
-                    iKyu = 4;
-                //Get the methods of add
-                if (radDelete.Checked)
-                    busGram.DeleteGrammarCards(iKyu, txtS3GTDB.Text);
-                if (!busGram.InsertGrammarCards(gramCards, iKyu.ToString(), txtS3GTDB.Text))
+                //Read data from Excel file           
+                BUS_Grammar busGram = new BUS_Grammar(Constants.DATABASE_PATH);
+                DTO_Grammar[] gramCards = busGram.ReadExcelFile(txtExcel.Text);
+                if (gramCards == null)
                 {
-                    MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Import data sucessfull!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Import to S3GT_DB    
+                    //Get the kyu
+                    int iKyu = 0;
+                    if (rad1kyu.Checked)
+                        iKyu = 1;
+                    else if (rad2kyu.Checked)
+                        iKyu = 2;
+                    else if (rad3kyu.Checked)
+                        iKyu = 3;
+                    else if (rad4kyu.Checked)
+                        iKyu = 4;
+                    //Get the methods of add
+                    if (radDelete.Checked)
+                        busGram.DeleteGrammarCards(iKyu, txtS3GTDB.Text);
+                    if (!busGram.InsertGrammarCards(gramCards, iKyu.ToString(), txtS3GTDB.Text))
+                    {
+                        MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Import data sucessfull!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             this.Cursor = Cursors.Default;

@@ -139,7 +139,7 @@ namespace JCard
                     cmd.Parameters["@Meaning_JP"].Value = arrDTOGram[i].STR_Meaning_JP;
                     cmd.Parameters["@Meaning_VN"].Value = arrDTOGram[i].STR_Meaning_VN;
 
-                    ////Execute Examples
+                    ////Execute Examples 
                     j = 0;
                     if (arrDTOGram[i].ArrExample.Count <= Constants.MAX_GRAMMAR_EXAMPLE)
                     {
@@ -168,6 +168,7 @@ namespace JCard
                             cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
                         }
                     }
+
                     //Execute
                     cmd.ExecuteNonQuery();
                 }
@@ -258,27 +259,28 @@ namespace JCard
                 da.Fill(ds, sheetname);
                 srcConn.Close();
                 //Check the right data
-                if (String.Compare(ds.Tables[0].Columns["MauCau"].ToString(), "MauCau") != 0)
+                if (String.Compare(ds.Tables[0].Columns["MauCau"].ToString(), "MauCau") != 0 ||
+                    String.Compare(ds.Tables[0].Columns["CuPhap"].ToString(), "CuPhap") != 0 ||
+                    String.Compare(ds.Tables[0].Columns["YNghia_JP"].ToString(), "YNghia_JP") != 0 ||
+                    String.Compare(ds.Tables[0].Columns["YNghia_VN"].ToString(), "YNghia_VN") != 0)
                     return result;
                 //Return to suitable result
                 int n = ds.Tables[0].Rows.Count;
+                int m = ds.Tables[0].Columns.Count;
                 result = new DTO_Grammar[n];
                 int i = 0;
+                int j;
                 for (; i < n; i++)
                 {
                     result[i] = new DTO_Grammar();
-                    result[i].STR_Sample = ds.Tables[0].Rows[i]["MauCau"].ToString();
-                    result[i].STR_Syntax = ds.Tables[0].Rows[i]["CuPhap"].ToString();
-                    result[i].STR_Meaning_JP = ds.Tables[0].Rows[i]["YNghia_JP"].ToString();
-                    result[i].STR_Meaning_VN = ds.Tables[0].Rows[i]["YNghia_VN"].ToString();
+                    result[i].STR_Sample = ds.Tables[0].Rows[i][0].ToString();
+                    result[i].STR_Syntax = ds.Tables[0].Rows[i][1].ToString();
+                    result[i].STR_Meaning_JP = ds.Tables[0].Rows[i][2].ToString();
+                    result[i].STR_Meaning_VN = ds.Tables[0].Rows[i][3].ToString();
                     //Example
-                    int j = 0;
-                    for (; j < Constants.MAX_GRAMMAR_EXAMPLE_EXCEL; j++)
-                    {
-                        String tmpStr = "ViDu";
-                        tmpStr += (j + 1).ToString();
-                        result[i].ArrExample.Add(ds.Tables[0].Rows[i][tmpStr].ToString());
-                    }
+                    j = 4;
+                    for (; j < m; j++)
+                        result[i].ArrExample.Add(ds.Tables[0].Rows[i][j].ToString());
                 }
             }
             catch (Exception ex)
