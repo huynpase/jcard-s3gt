@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JCard>
+  <Pos>BR</Pos> 
+  <DisplayTime>3</DisplayTime>
+  <WaitingTime>3</WaitingTime>
+  <FontSizeKanji>19</FontSizeKanji>
+  <FontSizeHira>16</FontSizeHira>
+  <FontSizeImi>13</FontSizeImi>
+  <PreData>0</PreData>
+</JCard>

@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35D83AA8-71B1-43C7-8F38-895CE2EC7DD4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>S3GT.My.MyApplication</StartupObject>
+    <RootNamespace>S3GT</RootNamespace>
+    <AssemblyName>S3GT_v2.0</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>Resources\S3GT_ver2.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>EA99C28EA22E2EB6636A38C559305290412027CA</ManifestCertificateThumbprint>
+    <ManifestKeyFile>S3GT_Design_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>G:\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>S3GT_v2.0</ProductName>
+    <PublisherName>S3JCA Group</PublisherName>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>S3GT_v2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>S3GT_v2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ImeLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ImeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>C:\Program Files (x86)\S3_JCD\S3GT\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\S3_JCD\S3GT\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jword, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Jword.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PopupControl, Version=1.2.5.34203, Culture=neutral, PublicKeyToken=04c10344d6495b18, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\S3_JCD\S3GT\PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Bussiness\ExportBO.vb" />
+    <Compile Include="Bussiness\ImportBO.vb" />
+    <Compile Include="Bussiness\ParameterBO.vb" />
+    <Compile Include="Bussiness\PerformTest\FromTopTestEngine.vb" />
+    <Compile Include="Bussiness\PerformTest\ITestDataContainable.vb" />
+    <Compile Include="Bussiness\PerformTest\RandomTestEngine.vb" />
+    <Compile Include="Bussiness\PerformTest\PerformTestBO.vb" />
+    <Compile Include="Bussiness\PerformTest\TestEngine.vb" />
+    <Compile Include="Bussiness\SearchVocBO.vb" />
+    <Compile Include="Bussiness\SingleKanjiBO.vb" />
+    <Compile Include="Bussiness\TopicGroupsBO.vb" />
+    <Compile Include="Bussiness\TopicsBO.vb" />
+    <Compile Include="Bussiness\VocabulariesBO.vb" />
+    <Compile Include="Common\Constants_HaoLT.vb" />
+    <Compile Include="Common\Constants_Kanji_MinhVV1.vb" />
+    <Compile Include="Common\Constants_NguyenNB.vb" />
+    <Compile Include="Common\Constants_PhatLS.vb" />
+    <Compile Include="Common\Constants_LanhVC.vb" />
+    <Compile Include="Common\Utils.vb" />
+    <Compile Include="Dao\BaseDAO.vb" />
+    <Compile Include="Dao\clsDatabase.vb" />
+    <Compile Include="Dao\Connection_HuyenDTN.vb" />
+    <Compile Include="Dao\Dao_HuyenDTN.vb" />
+    <Compile Include="Dao\ExportDAO.vb" />
+    <Compile Include="Dao\ImportDAO.vb" />
+    <Compile Include="Dao\ParameterDAO.vb" />
+    <Compile Include="Dao\PerformTestDAO.vb" />
+    <Compile Include="Dao\SearchVocDAO.vb" />
+    <Compile Include="Dao\SingleKanjiDAO.vb" />
+    <Compile Include="Dao\TopicDAO.vb" />
+    <Compile Include="Dao\TopicGroupDAO.vb" />
+    <Compile Include="Dao\VocabularyDAO.vb" />
+    <Compile Include="datasource\s3gt_dbDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s3gt_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasource\s3gt_dbDataSet.vb">
+      <DependentUpon>s3gt_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ParameterEntity.vb" />
+    <Compile Include="Entity\QuestionEntity.vb" />
+    <Compile Include="Entity\SingleKanjiEntity.vb" />
+    <Compile Include="Entity\TestResultEntity.vb" />
+    <Compile Include="Entity\TopicGroupsEntity.vb" />
+    <Compile Include="Entity\TopicsEntity.vb" />
+    <Compile Include="Entity\VocabulariesEntity.vb" />
+    <Compile Include="Entity\TestVocabularyEntity.vb" />
+    <Compile Include="Presentation\frmSplashWrong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmSplashCorrect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ComplexPopup.Designer.vb">
+      <DependentUpon>ComplexPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ComplexPopup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrPerformSpecialTest.Designer.vb">
+      <DependentUpon>usrPerformSpecialTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrPerformSpecialTest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary.Designer.vb">
+      <DependentUpon>dlgSameVocabulary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgDeleteTopic_Vocabulary.Designer.vb">
+      <DependentUpon>dlgDeleteTopic_Vocabulary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgDeleteTopic_Vocabulary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgFastRegisterVoc.Designer.vb">
+      <DependentUpon>dlgFastRegisterVoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgFastRegisterVoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgTestNameSaved.Designer.vb">
+      <DependentUpon>dlgTestNameSaved.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgTestNameSaved.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgCreateTopic.Designer.vb">
+      <DependentUpon>dlgCreateTopic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgCreateTopic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary1.Designer.vb">
+      <DependentUpon>dlgSameVocabulary1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgUpdate.Designer.vb">
+      <DependentUpon>dlgUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmChangeHotkey.Designer.vb">
+      <DependentUpon>frmChangeHotkey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmChangeHotkey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmDisplaySingleKanji.Designer.vb">
+      <DependentUpon>frmDisplaySingleKanji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmDisplaySingleKanji.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmLog.Designer.vb">
+      <DependentUpon>frmLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmMoveAndCopy.Designer.vb">
+      <DependentUpon>frmMoveAndCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmMoveAndCopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmMainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmMainForm.Designer.vb">
+      <DependentUpon>frmMainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentation\frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmViewLog.Designer.vb">
+      <DependentUpon>frmViewLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmViewLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgSetTimerInterval.designer.vb">
+      <DependentUpon>dlgSetTimerInterval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgSetTimerInterval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Processing.Designer.vb">
+      <DependentUpon>Processing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Processing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrConvert.designer.vb">
+      <DependentUpon>usrConvert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrConvert.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrDelete_Topic_Vocabulary.Designer.vb">
+      <DependentUpon>usrDelete_Topic_Vocabulary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrDelete_Topic_Vocabulary.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrExport.Designer.vb">
+      <DependentUpon>usrExport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrExport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrFastRegisterVocabularies.Designer.vb">
+      <DependentUpon>usrFastRegisterVocabularies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrFastRegisterVocabularies.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrImport.Designer.vb">
+      <DependentUpon>usrImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrImport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrPerformTest.Designer.vb">
+      <DependentUpon>usrPerformTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrPerformTest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrSearchSingleKanji.Designer.vb">
+      <DependentUpon>usrSearchSingleKanji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrSearchSingleKanji.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrAddSingleKanji.Designer.vb">
+      <DependentUpon>usrAddSingleKanji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrAddSingleKanji.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrAdd_New_Topic_Group.Designer.vb">
+      <DependentUpon>usrAdd_New_Topic_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrAdd_New_Topic_Group.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrDelete_Topic_Group.Designer.vb">
+      <DependentUpon>usrDelete_Topic_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrDelete_Topic_Group.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrMoveAndCopy.Designer.vb">
+      <DependentUpon>usrMoveAndCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrMoveAndCopy.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrTopic.Designer.vb">
+      <DependentUpon>usrTopic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrTopic.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrUpdate_Topic_Group.Designer.vb">
+      <DependentUpon>usrUpdate_Topic_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrUpdate_Topic_Group.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrVocabularies.Designer.vb">
+      <DependentUpon>usrVocabularies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrVocabularies.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrSearchVocabularies.Designer.vb">
+      <DependentUpon>usrSearchVocabularies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrSearchVocabularies.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="s3gt_dbDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s3gt_dbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Presentation\ComplexPopup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComplexPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmSplashWrong.resx">
+      <DependentUpon>frmSplashWrong.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmSplashCorrect.resx">
+      <DependentUpon>frmSplashCorrect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrPerformSpecialTest.resx">
+      <DependentUpon>usrPerformSpecialTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgSameVocabulary.resx">
+      <DependentUpon>dlgSameVocabulary.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgCreateTopic.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgCreateTopic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgDeleteTopic_Vocabulary.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgDeleteTopic_Vocabulary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgFastRegisterVoc.resx">
+      <DependentUpon>dlgFastRegisterVoc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgSameVocabulary1.resx">
+      <DependentUpon>dlgSameVocabulary1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgTestNameSaved.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgTestNameSaved.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgUpdate.resx">
+      <DependentUpon>dlgUpdate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmChangeHotkey.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChangeHotkey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmDisplaySingleKanji.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDisplaySingleKanji.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmLog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmMoveAndCopy.resx">
+      <DependentUpon>frmMoveAndCopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmSplash.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmViewLog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmViewLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgSetTimerInterval.resx">
+      <DependentUpon>dlgSetTimerInterval.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Processing.resx">
+      <DependentUpon>Processing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrAddSingleKanji.resx">
+      <DependentUpon>usrAddSingleKanji.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrAdd_New_Topic_Group.resx">
+      <DependentUpon>usrAdd_New_Topic_Group.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrConvert.resx">
+      <DependentUpon>usrConvert.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrDelete_Topic_Group.resx">
+      <DependentUpon>usrDelete_Topic_Group.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrDelete_Topic_Vocabulary.resx">
+      <DependentUpon>usrDelete_Topic_Vocabulary.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrExport.resx">
+      <DependentUpon>usrExport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrFastRegisterVocabularies.resx">
+      <DependentUpon>usrFastRegisterVocabularies.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrImport.resx">
+      <DependentUpon>usrImport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrMoveAndCopy.resx">
+      <DependentUpon>usrMoveAndCopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrPerformTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrPerformTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrSearchSingleKanji.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrSearchSingleKanji.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrTopic.resx">
+      <DependentUpon>usrTopic.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrUpdate_Topic_Group.resx">
+      <DependentUpon>usrUpdate_Topic_Group.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrVocabularies.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrVocabularies.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrSearchVocabularies.resx">
+      <DependentUpon>usrSearchVocabularies.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\resources\kanji_demo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\resources\kanji1.gif" />
+    <None Include="datasource\s3gt_dbDataSet.xsc">
+      <DependentUpon>s3gt_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="datasource\s3gt_dbDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s3gt_dbDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="datasource\s3gt_dbDataSet.xss">
+      <DependentUpon>s3gt_dbDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="datasource\s3gt_db.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\picture.jpg" />
+    <None Include="Resources\S3GT_ver2.ico" />
+    <None Include="Resources\S3GT V2.jpg" />
+    <Content Include="Resources\jword.png" />
+    <Content Include="S3GT.ico" />
+    <None Include="Resources\fish_banner.jpg" />
+    <None Include="Resources\S3GT_emboss.jpg" />
+    <None Include="Resources\S3GT.jpg" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="s3gt_dbDataSet1.xsc">
+      <DependentUpon>s3gt_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="s3gt_dbDataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s3gt_dbDataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="s3gt_dbDataSet1.xss">
+      <DependentUpon>s3gt_dbDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\KanjiImage\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

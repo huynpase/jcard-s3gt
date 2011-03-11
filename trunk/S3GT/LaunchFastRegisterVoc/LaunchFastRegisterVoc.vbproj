@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BA49502-4D26-4DBC-AFC5-D4A1A99CBA27}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LaunchFastRegisterVoc.My.MyApplication</StartupObject>
+    <RootNamespace>LaunchFastRegisterVoc</RootNamespace>
+    <AssemblyName>LaunchFastRegisterVoc</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>Resources\S3GT_ver2.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LaunchFastRegisterVoc.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LaunchFastRegisterVoc.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ImeLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ImeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ParameterBO.vb" />
+    <Compile Include="Business\SingleKanjiBO.vb" />
+    <Compile Include="Business\TopicGroupsBO.vb" />
+    <Compile Include="Business\TopicsBO.vb" />
+    <Compile Include="Business\VocabulariesBO.vb" />
+    <Compile Include="Common\Constants_HaoLT.vb" />
+    <Compile Include="Common\Constants_Kanji_MinhVV1.vb" />
+    <Compile Include="Common\Constants_LanhVC.vb" />
+    <Compile Include="Common\Constants_NguyenNB.vb" />
+    <Compile Include="Common\Constants_PhatLS.vb" />
+    <Compile Include="Common\Utils.vb" />
+    <Compile Include="DAO\BaseDAO.vb" />
+    <Compile Include="DAO\ParameterDAO.vb" />
+    <Compile Include="DAO\SingleKanjiDAO.vb" />
+    <Compile Include="DAO\TopicDAO.vb" />
+    <Compile Include="DAO\TopicGroupDAO.vb" />
+    <Compile Include="DAO\VocabularyDAO.vb" />
+    <Compile Include="Entity\ParameterEntity.vb" />
+    <Compile Include="Entity\SingleKanjiEntity.vb" />
+    <Compile Include="Entity\TopicGroupsEntity.vb" />
+    <Compile Include="Entity\TopicsEntity.vb" />
+    <Compile Include="Entity\VocabulariesEntity.vb" />
+    <Compile Include="frmFastRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFastRegister.Designer.vb">
+      <DependentUpon>frmFastRegister.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentation\dlgCreateTopicFastMode.Designer.vb">
+      <DependentUpon>dlgCreateTopicFastMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgCreateTopicFastMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary.Designer.vb">
+      <DependentUpon>dlgSameVocabulary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\dlgSameVocabulary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrFastRegisterVocabularies.Designer.vb">
+      <DependentUpon>usrFastRegisterVocabularies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrFastRegisterVocabularies.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\usrTopicFastMode.Designer.vb">
+      <DependentUpon>usrTopicFastMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\usrTopicFastMode.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Release\LaunchFastRegisterVoc.exe.config" />
+    <None Include="Resources\S3GT_ver2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmFastRegister.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFastRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgCreateTopicFastMode.resx">
+      <DependentUpon>dlgCreateTopicFastMode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\dlgSameVocabulary.resx">
+      <DependentUpon>dlgSameVocabulary.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrFastRegisterVocabularies.resx">
+      <DependentUpon>usrFastRegisterVocabularies.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\usrTopicFastMode.resx">
+      <DependentUpon>usrTopicFastMode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\LaunchFastRegisterVoc.exe" />
+    <Content Include="bin\Release\LaunchFastRegisterVoc.pdb" />
+    <Content Include="datasource\s3gt_db.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\datasource\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

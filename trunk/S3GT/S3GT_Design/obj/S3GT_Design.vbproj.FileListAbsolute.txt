@@ -1,0 +1,194 @@
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.config
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.xml
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.pdb
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.ResolveComReference.cache
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.MoreComplexPopup.ComplexPopup.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgCreateTopic.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgDeleteTopic_Vocabulary.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgFastRegisterVoc.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgSameVocabulary.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgTestNameSaved.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgUpdate.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmAbout.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmChangeHotkey.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmDisplaySingleKanji.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmLog.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmMoveAndCopy.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmMainForm.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.Resources.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmSplash.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmViewLog.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgSetTimerInterval.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.Processing.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrAddSingleKanji.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrAdd_New_Topic_Group.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrConvert.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrDelete_Topic_Group.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrDeleteTopic_Vocabulary.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrExport.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrFastRegisterVocabularies.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrImport.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrMoveAndCopy.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrPerformTest.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchSingleKanji.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrTopic.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrUpdate_Topic_Group.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrVocabularies.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchVocabularies.resources
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\datasource\s3gt_db.mdb
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.manifest
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.application
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.pdb
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.xml
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\bin\Release\PopupControl.pdb
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe.manifest
+C:\Documents and Settings\Nguyen Chi Binh\Desktop\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.application
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.config
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.xml
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.pdb
+F:\Source Code\Source Code\S3GT_Design\bin\Release\datasource\s3gt_db.mdb
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.manifest
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.application
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.pdb
+F:\Source Code\Source Code\S3GT_Design\bin\Release\S3GT_v2.xml
+F:\Source Code\Source Code\S3GT_Design\bin\Release\PopupControl.pdb
+F:\Source Code\Source Code\S3GT_Design\obj\Release\ResolveAssemblyReference.cache
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.ResolveComReference.cache
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.MoreComplexPopup.ComplexPopup.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgCreateTopic.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgDeleteTopic_Vocabulary.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgFastRegisterVoc.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgSameVocabulary.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgTestNameSaved.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgUpdate.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmAbout.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmChangeHotkey.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmDisplaySingleKanji.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmLog.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmMoveAndCopy.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmMainForm.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.Resources.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmSplash.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.frmViewLog.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.dlgSetTimerInterval.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.Processing.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrAddSingleKanji.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrAdd_New_Topic_Group.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrConvert.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrDelete_Topic_Group.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrDeleteTopic_Vocabulary.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrExport.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrFastRegisterVocabularies.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrImport.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrMoveAndCopy.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrPerformTest.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchSingleKanji.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrTopic.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrUpdate_Topic_Group.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrVocabularies.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchVocabularies.resources
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.GenerateResource.Cache
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe.manifest
+F:\Source Code\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.application
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.0.exe.config
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_v2.0.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_v2.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_v2.0.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\datasource\s3gt_db.mdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.0.exe.manifest
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.0.application
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.0.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.0.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\bin\Release\S3GT_v2.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_Design.vbproj.ResolveComReference.cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.MoreComplexPopup.ComplexPopup.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgCreateTopic.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgDeleteTopic_Vocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgFastRegisterVoc.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgSameVocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgTestNameSaved.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgUpdate.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmAbout.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmChangeHotkey.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmDisplaySingleKanji.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmLog.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmMoveAndCopy.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmMainForm.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.Resources.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmSplash.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.frmViewLog.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.dlgSetTimerInterval.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.Processing.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrAddSingleKanji.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrAdd_New_Topic_Group.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrConvert.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrDelete_Topic_Group.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrDeleteTopic_Vocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrExport.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrFastRegisterVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrImport.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrMoveAndCopy.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrPerformTest.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrSearchSingleKanji.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrTopic.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrUpdate_Topic_Group.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT.usrSearchVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_Design.vbproj.GenerateResource.Cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_v2.0.exe.manifest
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\S3GT_Design\obj\Release\S3GT_v2.0.application
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\datasource\s3gt_db.mdb
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.config
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe.manifest
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.application
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.exe
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.0.pdb
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\bin\Release\S3GT_v2.xml
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.ResolveComReference.cache
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.MoreComplexPopup.ComplexPopup.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgCreateTopic.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgDeleteTopic_Vocabulary.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgFastRegisterVoc.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgSameVocabulary.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgTestNameSaved.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgUpdate.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmAbout.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmChangeHotkey.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmDisplaySingleKanji.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmLog.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmMoveAndCopy.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmMainForm.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.Resources.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmSplash.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.frmViewLog.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.dlgSetTimerInterval.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.Processing.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrAddSingleKanji.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrAdd_New_Topic_Group.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrConvert.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrDelete_Topic_Group.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrDeleteTopic_Vocabulary.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrExport.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrFastRegisterVocabularies.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrImport.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrMoveAndCopy.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrPerformTest.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchSingleKanji.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrTopic.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrUpdate_Topic_Group.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrVocabularies.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT.usrSearchVocabularies.resources
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_Design.vbproj.GenerateResource.Cache
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe.manifest
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.application
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.exe
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_v2.xml
+D:\Projects\S3GTv2.1\Source Code\S3GT_Design\obj\Release\S3GT_v2.0.pdb

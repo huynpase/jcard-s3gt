@@ -1,0 +1,64 @@
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\bin\Debug\datasource\s3gt_db.mdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.exe.config
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.frmFastRegister.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.Resources.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.dlgCreateTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.dlgSameVocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.usrFastRegisterVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.usrTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.vbproj.GenerateResource.Cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code 160309\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.exe.config
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\bin\Debug\datasource\s3gt_db.mdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\bin\Debug\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.frmFastRegister.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.Resources.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.dlgCreateTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.dlgSameVocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.usrFastRegisterVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.usrTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090328_editedbyQuanTDA\LaunchFastRegisterVoc\obj\Debug\LaunchFastRegisterVoc.vbproj.GenerateResource.Cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\bin\Release\datasource\s3gt_db.mdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.exe.config
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.frmFastRegister.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.Resources.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.dlgCreateTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.dlgSameVocabulary.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.usrFastRegisterVocabularies.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.usrTopicFastMode.resources
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.vbproj.GenerateResource.Cache
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.exe
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.xml
+D:\Projects\S3GT 2.0\S3GT_newphase\Source Code_20090407\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\bin\Release\datasource\s3gt_db.mdb
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.exe.config
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.exe
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.pdb
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\bin\Release\LaunchFastRegisterVoc.xml
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.frmFastRegister.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.Resources.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.dlgCreateTopicFastMode.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.dlgSameVocabulary.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.usrFastRegisterVocabularies.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.usrTopicFastMode.resources
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.vbproj.GenerateResource.Cache
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.exe
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.xml
+D:\Projects\S3GTv2.1\Source Code\LaunchFastRegisterVoc\obj\Release\LaunchFastRegisterVoc.pdb

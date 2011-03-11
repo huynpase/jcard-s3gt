@@ -1,0 +1,485 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LaunchFastRegisterVoc
+</name>
+</assembly>
+<members>
+<member name="M:LaunchFastRegisterVoc.SingleKanjiBO.AddNew(LaunchFastRegisterVoc.SingleKanjiEntity)">
+	<summary>
+ Add new single kanji into database
+ </summary>
+	<param name="objSingleKanjiEntity">data of single kanji</param>
+	<returns>new value of single kanji</returns>
+	<remarks>Have ID of single kanji</remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiBO.DeleteSingleKanji(LaunchFastRegisterVoc.SingleKanjiEntity)">
+	<summary>
+ Delete Single Kanji by ID
+ </summary>
+	<param name="objSingleKanjiEntity">Content ID of Single Kanji</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiBO.GetKanjiTable(System.String)">
+	<summary>
+ Get table of all rows of Single Kanji match as input key Kunyomi.
+ </summary>
+	<returns>DataTable - table of all Single Kanji match as input key Kunyomi</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.AddNew(LaunchFastRegisterVoc.VocabulariesEntity)">
+	<summary>
+ Add one Vocabulary to database
+ </summary>
+	<param name="objVocEntity">data of Vocabulary</param>
+	<returns>new value of Vocabulary</returns>
+	<remarks>Have ID of vocabulary</remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.GetVocabulariesTable">
+	<summary>
+ Get table of all existing Vocabularies.
+ </summary>
+	<returns>DataTable - table of all Vocabularies</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.GetVocTableByTopic(System.Int32)">
+	<summary>
+ Get Table Vocabulary by TopicGroup and Toptic
+ </summary>
+	<param name="intTopicID"> ID of Topc</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.GetVocTableByKanji(System.String,System.String,System.String)">
+	<summary>
+ Get Table Vocabulary by TopicGroup and Toptic
+ </summary>
+	<param name="strTopicGroupName"> Topic Group Name</param>
+	<param name="strTopicName"> Topic Name</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.DeleteVocabulary(LaunchFastRegisterVoc.VocabulariesEntity)">
+	<summary>
+ Delete Vocabulary by ID
+ </summary>
+	<param name="objVocEntity">Content ID of Voc</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.CheckExist(System.String)">
+	<summary>
+ Check exist of 1 vocabulary in database
+ </summary>
+	<param name="strHigarana"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.CheckExist(System.String,System.Int32)">
+	<summary>
+  Check exist of 1 vocabulary in database
+ </summary>
+	<param name="strHigarana"></param>
+	<param name="intTopicID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.CheckExist(System.String,System.String,System.Int32)">
+	<summary>
+  Check exist of 1 vocabulary in database
+ </summary>
+	<param name="strHigarana"></param>
+	<param name="intTopicID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabularyDAO.SearchVocabulary(System.String,System.Int32,System.String,System.String)">
+	<summary>
+ Search Vocabulary
+ </summary>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.BaseDAO.Connect">
+	<summary>
+ Open connect to database
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.BaseDAO.Disconnect(System.Data.OleDb.OleDbConnection)">
+	<summary>
+ Close connection
+ </summary>
+	<param name="objConnection"></param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.BaseDAO.ExecuteQuery(System.String)">
+	<summary>
+ Select data form table
+ </summary>
+	<param name="strQuery">SQL string: noi dung cau SQL</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.BaseDAO.ExecuteNonQuery(System.String)">
+	<summary>
+ Insert, Update, Delete data in table
+ </summary>
+	<param name="strQuery">SQL string: Cau lenh SQL  dua vao</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.BaseDAO.ExecuteScalar(System.String)">
+	<summary>
+ Get Max, Min, Sum ... from Column of table
+ </summary>
+	<param name="strQuery">SQL string: Cau lenh SQL dua vao</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.AddNew(LaunchFastRegisterVoc.ParameterEntity)">
+	<summary>
+ Add one Parameter with Values to database
+ </summary>
+	<param name="objParamEntity">data of a Parameter</param>
+	<returns>New value of Parameter</returns>
+	<remarks>Have ID of Parameter</remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.GetParamsTable">
+	<summary>
+ Get table of all existing Parameters.
+ </summary>
+	<returns>DataTable - table of all Parameters</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.GetParameterByName(System.String)">
+	<summary>
+ Get Parameter by Name
+ </summary>
+	<param name="p_strParamName">Parameter Name</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.DeleteParamter(LaunchFastRegisterVoc.ParameterEntity)">
+	<summary>
+ Delete Topic Group by ID
+ </summary>
+	<param name="objParamEntity">Parameter</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.CheckExist(System.String)">
+	<summary>
+ Check exist of 1 Topic Group in database
+ </summary>
+	<param name="p_strParamName">Parameter Name</param>
+	<returns>Table of existing Parameters found</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterDAO.UpdateParameter(LaunchFastRegisterVoc.ParameterEntity)">
+	<summary>
+ Update 1 Parameter
+ </summary>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterBO.AddNew(LaunchFastRegisterVoc.ParameterEntity)">
+	<summary>
+ Add new Parameter into database
+ </summary>
+	<param name="objParamEntity">data of Paramter</param>
+	<returns>new value of Parameter</returns>
+</member><member name="M:LaunchFastRegisterVoc.ParameterBO.GetParametersTable">
+	<summary>
+ Get all rows in the Parameters Table.
+ Here the returned parameter is a Datatable to facilitating filtering on table rows
+ </summary>
+	<returns>Data table of Topic Groups</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterBO.GetParameterByName(System.String)">
+	<summary>
+ Get Parameter by Parameter Name
+ </summary>
+	<param name="p_strParamName">Content ID of Topic Group</param>
+	<returns>Topic Group Entity object</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.ParameterBO.DeleteParameter(LaunchFastRegisterVoc.ParameterEntity)">
+	<summary>
+ Delete a Topic Group from database
+ </summary>
+	<param name="objParamEntity">Content of Parameter</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.AddNew(LaunchFastRegisterVoc.TopicsEntity)">
+	<summary>
+ Add new Topic into database
+ </summary>
+	<param name="objTopicEntity">data of Topic</param>
+	<returns>new value of Topic</returns>
+	<remarks>Have ID of Topic</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.GetTopicsTable">
+	<summary>
+ Get all rows in the Topics Table.
+ Here the returned parameter is a Datatable to facilitating filtering on table rows
+ </summary>
+	<returns>Data table of Topics</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.GetTopicTableByTopicGroup(System.Int32)">
+	<summary>
+ Get Table Topic by Topic Group
+ </summary>
+	<param name="p_intTopicGroupID">Content ID of Topc</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.GetTopicByID(System.Int32)">
+	<summary>
+ Get Topic by Topic ID
+ </summary>
+	<param name="p_intTopicID">Content ID of Topic</param>
+	<returns>Topic Entity object</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.DeleteTopicVOC(LaunchFastRegisterVoc.TopicsEntity)">
+	<summary>
+ Delete Topic by ID
+ </summary>
+	<param name="objTopicEntity">Content ID of Topic</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.GetTopicID(System.String,System.String)">
+	<summary>
+ Get ID by group name and topic name
+ </summary>
+	<param name="strTopicGroup">Group name</param>
+	<param name="strTopicName">Topic name</param>
+	<returns>ID of topic</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicsBO.GetTopicListByTopicGroupName(System.String)">
+	<summary>
+ Get List of Topic by Topic Group Name
+ </summary>
+	<param name="strTopicGroup">Topic Group Name</param>
+	<returns>datatable of Topic Group(ID, Name, Description)</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.AddNew(LaunchFastRegisterVoc.TopicsEntity)">
+	<summary>
+ Add one Topic to database
+ </summary>
+	<param name="objTopicEntity">data of Topic Group</param>
+	<returns>new value of Topic Group</returns>
+	<remarks>Have ID of Topic Group</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicsTable">
+	<summary>
+ Get table of all existing Topics.
+ </summary>
+	<returns>DataTable - table of all Topics</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicTableByTopicGroup(System.Int32)">
+	<summary>
+ Get Table of Topics by TopicGroup and Toptic
+ </summary>
+	<param name="p_intTopicGroupID">Content ID of Topic Group</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicByName(System.String,System.String)">
+	<summary>
+ Get Topic by ID
+ </summary>
+	<param name="topicname">Topic Name</param>
+	<param name="topicgroup">Topic Group Name</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicByID(System.Int32)">
+	<summary>
+ Get Topic by ID
+ </summary>
+	<param name="p_intTopicID">Topic Group ID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.DeleteTopic_VOC(LaunchFastRegisterVoc.TopicsEntity)">
+	<summary>
+ Delete Topic Group by ID
+ </summary>
+	<param name="objTopicEntity">Content ID of Topic Group</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.CheckExist(System.String)">
+	<summary>
+ Check exist of 1 Topic Group in database
+ </summary>
+	<param name="p_strTopicName">Topic Group Name</param>
+	<returns>Table of existing Topic Groups found</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.UpdateTopic(LaunchFastRegisterVoc.TopicsEntity)">
+	<summary>
+ Update 1 Topic
+ </summary>
+	<param name="objTopicEntity">Topic ID</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicID(System.String,System.String)">
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicDAO.GetTopicListByTopicGroupName(System.String)">
+	<summary>
+ Get List of Topic by Topic Group Name
+ </summary>
+	<param name="strTopicGroup">Topic Group Name</param>
+	<returns>datatable of Topic Group(ID, Name, Description)</returns>
+	<remarks></remarks>
+</member><member name="P:LaunchFastRegisterVoc.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:LaunchFastRegisterVoc.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:LaunchFastRegisterVoc.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:LaunchFastRegisterVoc.dlgSameVocabulary.SetTextForTextbox(System.String)">
+	<summary>
+ set text for message content
+ </summary>
+	<param name="strValue">message content</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.dlgSameVocabulary.#ctor(LaunchFastRegisterVoc.VocabulariesEntity,System.Data.DataTable)">
+	<summary>
+ Define new Dialog of Vocabularies having same Hiragana
+ </summary>
+	<param name="vocabularyEntity">Vocabulary in processing</param>
+	<param name="objSameHiraganaVocTable">List of Vocabularies having same Hiragana as Vocabulary in processing</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.dlgSameVocabulary.CopyDataFromTableToEntity(System.Data.DataTable,System.Int32)">
+	<summary>
+ Copy 1 record in datatable to Voc Entity 
+ </summary>
+	<param name="objDataTableVOC">datatable of Voc exist in database</param>
+	<param name="intID"> ID of voc in datatable</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.Utils.Merge(System.Collections.ArrayList,System.Windows.Forms.DataGridViewRowCollection,System.Int32)">
+	<summary>
+ Merge cac dong trung nhau
+ </summary>
+	<param name="arrSameVocabulary">List so thu tu cac hang trung higarana/katagara</param>
+	<param name="dataGrid">Grid data user input</param>
+	<param name="intType">
+ intType = 2: Merge Kanji
+ intType = 3: Merge Meaning    ''' 
+ </param>
+	<returns>Gird data after merge</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.AddNew(LaunchFastRegisterVoc.VocabulariesEntity)">
+	<summary>
+ Add new vocabulary into database
+ </summary>
+	<param name="objVocEntity">data of vocabulary</param>
+	<returns>new value of vocabulary</returns>
+	<remarks>Have ID of vocabulary</remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.GetVocabulariesTable">
+	<summary>
+ Get all rows in the Vocabularies Table.
+ Here the returned parameter is a Datatable to facilitating filtering on table rows
+ </summary>
+	<returns>Data table of Vocabularies</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.GetVocTableByTopic(System.Int32)">
+	<summary>
+ Get Table Vocabulary by TopicGroup and Toptic
+ </summary>
+	<param name="intTopicID">Content ID of Topc</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.GetVocTableByKanji(System.String,System.String,System.String)">
+	<summary>
+ Get Table Vocabulary by TopicGroupName, TopicName,  Kanji
+ </summary>
+	<param name="strTopicGroupName"></param>
+	<param name="strTopicName"></param>
+	<param name="strKanji"></param>
+	<returns>list Voc</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.DeleteVocabulary(LaunchFastRegisterVoc.VocabulariesEntity)">
+	<summary>
+ Delete Vocabulary by ID
+ </summary>
+	<param name="objVocEntity">Content ID of Voc</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.VocabulariesBO.CopyDataToEntityFromDataGrid(System.Windows.Forms.DataGridView,System.Int32)">
+	<summary>
+ Copy 1 record (thu intID) from grid to entity
+ </summary>
+	<param name="dataVocabulary">datagrid</param>
+	<param name="intID">ID of record</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiDAO.AddNew(LaunchFastRegisterVoc.SingleKanjiEntity)">
+	<summary>
+ Add one Single Kanji to database
+ </summary>
+	<param name="objSingleKanjiEntity">data of Single Kanji</param>
+	<returns>new value of Single Kanji</returns>
+	<remarks>Have ID of Single Kanji</remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiDAO.DeleteSingleKanji(LaunchFastRegisterVoc.SingleKanjiEntity)">
+	<summary>
+ Delete Single Kanji by ID
+ </summary>
+	<param name="objSingleKanjiEntity">Content ID of Single Kanji</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiDAO.UpdateSingleKanji(LaunchFastRegisterVoc.SingleKanjiEntity)">
+	<summary>
+ Update 1 Single Kanji
+ </summary>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.SingleKanjiDAO.GetSingleKanjiTable(System.String)">
+	<summary>
+ Get table of all rows of Single Kanji match as input key Kunyomi.
+ </summary>
+	<returns>DataTable - table of all Single Kanji match as input key Kunyomi</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.AddNew(LaunchFastRegisterVoc.TopicGroupsEntity)">
+	<summary>
+ Add one Topic Group to database
+ </summary>
+	<param name="objTopicGroupEntity">data of Topic Group</param>
+	<returns>new value of Topic Group</returns>
+	<remarks>Have ID of Topic Group</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.GetTopicGroupsTable">
+	<summary>
+ Get table of all existing TopicGroups.
+ </summary>
+	<returns>DataTable - table of all TopicGroups</returns>
+	<remarks>Here we use Datatable as return data to facilitate the filter on table rows following some criteria
+ without requery from database.</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.GetTopicGroupByID(System.Int32)">
+	<summary>
+ Get TopicGroup by ID
+ </summary>
+	<param name="p_intTopicGroupID">Topic Group ID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.DeleteTopicGroup(LaunchFastRegisterVoc.TopicGroupsEntity)">
+	<summary>
+ Delete Topic Group by ID
+ </summary>
+	<param name="objTopicGroupEntity">Content ID of Topic Group</param>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.CheckExist(System.String)">
+	<summary>
+ Check exist of 1 Topic Group in database
+ </summary>
+	<param name="p_strTopicGroupName">Topic Group Name</param>
+	<returns>Table of existing Topic Groups found</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupDAO.UpdateTopicGroup(LaunchFastRegisterVoc.TopicGroupsEntity)">
+	<summary>
+ Update 1 Topic Group
+ </summary>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupsBO.AddNew(LaunchFastRegisterVoc.TopicGroupsEntity)">
+	<summary>
+ Add new Topic Group into database
+ </summary>
+	<param name="objTopicGroupEntity">data of Topic Group</param>
+	<returns>new value of Topic Group</returns>
+	<remarks>Have ID of Topic Group</remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupsBO.GetTopicGroupsTable">
+	<summary>
+ Get all rows in the Topic Groups Table.
+ Here the returned parameter is a Datatable to facilitating filtering on table rows
+ </summary>
+	<returns>Data table of Topic Groups</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupsBO.GetTopicGroupByID(System.Int32)">
+	<summary>
+ Get Topic Group by TopicGroup ID
+ </summary>
+	<param name="p_intTopicGroupID">Content ID of Topic Group</param>
+	<returns>Topic Group Entity object</returns>
+	<remarks></remarks>
+</member><member name="M:LaunchFastRegisterVoc.TopicGroupsBO.DeleteTopicGroup(LaunchFastRegisterVoc.TopicGroupsEntity)">
+	<summary>
+ Delete a Topic Group from database
+ </summary>
+	<param name="objTopicGroupEntity">Content ID of TopicGroup</param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
