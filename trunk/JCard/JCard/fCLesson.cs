@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using System.Diagnostics;
+using System.Threading;
 
 namespace JCard
 {
@@ -30,7 +31,11 @@ namespace JCard
         // Delegate control event form 1
         public SendData sendData;
         private void Form1_Load(object sender, EventArgs e)
-        {           
+        {
+            fSplash.ShowSplashScreen();
+            timer2.Interval = Constants.Timer_Interval;
+            timer2.Start();
+            Thread.Sleep(Constants.sleepTime);
            // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
             try
@@ -105,7 +110,6 @@ namespace JCard
                         MessageBox.Show("Please send to author contents of error below: \n" + ex);
 
                     }
-                   
                 }
                 else
                 {
@@ -337,10 +341,6 @@ namespace JCard
 
         }
 
-        private void notifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
 
         public static void showTabSetting()
         {            
@@ -369,6 +369,11 @@ namespace JCard
             button1_Click(null, null);
         }
 
-       
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            fSplash.CloseForm();
+            timer2.Stop();
+        }
+
     }
 }

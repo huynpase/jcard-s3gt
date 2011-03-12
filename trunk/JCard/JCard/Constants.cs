@@ -29,6 +29,8 @@ namespace JCard
         public const string Ex_DelayTime = "3";
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
+        public const int Timer_Interval = 100;
+        public const int sleepTime = 3000;
 
 
         //20100312: phuonghd : add code declare constant variable for setting jcard vocabulary

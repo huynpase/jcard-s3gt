@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCLesson));
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -51,13 +52,12 @@
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
-            this.setting1 = new JCard.rdbBR();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabGrammar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -295,7 +295,7 @@
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(13, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 16);
+            this.label1.Size = new System.Drawing.Size(163, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please choose  level:";
             // 
@@ -303,20 +303,15 @@
             // 
             this.tabSetting.BackColor = System.Drawing.Color.Transparent;
             this.tabSetting.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabSetting.Controls.Add(this.setting1);
             this.tabSetting.Location = new System.Drawing.Point(4, 22);
             this.tabSetting.Name = "tabSetting";
             this.tabSetting.Size = new System.Drawing.Size(446, 418);
             this.tabSetting.TabIndex = 2;
             this.tabSetting.Text = "Setting";
             // 
-            // setting1
+            // timer2
             // 
-            this.setting1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting1.BackgroundImage")));
-            this.setting1.Location = new System.Drawing.Point(0, 0);
-            this.setting1.Name = "setting1";
-            this.setting1.Size = new System.Drawing.Size(454, 444);
-            this.setting1.TabIndex = 0;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // fCLesson
             // 
@@ -341,7 +336,6 @@
             this.tabGrammar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabSetting.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,6 +366,7 @@
         private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
