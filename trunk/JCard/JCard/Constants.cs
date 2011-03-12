@@ -29,5 +29,15 @@ namespace JCard
         public const string Ex_DelayTime = "3";
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
+
+
+        //20100312: phuonghd : add code declare constant variable for setting jcard vocabulary
+        public const string PositionVOC = "BR";
+        public const float DisplayTimeVOC = 5;
+        public const float WaitingTimeVOC = 3;
+        public const float FontSizeKanjiVOC = 19;
+        public const float FontSizeImiVOC = 13;
+        public const float FontSizeKanaVOC = 15;
+
     }
 }
