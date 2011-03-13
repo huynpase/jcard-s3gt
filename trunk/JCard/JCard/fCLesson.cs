@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Collections;
 using System.Diagnostics;
@@ -18,7 +19,11 @@ namespace JCard
     {
         // Define file path of database 
         private String s3gtPath = "datasource\\s3gt_db.mdb";
+<<<<<<< .mine
+       // private  String fpath = "";// bien duong dan toan cuc
+=======
         private double opacityInc = .05;
+>>>>>>> .r98
 
         public fCLesson()
         {
@@ -41,13 +46,7 @@ namespace JCard
             this.tabVocabulary.Select();
             try
             {
-                ArrayList arrTopic = new ArrayList();
-                ArrayList arrTopicGroup = new ArrayList();
-                BUS_JCARD busJcard = new BUS_JCARD(s3gtPath);
-                arrTopic = busJcard.GetTopic();
-                arrTopicGroup = busJcard.GetTopicGroup();
-                AddToTreeView(arrTopicGroup, arrTopic);
-                treeView1.ExpandAll();
+                InitTreeView(s3gtPath);
                
             }
             catch (Exception ex)
@@ -55,6 +54,26 @@ namespace JCard
                 // throw ex;
             }
         }
+        private void InitTreeView(string filepath)
+        {
+            try
+            {
+               // fpath = filepath;
+                ArrayList arrTopic = new ArrayList();
+                ArrayList arrTopicGroup = new ArrayList();
+                BUS_JCARD busJcard = new BUS_JCARD(filepath);
+                arrTopic = busJcard.GetTopic();
+                arrTopicGroup = busJcard.GetTopicGroup();
+                AddToTreeView(arrTopicGroup, arrTopic);
+                treeView1.ExpandAll();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error when load DB");
+                MessageBox.Show("Please send to author contents of error below: \n" + ex);
+            }
+        }
+
 
         private void ButtStartClick(object sender, EventArgs e)
         {
@@ -325,10 +344,7 @@ namespace JCard
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // stop form dang chay
-            // hien thi form setting
-            this.Show();
-            this.tabSetting.Select();
+          
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -370,6 +386,67 @@ namespace JCard
             button1_Click(null, null);
         }
 
+<<<<<<< .mine
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string filepath = "";
+            OpenFileDialog opf = new OpenFileDialog();
+
+            opf.Title = "Please choose file S3GT DB want to load.";
+            opf.DefaultExt = "*.mdb";
+            opf.RestoreDirectory = true;
+            opf.Filter ="S3GT DB (*.mdb)|*.mdb";
+            if(opf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    filepath = opf.FileName;
+                    InitTreeView(filepath);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error when load DB file");
+                }
+                
+                
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            About ab = new About();
+            ab.ShowDialog();
+        }
+
+        private void radLastTopic_CheckedChanged(object sender, EventArgs e)
+        {
+            treeView1.Enabled = false;
+        }
+
+        private void radCombine_CheckedChanged(object sender, EventArgs e)
+        {
+            treeView1.Enabled = true;
+        }
+
+        private void radNewTopic_CheckedChanged(object sender, EventArgs e)
+        {
+            treeView1.Enabled = true;
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fSetting fset = new fSetting();
+            fset.ShowDialog();
+        }
+
+      
+=======
         private void timer2_Tick(object sender, EventArgs e)
         {
             timer2.Stop();
@@ -395,5 +472,6 @@ namespace JCard
             }
         }
 
+>>>>>>> .r98
     }
 }
