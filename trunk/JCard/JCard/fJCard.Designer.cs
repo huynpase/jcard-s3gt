@@ -49,8 +49,6 @@ namespace JCard
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.vocabularyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grammarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
@@ -86,11 +84,11 @@ namespace JCard
             this.txtKanji.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtKanji.Font = new System.Drawing.Font("MS PGothic", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtKanji.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtKanji.Location = new System.Drawing.Point(3, 11);
+            this.txtKanji.Location = new System.Drawing.Point(3, 3);
             this.txtKanji.Multiline = true;
             this.txtKanji.Name = "txtKanji";
             this.txtKanji.ReadOnly = true;
-            this.txtKanji.Size = new System.Drawing.Size(210, 30);
+            this.txtKanji.Size = new System.Drawing.Size(210, 52);
             this.txtKanji.TabIndex = 10002;
             this.txtKanji.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKanji.MouseLeave += new System.EventHandler(this.txtKanji_MouseLeave);
@@ -113,11 +111,11 @@ namespace JCard
             this.txtHiragana.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHiragana.Font = new System.Drawing.Font("MS PGothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtHiragana.ForeColor = System.Drawing.Color.Red;
-            this.txtHiragana.Location = new System.Drawing.Point(2, 11);
+            this.txtHiragana.Location = new System.Drawing.Point(2, 3);
             this.txtHiragana.Multiline = true;
             this.txtHiragana.Name = "txtHiragana";
             this.txtHiragana.ReadOnly = true;
-            this.txtHiragana.Size = new System.Drawing.Size(211, 26);
+            this.txtHiragana.Size = new System.Drawing.Size(211, 55);
             this.txtHiragana.TabIndex = 10001;
             this.txtHiragana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHiragana.MouseLeave += new System.EventHandler(this.txtHiragana_MouseLeave);
@@ -174,11 +172,11 @@ namespace JCard
             this.txtHanNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHanNom.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHanNom.ForeColor = System.Drawing.Color.Fuchsia;
-            this.txtHanNom.Location = new System.Drawing.Point(3, 13);
+            this.txtHanNom.Location = new System.Drawing.Point(3, 2);
             this.txtHanNom.Multiline = true;
             this.txtHanNom.Name = "txtHanNom";
             this.txtHanNom.ReadOnly = true;
-            this.txtHanNom.Size = new System.Drawing.Size(211, 31);
+            this.txtHanNom.Size = new System.Drawing.Size(211, 52);
             this.txtHanNom.TabIndex = 10002;
             this.txtHanNom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHanNom.MouseHover += new System.EventHandler(this.txtHanNom_MouseHover);
@@ -206,11 +204,11 @@ namespace JCard
             this.txtMeaning.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMeaning.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMeaning.ForeColor = System.Drawing.Color.MediumBlue;
-            this.txtMeaning.Location = new System.Drawing.Point(3, 13);
+            this.txtMeaning.Location = new System.Drawing.Point(3, 3);
             this.txtMeaning.Multiline = true;
             this.txtMeaning.Name = "txtMeaning";
             this.txtMeaning.ReadOnly = true;
-            this.txtMeaning.Size = new System.Drawing.Size(211, 31);
+            this.txtMeaning.Size = new System.Drawing.Size(211, 51);
             this.txtMeaning.TabIndex = 10002;
             this.txtMeaning.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMeaning.MouseLeave += new System.EventHandler(this.txtMeaning_MouseLeave);
@@ -220,49 +218,35 @@ namespace JCard
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "Jcard";
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vocabularyToolStripMenuItem,
-            this.grammarToolStripMenuItem,
-            this.settingToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // vocabularyToolStripMenuItem
             // 
             this.vocabularyToolStripMenuItem.Name = "vocabularyToolStripMenuItem";
-            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.vocabularyToolStripMenuItem.Text = "Vocabulary";
-            // 
-            // grammarToolStripMenuItem
-            // 
-            this.grammarToolStripMenuItem.Name = "grammarToolStripMenuItem";
-            this.grammarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.grammarToolStripMenuItem.Text = "Grammar";
-            // 
-            // settingToolStripMenuItem
-            // 
-            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.settingToolStripMenuItem.Text = "Setting";
-            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click_2);
+            this.vocabularyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vocabularyToolStripMenuItem.Text = "Back to Main screen";
+            this.vocabularyToolStripMenuItem.Click += new System.EventHandler(this.vocabularyToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_2);
             // 
@@ -283,12 +267,12 @@ namespace JCard
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fJCard";
-            this.Opacity = 0;
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard- Vocabulary";
+            this.Load += new System.EventHandler(this.FJCardLoad);
             this.MouseLeave += new System.EventHandler(this.FJCardMouseLeave);
             this.MouseHover += new System.EventHandler(this.FJCardMouseHover);
-            this.Load += new System.EventHandler(this.FJCardLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -325,8 +309,6 @@ namespace JCard
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem vocabularyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem grammarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
