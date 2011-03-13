@@ -19,11 +19,11 @@ namespace JCard
     {
         // Define file path of database 
         private String s3gtPath = "datasource\\s3gt_db.mdb";
-<<<<<<< .mine
+
        // private  String fpath = "";// bien duong dan toan cuc
-=======
+
         private double opacityInc = .05;
->>>>>>> .r98
+
 
         public fCLesson()
         {
@@ -386,7 +386,7 @@ namespace JCard
             button1_Click(null, null);
         }
 
-<<<<<<< .mine
+
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -446,7 +446,7 @@ namespace JCard
         }
 
       
-=======
+
         private void timer2_Tick(object sender, EventArgs e)
         {
             timer2.Stop();
@@ -472,6 +472,6 @@ namespace JCard
             }
         }
 
->>>>>>> .r98
+
     }
 }

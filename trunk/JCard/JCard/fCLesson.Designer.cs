@@ -33,6 +33,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVocabulary = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.button5 = new System.Windows.Forms.Button();
             this.cBoxCollapse = new System.Windows.Forms.CheckBox();
             this.chBoxAll = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,17 +54,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< .mine
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-=======
-            this.tabSetting = new System.Windows.Forms.TabPage();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
->>>>>>> .r98
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,6 +105,37 @@
             this.tabVocabulary.TabIndex = 0;
             this.tabVocabulary.Text = "Vocabulary";
             this.tabVocabulary.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(221, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Choose data base  of S3GT";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(378, 299);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(56, 16);
+            this.linkLabel2.TabIndex = 21;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Setting";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(364, 328);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(70, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Browse...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // cBoxCollapse
             // 
@@ -315,29 +342,14 @@
             // 
             // statusStrip1
             // 
-<<<<<<< .mine
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(482, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
-=======
-            this.tabSetting.BackColor = System.Drawing.Color.Transparent;
-            this.tabSetting.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabSetting.Location = new System.Drawing.Point(4, 22);
-            this.tabSetting.Name = "tabSetting";
-            this.tabSetting.Size = new System.Drawing.Size(446, 418);
-            this.tabSetting.TabIndex = 2;
-            this.tabSetting.Text = "Setting";
->>>>>>> .r98
             // 
-<<<<<<< .mine
             // linkLabel1
-=======
-            // timer2
->>>>>>> .r98
             // 
-<<<<<<< .mine
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(403, 453);
             this.linkLabel1.Name = "linkLabel1";
@@ -346,48 +358,15 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "About JCard";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-=======
+            // 
+            // timer2
+            // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
->>>>>>> .r98
             // 
-<<<<<<< .mine
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(364, 328);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Browse...";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(378, 299);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(56, 16);
-            this.linkLabel2.TabIndex = 21;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Setting";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(221, 333);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Choose data base  of S3GT";
-            // 
-=======
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
->>>>>>> .r98
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,16 +421,15 @@
         private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
-<<<<<<< .mine
+
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label3;
-=======
+
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
->>>>>>> .r98
-    }
+}
 }
 
