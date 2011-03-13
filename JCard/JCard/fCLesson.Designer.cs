@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabSetting = new System.Windows.Forms.TabPage();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -295,7 +296,7 @@
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(13, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 16);
+            this.label1.Size = new System.Drawing.Size(158, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please choose  level:";
             // 
@@ -312,6 +313,10 @@
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // fCLesson
             // 
@@ -367,6 +372,7 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 
