@@ -28,221 +28,379 @@ namespace JCard
         /// </summary>
         private void InitializeComponent()
         {
-        	this.button2 = new System.Windows.Forms.Button();
-        	this.button1 = new System.Windows.Forms.Button();
-        	this.groupBox3 = new System.Windows.Forms.GroupBox();
-        	this.groupBox2 = new System.Windows.Forms.GroupBox();
-        	this.label6 = new System.Windows.Forms.Label();
-        	this.label5 = new System.Windows.Forms.Label();
-        	this.comboBox3 = new System.Windows.Forms.ComboBox();
-        	this.comboBox2 = new System.Windows.Forms.ComboBox();
-        	this.label3 = new System.Windows.Forms.Label();
-        	this.label2 = new System.Windows.Forms.Label();
-        	this.groupBox1 = new System.Windows.Forms.GroupBox();
-        	this.radioButton3 = new System.Windows.Forms.RadioButton();
-        	this.radioButton4 = new System.Windows.Forms.RadioButton();
-        	this.radioButton2 = new System.Windows.Forms.RadioButton();
-        	this.radioButton1 = new System.Windows.Forms.RadioButton();
-        	this.groupBox2.SuspendLayout();
-        	this.groupBox1.SuspendLayout();
-        	this.SuspendLayout();
-        	// 
-        	// button2
-        	// 
-        	this.button2.Location = new System.Drawing.Point(227, 375);
-        	this.button2.Name = "button2";
-        	this.button2.Size = new System.Drawing.Size(85, 27);
-        	this.button2.TabIndex = 4;
-        	this.button2.Text = "&Cancel";
-        	this.button2.UseVisualStyleBackColor = true;
-        	this.button2.Click += new System.EventHandler(this.button2_Click);
-        	// 
-        	// button1
-        	// 
-        	this.button1.Location = new System.Drawing.Point(121, 375);
-        	this.button1.Name = "button1";
-        	this.button1.Size = new System.Drawing.Size(85, 27);
-        	this.button1.TabIndex = 3;
-        	this.button1.Text = "&OK";
-        	this.button1.UseVisualStyleBackColor = true;
-        	this.button1.Click += new System.EventHandler(this.button1_Click);
-        	// 
-        	// groupBox3
-        	// 
-        	this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-        	this.groupBox3.Location = new System.Drawing.Point(12, 191);
-        	this.groupBox3.Name = "groupBox3";
-        	this.groupBox3.Size = new System.Drawing.Size(422, 167);
-        	this.groupBox3.TabIndex = 2;
-        	this.groupBox3.TabStop = false;
-        	this.groupBox3.Text = "Register Keyboard";
-        	// 
-        	// groupBox2
-        	// 
-        	this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-        	this.groupBox2.Controls.Add(this.label6);
-        	this.groupBox2.Controls.Add(this.label5);
-        	this.groupBox2.Controls.Add(this.comboBox3);
-        	this.groupBox2.Controls.Add(this.comboBox2);
-        	this.groupBox2.Controls.Add(this.label3);
-        	this.groupBox2.Controls.Add(this.label2);
-        	this.groupBox2.Location = new System.Drawing.Point(12, 95);
-        	this.groupBox2.Name = "groupBox2";
-        	this.groupBox2.Size = new System.Drawing.Size(419, 90);
-        	this.groupBox2.TabIndex = 1;
-        	this.groupBox2.TabStop = false;
-        	this.groupBox2.Text = "Properties";
-        	// 
-        	// label6
-        	// 
-        	this.label6.AutoSize = true;
-        	this.label6.Location = new System.Drawing.Point(182, 56);
-        	this.label6.Name = "label6";
-        	this.label6.Size = new System.Drawing.Size(21, 15);
-        	this.label6.TabIndex = 18;
-        	this.label6.Text = "(s)";
-        	// 
-        	// label5
-        	// 
-        	this.label5.AutoSize = true;
-        	this.label5.Location = new System.Drawing.Point(182, 26);
-        	this.label5.Name = "label5";
-        	this.label5.Size = new System.Drawing.Size(21, 15);
-        	this.label5.TabIndex = 17;
-        	this.label5.Text = "(s)";
-        	// 
-        	// comboBox3
-        	// 
-        	this.comboBox3.FormattingEnabled = true;
-        	this.comboBox3.Location = new System.Drawing.Point(92, 53);
-        	this.comboBox3.Name = "comboBox3";
-        	this.comboBox3.Size = new System.Drawing.Size(80, 23);
-        	this.comboBox3.TabIndex = 15;
-        	this.comboBox3.Text = "5";
-        	// 
-        	// comboBox2
-        	// 
-        	this.comboBox2.FormattingEnabled = true;
-        	this.comboBox2.Location = new System.Drawing.Point(92, 24);
-        	this.comboBox2.Name = "comboBox2";
-        	this.comboBox2.Size = new System.Drawing.Size(80, 23);
-        	this.comboBox2.TabIndex = 14;
-        	this.comboBox2.Text = "5";
-        	// 
-        	// label3
-        	// 
-        	this.label3.AutoSize = true;
-        	this.label3.Location = new System.Drawing.Point(10, 56);
-        	this.label3.Name = "label3";
-        	this.label3.Size = new System.Drawing.Size(79, 15);
-        	this.label3.TabIndex = 12;
-        	this.label3.Text = "Display Time:";
-        	// 
-        	// label2
-        	// 
-        	this.label2.AutoSize = true;
-        	this.label2.Location = new System.Drawing.Point(10, 26);
-        	this.label2.Name = "label2";
-        	this.label2.Size = new System.Drawing.Size(76, 15);
-        	this.label2.TabIndex = 11;
-        	this.label2.Text = "Deplay Time:";
-        	// 
-        	// groupBox1
-        	// 
-        	this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-        	this.groupBox1.Controls.Add(this.radioButton3);
-        	this.groupBox1.Controls.Add(this.radioButton4);
-        	this.groupBox1.Controls.Add(this.radioButton2);
-        	this.groupBox1.Controls.Add(this.radioButton1);
-        	this.groupBox1.Location = new System.Drawing.Point(12, 12);
-        	this.groupBox1.Name = "groupBox1";
-        	this.groupBox1.Size = new System.Drawing.Size(419, 77);
-        	this.groupBox1.TabIndex = 0;
-        	this.groupBox1.TabStop = false;
-        	this.groupBox1.Text = "Display";
-        	// 
-        	// radioButton3
-        	// 
-        	this.radioButton3.AutoSize = true;
-        	this.radioButton3.Checked = true;
-        	this.radioButton3.Location = new System.Drawing.Point(185, 48);
-        	this.radioButton3.Name = "radioButton3";
-        	this.radioButton3.Size = new System.Drawing.Size(95, 19);
-        	this.radioButton3.TabIndex = 3;
-        	this.radioButton3.TabStop = true;
-        	this.radioButton3.Text = "Bottom Right";
-        	this.radioButton3.UseVisualStyleBackColor = true;
-        	// 
-        	// radioButton4
-        	// 
-        	this.radioButton4.AutoSize = true;
-        	this.radioButton4.Location = new System.Drawing.Point(185, 23);
-        	this.radioButton4.Name = "radioButton4";
-        	this.radioButton4.Size = new System.Drawing.Size(77, 19);
-        	this.radioButton4.TabIndex = 2;
-        	this.radioButton4.Text = "Top Right";
-        	this.radioButton4.UseVisualStyleBackColor = true;
-        	// 
-        	// radioButton2
-        	// 
-        	this.radioButton2.AutoSize = true;
-        	this.radioButton2.Location = new System.Drawing.Point(13, 44);
-        	this.radioButton2.Name = "radioButton2";
-        	this.radioButton2.Size = new System.Drawing.Size(87, 19);
-        	this.radioButton2.TabIndex = 1;
-        	this.radioButton2.Text = "Bottom Left";
-        	this.radioButton2.UseVisualStyleBackColor = true;
-        	// 
-        	// radioButton1
-        	// 
-        	this.radioButton1.AutoSize = true;
-        	this.radioButton1.Location = new System.Drawing.Point(13, 19);
-        	this.radioButton1.Name = "radioButton1";
-        	this.radioButton1.Size = new System.Drawing.Size(69, 19);
-        	this.radioButton1.TabIndex = 0;
-        	this.radioButton1.Text = "Top Left";
-        	this.radioButton1.UseVisualStyleBackColor = true;
-        	// 
-        	// fSetting
-        	// 
-        	this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        	this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-        	this.ClientSize = new System.Drawing.Size(442, 415);
-        	this.Controls.Add(this.button2);
-        	this.Controls.Add(this.button1);
-        	this.Controls.Add(this.groupBox1);
-        	this.Controls.Add(this.groupBox3);
-        	this.Controls.Add(this.groupBox2);
-        	this.MaximizeBox = false;
-        	this.MinimizeBox = false;
-        	this.Name = "fSetting";
-        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "Setting";
-        	this.groupBox2.ResumeLayout(false);
-        	this.groupBox2.PerformLayout();
-        	this.groupBox1.ResumeLayout(false);
-        	this.groupBox1.PerformLayout();
-        	this.ResumeLayout(false);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSetting));
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comFontMeaning = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comFontHanNom = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comFontKana = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comFontKanji = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comDisTime = new System.Windows.Forms.ComboBox();
+            this.comDeplayTime = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radTopRight = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(203, 290);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "&Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(109, 289);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "&Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.comFontMeaning);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.comFontHanNom);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.comFontKana);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.comFontKanji);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.comDisTime);
+            this.groupBox2.Controls.Add(this.comDeplayTime);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(10, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(359, 189);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Properties";
+            // 
+            // comFontMeaning
+            // 
+            this.comFontMeaning.FormattingEnabled = true;
+            this.comFontMeaning.Items.AddRange(new object[] {
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comFontMeaning.Location = new System.Drawing.Point(110, 154);
+            this.comFontMeaning.Name = "comFontMeaning";
+            this.comFontMeaning.Size = new System.Drawing.Size(69, 21);
+            this.comFontMeaning.TabIndex = 28;
+            this.comFontMeaning.Text = "5";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Font size Meaning";
+            // 
+            // comFontHanNom
+            // 
+            this.comFontHanNom.FormattingEnabled = true;
+            this.comFontHanNom.Items.AddRange(new object[] {
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comFontHanNom.Location = new System.Drawing.Point(110, 127);
+            this.comFontHanNom.Name = "comFontHanNom";
+            this.comFontHanNom.Size = new System.Drawing.Size(69, 21);
+            this.comFontHanNom.TabIndex = 26;
+            this.comFontHanNom.Text = "5";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 129);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Font size Han Nom";
+            // 
+            // comFontKana
+            // 
+            this.comFontKana.FormattingEnabled = true;
+            this.comFontKana.Items.AddRange(new object[] {
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comFontKana.Location = new System.Drawing.Point(110, 100);
+            this.comFontKana.Name = "comFontKana";
+            this.comFontKana.Size = new System.Drawing.Size(69, 21);
+            this.comFontKana.TabIndex = 24;
+            this.comFontKana.Text = "5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Font size Kana";
+            // 
+            // comFontKanji
+            // 
+            this.comFontKanji.FormattingEnabled = true;
+            this.comFontKanji.Items.AddRange(new object[] {
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comFontKanji.Location = new System.Drawing.Point(110, 73);
+            this.comFontKanji.Name = "comFontKanji";
+            this.comFontKanji.Size = new System.Drawing.Size(69, 21);
+            this.comFontKanji.TabIndex = 22;
+            this.comFontKanji.Text = "5";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Font size Kanji";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "(s)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(182, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "(s)";
+            // 
+            // comDisTime
+            // 
+            this.comDisTime.FormattingEnabled = true;
+            this.comDisTime.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.comDisTime.Location = new System.Drawing.Point(111, 46);
+            this.comDisTime.Name = "comDisTime";
+            this.comDisTime.Size = new System.Drawing.Size(69, 21);
+            this.comDisTime.TabIndex = 15;
+            this.comDisTime.Text = "5";
+            // 
+            // comDeplayTime
+            // 
+            this.comDeplayTime.FormattingEnabled = true;
+            this.comDeplayTime.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.comDeplayTime.Location = new System.Drawing.Point(111, 21);
+            this.comDeplayTime.Name = "comDeplayTime";
+            this.comDeplayTime.Size = new System.Drawing.Size(69, 21);
+            this.comDeplayTime.TabIndex = 14;
+            this.comDeplayTime.Text = "5";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Display Time:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Deplay Time:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radTopRight);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(359, 67);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Display";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.Location = new System.Drawing.Point(12, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(72, 17);
+            this.radioButton1.TabIndex = 4;
+            this.radioButton1.Text = "Top Right";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radTopRight
+            // 
+            this.radTopRight.AutoSize = true;
+            this.radTopRight.Checked = true;
+            this.radTopRight.Location = new System.Drawing.Point(159, 42);
+            this.radTopRight.Name = "radTopRight";
+            this.radTopRight.Size = new System.Drawing.Size(86, 17);
+            this.radTopRight.TabIndex = 3;
+            this.radTopRight.TabStop = true;
+            this.radTopRight.Text = "Bottom Right";
+            this.radTopRight.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Enabled = false;
+            this.radioButton4.Location = new System.Drawing.Point(159, 20);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(72, 17);
+            this.radioButton4.TabIndex = 2;
+            this.radioButton4.Text = "Top Right";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.Location = new System.Drawing.Point(11, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(79, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Bottom Left";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // fSetting
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::JCard.Properties.Resources.Back2;
+            this.ClientSize = new System.Drawing.Size(379, 333);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "fSetting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Setting Vocabulary";
+            this.Load += new System.EventHandler(this.fSetting_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comDisTime;
+        private System.Windows.Forms.ComboBox comDeplayTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radTopRight;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ComboBox comFontKanji;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comFontHanNom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comFontKana;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comFontMeaning;
+        private System.Windows.Forms.Label label8;
 
 
 
