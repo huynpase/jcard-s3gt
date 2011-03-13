@@ -63,6 +63,15 @@ namespace JCard
             get { return _FontSizeImiVOC; }
             set { _FontSizeImiVOC = value; }
         }
+
+        public float FontSizeHanNom
+        {
+            get { return _FontSizeHanNom; }
+            set { _FontSizeHanNom = value; }
+        }
+
+        private float _FontSizeHanNom;
+
         //float _FontSizeGrammer1;//Set font cho chu cua Grammer, tuy sau nay phat trien the nao
 
         //public float FontSizeGrammer1
@@ -89,10 +98,11 @@ namespace JCard
         {
             PositionVOC = "BR";
             //PositionGMR = "BR";
-            FontSizeKanjiVOC = 13;
-            FontSizeKanaVOC = 13;
+            FontSizeKanjiVOC = 19;
+            FontSizeKanaVOC = 16;
             FontSizeImiVOC = 13;
             DisplayTimeVOC = 5;
+            FontSizeHanNom = 16;
             //DisplayTimeGMR = 5;
             //FontSizeGrammer3 = 13;
             //FontSizeGrammer2 = 13;
