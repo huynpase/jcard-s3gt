@@ -18,10 +18,11 @@ namespace JCard
     {
         // Define file path of database 
         private String s3gtPath = "datasource\\s3gt_db.mdb";
+        private double opacityInc = .05;
 
         public fCLesson()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
         
        
@@ -35,7 +36,7 @@ namespace JCard
             fSplash.ShowSplashScreen();
             timer2.Interval = Constants.Timer_Interval;
             timer2.Start();
-            Thread.Sleep(Constants.sleepTime);
+            this.Opacity = 0;
            // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
             try
@@ -371,8 +372,26 @@ namespace JCard
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            fSplash.CloseForm();
             timer2.Stop();
+            fSplash.CloseForm();
+            timer3.Interval = 70;
+            timer3.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (opacityInc > 0)
+            {
+                if (this.Opacity < 1)
+                    this.Opacity += opacityInc;
+            }
+            else
+            {
+                if (this.Opacity > 0)
+                    this.Opacity += opacityInc;
+                else
+                    this.Close();
+            }
         }
 
     }
