@@ -51,9 +51,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< .mine
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+=======
             this.tabSetting = new System.Windows.Forms.TabPage();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+>>>>>>> .r98
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,16 +82,18 @@
             // 
             this.tabControl1.Controls.Add(this.tabVocabulary);
             this.tabControl1.Controls.Add(this.tabGrammar);
-            this.tabControl1.Controls.Add(this.tabSetting);
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(454, 444);
+            this.tabControl1.Size = new System.Drawing.Size(481, 444);
             this.tabControl1.TabIndex = 10;
             // 
             // tabVocabulary
             // 
             this.tabVocabulary.BackgroundImage = global::JCard.Properties.Resources.Back2;
+            this.tabVocabulary.Controls.Add(this.label3);
+            this.tabVocabulary.Controls.Add(this.linkLabel2);
+            this.tabVocabulary.Controls.Add(this.button5);
             this.tabVocabulary.Controls.Add(this.cBoxCollapse);
             this.tabVocabulary.Controls.Add(this.chBoxAll);
             this.tabVocabulary.Controls.Add(this.button1);
@@ -95,7 +105,7 @@
             this.tabVocabulary.Location = new System.Drawing.Point(4, 22);
             this.tabVocabulary.Name = "tabVocabulary";
             this.tabVocabulary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVocabulary.Size = new System.Drawing.Size(446, 418);
+            this.tabVocabulary.Size = new System.Drawing.Size(473, 418);
             this.tabVocabulary.TabIndex = 0;
             this.tabVocabulary.Text = "Vocabulary";
             this.tabVocabulary.UseVisualStyleBackColor = true;
@@ -103,31 +113,31 @@
             // cBoxCollapse
             // 
             this.cBoxCollapse.AutoSize = true;
-            this.cBoxCollapse.Location = new System.Drawing.Point(322, 327);
+            this.cBoxCollapse.Location = new System.Drawing.Point(377, 48);
             this.cBoxCollapse.Name = "cBoxCollapse";
-            this.cBoxCollapse.Size = new System.Drawing.Size(80, 17);
+            this.cBoxCollapse.Size = new System.Drawing.Size(79, 17);
             this.cBoxCollapse.TabIndex = 17;
-            this.cBoxCollapse.Text = "Collapse All";
+            this.cBoxCollapse.Text = "Collapse all";
             this.cBoxCollapse.UseVisualStyleBackColor = true;
             this.cBoxCollapse.CheckedChanged += new System.EventHandler(this.cBoxCollapse_CheckedChanged_1);
             // 
             // chBoxAll
             // 
             this.chBoxAll.AutoSize = true;
-            this.chBoxAll.Location = new System.Drawing.Point(234, 327);
+            this.chBoxAll.Location = new System.Drawing.Point(377, 25);
             this.chBoxAll.Name = "chBoxAll";
-            this.chBoxAll.Size = new System.Drawing.Size(71, 17);
+            this.chBoxAll.Size = new System.Drawing.Size(70, 17);
             this.chBoxAll.TabIndex = 16;
-            this.chBoxAll.Text = "Check All";
+            this.chBoxAll.Text = "Check all";
             this.chBoxAll.UseVisualStyleBackColor = true;
             this.chBoxAll.CheckedChanged += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(346, 380);
+            this.button1.Location = new System.Drawing.Point(377, 372);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 25);
+            this.button1.Size = new System.Drawing.Size(86, 31);
             this.button1.TabIndex = 15;
             this.button1.Text = "&Cancel";
             this.button1.UseVisualStyleBackColor = true;
@@ -137,10 +147,11 @@
             // 
             this.radCombine.Location = new System.Drawing.Point(3, 387);
             this.radCombine.Name = "radCombine";
-            this.radCombine.Size = new System.Drawing.Size(188, 24);
+            this.radCombine.Size = new System.Drawing.Size(274, 24);
             this.radCombine.TabIndex = 14;
-            this.radCombine.Text = "Combine new topic and  last topic";
+            this.radCombine.Text = "Study combine new vocabulary and  last vocabulary";
             this.radCombine.UseVisualStyleBackColor = true;
+            this.radCombine.CheckedChanged += new System.EventHandler(this.radCombine_CheckedChanged);
             // 
             // radLastTopic
             // 
@@ -148,8 +159,9 @@
             this.radLastTopic.Name = "radLastTopic";
             this.radLastTopic.Size = new System.Drawing.Size(128, 24);
             this.radLastTopic.TabIndex = 12;
-            this.radLastTopic.Text = "Load the last topic";
+            this.radLastTopic.Text = "Study last vocabulary";
             this.radLastTopic.UseVisualStyleBackColor = true;
+            this.radLastTopic.CheckedChanged += new System.EventHandler(this.radLastTopic_CheckedChanged);
             // 
             // radNewTopic
             // 
@@ -159,8 +171,9 @@
             this.radNewTopic.Size = new System.Drawing.Size(135, 24);
             this.radNewTopic.TabIndex = 13;
             this.radNewTopic.TabStop = true;
-            this.radNewTopic.Text = "New Topic";
+            this.radNewTopic.Text = "Study new vocabulary";
             this.radNewTopic.UseVisualStyleBackColor = true;
+            this.radNewTopic.CheckedChanged += new System.EventHandler(this.radNewTopic_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -185,9 +198,9 @@
             // buttCopy
             // 
             this.buttCopy.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttCopy.Location = new System.Drawing.Point(235, 380);
+            this.buttCopy.Location = new System.Drawing.Point(277, 372);
             this.buttCopy.Name = "buttCopy";
-            this.buttCopy.Size = new System.Drawing.Size(95, 25);
+            this.buttCopy.Size = new System.Drawing.Size(94, 31);
             this.buttCopy.TabIndex = 10;
             this.buttCopy.Text = "&Start";
             this.buttCopy.UseVisualStyleBackColor = true;
@@ -201,7 +214,7 @@
             this.tabGrammar.Location = new System.Drawing.Point(4, 22);
             this.tabGrammar.Name = "tabGrammar";
             this.tabGrammar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGrammar.Size = new System.Drawing.Size(446, 418);
+            this.tabGrammar.Size = new System.Drawing.Size(473, 418);
             this.tabGrammar.TabIndex = 1;
             this.tabGrammar.Text = "Grammar";
             this.tabGrammar.UseVisualStyleBackColor = true;
@@ -300,8 +313,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Please choose  level:";
             // 
-            // tabSetting
+            // statusStrip1
             // 
+<<<<<<< .mine
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(482, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
+=======
             this.tabSetting.BackColor = System.Drawing.Color.Transparent;
             this.tabSetting.BackgroundImage = global::JCard.Properties.Resources.Back2;
             this.tabSetting.Location = new System.Drawing.Point(4, 22);
@@ -309,20 +329,72 @@
             this.tabSetting.Size = new System.Drawing.Size(446, 418);
             this.tabSetting.TabIndex = 2;
             this.tabSetting.Text = "Setting";
+>>>>>>> .r98
             // 
+<<<<<<< .mine
+            // linkLabel1
+=======
             // timer2
+>>>>>>> .r98
             // 
+<<<<<<< .mine
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(403, 453);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(65, 13);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "About JCard";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+=======
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+>>>>>>> .r98
             // 
+<<<<<<< .mine
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(364, 328);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(70, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Browse...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(378, 299);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(56, 16);
+            this.linkLabel2.TabIndex = 21;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Setting";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(221, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Choose data base  of S3GT";
+            // 
+=======
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+>>>>>>> .r98
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 450);
+            this.ClientSize = new System.Drawing.Size(482, 471);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -330,7 +402,7 @@
             this.MaximizeBox = false;
             this.Name = "fCLesson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "JCard - PhuongHD";
+            this.Text = "JCard ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseHover += new System.EventHandler(this.fCLesson_MouseHover);
             this.tabControl1.ResumeLayout(false);
@@ -367,12 +439,19 @@
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabSetting;
         private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
+<<<<<<< .mine
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label3;
+=======
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+>>>>>>> .r98
     }
 }
 
