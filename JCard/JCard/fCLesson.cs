@@ -374,8 +374,9 @@ namespace JCard
         {
             timer2.Stop();
             fSplash.CloseForm();
-            timer3.Interval = 70;
+            timer3.Interval = 50;
             timer3.Start();
+            Thread.Sleep(1000);
         }
 
         private void timer3_Tick(object sender, EventArgs e)
