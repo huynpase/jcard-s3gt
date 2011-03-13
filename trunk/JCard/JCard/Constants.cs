@@ -39,7 +39,8 @@ namespace JCard
         public const float WaitingTimeVOC = 3;
         public const float FontSizeKanjiVOC = 19;
         public const float FontSizeImiVOC = 13;
-        public const float FontSizeKanaVOC = 15;
+        public const float FontSizeKanaVOC = 16;
+        public const float FontSizeHanNom = 16;
 
     }
 }
