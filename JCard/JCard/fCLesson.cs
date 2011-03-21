@@ -487,7 +487,7 @@ namespace JCard
             if (objResourceManager != null)
             {
                 //Main screen
-                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager);
+                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
             }
         }
     }
