@@ -51,6 +51,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -73,6 +74,7 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="BUS.cs" />
+    <Compile Include="BUS_CAT.cs" />
     <Compile Include="BUS_Grammar.cs" />
     <Compile Include="BUS_GramSetting.cs" />
     <Compile Include="BUS_JCARD.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DAO.cs" />
+    <Compile Include="DAO_CAT.cs" />
     <Compile Include="DAO_Grammar.cs" />
     <Compile Include="DAO_GramSetting.cs" />
     <Compile Include="DAO_JCARD.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="DTO.cs" />
     <Compile Include="DTOSetting.cs" />
+    <Compile Include="DTO_CAT.cs" />
     <Compile Include="DTO_GramSetting.cs" />
     <Compile Include="DTO_Setting.cs" />
     <Compile Include="DTO_Grammar.cs" />
@@ -117,6 +121,12 @@
     </Compile>
     <Compile Include="fImportData.designer.cs">
       <DependentUpon>fImportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSplash.Designer.cs">
+      <DependentUpon>fSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Ini.cs" />
     <Compile Include="ReduceMemory.cs" />
@@ -176,6 +186,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>fSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSplash.resx">
+      <DependentUpon>fSplash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -203,6 +216,7 @@
   <ItemGroup>
     <Content Include="favorits.ico" />
     <Content Include="Resources\J-Card.png" />
+    <Content Include="Resources\StartingScreen.jpg" />
     <None Include="Resources\Back2.jpg" />
   </ItemGroup>
   <ItemGroup>
