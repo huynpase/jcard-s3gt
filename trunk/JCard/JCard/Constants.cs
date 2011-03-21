@@ -42,5 +42,11 @@ namespace JCard
         public const float FontSizeKanaVOC = 16;
         public const float FontSizeHanNom = 16;
 
+        // App Config
+        public const string CONFIG_LANGUAGE_KEY = "Language";
+        public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
+
+        // Resource Name
+        public const string RES_PROGRAM_NAME = "ProgramName"; 
     }
 }

@@ -8,7 +8,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Collections;
 using System.Diagnostics;
-using System.Threading;
+using System.Resources;
+using System.Globalization;
 
 namespace JCard
 {
@@ -17,10 +18,15 @@ namespace JCard
     /// </summary>
     public partial class fCLesson : Form
     {
+        #region Variables for resource
+        ResourceManager objResourceManager;
+        CultureInfo objCulInfo;
+        #endregion
+
         // Define file path of database 
         private String s3gtPath = "datasource\\s3gt_db.mdb";
 
-       // private  String fpath = "";// bien duong dan toan cuc
+        // private  String fpath = "";// bien duong dan toan cuc
 
         private double opacityInc = .05;
 
@@ -28,9 +34,11 @@ namespace JCard
         public fCLesson()
         {
             InitializeComponent();
+
+            SetDisplayLabel();
         }
-        
-       
+
+
         // Define a delegate
         public delegate void SendData(int flag, ArrayList arrVoc);
 
@@ -42,12 +50,12 @@ namespace JCard
             timer2.Interval = Constants.Timer_Interval;
             timer2.Start();
             this.Opacity = 0;
-           // notifyIcon1.Visible = false;
+            // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
             try
             {
                 InitTreeView(s3gtPath);
-               
+
             }
             catch (Exception ex)
             {
@@ -58,7 +66,7 @@ namespace JCard
         {
             try
             {
-               // fpath = filepath;
+                // fpath = filepath;
                 ArrayList arrTopic = new ArrayList();
                 ArrayList arrTopicGroup = new ArrayList();
                 BUS_JCARD busJcard = new BUS_JCARD(filepath);
@@ -67,7 +75,7 @@ namespace JCard
                 AddToTreeView(arrTopicGroup, arrTopic);
                 treeView1.ExpandAll();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error when load DB");
                 MessageBox.Show("Please send to author contents of error below: \n" + ex);
@@ -77,49 +85,26 @@ namespace JCard
 
         private void ButtStartClick(object sender, EventArgs e)
         {
-                 cReduceMemory.ReduceMemory();
-          
-                int iFlag = 1;
-                BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
-                
-                ArrayList arrVoc = new ArrayList();
-                ArrayList arrListTopic = new ArrayList();
-                ArrayList arrListLastTopic = new ArrayList();
+            cReduceMemory.ReduceMemory();
 
-                // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
-                if(radNewTopic.Checked) // is new topic
-                {
-                    if (CheckChosedDataOfTreeView() != false)
-                    {
-                        try
-                        {
-                            oJcard.ResetIsLastTopic();
-                            arrListTopic = GetListTopicChosen();
-                            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                            oJcard.UpdateIsLastTopic(arrListTopic, true);
-                            fJCard fjcard = new fJCard(iFlag, arrVoc);                            
-                            fjcard.Show();
-                            this.Hide();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error when connect to DB");
-                            MessageBox.Show("Please send to author contents of error below: \n" + ex);
+            int iFlag = 1;
+            BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
 
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                    }                    
-                }
-                else if(radLastTopic.Checked)
+            ArrayList arrVoc = new ArrayList();
+            ArrayList arrListTopic = new ArrayList();
+            ArrayList arrListLastTopic = new ArrayList();
+
+            // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
+            if (radNewTopic.Checked) // is new topic
+            {
+                if (CheckChosedDataOfTreeView() != false)
                 {
                     try
                     {
-                        arrListTopic = oJcard.GetTopicIsLastTopic();
+                        oJcard.ResetIsLastTopic();
+                        arrListTopic = GetListTopicChosen();
                         arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                        oJcard.UpdateIsLastTopic(arrListTopic, true);
                         fJCard fjcard = new fJCard(iFlag, arrVoc);
                         fjcard.Show();
                         this.Hide();
@@ -133,37 +118,60 @@ namespace JCard
                 }
                 else
                 {
-                    if (CheckChosedDataOfTreeView() != false)
-                    {
-                        try
-                        {
-                            arrListLastTopic = oJcard.GetTopicIsLastTopic();
-                            arrListTopic = GetListTopicChosen();
-                            CombineArrayList(ref arrListTopic, arrListLastTopic);
-                            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                            oJcard.UpdateIsLastTopic(arrListTopic, true);
-                            fJCard fjcard = new fJCard(iFlag, arrVoc);
-                            fjcard.Show();
-                            this.Hide();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error when connect to DB");
-                            MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
-                        }
-                       
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
-        
+            }
+            else if (radLastTopic.Checked)
+            {
+                try
+                {
+                    arrListTopic = oJcard.GetTopicIsLastTopic();
+                    arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                    fJCard fjcard = new fJCard(iFlag, arrVoc);
+                    fjcard.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when connect to DB");
+                    MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                }
+            }
+            else
+            {
+                if (CheckChosedDataOfTreeView() != false)
+                {
+                    try
+                    {
+                        arrListLastTopic = oJcard.GetTopicIsLastTopic();
+                        arrListTopic = GetListTopicChosen();
+                        CombineArrayList(ref arrListTopic, arrListLastTopic);
+                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                        oJcard.UpdateIsLastTopic(arrListTopic, true);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fjcard.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error when connect to DB");
+                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+
         }
 
-        private void CombineArrayList(ref ArrayList arrReturn,ArrayList arrNeedCopy)
+        private void CombineArrayList(ref ArrayList arrReturn, ArrayList arrNeedCopy)
         {
             foreach (int value in arrNeedCopy)
             {
@@ -188,13 +196,13 @@ namespace JCard
             }
             return true;
         }
-      
+
         private ArrayList GetListTopicChosen()
         {
             ArrayList arr = new ArrayList();
             foreach (TreeNode trNR in treeView1.Nodes)
             {
-                foreach (TreeNode tn  in trNR.Nodes)
+                foreach (TreeNode tn in trNR.Nodes)
                 {
                     if (tn.Checked == true)
                     {
@@ -212,14 +220,14 @@ namespace JCard
             {
                 TreeNode noderoot = new TreeNode();
                 DTO_Topic_Group dtogroup = new DTO_Topic_Group();
-                dtogroup = (DTO_Topic_Group) arrTopicGroup[j];
+                dtogroup = (DTO_Topic_Group)arrTopicGroup[j];
                 noderoot = treeView1.Nodes.Add(dtogroup.StrTPGName);
                 noderoot.Name = dtogroup.ITopicGroupID.ToString();
 
                 for (int i = 0; i < arrTopic.Count; i++)
                 {
                     DTO_Topic dto = new DTO_Topic();
-                    dto = (DTO_Topic) arrTopic[i];
+                    dto = (DTO_Topic)arrTopic[i];
                     if (dtogroup.ITopicGroupID == dto.IGroupID)
                     {
                         TreeNode node = new TreeNode();
@@ -229,7 +237,7 @@ namespace JCard
                 }
             }
         }
-     
+
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             // TreeNode node;
@@ -250,21 +258,21 @@ namespace JCard
                 }
                 e.Node.Parent.Checked = blnAll;
             }
-        }     
+        }
 
         private void fCLesson_MouseHover(object sender, EventArgs e)
         {
             //MessageBox.Show("Mouse hover");
-        }       
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit this program ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
-            if(dr == DialogResult.Yes)
+            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Yes)
             {
                 this.Dispose();
-                Application.Exit();                
-            }          
-              
+                Application.Exit();
+            }
+
         }
 
         private void chBoxAll_CheckedChanged_1(object sender, EventArgs e)
@@ -311,12 +319,12 @@ namespace JCard
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
                 ///* Get grammar cards frm database
                 BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
-                ArrayList arr_Entry = buGram.GetGrammarCarByLevel(cmbLevel.SelectedIndex+1);
+                ArrayList arr_Entry = buGram.GetGrammarCarByLevel(cmbLevel.SelectedIndex + 1);
                 //*/
 
                 if (arr_Entry != null && arr_Entry.Count > 0)
@@ -344,7 +352,7 @@ namespace JCard
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -360,7 +368,7 @@ namespace JCard
 
 
         public static void showTabSetting()
-        {            
+        {
 
         }
 
@@ -400,8 +408,8 @@ namespace JCard
             opf.Title = "Please choose file S3GT DB want to load.";
             opf.DefaultExt = "*.mdb";
             opf.RestoreDirectory = true;
-            opf.Filter ="S3GT DB (*.mdb)|*.mdb";
-            if(opf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            opf.Filter = "S3GT DB (*.mdb)|*.mdb";
+            if (opf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
@@ -413,8 +421,8 @@ namespace JCard
 
                     MessageBox.Show("Error when load DB file");
                 }
-                
-                
+
+
             }
         }
 
@@ -438,14 +446,6 @@ namespace JCard
         {
             treeView1.Enabled = true;
         }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            fSetting fset = new fSetting();
-            fset.ShowDialog();
-        }
-
-      
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -472,6 +472,23 @@ namespace JCard
             }
         }
 
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            fSetting fset = new fSetting();
+            fset.ShowDialog();
+        }
 
+        public void SetDisplayLabel()
+        {
+            // Create a resource manager to retrieve resources.
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+
+            if (objResourceManager != null)
+            {
+                //Main screen
+                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager);
+            }
+        }
     }
 }

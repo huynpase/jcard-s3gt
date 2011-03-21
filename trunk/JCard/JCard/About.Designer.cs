@@ -74,7 +74,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 90);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Trần Đức Hải Triều\r\nHuỳnh Đức Phương\r\nHuỳnh Nhật Minh\r\nNguyễn Quôc Việt\r\nNguyễn X" +
+            this.label3.Text = "Trần Đức Hải Triều\r\nHuỳnh Đức Phương\r\nHuỳnh Ngọc Minh\r\nNguyễn Quốc Việt\r\nNguyễn X" +
                 "uân Quyền\r\nLê Anh Dũng\r\n";
             // 
             // About
