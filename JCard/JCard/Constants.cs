@@ -47,6 +47,7 @@ namespace JCard
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
 
         // Resource Name
-        public const string RES_PROGRAM_NAME = "ProgramName"; 
+        public const string RES_PROGRAM_NAME = "ProgramName";
+        public const string RES_PROGRAM_VALUE = "Chương trình J-Card";
     }
 }

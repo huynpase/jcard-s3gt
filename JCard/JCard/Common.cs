@@ -44,11 +44,11 @@ namespace JCard
                 }
                 #pragma warning restore 618,612
 
-                return String.Empty;
+                return strDefault;
             }
             catch (Exception)
             {
-                throw;
+                return strDefault;
             }
         }
 
@@ -59,7 +59,7 @@ namespace JCard
         /// <param name="ci">Cuture Info</param>
         /// <param name="rm">Object of Resource Manager</param>
         /// <returns>Resource Value</returns>
-        public static string GetResourceValue(string strResName, CultureInfo ci, ResourceManager rm)
+        public static string GetResourceValue(string strResName, CultureInfo ci, ResourceManager rm, string strDefault)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace JCard
             }
             catch (Exception)
             {
-                throw;
+                return strDefault;
             }
         }
     }
