@@ -83,7 +83,7 @@ namespace JCard
         }
 
 
-        private void ButtStartClick(object sender, EventArgs e)
+        private void ButtCopy_Click(object sender, EventArgs e)
         {
             cReduceMemory.ReduceMemory();
 
@@ -488,7 +488,29 @@ namespace JCard
             {
                 //Main screen
                 this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
+                tabVocabulary.Text = Common.GetResourceValue(Constants.RES_TABVOCAB_NAME,objCulInfo,objResourceManager,Constants.RES_TABVOCAB_VALUE);
+                tabGrammar.Text = Common.GetResourceValue(Constants.RES_TABGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_TABGRAM_VALUE);
+                lblGramS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+                lblVocabS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+                groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+                chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+                cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+                groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
+                radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
+                radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
+                radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
+                button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+                ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+                button1.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+                checkBox3.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+                checkBox4.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+                btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
+                btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+                button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+                button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
             }
         }
+
     }
 }
