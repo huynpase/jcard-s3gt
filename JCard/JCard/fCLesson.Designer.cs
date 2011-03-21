@@ -33,8 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVocabulary = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.button5 = new System.Windows.Forms.Button();
             this.cBoxCollapse = new System.Windows.Forms.CheckBox();
             this.chBoxAll = new System.Windows.Forms.CheckBox();
@@ -46,23 +44,32 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.buttCopy = new System.Windows.Forms.Button();
             this.tabGrammar = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.txtS3GTDB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabGrammar.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -78,60 +85,37 @@
             // 
             this.tabControl1.Controls.Add(this.tabVocabulary);
             this.tabControl1.Controls.Add(this.tabGrammar);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(481, 444);
+            this.tabControl1.Size = new System.Drawing.Size(516, 471);
             this.tabControl1.TabIndex = 10;
             // 
             // tabVocabulary
             // 
             this.tabVocabulary.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabVocabulary.Controls.Add(this.label3);
-            this.tabVocabulary.Controls.Add(this.linkLabel2);
+            this.tabVocabulary.Controls.Add(this.groupBox3);
+            this.tabVocabulary.Controls.Add(this.button4);
+            this.tabVocabulary.Controls.Add(this.txtS3GTDB);
+            this.tabVocabulary.Controls.Add(this.label2);
             this.tabVocabulary.Controls.Add(this.button5);
-            this.tabVocabulary.Controls.Add(this.cBoxCollapse);
-            this.tabVocabulary.Controls.Add(this.chBoxAll);
             this.tabVocabulary.Controls.Add(this.button1);
-            this.tabVocabulary.Controls.Add(this.radCombine);
-            this.tabVocabulary.Controls.Add(this.radLastTopic);
-            this.tabVocabulary.Controls.Add(this.radNewTopic);
             this.tabVocabulary.Controls.Add(this.groupBox1);
             this.tabVocabulary.Controls.Add(this.buttCopy);
             this.tabVocabulary.Location = new System.Drawing.Point(4, 22);
             this.tabVocabulary.Name = "tabVocabulary";
             this.tabVocabulary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVocabulary.Size = new System.Drawing.Size(473, 418);
+            this.tabVocabulary.Size = new System.Drawing.Size(508, 445);
             this.tabVocabulary.TabIndex = 0;
             this.tabVocabulary.Text = "Vocabulary";
             this.tabVocabulary.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(221, 333);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Choose data base  of S3GT";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(378, 299);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(56, 16);
-            this.linkLabel2.TabIndex = 21;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Setting";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(364, 328);
+            this.button5.Location = new System.Drawing.Point(387, 9);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 23);
+            this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 20;
             this.button5.Text = "Browse...";
             this.button5.UseVisualStyleBackColor = true;
@@ -140,7 +124,7 @@
             // cBoxCollapse
             // 
             this.cBoxCollapse.AutoSize = true;
-            this.cBoxCollapse.Location = new System.Drawing.Point(377, 48);
+            this.cBoxCollapse.Location = new System.Drawing.Point(293, 12);
             this.cBoxCollapse.Name = "cBoxCollapse";
             this.cBoxCollapse.Size = new System.Drawing.Size(79, 17);
             this.cBoxCollapse.TabIndex = 17;
@@ -151,7 +135,7 @@
             // chBoxAll
             // 
             this.chBoxAll.AutoSize = true;
-            this.chBoxAll.Location = new System.Drawing.Point(377, 25);
+            this.chBoxAll.Location = new System.Drawing.Point(217, 12);
             this.chBoxAll.Name = "chBoxAll";
             this.chBoxAll.Size = new System.Drawing.Size(70, 17);
             this.chBoxAll.TabIndex = 16;
@@ -162,9 +146,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(377, 372);
+            this.button1.Location = new System.Drawing.Point(387, 390);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 31);
+            this.button1.Size = new System.Drawing.Size(94, 31);
             this.button1.TabIndex = 15;
             this.button1.Text = "&Cancel";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,52 +156,54 @@
             // 
             // radCombine
             // 
-            this.radCombine.Location = new System.Drawing.Point(3, 387);
+            this.radCombine.Location = new System.Drawing.Point(6, 95);
             this.radCombine.Name = "radCombine";
-            this.radCombine.Size = new System.Drawing.Size(274, 24);
+            this.radCombine.Size = new System.Drawing.Size(51, 24);
             this.radCombine.TabIndex = 14;
-            this.radCombine.Text = "Study combine new vocabulary and  last vocabulary";
+            this.radCombine.Text = "All";
             this.radCombine.UseVisualStyleBackColor = true;
             this.radCombine.CheckedChanged += new System.EventHandler(this.radCombine_CheckedChanged);
             // 
             // radLastTopic
             // 
-            this.radLastTopic.Location = new System.Drawing.Point(3, 357);
+            this.radLastTopic.Location = new System.Drawing.Point(6, 65);
             this.radLastTopic.Name = "radLastTopic";
-            this.radLastTopic.Size = new System.Drawing.Size(128, 24);
+            this.radLastTopic.Size = new System.Drawing.Size(103, 24);
             this.radLastTopic.TabIndex = 12;
-            this.radLastTopic.Text = "Study last vocabulary";
+            this.radLastTopic.Text = "Last vocabulary";
             this.radLastTopic.UseVisualStyleBackColor = true;
             this.radLastTopic.CheckedChanged += new System.EventHandler(this.radLastTopic_CheckedChanged);
             // 
             // radNewTopic
             // 
             this.radNewTopic.Checked = true;
-            this.radNewTopic.Location = new System.Drawing.Point(3, 327);
+            this.radNewTopic.Location = new System.Drawing.Point(6, 35);
             this.radNewTopic.Name = "radNewTopic";
-            this.radNewTopic.Size = new System.Drawing.Size(135, 24);
+            this.radNewTopic.Size = new System.Drawing.Size(103, 24);
             this.radNewTopic.TabIndex = 13;
             this.radNewTopic.TabStop = true;
-            this.radNewTopic.Text = "Study new vocabulary";
+            this.radNewTopic.Text = "New vocabulary";
             this.radNewTopic.UseVisualStyleBackColor = true;
             this.radNewTopic.CheckedChanged += new System.EventHandler(this.radNewTopic_CheckedChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.treeView1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Controls.Add(this.chBoxAll);
+            this.groupBox1.Controls.Add(this.cBoxCollapse);
+            this.groupBox1.Location = new System.Drawing.Point(3, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(368, 315);
+            this.groupBox1.Size = new System.Drawing.Size(378, 341);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please choose glossary(ies)  to learning";
+            this.groupBox1.Text = "Please choose glossary(ies)  to learn";
             // 
             // treeView1
             // 
             this.treeView1.CheckBoxes = true;
-            this.treeView1.Location = new System.Drawing.Point(9, 19);
+            this.treeView1.Location = new System.Drawing.Point(9, 35);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(348, 283);
+            this.treeView1.Size = new System.Drawing.Size(363, 300);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -225,7 +211,7 @@
             // buttCopy
             // 
             this.buttCopy.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttCopy.Location = new System.Drawing.Point(277, 372);
+            this.buttCopy.Location = new System.Drawing.Point(281, 390);
             this.buttCopy.Name = "buttCopy";
             this.buttCopy.Size = new System.Drawing.Size(94, 31);
             this.buttCopy.TabIndex = 10;
@@ -236,47 +222,30 @@
             // tabGrammar
             // 
             this.tabGrammar.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabGrammar.Controls.Add(this.label2);
-            this.tabGrammar.Controls.Add(this.panel1);
+            this.tabGrammar.Controls.Add(this.textBox1);
+            this.tabGrammar.Controls.Add(this.label1);
+            this.tabGrammar.Controls.Add(this.button6);
+            this.tabGrammar.Controls.Add(this.groupBox2);
+            this.tabGrammar.Controls.Add(this.btnImport);
+            this.tabGrammar.Controls.Add(this.button2);
+            this.tabGrammar.Controls.Add(this.btnSetting);
+            this.tabGrammar.Controls.Add(this.button3);
+            this.tabGrammar.Controls.Add(this.cmbLevel);
             this.tabGrammar.Location = new System.Drawing.Point(4, 22);
             this.tabGrammar.Name = "tabGrammar";
             this.tabGrammar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGrammar.Size = new System.Drawing.Size(473, 418);
+            this.tabGrammar.Size = new System.Drawing.Size(508, 445);
             this.tabGrammar.TabIndex = 1;
             this.tabGrammar.Text = "Grammar";
             this.tabGrammar.UseVisualStyleBackColor = true;
             this.tabGrammar.Click += new System.EventHandler(this.tabGrammar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(136, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Grammar Reminder ";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnImport);
-            this.panel1.Controls.Add(this.btnSetting);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.cmbLevel);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(443, 137);
-            this.panel1.TabIndex = 1;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(344, 71);
+            this.button2.Location = new System.Drawing.Point(387, 390);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 29);
+            this.button2.Size = new System.Drawing.Size(94, 31);
             this.button2.TabIndex = 3;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -285,9 +254,9 @@
             // btnImport
             // 
             this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(6, 71);
+            this.btnImport.Location = new System.Drawing.Point(12, 390);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(95, 29);
+            this.btnImport.Size = new System.Drawing.Size(94, 31);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -296,9 +265,9 @@
             // btnSetting
             // 
             this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.Location = new System.Drawing.Point(106, 71);
+            this.btnSetting.Location = new System.Drawing.Point(117, 390);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(95, 29);
+            this.btnSetting.Size = new System.Drawing.Size(94, 31);
             this.btnSetting.TabIndex = 4;
             this.btnSetting.Text = "Se&tting";
             this.btnSetting.UseVisualStyleBackColor = true;
@@ -307,9 +276,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(243, 71);
+            this.button3.Location = new System.Drawing.Point(281, 390);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 29);
+            this.button3.Size = new System.Drawing.Size(94, 31);
             this.button3.TabIndex = 2;
             this.button3.Text = "&Start";
             this.button3.UseVisualStyleBackColor = true;
@@ -323,35 +292,24 @@
             "2kyu",
             "3kyu",
             "4kyu"});
-            this.cmbLevel.Location = new System.Drawing.Point(177, 3);
+            this.cmbLevel.Location = new System.Drawing.Point(387, 54);
             this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(118, 21);
+            this.cmbLevel.Size = new System.Drawing.Size(70, 21);
             this.cmbLevel.TabIndex = 1;
             this.cmbLevel.Text = "2kyu";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(13, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Please choose  level:";
             // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(482, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(516, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(403, 453);
+            this.linkLabel1.Location = new System.Drawing.Point(437, 454);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(65, 13);
             this.linkLabel1.TabIndex = 12;
@@ -367,11 +325,121 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // txtS3GTDB
+            // 
+            this.txtS3GTDB.Location = new System.Drawing.Point(95, 12);
+            this.txtS3GTDB.Name = "txtS3GTDB";
+            this.txtS3GTDB.ReadOnly = true;
+            this.txtS3GTDB.Size = new System.Drawing.Size(286, 20);
+            this.txtS3GTDB.TabIndex = 24;
+            this.txtS3GTDB.Text = "datasource\\\\s3gt_db.mdb";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(9, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "S3GT Database:";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(12, 390);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 31);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Se&tting";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radNewTopic);
+            this.groupBox3.Controls.Add(this.radLastTopic);
+            this.groupBox3.Controls.Add(this.radCombine);
+            this.groupBox3.Location = new System.Drawing.Point(387, 42);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(116, 128);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Learn vocabulary";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(95, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(286, 20);
+            this.textBox1.TabIndex = 28;
+            this.textBox1.Text = "datasource\\\\s3gt_db.mdb";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "S3GT Database:";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(387, 9);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 26;
+            this.button6.Text = "Browse...";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.treeView2);
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Location = new System.Drawing.Point(3, 42);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(378, 341);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Please choose glossary(ies)  to learn";
+            // 
+            // treeView2
+            // 
+            this.treeView2.CheckBoxes = true;
+            this.treeView2.Location = new System.Drawing.Point(9, 35);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(363, 300);
+            this.treeView2.TabIndex = 0;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(217, 12);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(70, 17);
+            this.checkBox3.TabIndex = 16;
+            this.checkBox3.Text = "Check all";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(293, 12);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(79, 17);
+            this.checkBox4.TabIndex = 17;
+            this.checkBox4.Text = "Collapse all";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // fCLesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 471);
+            this.ClientSize = new System.Drawing.Size(516, 471);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
@@ -388,10 +456,12 @@
             this.tabVocabulary.ResumeLayout(false);
             this.tabVocabulary.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabGrammar.ResumeLayout(false);
             this.tabGrammar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,24 +482,30 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button buttCopy;
         private System.Windows.Forms.TabPage tabGrammar;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cmbLevel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtS3GTDB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
 }
 }
 
