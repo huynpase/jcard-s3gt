@@ -13,8 +13,6 @@ namespace JCard
     public partial class fSetting : Form
     {
         string strFileSettingPath = Application.StartupPath + @"\Setting.ini";
-        ResourceManager objResourceManager;
-        CultureInfo objCulInfo;
         public fSetting()
         {
             InitializeComponent();
@@ -88,8 +86,8 @@ namespace JCard
 
         public void SetDisplayLabel()
         {
-            objResourceManager = new ResourceManager("JCard.Resources", typeof(fSetting).Assembly);
-            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fSetting).Assembly);
+            CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
             if (objResourceManager != null)
             {
                 this.Text = Common.GetResourceValue(Constants.RES_VOCABSETT_NAME, objCulInfo, objResourceManager, Constants.RES_VOCABSETT_VALUE);
