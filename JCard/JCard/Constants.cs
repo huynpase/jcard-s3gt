@@ -67,6 +67,8 @@ namespace JCard
         public const string RES_BTNSAVE_NAME = "btnsave";
         public const string RES_BTNCANCEL_NAME = "btncancel";
         public const string RES_BTNIMPORT_NAME = "btnimport";
+        public const string RES_BTNBROWSE_NAME = "btnbrowse";
+
         public const string RES_TABVOCAB_VALUE = "Từ Vựng";
         public const string RES_S3GTLABEL_VALUE = "CSDL S3GT:";
         public const string RES_TABGRAM_VALUE = "Ngữ Pháp";
@@ -82,12 +84,57 @@ namespace JCard
         public const string RES_BTNSAVE_VALUE = "Lưu";
         public const string RES_BTNCANCEL_VALUE = "Hủy";
         public const string RES_BTNIMPORT_VALUE = "Thêm Vào";
+        public const string RES_BTNBROWSE_VALUE = "Duyệt...";
 
         // Resource fGramSettings
         public const string RES_GRAMSETT_NAME = "SettingGrammar";
+        public const string RES_GRBSAMPLE_NAME = "grbsample";
+        public const string RES_GRBJAP_NAME = "grbjap";
+        public const string RES_GRBVIE_NAME = "grbvie";
+        public const string RES_GRBEX_NAME = "grbex";
+        public const string RES_LBLBGCLR_NAME = "lblbgclr";
+        public const string RES_LBLFCLR_NAME = "lblfclr";
+        public const string RES_CHKBOXISDISPLAYED_NAME = "chkboxisdisplayed";
+        public const string RES_LBLEXNUM_NAME = "lblexnum";
+        public const string RES_LBLDISPLAY_NAME = "lbldisplay";
+        public const string RES_LBLDELAY_NAME = "lbldelay";
+
         public const string RES_GRAMSETT_VALUE = "Cấu Hình Card Ngữ Pháp";
-        public const string RES_GRAMSETT_SAVEBUTTON_NAME = "GramSettSaveButt";
-        public const string RES_GRAMSETT_SAVEBUTTON_VALUE = "Lưu";
+        public const string RES_GRBSAMPLE_VALUE = "Mẫu Ngữ Pháp";
+        public const string RES_GRBJAP_VALUE = "Nghĩa Tiếng Nhật";
+        public const string RES_GRBVIE_VALUE = "Nghĩa Tiếng Việt";
+        public const string RES_GRBEX_VALUE = "Ví Dụ";
+        public const string RES_LBLBGCLR_VALUE = "Màu Nền:";
+        public const string RES_LBLFCLR_VALUE = "Màu Chữ:";
+        public const string RES_CHKBOXISDISPLAYED_VALUE = "Hiển Thị";
+        public const string RES_LBLEXNUM_VALUE = "Số Lượng Hiển Thị:";
+        public const string RES_LBLDISPLAY_VALUE = "Thời Gian Hiển Thị (s):";
+        public const string RES_LBLDELAY_VALUE = "Thời Gian Chậm (s):";
+
+        //Resource fSetting
+        public const string RES_VOCABSETT_NAME = "vocabsett";
+        public const string RES_GRBPOS_NAME = "grbpos";
+        public const string RES_GRBPROP_NAME = "grbprop";
+        public const string RES_RADTR_NAME = "radtr";
+        public const string RES_RADTL_NAME = "radtl";
+        public const string RES_RADBR_NAME = "radbr";
+        public const string RES_RADBL_NAME = "radbl";
+        public const string RES_LBLFKANJI_NAME = "lblfkanji";
+        public const string RES_LBLFKANA_NAME = "lblfkana";
+        public const string RES_LBLFHAN_NAME = "lblfhan";
+        public const string RES_LBLFMEANING_NAME = "lblfmeaning";
+
+        public const string RES_VOCABSETT_VALUE = "Cấu Hình Card Từ Vựng";
+        public const string RES_GRBPOS_VALUE = "Vị Trí Hiển Thị";
+        public const string RES_GRBPROP_VALUE = "Các Thiết Lập";
+        public const string RES_RADTR_VALUE = "Phía Trên Bên Phải";
+        public const string RES_RADTL_VALUE = "Phía Trên Bên Trái";
+        public const string RES_RADBR_VALUE = "Phía Dưới Bên Phải";
+        public const string RES_RADBL_VALUE = "Phía Dưới Bên Trái";
+        public const string RES_LBLFKANJI_VALUE = "Cỡ Chữ Kanji";
+        public const string RES_LBLFKANA_VALUE = "Cỡ Chữ Kana";
+        public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm";
+        public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa";
     
         // Resource Messages
         public const string RES_ERROR_TITLE_NAME = "MsgErrorTitle";

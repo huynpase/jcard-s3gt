@@ -1,4 +1,4 @@
-namespace JCard
+﻿namespace JCard
 {
     partial class fSetting
     {
@@ -40,15 +40,13 @@ namespace JCard
             this.label4 = new System.Windows.Forms.Label();
             this.comFontKanji = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.comDisTime = new System.Windows.Forms.ComboBox();
             this.comDeplayTime = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radTopRight = new System.Windows.Forms.RadioButton();
+            this.radBottRight = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
@@ -86,8 +84,6 @@ namespace JCard
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comFontKanji);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.comDisTime);
             this.groupBox2.Controls.Add(this.comDeplayTime);
             this.groupBox2.Controls.Add(this.label3);
@@ -207,24 +203,6 @@ namespace JCard
             this.label1.TabIndex = 21;
             this.label1.Text = "Font size Kanji";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "(s)";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "(s)";
-            // 
             // comDisTime
             // 
             this.comDisTime.FormattingEnabled = true;
@@ -280,24 +258,24 @@ namespace JCard
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Display Time:";
+            this.label3.Text = "Display Time (s):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Deplay Time:";
+            this.label2.Text = "Deplay Time (s):";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radTopRight);
+            this.groupBox1.Controls.Add(this.radBottRight);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
@@ -305,7 +283,7 @@ namespace JCard
             this.groupBox1.Size = new System.Drawing.Size(359, 67);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Display";
+            this.groupBox1.Text = "Position";
             // 
             // radioButton1
             // 
@@ -313,22 +291,22 @@ namespace JCard
             this.radioButton1.Enabled = false;
             this.radioButton1.Location = new System.Drawing.Point(12, 20);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(72, 17);
+            this.radioButton1.Size = new System.Drawing.Size(65, 17);
             this.radioButton1.TabIndex = 4;
-            this.radioButton1.Text = "Top Right";
+            this.radioButton1.Text = "Top Left";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radTopRight
+            // radBottRight
             // 
-            this.radTopRight.AutoSize = true;
-            this.radTopRight.Checked = true;
-            this.radTopRight.Location = new System.Drawing.Point(159, 42);
-            this.radTopRight.Name = "radTopRight";
-            this.radTopRight.Size = new System.Drawing.Size(86, 17);
-            this.radTopRight.TabIndex = 3;
-            this.radTopRight.TabStop = true;
-            this.radTopRight.Text = "Bottom Right";
-            this.radTopRight.UseVisualStyleBackColor = true;
+            this.radBottRight.AutoSize = true;
+            this.radBottRight.Checked = true;
+            this.radBottRight.Location = new System.Drawing.Point(159, 42);
+            this.radBottRight.Name = "radBottRight";
+            this.radBottRight.Size = new System.Drawing.Size(86, 17);
+            this.radBottRight.TabIndex = 3;
+            this.radBottRight.TabStop = true;
+            this.radBottRight.Text = "Bottom Right";
+            this.radBottRight.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
@@ -382,14 +360,12 @@ namespace JCard
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comDisTime;
         private System.Windows.Forms.ComboBox comDeplayTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radTopRight;
+        private System.Windows.Forms.RadioButton radBottRight;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
