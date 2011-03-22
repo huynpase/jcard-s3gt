@@ -28,7 +28,6 @@ namespace JCard
         public fCLesson()
         {
             InitializeComponent();
-
             string s3gtPath = Application.StartupPath + "\\" + Common.GetConfigValue(Constants.CONFIG_DATABASE_PATH_KEY, Constants.DATABASE_PATH);
             txtS3GTDB.Text = s3gtPath;
             txtDatabaseGram.Text = s3gtPath;
@@ -111,6 +110,8 @@ namespace JCard
                 btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
                 button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
                 button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+                btnBrowseGram.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+                btnBrowseVoc.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
             }
         }
         #endregion

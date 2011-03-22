@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnbrowse" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
   <data name="btncancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -135,6 +138,28 @@
   <data name="chkboxcollapse" xml:space="preserve">
     <value>Thu Gọn</value>
   </data>
+  <data name="chkboxisdisplayed" xml:space="preserve">
+    <value>Hiển Thị</value>
+    <comment>:</comment>
+  </data>
+  <data name="grbex" xml:space="preserve">
+    <value>Ví Dụ</value>
+  </data>
+  <data name="grbjap" xml:space="preserve">
+    <value>Nghĩa Tiếng Nhật</value>
+  </data>
+  <data name="grbpos" xml:space="preserve">
+    <value>Vị Trí Hiển Thị</value>
+  </data>
+  <data name="grbprop" xml:space="preserve">
+    <value>Các Thiết Lập</value>
+  </data>
+  <data name="grbsample" xml:space="preserve">
+    <value>Mẫu Ngữ Pháp</value>
+  </data>
+  <data name="grbvie" xml:space="preserve">
+    <value>Nghĩa Tiếng Việt</value>
+  </data>
   <data name="groupboxvocab" xml:space="preserve">
     <value>Chọn chủ đề học</value>
   </data>
@@ -144,9 +169,42 @@
   <data name="lableS3GTs" xml:space="preserve">
     <value>CSDL S3GT:</value>
   </data>
+  <data name="lblbgclr" xml:space="preserve">
+    <value>Màu Nền:</value>
+  </data>
+  <data name="lbldelay" xml:space="preserve">
+    <value>Delay Time (s):</value>
+  </data>
+  <data name="lbldisplay" xml:space="preserve">
+    <value>Thời Gian Hiển Thị (s):</value>
+  </data>
+  <data name="lblexnum" xml:space="preserve">
+    <value>Số Lượng Hiển Thị:</value>
+  </data>
+  <data name="lblfclr" xml:space="preserve">
+    <value>Màu Chữ:</value>
+  </data>
+  <data name="lblfhan" xml:space="preserve">
+    <value>Cỡ Chữ Hán Nôm</value>
+  </data>
+  <data name="lblfkana" xml:space="preserve">
+    <value>Cỡ Chữ Kana</value>
+  </data>
+  <data name="lblfkanji" xml:space="preserve">
+    <value>Cỡ Chữ Kanji</value>
+  </data>
+  <data name="lblfmeaning" xml:space="preserve">
+    <value>Cỡ Chữ Phần Nghĩa</value>
+  </data>
   <data name="programname" xml:space="preserve">
     <value>Chương trình J-Card</value>
     <comment>Program name displayed on main screen</comment>
+  </data>
+  <data name="radbl" xml:space="preserve">
+    <value>Phía Dưới Bên Trái</value>
+  </data>
+  <data name="radbr" xml:space="preserve">
+    <value>Phía Dưới Bên Phải</value>
   </data>
   <data name="radiovocaball" xml:space="preserve">
     <value>Tất Cả</value>
@@ -157,10 +215,22 @@
   <data name="radiovocabnew" xml:space="preserve">
     <value>Từ Mới</value>
   </data>
+  <data name="radtl" xml:space="preserve">
+    <value>Phía Trên Bên Trái</value>
+  </data>
+  <data name="radtr" xml:space="preserve">
+    <value>Phía Trên Bên Phải</value>
+  </data>
+  <data name="settinggrammar" xml:space="preserve">
+    <value>Cấu Hình Card Ngữ Pháp</value>
+  </data>
   <data name="tabgrammar" xml:space="preserve">
     <value>Ngữ Pháp</value>
   </data>
   <data name="tabvocabulary" xml:space="preserve">
     <value>Từ Vựng</value>
+  </data>
+  <data name="vocabsett" xml:space="preserve">
+    <value>Cấu Hình Card Từ Vựng</value>
   </data>
 </root>
