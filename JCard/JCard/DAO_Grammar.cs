@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
 using System.Data;
 using System.Data.OleDb;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data.Odbc;
 
 namespace JCard
 {
@@ -24,22 +25,24 @@ namespace JCard
         /// <summary>
         /// Get all grammar cards by input Level
         /// </summary>
-        /// <param name="strLevel">Input Level</param>
+        /// <param name="catID">The category ID.</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCardByLevel(int intKyu)
+        public ArrayList GetGrammarCarByLevel(int catID)
         {
             ArrayList result = new ArrayList();
 
             DataProvider provider = new DataProvider(str_datasource);
 
-            String sql = "Select * from S3GT_GRAM where Kyu=" + intKyu.ToString() + "";
+            String sql = "SELECT * FROM S3GT_GRAM WHERE CAT_ID='" + catID.ToString() + "'";
             IDataReader reader = provider.excuteQuery(sql);
+
+            string tempEx = "";
 
             while (reader.Read())
             {
                 DTO_Grammar gramCard = new DTO_Grammar();
                 gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
-                gramCard.INT_Kyu = intKyu;
+                gramCard.LCAT_ID = catID;
                 gramCard.STR_Sample = reader["Sample"].ToString();
                 gramCard.STR_Syntax = reader["Syntax"].ToString();
                 gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
@@ -47,46 +50,8 @@ namespace JCard
 
                 for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                 {
-                    string tempEx = reader["Example" + (i + 1).ToString()].ToString();
-                    if (tempEx != string.Empty && tempEx != null)
-                        gramCard.ArrExample.Add(tempEx);
-                }
-
-                result.Add(gramCard);
-            }
-            reader.Close();
-
-            return result;
-        }
-
-        public ArrayList GetAllGrammarCard()
-        {
-            ArrayList result = new ArrayList();
-
-            DataProvider provider = new DataProvider(str_datasource);
-
-            String sql = "Select * from S3GT_GRAM";
-            IDataReader reader = provider.excuteQuery(sql);
-
-            while (reader.Read())
-            {
-                DTO_Grammar gramCard = new DTO_Grammar();
-                gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
-                gramCard.INT_Kyu = int.Parse(reader["CAT_ID"].ToString());
-                gramCard.STR_Sample = reader["Sample"].ToString();
-                gramCard.STR_Syntax = reader["Syntax"].ToString();
-                gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
-                gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
-
-                for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
-                {
-                    string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
-                    if (tempEx_JP != string.Empty && tempEx_JP != null)
-                        gramCard.ArrExample.Add(tempEx_JP);
-                    
-                    string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
-                    if (tempEx_VN != string.Empty && tempEx_VN != null)
-                        gramCard.ArrExampleVN.Add(tempEx_VN);
+                    tempEx = reader["Example" + (i + 1).ToString()].ToString();
+                    gramCard.ArrExampleVN[i] = tempEx;
                 }
 
                 result.Add(gramCard);
@@ -99,20 +64,19 @@ namespace JCard
         /// <summary>
         /// Deletes all the grammar cards in S3GT database.
         /// </summary>
-        /// <param name="strKyu">The String of kyu.</param>
-        /// <param name="dbFile">The S3GT databse file path.</param>
+        /// <param name="catID">The category ID.</param>
         /// <returns></returns>
-        public Boolean DeleteGrammarCards(int strKyu, string dbFile)
+        public Boolean DeleteGrammarCards(int catID)
         {
             OleDbConnection cn;
-            cn = DataProvider.ConnectData(dbFile);
+            cn = DataProvider.ConnectData(str_datasource);
             //
-            string strSQL = "DELETE * FROM S3GT_GRAM WHERE Kyu=?";
+            string strSQL = "DELETE * FROM S3GT_GRAM WHERE CAT_ID=?";
             try
             {
                 OleDbCommand cmd = new OleDbCommand(strSQL, cn);
-                cmd.Parameters.Add("@Kyu", OleDbType.Integer);
-                cmd.Parameters["@Kyu"].Value = strKyu;
+                cmd.Parameters.Add("@CAT_ID", OleDbType.Integer);
+                cmd.Parameters["@CAT_ID"].Value = catID;
                 //
                 cmd.ExecuteNonQuery();
                 cmd.Cancel();
@@ -130,10 +94,9 @@ namespace JCard
         /// Inserts the grammar cards to S3GT_DB.
         /// </summary>
         /// <param name="arrDTOGram">The array of  DTO grammar cards.</param>
-        /// <param name="strKyu">The String of kyu.</param>
-        /// <param name="dbFile">The database file.</param>
+        /// <param name="catID">The category ID.</param>
         /// <returns></returns>
-        public Boolean InsertGrammarCards(DTO_Grammar[] arrDTOGram, String strKyu, String dbFile)
+        public Boolean InsertGrammarCards(DTO_Grammar[] arrDTOGram, int catID)
         {
             OleDbConnection cn = null;
             OleDbCommand cmd = null;
@@ -145,15 +108,16 @@ namespace JCard
             try
             {
                 //Initial String SQL
-                cn = DataProvider.ConnectData(dbFile);
-                string strSQL1 = "INSERT INTO S3GT_GRAM(Kyu,Sample,Syntax,Meaning_JP,Meaning_VN";
+                cn = DataProvider.ConnectData(str_datasource);
+                string strSQL1 = "INSERT INTO S3GT_GRAM(CAT_ID,Sample,Syntax,Meaning_JP,Meaning_VN";
                 string strSQL2 = ") values (?,?,?,?,?";
                 //
                 j = 0;
                 for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                 {
-                    strSQL1 += ",Example" + (j + 1).ToString();
-                    strSQL2 += ",?";
+                    strSQL1 += ",Example" + (j + 1).ToString() + "_JP,Example" + (j + 1).ToString() + "_VN";
+                    strSQL2 += ",?,?";
+
                 }
                 strSQL2 += ")";
                 strSQL = strSQL1 + strSQL2 + "";
@@ -163,34 +127,48 @@ namespace JCard
                 {
                     cmd = new OleDbCommand(strSQL, cn);
                     //Add Type of Value
-                    cmd.Parameters.Add("@Kyu", OleDbType.WChar);
+                    cmd.Parameters.Add("@CAT_ID", OleDbType.Integer);
                     cmd.Parameters.Add("@Sample", OleDbType.WChar);
                     cmd.Parameters.Add("@Syntax", OleDbType.WChar);
                     cmd.Parameters.Add("@Meaning_JP", OleDbType.WChar);
                     cmd.Parameters.Add("@Meaning_VN", OleDbType.WChar);
 
                     //Add Values
-                    cmd.Parameters["@Kyu"].Value = strKyu;
+                    cmd.Parameters["@CAT_ID"].Value = catID;
                     cmd.Parameters["@Sample"].Value = arrDTOGram[i].STR_Sample;
                     cmd.Parameters["@Syntax"].Value = arrDTOGram[i].STR_Syntax;
                     cmd.Parameters["@Meaning_JP"].Value = arrDTOGram[i].STR_Meaning_JP;
                     cmd.Parameters["@Meaning_VN"].Value = arrDTOGram[i].STR_Meaning_VN;
 
-                    ////Execute Examples 
+                    //Execute Examples 
+                    //Require: the number of Example VN and Example JP is equal 
                     j = 0;
-                    if (arrDTOGram[i].ArrExample.Count <= Constants.MAX_GRAMMAR_EXAMPLE)
+                    if (arrDTOGram[i].ArrExampleVN.Count <= Constants.MAX_GRAMMAR_EXAMPLE)
                     {
-                        for (; j < arrDTOGram[i].ArrExample.Count; j++)
+                        for (; j < arrDTOGram[i].ArrExampleVN.Count; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
-                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleVN[j].ToString();
+
                         }
                         for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = "";
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
                             cmd.Parameters[tmpStr].Value = "";
                         }
@@ -199,10 +177,16 @@ namespace JCard
                     {
                         for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
-                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleVN[j].ToString();
                         }
                     }
 
@@ -216,8 +200,7 @@ namespace JCard
             }
             catch (OleDbException ex)
             {
-                Console.WriteLine(ex.Message);
-                return false;
+                throw (ex);
             }
         }
 
@@ -257,8 +240,7 @@ namespace JCard
             }
             catch (OleDbException ex)
             {
-                Console.WriteLine(ex.Message);
-                return null;
+                throw (ex);
             }
             finally
             {
@@ -317,13 +299,17 @@ namespace JCard
                     //Example
                     j = 4;
                     for (; j < m; j++)
-                        result[i].ArrExample.Add(ds.Tables[0].Rows[i][j].ToString());
+                    {
+                        if ((j % 2) == 0)//Example_JP
+                            result[i].ArrExampleJP.Add(ds.Tables[0].Rows[i][j].ToString());
+                        else//Example_VN
+                            result[i].ArrExampleVN.Add(ds.Tables[0].Rows[i][j].ToString());
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return result;
+                throw (ex);
             }
             return result;
         }

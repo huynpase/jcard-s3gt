@@ -7,20 +7,18 @@ namespace JCard
     public class DTO_Grammar
     {
         long lGR_ID;
-
         public long LGR_ID
         {
             get { return lGR_ID; }
             set { lGR_ID = value; }
         }
 
-        int int_Kyu;
-
-        public int INT_Kyu
+        long lCAT_ID;
+        public long LCAT_ID
         {
-            get { return int_Kyu; }
-            set { int_Kyu = value; }
-        }
+            get { return lCAT_ID; }
+            set { lCAT_ID = value; }
+        }       
 
         string str_Sample;
 
@@ -54,69 +52,50 @@ namespace JCard
             set { str_Meaning_VN = value; }
         }
 
-        ArrayList arrExample;
-
-        public ArrayList ArrExample
-        {
-            get { return arrExample; }
-            set { arrExample = value; }
-        }
-
         ArrayList arrExampleVN;
-
         public ArrayList ArrExampleVN
         {
             get { return arrExampleVN; }
             set { arrExampleVN = value; }
         }
 
+        ArrayList arrExampleJP;
+        public ArrayList ArrExampleJP
+        {
+            get { return arrExampleJP; }
+            set { arrExampleJP = value; }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DTO_Grammar"/> class.
+        /// </summary>
         public DTO_Grammar()
         {
             lGR_ID = 1;
-            int_Kyu = 1;
+            lCAT_ID = 1;          
             str_Sample = "";
             str_Syntax = "";
             str_Meaning_JP = "";
             str_Meaning_VN = "";
-            arrExample = new ArrayList();
+
             arrExampleVN = new ArrayList();
+            arrExampleJP = new ArrayList();
         }
 
-        public DTO_Grammar(DTO_Grammar grammar)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DTO_Grammar"/> class.
+        /// </summary>
+        /// <param name="sample">The sample.</param>
+        /// <param name="meaning_jp">The meaning_jp.</param>
+        /// <param name="meaning_vn">The meaning_vn.</param>
+        /// <param name="example">The example.</param>
+        public DTO_Grammar(string sample, string meaning_jp, string meaning_vn, ArrayList exampleVN, ArrayList exampleJP)
         {
-            lGR_ID = grammar.LGR_ID;
-            str_Sample = grammar.STR_Sample;
-            str_Meaning_JP = grammar.STR_Meaning_JP;
-            str_Meaning_VN = grammar.STR_Meaning_VN;
-            int_Kyu = grammar.INT_Kyu;
-            str_Syntax = grammar.STR_Syntax;
-            arrExample = new ArrayList();
-            arrExampleVN = new ArrayList();
-
-            int j = 0;
-            for (j = 0; j < grammar.ArrExample.Count; j++)
-                arrExample.Add(grammar.ArrExample[j].ToString());
-
-            for (j = 0; j < grammar.ArrExampleVN.Count; j++)
-                arrExampleVN.Add(grammar.ArrExampleVN[j].ToString());
-        }
-
-        public string XuLyXuongHangExampleJP()
-        {
-            return "";
-        }
-
-        public string XuLyXuongHangExampleVN()
-        {
-            return "";
-        }
-
-        public string GetExample(int exIndex, bool exam_vn_displayed, bool type)
-        {
-            if (type)
-                return arrExample[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
-            else
-                return XuLyXuongHangExampleJP() + Environment.NewLine + XuLyXuongHangExampleVN();
+            str_Sample = sample;
+            str_Meaning_JP = meaning_jp;
+            str_Meaning_VN = meaning_vn;
+            arrExampleVN = exampleVN;
+            arrExampleJP = exampleJP;
         }
     }
 }
