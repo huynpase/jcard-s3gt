@@ -116,8 +116,9 @@ namespace J_Card_ImportData
                 j = 0;
                 for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                 {
-                    strSQL1 += ",Example" + (j + 1).ToString();
-                    strSQL2 += ",?";
+                    strSQL1 += ",Example" + (j + 1).ToString() + "_JP,Example" + (j + 1).ToString() + "_VN";
+                    strSQL2 += ",?,?";
+
                 }
                 strSQL2 += ")";
                 strSQL = strSQL1 + strSQL2 + "";
@@ -140,21 +141,35 @@ namespace J_Card_ImportData
                     cmd.Parameters["@Meaning_JP"].Value = arrDTOGram[i].STR_Meaning_JP;
                     cmd.Parameters["@Meaning_VN"].Value = arrDTOGram[i].STR_Meaning_VN;
 
-                    ////Execute Examples 
+                    //Execute Examples 
+                    //Require: the number of Example VN and Example JP is equal 
                     j = 0;
                     if (arrDTOGram[i].ArrExampleVN.Count <= Constants.MAX_GRAMMAR_EXAMPLE)
                     {
                         for (; j < arrDTOGram[i].ArrExampleVN.Count; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
                             cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleVN[j].ToString();
+
                         }
                         for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = "";
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
                             cmd.Parameters[tmpStr].Value = "";
                         }
@@ -163,8 +178,14 @@ namespace J_Card_ImportData
                     {
                         for (; j < Constants.MAX_GRAMMAR_EXAMPLE; j++)
                         {
+                            //Example JP
                             String tmpStr = "@Example";
-                            tmpStr += (j + 1).ToString();
+                            tmpStr += (j + 1).ToString() + "_JP";
+                            cmd.Parameters.Add(tmpStr, OleDbType.WChar);
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
+                            //Example VN
+                            tmpStr = "@Example";
+                            tmpStr += (j + 1).ToString() + "_VN";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
                             cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleVN[j].ToString();
                         }
@@ -279,7 +300,12 @@ namespace J_Card_ImportData
                     //Example
                     j = 4;
                     for (; j < m; j++)
-                        result[i].ArrExampleVN.Add(ds.Tables[0].Rows[i][j].ToString());
+                    {
+                        if ((j % 2) == 0)//Example_JP
+                            result[i].ArrExampleJP.Add(ds.Tables[0].Rows[i][j].ToString());
+                        else//Example_VN
+                            result[i].ArrExampleVN.Add(ds.Tables[0].Rows[i][j].ToString());
+                    }
                 }
             }
             catch (Exception ex)
