@@ -34,11 +34,7 @@ namespace J_Card_ImportData
             this.txtS3GTDB = new System.Windows.Forms.TextBox();
             this.butExcel = new System.Windows.Forms.Button();
             this.butS3GTDB = new System.Windows.Forms.Button();
-            this.rad1kyu = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.rad2kyu = new System.Windows.Forms.RadioButton();
-            this.rad3kyu = new System.Windows.Forms.RadioButton();
-            this.rad4kyu = new System.Windows.Forms.RadioButton();
             this.radDelete = new System.Windows.Forms.RadioButton();
             this.radKeep = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,6 +42,8 @@ namespace J_Card_ImportData
             this.openFileDialog_Excel = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_S3GTDB = new System.Windows.Forms.OpenFileDialog();
             this.progBarImport = new System.Windows.Forms.ProgressBar();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.btnAddCategory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,61 +103,15 @@ namespace J_Card_ImportData
             this.butS3GTDB.UseVisualStyleBackColor = true;
             this.butS3GTDB.Click += new System.EventHandler(this.butS3GTDB_Click);
             // 
-            // rad1kyu
-            // 
-            this.rad1kyu.AutoSize = true;
-            this.rad1kyu.BackColor = System.Drawing.Color.Transparent;
-            this.rad1kyu.Checked = true;
-            this.rad1kyu.Location = new System.Drawing.Point(144, 111);
-            this.rad1kyu.Name = "rad1kyu";
-            this.rad1kyu.Size = new System.Drawing.Size(48, 17);
-            this.rad1kyu.TabIndex = 4;
-            this.rad1kyu.TabStop = true;
-            this.rad1kyu.Text = "1kyu";
-            this.rad1kyu.UseVisualStyleBackColor = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(18, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Choose Level";
-            // 
-            // rad2kyu
-            // 
-            this.rad2kyu.AutoSize = true;
-            this.rad2kyu.BackColor = System.Drawing.Color.Transparent;
-            this.rad2kyu.Location = new System.Drawing.Point(206, 111);
-            this.rad2kyu.Name = "rad2kyu";
-            this.rad2kyu.Size = new System.Drawing.Size(48, 17);
-            this.rad2kyu.TabIndex = 4;
-            this.rad2kyu.Text = "2kyu";
-            this.rad2kyu.UseVisualStyleBackColor = false;
-            // 
-            // rad3kyu
-            // 
-            this.rad3kyu.AutoSize = true;
-            this.rad3kyu.BackColor = System.Drawing.Color.Transparent;
-            this.rad3kyu.Location = new System.Drawing.Point(268, 111);
-            this.rad3kyu.Name = "rad3kyu";
-            this.rad3kyu.Size = new System.Drawing.Size(48, 17);
-            this.rad3kyu.TabIndex = 4;
-            this.rad3kyu.Text = "3kyu";
-            this.rad3kyu.UseVisualStyleBackColor = false;
-            // 
-            // rad4kyu
-            // 
-            this.rad4kyu.AutoSize = true;
-            this.rad4kyu.BackColor = System.Drawing.Color.Transparent;
-            this.rad4kyu.Location = new System.Drawing.Point(325, 111);
-            this.rad4kyu.Name = "rad4kyu";
-            this.rad4kyu.Size = new System.Drawing.Size(48, 17);
-            this.rad4kyu.TabIndex = 4;
-            this.rad4kyu.Text = "4kyu";
-            this.rad4kyu.UseVisualStyleBackColor = false;
+            this.label4.Text = "Choose Category";
             // 
             // radDelete
             // 
@@ -167,10 +119,10 @@ namespace J_Card_ImportData
             this.radDelete.Checked = true;
             this.radDelete.Location = new System.Drawing.Point(15, 15);
             this.radDelete.Name = "radDelete";
-            this.radDelete.Size = new System.Drawing.Size(399, 17);
+            this.radDelete.Size = new System.Drawing.Size(316, 17);
             this.radDelete.TabIndex = 4;
             this.radDelete.TabStop = true;
-            this.radDelete.Text = "Delete existing grammars of level has been chosen above then insert new data.";
+            this.radDelete.Text = "Delete existing grammars of this category and insert new data.";
             this.radDelete.UseVisualStyleBackColor = true;
             // 
             // radKeep
@@ -178,9 +130,9 @@ namespace J_Card_ImportData
             this.radKeep.AutoSize = true;
             this.radKeep.Location = new System.Drawing.Point(15, 47);
             this.radKeep.Name = "radKeep";
-            this.radKeep.Size = new System.Drawing.Size(390, 17);
+            this.radKeep.Size = new System.Drawing.Size(310, 17);
             this.radKeep.TabIndex = 4;
-            this.radKeep.Text = "Keep existing grammars of level has been chosen above and insert new data.";
+            this.radKeep.Text = "Keep existing grammars of this category and insert new data.";
             this.radKeep.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -221,7 +173,25 @@ namespace J_Card_ImportData
             this.progBarImport.Name = "progBarImport";
             this.progBarImport.Size = new System.Drawing.Size(594, 23);
             this.progBarImport.TabIndex = 8;
-            this.progBarImport.Visible = false;            
+            this.progBarImport.Visible = false;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(129, 107);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbCategory.TabIndex = 10;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.Location = new System.Drawing.Point(257, 107);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(107, 23);
+            this.btnAddCategory.TabIndex = 11;
+            this.btnAddCategory.Text = "Add category";
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // fImportData
             // 
@@ -229,14 +199,12 @@ namespace J_Card_ImportData
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::J_Card_ImportData.Properties.Resources.Back2;
             this.ClientSize = new System.Drawing.Size(594, 309);
+            this.Controls.Add(this.btnAddCategory);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.progBarImport);
             this.Controls.Add(this.butConvert);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.rad4kyu);
-            this.Controls.Add(this.rad3kyu);
-            this.Controls.Add(this.rad2kyu);
-            this.Controls.Add(this.rad1kyu);
             this.Controls.Add(this.butS3GTDB);
             this.Controls.Add(this.butExcel);
             this.Controls.Add(this.txtS3GTDB);
@@ -263,11 +231,7 @@ namespace J_Card_ImportData
         private System.Windows.Forms.TextBox txtS3GTDB;
         private System.Windows.Forms.Button butExcel;
         private System.Windows.Forms.Button butS3GTDB;
-        private System.Windows.Forms.RadioButton rad1kyu;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton rad2kyu;
-        private System.Windows.Forms.RadioButton rad3kyu;
-        private System.Windows.Forms.RadioButton rad4kyu;
         private System.Windows.Forms.RadioButton radDelete;
         private System.Windows.Forms.RadioButton radKeep;
         private System.Windows.Forms.Panel panel1;
@@ -275,5 +239,7 @@ namespace J_Card_ImportData
         private System.Windows.Forms.OpenFileDialog openFileDialog_Excel;
         private System.Windows.Forms.OpenFileDialog openFileDialog_S3GTDB;
         private System.Windows.Forms.ProgressBar progBarImport;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Button btnAddCategory;
     }
 }
