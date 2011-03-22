@@ -35,6 +35,8 @@ namespace JCard
         {
             InitializeComponent();
 
+            s3gtPath = Common.GetConfigValue(Constants.CONFIG_DATABASE_PATH_KEY, Constants.DATABASE_PATH);
+
             SetDisplayLabel();
         }
 
@@ -238,6 +240,23 @@ namespace JCard
             }
         }
 
+        private void fCLesson_MouseHover(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Mouse hover");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Yes)
+            {
+                this.Dispose();
+                Application.Exit();
+            }
+
+        }
+
+        #region Thao Tác trên TreeView
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             // TreeNode node;
@@ -260,26 +279,28 @@ namespace JCard
             }
         }
 
-        private void fCLesson_MouseHover(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Mouse hover");
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.Yes)
-            {
-                this.Dispose();
-                Application.Exit();
-            }
-
-        }
-
         private void chBoxAll_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chBoxAll.Checked)
+            if (sender == chBoxAll)
             {
-                foreach (TreeNode tn in treeView1.Nodes)
+                CheckAll(treeView1, chBoxAll.Checked);
+            }
+            else if (sender == chbGramAll)
+            {
+                CheckAll(trvGrammars, chbGramAll.Checked);
+            }
+        }
+
+        /// <summary>
+        /// Check ON/OFF for all TreeNode
+        /// </summary>
+        /// <param name="tv">Tree View</param>
+        /// <param name="flag">ON/OFF</param>
+        private void CheckAll(TreeView tv, bool flag)
+        {
+            if (flag)
+            {
+                foreach (TreeNode tn in tv.Nodes)
                 {
                     tn.Checked = true;
                     foreach (TreeNode n in tn.Nodes)
@@ -290,7 +311,7 @@ namespace JCard
             }
             else
             {
-                foreach (TreeNode tn in treeView1.Nodes)
+                foreach (TreeNode tn in tv.Nodes)
                 {
                     tn.Checked = false;
                     foreach (TreeNode n in tn.Nodes)
@@ -303,15 +324,79 @@ namespace JCard
 
         private void cBoxCollapse_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (cBoxCollapse.Checked)
+            if (sender == cBoxCollapse)
             {
-                treeView1.CollapseAll();
+                ExpandAll(treeView1, cBoxCollapse.Checked);
+            }
+            else if (sender == chbGramColAll)
+            {
+                ExpandAll(trvGrammars, chbGramColAll.Checked);
+            }
+        }
+
+        /// <summary>
+        /// Expand or Collapse for all TreeNode
+        /// </summary>
+        /// <param name="tv">Tree View</param>
+        /// <param name="flag">TRUE/FALSE</param>
+        private void ExpandAll(TreeView tv, bool flag)
+        {
+            if (flag)
+            {
+                tv.CollapseAll();
             }
             else
             {
-                treeView1.ExpandAll();
+                tv.ExpandAll();
             }
         }
+
+        /// <summary>
+        /// Check whether existing one node is selected.
+        /// </summary>
+        /// <param name="tv">Tree View</param>
+        /// <returns>TRUE/FALSE</returns>
+        private bool IsNodeSelected(TreeView tv)
+        {
+            for (int i = 0; i < tv.Nodes.Count; i++)
+            {
+                if (tv.Nodes[i].Checked)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Get selected grammar cards from Tree View
+        /// </summary>
+        /// <param name="lstNodes">List of Tree Node</param>
+        /// <returns>Selected Grammar Cards</returns>
+        public ArrayList GetSelectedGrammarCards(TreeNodeCollection lstNodes)
+        {
+            ArrayList result = new ArrayList();
+
+            for (int i = 0; i < lstNodes.Count; i++)
+            {
+                TreeNode rootNode = lstNodes[i];
+                if (rootNode.Checked)
+                {
+                    for (int j = 0; j < rootNode.Nodes.Count; j++)
+                    {
+                        if (rootNode.Nodes[j].Checked)
+                        {
+                            DTO_Grammar dtoGram = (DTO_Grammar)rootNode.Nodes[j].Tag;
+                            result.Add(dtoGram);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+        #endregion
 
         private void tabGrammar_Click(object sender, EventArgs e)
         {
@@ -322,21 +407,23 @@ namespace JCard
         {
             try
             {
-                ///* Get grammar cards frm database
-                BUS_Grammar buGram = new BUS_Grammar(Constants.DATABASE_PATH);
-                ArrayList arr_Entry = buGram.GetGrammarCarByLevel(cmbLevel.SelectedIndex + 1);
-                //*/
+                if (IsNodeSelected(trvGrammars))
+                {
+                    ///* Get grammar cards frm database
+                    ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
+                    //*/
 
-                if (arr_Entry != null && arr_Entry.Count > 0)
-                {
-                    fGrammar fg = new fGrammar(arr_Entry);
-                    fg.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("The grammar of selected level is empty.\n Please select another level and restart displaying grammar cards.",
-                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (arr_Entry != null && arr_Entry.Count > 0)
+                    {
+                        fGrammar fg = new fGrammar(arr_Entry);
+                        fg.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The grammar of selected level is empty.\n Please select another level and restart displaying grammar cards.",
+                            "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -503,8 +590,8 @@ namespace JCard
                 ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
                 button1.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
                 groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
-                checkBox3.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
-                checkBox4.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+                chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+                chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
                 btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
                 btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
                 button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
@@ -512,5 +599,36 @@ namespace JCard
             }
         }
 
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1)
+            {
+                this.Enabled = false;
+                this.Cursor = Cursors.WaitCursor;
+
+                try
+                {
+                    trvGrammars.Nodes.Clear();
+
+                    // Get Grammars
+                    BUS_Grammar buGram = new BUS_Grammar(s3gtPath);
+                    List<TreeNode> lstNodes = buGram.GetGrammarCardTree();
+
+                    trvGrammars.Nodes.AddRange(lstNodes.ToArray());
+
+                    trvGrammars.ExpandAll();
+                    trvGrammars.SelectedNode = trvGrammars.TopNode;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    this.Cursor = Cursors.Default;
+                    this.Enabled = true;
+                }
+            }
+        }
     }
 }

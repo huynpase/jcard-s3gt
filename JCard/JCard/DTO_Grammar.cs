@@ -62,6 +62,14 @@ namespace JCard
             set { arrExample = value; }
         }
 
+        ArrayList arrExampleVN;
+
+        public ArrayList ArrExampleVN
+        {
+            get { return arrExampleVN; }
+            set { arrExampleVN = value; }
+        }
+
         public DTO_Grammar()
         {
             lGR_ID = 1;
@@ -71,6 +79,7 @@ namespace JCard
             str_Meaning_JP = "";
             str_Meaning_VN = "";
             arrExample = new ArrayList();
+            arrExampleVN = new ArrayList();
         }
 
         public DTO_Grammar(DTO_Grammar grammar)
@@ -85,6 +94,10 @@ namespace JCard
 
             for (int j = 0; j < grammar.ArrExample.Count; j++)
                 arrExample.Add(grammar.ArrExample[j].ToString());
+
+            arrExampleVN = new ArrayList();
+            for (int j = 0; j < grammar.ArrExampleVN.Count; j++)
+                arrExampleVN.Add(grammar.ArrExampleVN[j].ToString());
         }
     }
 }

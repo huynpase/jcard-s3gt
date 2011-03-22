@@ -52,14 +52,13 @@
             this.lblGramS3GT = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.treeView2 = new System.Windows.Forms.TreeView();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.trvGrammars = new System.Windows.Forms.TreeView();
+            this.chbGramAll = new System.Windows.Forms.CheckBox();
+            this.chbGramColAll = new System.Windows.Forms.CheckBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -91,6 +90,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(516, 471);
             this.tabControl1.TabIndex = 10;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabVocabulary
             // 
@@ -272,7 +272,6 @@
             this.tabGrammar.Controls.Add(this.button2);
             this.tabGrammar.Controls.Add(this.btnSetting);
             this.tabGrammar.Controls.Add(this.button3);
-            this.tabGrammar.Controls.Add(this.cmbLevel);
             this.tabGrammar.Location = new System.Drawing.Point(4, 22);
             this.tabGrammar.Name = "tabGrammar";
             this.tabGrammar.Padding = new System.Windows.Forms.Padding(3);
@@ -312,43 +311,46 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.treeView2);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.trvGrammars);
+            this.groupBox2.Controls.Add(this.chbGramAll);
+            this.groupBox2.Controls.Add(this.chbGramColAll);
             this.groupBox2.Location = new System.Drawing.Point(3, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(378, 341);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Please choose glossary(ies)  to learn";
+            this.groupBox2.Text = "Please choose grammar(s)  to learn";
             // 
-            // treeView2
+            // trvGrammars
             // 
-            this.treeView2.CheckBoxes = true;
-            this.treeView2.Location = new System.Drawing.Point(9, 35);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(363, 300);
-            this.treeView2.TabIndex = 0;
+            this.trvGrammars.CheckBoxes = true;
+            this.trvGrammars.Location = new System.Drawing.Point(9, 35);
+            this.trvGrammars.Name = "trvGrammars";
+            this.trvGrammars.Size = new System.Drawing.Size(363, 300);
+            this.trvGrammars.TabIndex = 0;
+            this.trvGrammars.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
-            // checkBox3
+            // chbGramAll
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(217, 12);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(70, 17);
-            this.checkBox3.TabIndex = 16;
-            this.checkBox3.Text = "Check all";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chbGramAll.AutoSize = true;
+            this.chbGramAll.Location = new System.Drawing.Point(217, 12);
+            this.chbGramAll.Name = "chbGramAll";
+            this.chbGramAll.Size = new System.Drawing.Size(70, 17);
+            this.chbGramAll.TabIndex = 16;
+            this.chbGramAll.Text = "Check all";
+            this.chbGramAll.UseVisualStyleBackColor = true;
+            this.chbGramAll.CheckedChanged += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
             // 
-            // checkBox4
+            // chbGramColAll
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(293, 12);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(79, 17);
-            this.checkBox4.TabIndex = 17;
-            this.checkBox4.Text = "Collapse all";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chbGramColAll.AutoSize = true;
+            this.chbGramColAll.Location = new System.Drawing.Point(293, 12);
+            this.chbGramColAll.Name = "chbGramColAll";
+            this.chbGramColAll.Size = new System.Drawing.Size(79, 17);
+            this.chbGramColAll.TabIndex = 17;
+            this.chbGramColAll.Text = "Collapse all";
+            this.chbGramColAll.UseVisualStyleBackColor = true;
+            this.chbGramColAll.CheckedChanged += new System.EventHandler(this.cBoxCollapse_CheckedChanged_1);
             // 
             // btnImport
             // 
@@ -393,20 +395,6 @@
             this.button3.Text = "&Start";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // cmbLevel
-            // 
-            this.cmbLevel.FormattingEnabled = true;
-            this.cmbLevel.Items.AddRange(new object[] {
-            "1kyu",
-            "2kyu",
-            "3kyu",
-            "4kyu"});
-            this.cmbLevel.Location = new System.Drawing.Point(387, 54);
-            this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(70, 21);
-            this.cmbLevel.TabIndex = 1;
-            this.cmbLevel.Text = "2kyu";
             // 
             // statusStrip1
             // 
@@ -484,7 +472,6 @@
         private System.Windows.Forms.TabPage tabGrammar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox cmbLevel;
         private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
@@ -503,9 +490,9 @@
         private System.Windows.Forms.Label lblGramS3GT;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TreeView treeView2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TreeView trvGrammars;
+        private System.Windows.Forms.CheckBox chbGramAll;
+        private System.Windows.Forms.CheckBox chbGramColAll;
 }
 }
 
