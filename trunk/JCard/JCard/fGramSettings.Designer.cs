@@ -287,7 +287,7 @@
             // 
             this.numDisTim.Location = new System.Drawing.Point(104, 88);
             this.numDisTim.Maximum = new decimal(new int[] {
-            50,
+            60,
             0,
             0,
             0});
