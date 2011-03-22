@@ -40,7 +40,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtS3GTDB = new System.Windows.Forms.TextBox();
             this.lblVocabS3GT = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBrowseVoc = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -48,9 +48,9 @@
             this.cBoxCollapse = new System.Windows.Forms.CheckBox();
             this.ButtCopy = new System.Windows.Forms.Button();
             this.tabGrammar = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDatabaseGram = new System.Windows.Forms.TextBox();
             this.lblGramS3GT = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnBrowseGram = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.trvGrammars = new System.Windows.Forms.TreeView();
             this.chbGramAll = new System.Windows.Forms.CheckBox();
@@ -90,7 +90,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(516, 471);
             this.tabControl1.TabIndex = 10;
-            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabVocabulary
             // 
@@ -99,7 +99,7 @@
             this.tabVocabulary.Controls.Add(this.button4);
             this.tabVocabulary.Controls.Add(this.txtS3GTDB);
             this.tabVocabulary.Controls.Add(this.lblVocabS3GT);
-            this.tabVocabulary.Controls.Add(this.button5);
+            this.tabVocabulary.Controls.Add(this.btnBrowseVoc);
             this.tabVocabulary.Controls.Add(this.button1);
             this.tabVocabulary.Controls.Add(this.groupBox1);
             this.tabVocabulary.Controls.Add(this.ButtCopy);
@@ -185,15 +185,15 @@
             this.lblVocabS3GT.TabIndex = 23;
             this.lblVocabS3GT.Text = "S3GT Database:";
             // 
-            // button5
+            // btnBrowseVoc
             // 
-            this.button5.Location = new System.Drawing.Point(387, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Browse...";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnBrowseVoc.Location = new System.Drawing.Point(387, 9);
+            this.btnBrowseVoc.Name = "btnBrowseVoc";
+            this.btnBrowseVoc.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseVoc.TabIndex = 20;
+            this.btnBrowseVoc.Text = "Browse...";
+            this.btnBrowseVoc.UseVisualStyleBackColor = true;
+            this.btnBrowseVoc.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -225,7 +225,6 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(363, 300);
             this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // chBoxAll
@@ -264,9 +263,9 @@
             // tabGrammar
             // 
             this.tabGrammar.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabGrammar.Controls.Add(this.textBox1);
+            this.tabGrammar.Controls.Add(this.txtDatabaseGram);
             this.tabGrammar.Controls.Add(this.lblGramS3GT);
-            this.tabGrammar.Controls.Add(this.button6);
+            this.tabGrammar.Controls.Add(this.btnBrowseGram);
             this.tabGrammar.Controls.Add(this.groupBox2);
             this.tabGrammar.Controls.Add(this.btnImport);
             this.tabGrammar.Controls.Add(this.button2);
@@ -279,16 +278,15 @@
             this.tabGrammar.TabIndex = 1;
             this.tabGrammar.Text = "Grammar";
             this.tabGrammar.UseVisualStyleBackColor = true;
-            this.tabGrammar.Click += new System.EventHandler(this.tabGrammar_Click);
             // 
-            // textBox1
+            // txtDatabaseGram
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(286, 20);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Text = "datasource\\\\s3gt_db.mdb";
+            this.txtDatabaseGram.Location = new System.Drawing.Point(95, 12);
+            this.txtDatabaseGram.Name = "txtDatabaseGram";
+            this.txtDatabaseGram.ReadOnly = true;
+            this.txtDatabaseGram.Size = new System.Drawing.Size(286, 20);
+            this.txtDatabaseGram.TabIndex = 28;
+            this.txtDatabaseGram.Text = "datasource\\\\s3gt_db.mdb";
             // 
             // lblGramS3GT
             // 
@@ -300,14 +298,15 @@
             this.lblGramS3GT.TabIndex = 27;
             this.lblGramS3GT.Text = "S3GT Database:";
             // 
-            // button6
+            // btnBrowseGram
             // 
-            this.button6.Location = new System.Drawing.Point(387, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 26;
-            this.button6.Text = "Browse...";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnBrowseGram.Location = new System.Drawing.Point(387, 9);
+            this.btnBrowseGram.Name = "btnBrowseGram";
+            this.btnBrowseGram.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseGram.TabIndex = 26;
+            this.btnBrowseGram.Text = "Browse...";
+            this.btnBrowseGram.UseVisualStyleBackColor = true;
+            this.btnBrowseGram.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox2
             // 
@@ -439,7 +438,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard ";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseHover += new System.EventHandler(this.fCLesson_MouseHover);
             this.tabControl1.ResumeLayout(false);
             this.tabVocabulary.ResumeLayout(false);
             this.tabVocabulary.PerformLayout();
@@ -478,7 +476,7 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBrowseVoc;
 
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
@@ -486,9 +484,9 @@
         private System.Windows.Forms.TextBox txtS3GTDB;
         private System.Windows.Forms.Label lblVocabS3GT;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDatabaseGram;
         private System.Windows.Forms.Label lblGramS3GT;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnBrowseGram;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TreeView trvGrammars;
         private System.Windows.Forms.CheckBox chbGramAll;

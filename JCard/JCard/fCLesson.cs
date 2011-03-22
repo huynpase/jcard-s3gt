@@ -23,29 +23,26 @@ namespace JCard
         CultureInfo objCulInfo;
         #endregion
 
-        // Define file path of database 
-        private String s3gtPath = "datasource\\s3gt_db.mdb";
-
-        // private  String fpath = "";// bien duong dan toan cuc
-
         private double opacityInc = .05;
-
 
         public fCLesson()
         {
             InitializeComponent();
 
-            s3gtPath = Common.GetConfigValue(Constants.CONFIG_DATABASE_PATH_KEY, Constants.DATABASE_PATH);
+            string s3gtPath = Application.StartupPath + "\\" + Common.GetConfigValue(Constants.CONFIG_DATABASE_PATH_KEY, Constants.DATABASE_PATH);
+            txtS3GTDB.Text = s3gtPath;
+            txtDatabaseGram.Text = s3gtPath;
 
             SetDisplayLabel();
         }
-
 
         // Define a delegate
         public delegate void SendData(int flag, ArrayList arrVoc);
 
         // Delegate control event form 1
         public SendData sendData;
+
+        #region Form Load
         private void Form1_Load(object sender, EventArgs e)
         {
             fSplash.ShowSplashScreen();
@@ -54,16 +51,88 @@ namespace JCard
             this.Opacity = 0;
             // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
-            try
-            {
-                InitTreeView(s3gtPath);
 
-            }
-            catch (Exception ex)
+            InitTreeView(txtS3GTDB.Text);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            timer2.Stop();
+            fSplash.CloseForm();
+            timer3.Interval = 50;
+            timer3.Start();
+            Thread.Sleep(1000);
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (opacityInc > 0)
             {
-                // throw ex;
+                if (this.Opacity < 1)
+                    this.Opacity += opacityInc;
+            }
+            else
+            {
+                if (this.Opacity > 0)
+                    this.Opacity += opacityInc;
+                else
+                    this.Close();
             }
         }
+
+        public void SetDisplayLabel()
+        {
+            // Create a resource manager to retrieve resources.
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+
+            if (objResourceManager != null)
+            {
+                //Main screen
+                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
+                tabVocabulary.Text = Common.GetResourceValue(Constants.RES_TABVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_TABVOCAB_VALUE);
+                tabGrammar.Text = Common.GetResourceValue(Constants.RES_TABGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_TABGRAM_VALUE);
+                lblGramS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+                lblVocabS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+                groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+                chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+                cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+                groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
+                radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
+                radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
+                radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
+                button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+                ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+                button1.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+                chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+                chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+                btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
+                btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+                button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+                button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+            }
+        }
+        #endregion
+
+        #region Thao Tác trên TabControl
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Clear();
+            trvGrammars.Nodes.Clear();
+
+            if (tabControl1.SelectedIndex == 1)
+            {
+                InitGramTreeView(txtDatabaseGram.Text);
+            }
+            else if (tabControl1.SelectedIndex == 0)
+            {
+                InitTreeView(txtS3GTDB.Text);
+            }
+        }
+        #endregion
+
+        #region Thao Tác trên TreeView
         private void InitTreeView(string filepath)
         {
             try
@@ -82,104 +151,8 @@ namespace JCard
                 MessageBox.Show("Error when load DB");
                 MessageBox.Show("Please send to author contents of error below: \n" + ex);
             }
-        }
+        }        
 
-
-        private void ButtCopy_Click(object sender, EventArgs e)
-        {
-            cReduceMemory.ReduceMemory();
-
-            int iFlag = 1;
-            BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
-
-            ArrayList arrVoc = new ArrayList();
-            ArrayList arrListTopic = new ArrayList();
-            ArrayList arrListLastTopic = new ArrayList();
-
-            // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
-            if (radNewTopic.Checked) // is new topic
-            {
-                if (CheckChosedDataOfTreeView() != false)
-                {
-                    try
-                    {
-                        oJcard.ResetIsLastTopic();
-                        arrListTopic = GetListTopicChosen();
-                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                        oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc);
-                        fjcard.Show();
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error when connect to DB");
-                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                }
-            }
-            else if (radLastTopic.Checked)
-            {
-                try
-                {
-                    arrListTopic = oJcard.GetTopicIsLastTopic();
-                    arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                    fJCard fjcard = new fJCard(iFlag, arrVoc);
-                    fjcard.Show();
-                    this.Hide();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error when connect to DB");
-                    MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
-                }
-            }
-            else
-            {
-                if (CheckChosedDataOfTreeView() != false)
-                {
-                    try
-                    {
-                        arrListLastTopic = oJcard.GetTopicIsLastTopic();
-                        arrListTopic = GetListTopicChosen();
-                        CombineArrayList(ref arrListTopic, arrListLastTopic);
-                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                        oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc);
-                        fjcard.Show();
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error when connect to DB");
-                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                }
-            }
-
-        }
-
-        private void CombineArrayList(ref ArrayList arrReturn, ArrayList arrNeedCopy)
-        {
-            foreach (int value in arrNeedCopy)
-            {
-                arrReturn.Add(value);
-            }
-        }
         private bool CheckChosedDataOfTreeView()
         {
             int flag = 0;
@@ -215,6 +188,7 @@ namespace JCard
             }
             return arr;
         }
+
         private void AddToTreeView(ArrayList arrTopicGroup, ArrayList arrTopic)
         {
             treeView1.Nodes.Clear();
@@ -240,23 +214,24 @@ namespace JCard
             }
         }
 
-        private void fCLesson_MouseHover(object sender, EventArgs e)
+        private void InitGramTreeView(string strFilePath)
         {
-            //MessageBox.Show("Mouse hover");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.Yes)
+            try
             {
-                this.Dispose();
-                Application.Exit();
-            }
+                // Get Grammars
+                BUS_Grammar buGram = new BUS_Grammar(strFilePath);
+                List<TreeNode> lstNodes = buGram.GetGrammarCardTree();
 
+                trvGrammars.Nodes.AddRange(lstNodes.ToArray());
+
+                trvGrammars.ExpandAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
-        #region Thao Tác trên TreeView
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             // TreeNode node;
@@ -398,11 +373,7 @@ namespace JCard
         }
         #endregion
 
-        private void tabGrammar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Thao Tác trên Grammar Tab
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -413,17 +384,16 @@ namespace JCard
                     ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
                     //*/
 
-                    if (arr_Entry != null && arr_Entry.Count > 0)
-                    {
-                        fGrammar fg = new fGrammar(arr_Entry);
-                        fg.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The grammar of selected level is empty.\n Please select another level and restart displaying grammar cards.",
-                            "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    fGrammar fg = new fGrammar(arr_Entry);
+                    fg.Show();
+
+                    trvGrammars.Nodes.Clear();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Please select at least one grammar before learning.", "Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -435,33 +405,6 @@ namespace JCard
                     return;
                 }
             }
-        }
-
-        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Application.Exit();
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-
-        public static void showTabSetting()
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -480,16 +423,125 @@ namespace JCard
         {
             button1_Click(null, null);
         }
+        #endregion       
 
-
-        private void button4_Click(object sender, EventArgs e)
+        #region Thao Tác trên Vocabulary Tab
+        private void ButtCopy_Click(object sender, EventArgs e)
         {
+            cReduceMemory.ReduceMemory();
 
+            int iFlag = 1;
+            //BUS_JCARD oJcard = new BUS_JCARD(s3gtPath);
+            BUS_JCARD oJcard = new BUS_JCARD(txtS3GTDB.Text);
+
+            ArrayList arrVoc = new ArrayList();
+            ArrayList arrListTopic = new ArrayList();
+            ArrayList arrListLastTopic = new ArrayList();
+
+            // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
+            if (radNewTopic.Checked) // is new topic
+            {
+                if (CheckChosedDataOfTreeView() != false)
+                {
+                    try
+                    {
+                        oJcard.ResetIsLastTopic();
+                        arrListTopic = GetListTopicChosen();
+                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                        oJcard.UpdateIsLastTopic(arrListTopic, true);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fjcard.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error when connect to DB");
+                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            else if (radLastTopic.Checked)
+            {
+                try
+                {
+                    arrListTopic = oJcard.GetTopicIsLastTopic();
+                    arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                    fJCard fjcard = new fJCard(iFlag, arrVoc);
+                    fjcard.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when connect to DB");
+                    MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                }
+            }
+            else
+            {
+                if (CheckChosedDataOfTreeView() != false)
+                {
+                    try
+                    {
+                        arrListLastTopic = oJcard.GetTopicIsLastTopic();
+                        arrListTopic = GetListTopicChosen();
+                        CombineArrayList(ref arrListTopic, arrListLastTopic);
+                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                        oJcard.UpdateIsLastTopic(arrListTopic, true);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fjcard.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error when connect to DB");
+                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+
+        }
+
+        private void CombineArrayList(ref ArrayList arrReturn, ArrayList arrNeedCopy)
+        {
+            foreach (int value in arrNeedCopy)
+            {
+                arrReturn.Add(value);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Yes)
+            {
+                this.Dispose();
+                Application.Exit();
+            }
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            fSetting fset = new fSetting();
+            fset.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string filepath = "";
             OpenFileDialog opf = new OpenFileDialog();
 
             opf.Title = "Please choose file S3GT DB want to load.";
@@ -498,18 +550,16 @@ namespace JCard
             opf.Filter = "S3GT DB (*.mdb)|*.mdb";
             if (opf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                try
+                if (sender == btnBrowseVoc)
                 {
-                    filepath = opf.FileName;
-                    InitTreeView(filepath);
+                    txtS3GTDB.Text = opf.FileName;
+                    InitTreeView(txtS3GTDB.Text);
                 }
-                catch (Exception ex)
+                else if (sender == btnBrowseGram)
                 {
-
-                    MessageBox.Show("Error when load DB file");
+                    txtDatabaseGram.Text = opf.FileName;
+                    InitGramTreeView(txtDatabaseGram.Text);
                 }
-
-
             }
         }
 
@@ -533,102 +583,6 @@ namespace JCard
         {
             treeView1.Enabled = true;
         }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            timer2.Stop();
-            fSplash.CloseForm();
-            timer3.Interval = 50;
-            timer3.Start();
-            Thread.Sleep(1000);
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            if (opacityInc > 0)
-            {
-                if (this.Opacity < 1)
-                    this.Opacity += opacityInc;
-            }
-            else
-            {
-                if (this.Opacity > 0)
-                    this.Opacity += opacityInc;
-                else
-                    this.Close();
-            }
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            fSetting fset = new fSetting();
-            fset.ShowDialog();
-        }
-
-        public void SetDisplayLabel()
-        {
-            // Create a resource manager to retrieve resources.
-            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
-            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
-
-            if (objResourceManager != null)
-            {
-                //Main screen
-                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
-                tabVocabulary.Text = Common.GetResourceValue(Constants.RES_TABVOCAB_NAME,objCulInfo,objResourceManager,Constants.RES_TABVOCAB_VALUE);
-                tabGrammar.Text = Common.GetResourceValue(Constants.RES_TABGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_TABGRAM_VALUE);
-                lblGramS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
-                lblVocabS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
-                groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
-                chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
-                cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
-                groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
-                radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
-                radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
-                radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
-                button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
-                ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
-                button1.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
-                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
-                chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
-                chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
-                btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
-                btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
-                button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
-                button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
-            }
-        }
-
-        private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
-            if (tabControl1.SelectedIndex == 1)
-            {
-                this.Enabled = false;
-                this.Cursor = Cursors.WaitCursor;
-
-                try
-                {
-                    trvGrammars.Nodes.Clear();
-
-                    // Get Grammars
-                    BUS_Grammar buGram = new BUS_Grammar(s3gtPath);
-                    List<TreeNode> lstNodes = buGram.GetGrammarCardTree();
-
-                    trvGrammars.Nodes.AddRange(lstNodes.ToArray());
-
-                    trvGrammars.ExpandAll();
-                    trvGrammars.SelectedNode = trvGrammars.TopNode;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    this.Cursor = Cursors.Default;
-                    this.Enabled = true;
-                }
-            }
-        }
+        #endregion     
     }
 }
