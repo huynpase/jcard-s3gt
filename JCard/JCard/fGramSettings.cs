@@ -190,7 +190,7 @@ namespace JCard
         public void SetDisplayLabel()
         {
             // Create a resource manager to retrieve resources.
-            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fGramSetts).Assembly);
             CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
 
             if (objResourceManager != null)
