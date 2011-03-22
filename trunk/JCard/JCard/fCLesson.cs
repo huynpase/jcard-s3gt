@@ -148,8 +148,7 @@ namespace JCard
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error when load DB");
-                MessageBox.Show("Please send to author contents of error below: \n" + ex);
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
             }
         }        
 
@@ -228,7 +227,7 @@ namespace JCard
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
             }
         }
 
@@ -376,34 +375,21 @@ namespace JCard
         #region Thao Tác trên Grammar Tab
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            if (IsNodeSelected(trvGrammars))
             {
-                if (IsNodeSelected(trvGrammars))
-                {
-                    ///* Get grammar cards frm database
-                    ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
-                    //*/
+                ///* Get grammar cards frm database
+                ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
+                //*/
 
-                    fGrammar fg = new fGrammar(arr_Entry);
-                    fg.Show();
+                fGrammar fg = new fGrammar(arr_Entry);
+                fg.Show();
 
-                    trvGrammars.Nodes.Clear();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Please select at least one grammar before learning.", "Information", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                }
+                trvGrammars.Nodes.Clear();
+                this.Hide();
             }
-            catch (Exception ex)
+            else
             {
-                if (MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                {
-                    this.Dispose();
-                    Application.Exit();
-                    return;
-                }
+                Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_GRAM_INFO_NAME, Constants.RES_SELECT_GRAM_INFO_VALUE);
             }
         }
 
@@ -455,15 +441,12 @@ namespace JCard
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error when connect to DB");
-                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
+                        Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
                 }
             }
             else if (radLastTopic.Checked)
@@ -478,9 +461,7 @@ namespace JCard
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error when connect to DB");
-                    MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
+                    Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
                 }
             }
             else
@@ -500,16 +481,12 @@ namespace JCard
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error when connect to DB");
-                        MessageBox.Show("Please send to author contents of error below: \n" + ex);
-
+                        Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("Please select at least one glossary ", "Information", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
                 }
             }
 
@@ -525,13 +502,8 @@ namespace JCard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.Yes)
-            {
-                this.Dispose();
-                Application.Exit();
-            }
-
+            this.Dispose();
+            Application.Exit();
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -544,7 +516,8 @@ namespace JCard
         {
             OpenFileDialog opf = new OpenFileDialog();
 
-            opf.Title = "Please choose file S3GT DB want to load.";
+            opf.Title = Common.GetResourceValue(Constants.RES_S3GT_OPEN_TITLE_NAME, objCulInfo,
+                objResourceManager, Constants.RES_S3GT_OPEN_TITLE_VALUE);
             opf.DefaultExt = "*.mdb";
             opf.RestoreDirectory = true;
             opf.Filter = "S3GT DB (*.mdb)|*.mdb";
@@ -553,11 +526,13 @@ namespace JCard
                 if (sender == btnBrowseVoc)
                 {
                     txtS3GTDB.Text = opf.FileName;
+                    treeView1.Nodes.Clear();
                     InitTreeView(txtS3GTDB.Text);
                 }
                 else if (sender == btnBrowseGram)
                 {
                     txtDatabaseGram.Text = opf.FileName;
+                    trvGrammars.Nodes.Clear();
                     InitGramTreeView(txtDatabaseGram.Text);
                 }
             }
