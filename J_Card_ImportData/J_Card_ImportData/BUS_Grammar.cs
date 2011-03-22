@@ -28,10 +28,10 @@ namespace J_Card_ImportData
         /// </summary>
         /// <param name="strLevel">Input Level</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCarByLevel(string strLevel)
+        public ArrayList GetGrammarCarByLevel(int catID)
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
-            return daoGram.GetGrammarCarByLevel(strLevel);
+            return daoGram.GetGrammarCarByLevel(catID);
         }
 
 
@@ -41,11 +41,11 @@ namespace J_Card_ImportData
         /// <param name="strKyu">The kyu.</param>
         /// <param name="dbFile">The S3GT databse file path.</param>
         /// <returns></returns>
-        public Boolean DeleteGrammarCards(int strKyu, string dbFile)
+        public Boolean DeleteGrammarCards(int strKyu)
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
             //Delete all the previous record
-            return (daoGram.DeleteGrammarCards(strKyu, dbFile));
+            return (daoGram.DeleteGrammarCards(strKyu));
         }
         /// <summary>
         /// Inserts the grammar cards.
@@ -54,11 +54,11 @@ namespace J_Card_ImportData
         /// <param name="strKyu">The String of kyu.</param>
         /// <param name="dbFile">The s3gt database file path.</param>
         /// <returns></returns>
-        public Boolean InsertGrammarCards(DTO_Grammar[] arrDTOGram, String strKyu, String dbFile)
+        public Boolean InsertGrammarCards(DTO_Grammar[] arrDTOGram, int catID)
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
             //Continue add new one
-            return daoGram.InsertGrammarCards(arrDTOGram, strKyu, dbFile);
+            return daoGram.InsertGrammarCards(arrDTOGram, catID);
         }
 
         /// <summary>

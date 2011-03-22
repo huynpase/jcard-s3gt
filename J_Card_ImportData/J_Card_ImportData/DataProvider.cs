@@ -43,8 +43,7 @@ namespace J_Card_ImportData
             }
             catch (OleDbException ex)
             {
-                Console.WriteLine(ex.Message);
-                return cn;
+                throw (ex);                
             }
         }
 
@@ -92,6 +91,6 @@ namespace J_Card_ImportData
                 _connect.Close();
             }
         }
-
     }
 }
+

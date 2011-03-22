@@ -7,20 +7,18 @@ namespace J_Card_ImportData
     public class DTO_Grammar
     {
         long lGR_ID;
-
         public long LGR_ID
         {
             get { return lGR_ID; }
             set { lGR_ID = value; }
         }
 
-        string str_Level;
-
-        public string STR_Level
+        long lCAT_ID;
+        public long LCAT_ID
         {
-            get { return str_Level; }
-            set { str_Level = value; }
-        }
+            get { return lCAT_ID; }
+            set { lCAT_ID = value; }
+        }       
 
         string str_Sample;
 
@@ -54,12 +52,18 @@ namespace J_Card_ImportData
             set { str_Meaning_VN = value; }
         }
 
-        ArrayList arrExample;
-
-        public ArrayList ArrExample
+        ArrayList arrExampleVN;
+        public ArrayList ArrExampleVN
         {
-            get { return arrExample; }
-            set { arrExample = value; }
+            get { return arrExampleVN; }
+            set { arrExampleVN = value; }
+        }
+
+        ArrayList arrExampleJP;
+        public ArrayList ArrExampleJP
+        {
+            get { return arrExampleJP; }
+            set { arrExampleJP = value; }
         }
 
         /// <summary>
@@ -68,19 +72,14 @@ namespace J_Card_ImportData
         public DTO_Grammar()
         {
             lGR_ID = 1;
-            str_Level = "";
+            lCAT_ID = 1;          
             str_Sample = "";
             str_Syntax = "";
             str_Meaning_JP = "";
             str_Meaning_VN = "";
-            //
-            arrExample = new ArrayList();
-            //int i = 0;
-            //for (; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
-            //{
-            //    String tmpStr = "";
-            //    arrExample.Add(tmpStr);
-            //}
+
+            arrExampleVN = new ArrayList();
+            arrExampleJP = new ArrayList();
         }
 
         /// <summary>
@@ -90,12 +89,13 @@ namespace J_Card_ImportData
         /// <param name="meaning_jp">The meaning_jp.</param>
         /// <param name="meaning_vn">The meaning_vn.</param>
         /// <param name="example">The example.</param>
-        public DTO_Grammar(string sample, string meaning_jp, string meaning_vn, ArrayList example)
+        public DTO_Grammar(string sample, string meaning_jp, string meaning_vn, ArrayList exampleVN, ArrayList exampleJP)
         {
             str_Sample = sample;
             str_Meaning_JP = meaning_jp;
             str_Meaning_VN = meaning_vn;
-            arrExample = example;
+            arrExampleVN = exampleVN;
+            arrExampleJP = exampleJP;
         }
     }
 }
