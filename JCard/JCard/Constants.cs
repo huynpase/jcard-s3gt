@@ -88,5 +88,21 @@ namespace JCard
         public const string RES_GRAMSETT_VALUE = "Cấu Hình Card Ngữ Pháp";
         public const string RES_GRAMSETT_SAVEBUTTON_NAME = "GramSettSaveButt";
         public const string RES_GRAMSETT_SAVEBUTTON_VALUE = "Lưu";
+    
+        // Resource Messages
+        public const string RES_ERROR_TITLE_NAME = "MsgErrorTitle";
+        public const string RES_ERROR_TITLE_VALUE = "Thông Báo Lỗi";
+        public const string RES_INFO_TITLE_NAME = "MsgInfoTitle";
+        public const string RES_INFO_TITLE_VALUE = "Thông Báo";
+        public const string RES_CONFIRM_TITLE_NAME = "MsgConfirmTitle";
+        public const string RES_CONFIRM_TITLE_VALUE = "Thông Báo Xác Nhận";
+        public const string RES_S3GT_OPEN_TITLE_NAME = "MsgS3gtOpenTitle";
+        public const string RES_S3GT_OPEN_TITLE_VALUE = "Hãy chọn file CSDL S3GT";
+        public const string RES_ERROR_NAME = "MsgError";
+        public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
+        public const string RES_SELECT_GRAM_INFO_NAME = "MsgSelectGram";
+        public const string RES_SELECT_GRAM_INFO_VALUE = "Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.";
+        public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";
+        public const string RES_SELECT_TOPIC_INFO_VALUE = "Hãy chọn ít nhất một chủ đề trước khi bắt đầu học.";
     }
 }
