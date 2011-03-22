@@ -19,10 +19,10 @@ namespace JCard
          */
         private bool flag;
 
-        // Grammar setting
+        /* Grammar setting */
         private DTO_GramSetting dto_gramSetting;
-
-        private string strSettingFile = @"\GramSettings.ini";   // file path of grammar setting file
+        /* file path of grammar setting file */
+        private string strSettingFile = @"\GramSettings.ini";
                 
         /* So example da duoc hien thi */
         private int count_example;
@@ -44,8 +44,14 @@ namespace JCard
         /* Lay random 1 mau grammar card hoac 1 example bat ky */
         private Random rand;
 
-        /* List luu giu cac grammar card truoc do */
-        ArrayList arr_CardForward = new ArrayList();
+        /* Xu ly get back grammar */
+        ArrayList arr_CardForward = new ArrayList(); // List luu giu cac grammar card truoc do
+
+        /* Xu ly get Back-Next example */
+        ArrayList arr_CardExampleForward = new ArrayList(); // List luu giu cac grammar card truoc do - 
+                                                            // Xu ly trong truong hop da hien thi het vi du truoc do
+                                                            // cua grammar card hien tai
+        ArrayList arr_ExampleForward = new ArrayList(); // List luu giu cac example truoc do
                 
         public fGrammar(ArrayList arr_GramCards)
         {
@@ -84,11 +90,13 @@ namespace JCard
             /* So example duoc phep hien thi trong moi grammar card: Set cung */
             example_ini = dto_gramSetting.Ex_NoOfDisplay;
 
+            /* Display grammar card va example dau tien khi vua moi load chuong trinh len */
             rand = new Random();
             if (arr_Entry.Count >= 1)
             {
                 index_entry = rand.Next(0, arr_Entry.Count - 1);
                 arr_CardForward.Add(index_entry);
+                arr_CardExampleForward.Add(index_entry);
                 max_entry = arr_Entry.Count;
                 max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
                 if (example_ini < max_example)
@@ -106,6 +114,7 @@ namespace JCard
                 if (sum_of_display_example >= 1)
                 {
                     index_example = rand.Next(0, max_example - 1);
+                    arr_ExampleForward.Add(index_example);
                     lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
@@ -333,51 +342,79 @@ namespace JCard
                 }
             }
         }
-        /* Display */
+        /* Ham xu ly chinh dung de hien thi grammar card va example */
         private void Display()
         {
+            int i = 0, j = 0;
             count_example++;
-            if (count_example == sum_of_display_example || sum_of_display_example == 0)
-            {
+            if (count_example == sum_of_display_example || sum_of_display_example == 0 || count_example_forward != 1)
+            {// Truong hop da hien thi het example tuong voi mau grammar card hien tai
                 if (max_entry > 1)
                 {
                     // Lay random grammar card tiep theo
-                    for (int i = 0; i < arr_tempEntry.Count; i++)
-                        if (((DTO_Grammar)arr_tempEntry[i]).LGR_ID == ((DTO_Grammar)arr_Entry[index_entry]).LGR_ID)
-                            arr_CardForward.Add(i);
-                    count_forward = 0;
-                    arr_Entry.RemoveAt(index_entry);
-                    max_entry--;
-                    index_entry = rand.Next(0, max_entry - 1);
-
-                    count_example = 0;
-                    max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
-                    if (example_ini < max_example)
+                    if (count_example == sum_of_display_example || sum_of_display_example == 0)
                     {
-                        sum_of_display_example = example_ini;
-                    }
-                    else
-                    {
-                        sum_of_display_example = max_example;
+                        for (i = 0; i < arr_tempEntry.Count; i++)
+                            if (((DTO_Grammar)arr_tempEntry[i]).LGR_ID == ((DTO_Grammar)arr_Entry[index_entry]).LGR_ID)
+                                break;
+                        arr_CardForward.Add(i);
+                    
+                        count_forward = 0;
+                        arr_Entry.RemoveAt(index_entry);
+                        max_entry--;
+                        index_entry = rand.Next(0, max_entry - 1);
+
+                        count_example = 0;
+                        max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                        if (example_ini < max_example)
+                        {
+                            sum_of_display_example = example_ini;
+                        }
+                        else
+                        {
+                            sum_of_display_example = max_example;
+                        }
                     }
 
+                    count_example_forward = 1;
                     SetControlValues(arr_Entry, index_entry);
                 }
                 else
-                {
-                    this.Dispose();
-                    Application.Restart();
+                {// Truong hop da hien thi het tat ca grammar card
+                    if (!(count_example == sum_of_display_example || sum_of_display_example == 0))
+                    {
+                        count_example_forward = 1;
+                        SetControlValues(arr_Entry, index_entry);
+                    }
+                    else
+                    {
+                        this.Dispose();
+                        Application.Restart();
+                    }
                 }
             }
 
             if (max_example >= 1 && sum_of_display_example >= 1)
             {
+                /* Xu ly get back example */
+                for (j = 0; j < arr_tempEntry.Count; j++)
+                    if (((DTO_Grammar)arr_tempEntry[j]).LGR_ID == ((DTO_Grammar)arr_Entry[index_entry]).LGR_ID)
+                        break;
+                arr_CardExampleForward.Add(j);
+
                 // Lay random example tiep theo
                 index_example = rand.Next(0, max_example - 1);
                 lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
                 toolTip4.SetToolTip(lblExample, lblExample.Text);
+                /* Xu ly get back example */
+                for (i = 0; i < ((DTO_Grammar)arr_tempEntry[j]).ArrExample.Count; i++)
+                    if (((DTO_Grammar)arr_tempEntry[j]).ArrExample[i].ToString().Equals(((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString()))
+                    {
+                        arr_ExampleForward.Add(i);
+                        break;
+                    }
                 ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
-                max_example--;
+                max_example--; // Do vua display 1 example nen phai giam bien nay xuong 1
             }
             else
             {
@@ -428,7 +465,8 @@ namespace JCard
 
         private void fGrammar_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -439,7 +477,8 @@ namespace JCard
 
         private void panel1_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
@@ -450,7 +489,8 @@ namespace JCard
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -461,7 +501,8 @@ namespace JCard
 
         private void panel2_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
@@ -472,7 +513,8 @@ namespace JCard
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
@@ -483,7 +525,8 @@ namespace JCard
 
         private void panel4_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void label4_MouseMove(object sender, MouseEventArgs e)
@@ -494,7 +537,8 @@ namespace JCard
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void textBox1_MouseMove(object sender, MouseEventArgs e)
@@ -505,7 +549,8 @@ namespace JCard
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void btnPrevious_MouseMove(object sender, MouseEventArgs e)
@@ -516,7 +561,8 @@ namespace JCard
 
         private void btnPrevious_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
         }
 
         private void btnNext_MouseMove(object sender, MouseEventArgs e)
@@ -527,12 +573,49 @@ namespace JCard
 
         private void btnNext_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if (!bool_display)
+                timer.Enabled = true;
+        }
+
+        private void btnDisplay_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void btnDisplay_MouseLeave(object sender, EventArgs e)
+        {
+            if (!bool_display)
+                timer.Enabled = true;
+        }
+
+        private void btnExamplePrev_MouseLeave(object sender, EventArgs e)
+        {
+            if (!bool_display)
+                timer.Enabled = true;
+        }
+
+        private void btnExamplePrev_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void btnExampleNxt_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+        }
+
+        private void btnExampleNxt_MouseLeave(object sender, EventArgs e)
+        {
+            if (!bool_display)
+                timer.Enabled = true;
         }
         #endregion
 
         #region Next&Forward
-        private int count_forward = 0;
+        private int count_forward = 0; // Dem so lan back/lui cua grammar card
         // Hien thi grammar card truoc do
         private void btnPrevious_Click(object sender, EventArgs e)
         {
@@ -563,6 +646,27 @@ namespace JCard
         private void btnNext_Click(object sender, EventArgs e)
         {
             count_example = sum_of_display_example - 1;
+            Display();
+        }
+
+        // Hien thi lai vi du truoc do. Neu da hien thi het vi du truoc do thi hien thi mau ngu phap truoc do.
+        private int count_example_forward = 1; // Dem so lan back/lui cua example
+        private void btnExamplePrev_Click(object sender, EventArgs e)
+        {
+            if (arr_CardExampleForward.Count > 1 && count_example_forward < arr_CardExampleForward.Count)
+            {
+                count_example_forward++;
+                int temp_index_entry = (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward];
+                int temp_index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - count_example_forward];
+                SetControlValues(arr_tempEntry, temp_index_entry);
+                lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
+                toolTip4.SetToolTip(lblExample, lblExample.Text);
+            }
+        }
+
+        // Hien thi vi du tiep theo. Neu tat ca vi du da duoc hien thi thi hien thi grammar moi.
+        private void btnExampleNxt_Click(object sender, EventArgs e)
+        {
             Display();
         }
         #endregion
@@ -611,7 +715,8 @@ namespace JCard
 
         private void panel5_MouseLeave(object sender, EventArgs e)
         {
-            timer.Enabled = true;
+            if(!bool_display)
+                timer.Enabled = true;
         }
 
         #region Change Width
@@ -662,5 +767,39 @@ namespace JCard
         }
         #endregion
         #endregion
+
+        // Cho phep display/nondisplay vung hien thi sample, meaning, example
+        private bool bool_display = false;
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            if (!bool_display)
+            {
+                bool_display = true;
+                pnlSample.Visible = false;
+                pnlSamWidth.Visible = false;
+                pnlJPMeaning.Visible = false;
+                pnlVNMeaning.Visible = false;
+                pnlJPMeanWidth.Visible = false;
+                pnlExample.Visible = false;
+                pnlExWidth.Visible = false;
+                this.Width = pnlTitle.Width + pnlButtons.Width*2;
+                timer.Enabled = false;
+                this.Opacity = 1;
+            }
+            else
+            {
+                bool_display = false;
+                pnlSample.Visible = true;
+                pnlSamWidth.Visible = true;
+                pnlJPMeaning.Visible = true;
+                pnlVNMeaning.Visible = true;
+                pnlJPMeanWidth.Visible = true;
+                pnlExample.Visible = true;
+                pnlExWidth.Visible = true;
+                this.Width = pnlTitle.Width + pnlButtons.Width +
+                                pnlSample.Width + pnlJPMeaning.Width +
+                                pnlExample.Width;
+            }
+        }
     }
 }

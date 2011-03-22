@@ -103,6 +103,7 @@ namespace JCard
         //Set values for Example Panel
         #region Example
         int _Ex_BackColor, _Ex_ForeColor, _Ex_Width, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
+        bool _Ex_VN_IsDisplayed;
         public int Ex_BackColor
         {
             get { return _Ex_BackColor; }
@@ -137,6 +138,12 @@ namespace JCard
         {
             get { return _Ex_DelayTime; }
             set { _Ex_DelayTime = value; }
+        }
+
+        public bool Ex_VN_IsDisplayed
+        {
+            get { return _Ex_VN_IsDisplayed; }
+            set { _Ex_VN_IsDisplayed = value; }
         }
         #endregion
     }

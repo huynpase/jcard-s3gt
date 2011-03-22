@@ -91,13 +91,32 @@ namespace JCard
             int_Kyu = grammar.INT_Kyu;
             str_Syntax = grammar.STR_Syntax;
             arrExample = new ArrayList();
+            arrExampleVN = new ArrayList();
 
-            for (int j = 0; j < grammar.ArrExample.Count; j++)
+            int j = 0;
+            for (j = 0; j < grammar.ArrExample.Count; j++)
                 arrExample.Add(grammar.ArrExample[j].ToString());
 
-            arrExampleVN = new ArrayList();
-            for (int j = 0; j < grammar.ArrExampleVN.Count; j++)
+            for (j = 0; j < grammar.ArrExampleVN.Count; j++)
                 arrExampleVN.Add(grammar.ArrExampleVN[j].ToString());
+        }
+
+        public string XuLyXuongHangExampleJP()
+        {
+            return "";
+        }
+
+        public string XuLyXuongHangExampleVN()
+        {
+            return "";
+        }
+
+        public string GetExample(int exIndex, bool exam_vn_displayed, bool type)
+        {
+            if (type)
+                return arrExample[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
+            else
+                return XuLyXuongHangExampleJP() + Environment.NewLine + XuLyXuongHangExampleVN();
         }
     }
 }
