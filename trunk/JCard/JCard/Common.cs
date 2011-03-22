@@ -5,6 +5,7 @@ using System.Threading;
 using System.Configuration;
 using System.Resources;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace JCard
 {
@@ -70,5 +71,59 @@ namespace JCard
                 return strDefault;
             }
         }
+
+        #region Xử lý hiển thị message
+        /// <summary>
+        /// Show error message
+        /// </summary>
+        /// <param name="ci"></param>
+        /// <param name="rm"></param>
+        /// <param name="strError"></param>
+        public static void ShowErrorMsg(CultureInfo ci, ResourceManager rm, string strError)
+        {
+            string msg = GetResourceValue(Constants.RES_ERROR_NAME, ci, rm, Constants.RES_ERROR_VALUE) +
+                            Environment.NewLine + Environment.NewLine + strError;
+            string title = GetResourceValue(Constants.RES_ERROR_TITLE_NAME, ci, rm, Constants.RES_ERROR_TITLE_VALUE);
+
+            if (MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+            {
+                Application.Exit();
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Show info message
+        /// </summary>
+        /// <param name="ci"></param>
+        /// <param name="rm"></param>
+        /// <param name="strMsg"></param>
+        /// <param name="strDefMsg"></param>
+        public static void ShowInfoMsg(CultureInfo ci, ResourceManager rm, string strMsg, string strDefMsg)
+        {
+            string msg = GetResourceValue(strMsg, ci, rm, strDefMsg);
+            
+            string title = GetResourceValue(Constants.RES_INFO_TITLE_NAME, ci, rm, Constants.RES_INFO_TITLE_VALUE);
+
+            MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Show confirm message
+        /// </summary>
+        /// <param name="ci"></param>
+        /// <param name="rm"></param>
+        /// <param name="strMsg"></param>
+        /// <param name="strDefMsg"></param>
+        /// <returns></returns>
+        public static DialogResult ShowConfirmMsg(CultureInfo ci, ResourceManager rm, string strMsg, string strDefMsg)
+        {
+            string msg = GetResourceValue(strMsg, ci, rm, strDefMsg);
+
+            string title = GetResourceValue(Constants.RES_INFO_TITLE_NAME, ci, rm, Constants.RES_INFO_TITLE_VALUE);
+
+            return MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Question);  
+        }
+        #endregion
     }
 }
