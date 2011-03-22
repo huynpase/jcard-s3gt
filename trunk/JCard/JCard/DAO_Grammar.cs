@@ -26,7 +26,7 @@ namespace JCard
         /// </summary>
         /// <param name="strLevel">Input Level</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCarByLevel(int intKyu)
+        public ArrayList GetGrammarCardByLevel(int intKyu)
         {
             ArrayList result = new ArrayList();
 
@@ -50,6 +50,43 @@ namespace JCard
                     string tempEx = reader["Example" + (i + 1).ToString()].ToString();
                     if (tempEx != string.Empty && tempEx != null)
                         gramCard.ArrExample.Add(tempEx);
+                }
+
+                result.Add(gramCard);
+            }
+            reader.Close();
+
+            return result;
+        }
+
+        public ArrayList GetAllGrammarCard()
+        {
+            ArrayList result = new ArrayList();
+
+            DataProvider provider = new DataProvider(str_datasource);
+
+            String sql = "Select * from S3GT_GRAM";
+            IDataReader reader = provider.excuteQuery(sql);
+
+            while (reader.Read())
+            {
+                DTO_Grammar gramCard = new DTO_Grammar();
+                gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
+                gramCard.INT_Kyu = int.Parse(reader["CAT_ID"].ToString());
+                gramCard.STR_Sample = reader["Sample"].ToString();
+                gramCard.STR_Syntax = reader["Syntax"].ToString();
+                gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
+                gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
+
+                for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
+                {
+                    string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
+                    if (tempEx_JP != string.Empty && tempEx_JP != null)
+                        gramCard.ArrExample.Add(tempEx_JP);
+                    
+                    string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
+                    if (tempEx_VN != string.Empty && tempEx_VN != null)
+                        gramCard.ArrExampleVN.Add(tempEx_VN);
                 }
 
                 result.Add(gramCard);

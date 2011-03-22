@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using System.Windows.Forms;
 
 namespace JCard
 {
@@ -24,10 +25,10 @@ namespace JCard
         /// </summary>
         /// <param name="strLevel">Input Level</param>
         /// <returns>List of grammar cards</returns>
-        public ArrayList GetGrammarCarByLevel(int intKyu)
+        public ArrayList GetGrammarCardByLevel(int intKyu)
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
-            return daoGram.GetGrammarCarByLevel(intKyu);
+            return daoGram.GetGrammarCardByLevel(intKyu);
         }
 
         /// <summary>
@@ -65,6 +66,72 @@ namespace JCard
         {
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
             return daoGram.ReadExcelFile(exFilePath);
+        }
+
+        /// <summary>
+        /// Get a tree of grammar card
+        /// </summary>
+        /// <returns>A List of TreeNode</returns>
+        public List<TreeNode> GetGrammarCardTree()
+        {
+            List<TreeNode> lstCards = new List<TreeNode>();
+
+            DAO_CAT daoCat = new DAO_CAT(str_datasource);
+            ArrayList arrCats = daoCat.GetAllCats();
+            
+            DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
+            ArrayList arrCards = daoGram.GetAllGrammarCard();
+
+            for (int i = 0; i < arrCards.Count; i++)
+            {
+                DTO_Grammar dtoGram = (DTO_Grammar)arrCards[i];
+                int rootIndex = GetRootNode(arrCats, ref lstCards, dtoGram.INT_Kyu);
+
+                TreeNode node = new TreeNode();
+                node.Name = dtoGram.LGR_ID.ToString();
+                node.Text = dtoGram.STR_Sample;
+                node.Tag = dtoGram;
+
+                lstCards[rootIndex].Nodes.Add(node);
+            }
+
+            return lstCards;
+        }
+
+        /// <summary>
+        /// Get index of Root Node by catID
+        /// </summary>
+        /// <param name="arrCats">Array of Category</param>
+        /// <param name="lstCards">A List of TreeNode</param>
+        /// <param name="catID">Category ID</param>
+        /// <returns>Index of Root Node</returns>
+        private int GetRootNode(ArrayList arrCats, ref List<TreeNode> lstCards, int catID)
+        {
+            for (int i = lstCards.Count - 1; i >= 0 ; i--)
+            {
+                TreeNode node = lstCards[i];
+                if (node.Name == catID.ToString())
+                {
+                    return i;
+                }
+            }
+
+            for (int i = 0; i < arrCats.Count; i++)
+            {
+                DTO_CAT cat = (DTO_CAT)arrCats[i];
+                if (cat.IntID == catID)
+                {
+                    TreeNode node = new TreeNode();
+                    node.Name = cat.IntID.ToString();
+                    node.Text = cat.StrName;
+
+                    lstCards.Add(node);
+
+                    return lstCards.Count-1;
+                }
+            }
+
+            return -1;
         }
         #endregion
     }

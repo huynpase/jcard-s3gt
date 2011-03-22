@@ -6,8 +6,7 @@ namespace JCard
 {
     public class Constants
     {
-        public const int MAX_GRAMMAR_EXAMPLE = 10;
-        public const string DATABASE_PATH = "datasource\\s3gt_db.mdb";
+        public const int MAX_GRAMMAR_EXAMPLE = 10;       
         public const string Top = "0";
         public const string Left = "0";
         public const string BackColor = "-256";
@@ -45,6 +44,8 @@ namespace JCard
         // App Config
         public const string CONFIG_LANGUAGE_KEY = "Language";
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
+        public const string DATABASE_PATH = "datasource\\s3gt_db.mdb";
+        public const string CONFIG_DATABASE_PATH_KEY = "DatabasePath";
 
         // Resource Program
         public const string RES_PROGRAM_NAME = "ProgramName";

@@ -36,9 +36,9 @@ namespace JCard
             while (reader.Read())
             {
                 DTO_CAT cat = new DTO_CAT();
-                cat.IntID = int.Parse(reader[""].ToString());
-                cat.StrName = reader[""].ToString();
-                cat.StrDesc = reader[""].ToString();
+                cat.IntID = int.Parse(reader["CAT_ID"].ToString());
+                cat.StrName = reader["CAT_Name"].ToString();
+                cat.StrDesc = reader["CAT_Desc"].ToString();
 
                 result.Add(cat);
             }
