@@ -90,15 +90,8 @@ namespace J_Card_ImportData
                 {
                     //Import to S3GT_DB    
                     //Get the category
-                    int catID = 0;
-                    //if (rad1kyu.Checked)
-                    //    iKyu = 1;
-                    //else if (rad2kyu.Checked)
-                    //    iKyu = 2;
-                    //else if (rad3kyu.Checked)
-                    //    iKyu = 3;
-                    //else if (rad4kyu.Checked)
-                    //    iKyu = 4;
+                    DTO_Category selectedCat = (DTO_Category)cbCategory.SelectedValue;
+                    int catID = (int)selectedCat.CAT_ID;
                     ////Get the methods of add
                     if (radDelete.Checked)
                         busGram.DeleteGrammarCards(catID);
