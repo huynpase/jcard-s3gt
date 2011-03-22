@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Resources;
+using System.Globalization;
 using JCard;
 
 namespace JCard
@@ -17,6 +19,7 @@ namespace JCard
         public fGramSetts()
         {
             InitializeComponent();
+            SetDisplayLabel();
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
             ChangeGramSett = busGramSett.ReadGramSetting(filePath);
@@ -182,6 +185,35 @@ namespace JCard
         private void numNoDis_Enter(object sender, EventArgs e)
         {
             saveNumVal = ((NumericUpDown)sender).Value;
+        }
+
+        public void SetDisplayLabel()
+        {
+            // Create a resource manager to retrieve resources.
+            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+
+            if (objResourceManager != null)
+            {
+                this.Text = Common.GetResourceValue(Constants.RES_GRAMSETT_NAME, objCulInfo, objResourceManager, Constants.RES_GRAMSETT_VALUE);
+                grbSample.Text = Common.GetResourceValue(Constants.RES_GRBSAMPLE_NAME, objCulInfo, objResourceManager, Constants.RES_GRBSAMPLE_VALUE);
+                grbJap.Text = Common.GetResourceValue(Constants.RES_GRBJAP_NAME, objCulInfo, objResourceManager,Constants.RES_GRBJAP_VALUE);
+                grbVie.Text = Common.GetResourceValue(Constants.RES_GRBVIE_NAME, objCulInfo, objResourceManager,Constants.RES_GRBVIE_VALUE);
+                grbEx.Text = Common.GetResourceValue(Constants.RES_GRBEX_NAME, objCulInfo, objResourceManager,Constants.RES_GRBEX_VALUE);
+                lblSampleBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLBGCLR_VALUE);
+                lblSampleFclr.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLFCLR_VALUE);
+                chkboxJap.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLFCLR_VALUE);
+                lblJapBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLBGCLR_VALUE);
+                lblJapFClr.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLFCLR_VALUE);
+                chkboxVie.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager,Constants.RES_CHKBOXISDISPLAYED_VALUE);
+                lblVieBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLBGCLR_VALUE);
+                lblVieFClr.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager,Constants.RES_CHKBOXISDISPLAYED_VALUE);
+                lblExBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLBGCLR_VALUE);
+                lblExFClr.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager,Constants.RES_LBLFCLR_VALUE);
+                lblExNoDis.Text = Common.GetResourceValue(Constants.RES_LBLEXNUM_NAME, objCulInfo, objResourceManager,Constants.RES_LBLEXNUM_VALUE);
+                lblDisTim.Text = Common.GetResourceValue(Constants.RES_LBLDISPLAY_NAME, objCulInfo, objResourceManager,Constants.RES_LBLDISPLAY_VALUE);
+                lblDelayTim.Text = Common.GetResourceValue(Constants.RES_LBLDELAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDELAY_VALUE);
+            }
         }
 
     }
