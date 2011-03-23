@@ -111,7 +111,7 @@ namespace JCard
             str_Syntax = grammar.STR_Syntax;
             arrExampleJP = new ArrayList();
             arrExampleVN = new ArrayList();
-            
+
             int j = 0;
             for (j = 0; j < grammar.ArrExampleJP.Count; j++)
                 arrExampleJP.Add(grammar.ArrExampleJP[j].ToString());
@@ -124,18 +124,65 @@ namespace JCard
         /// Xus the ly xuong hang example JP.
         /// </summary>
         /// <returns></returns>
-        public string XuLyXuongHangExampleJP()
+        public string XuLyXuongHangExampleJP(string exam)
         {
-            return "";
+            string temp1 = String.Empty;
+            string temp2 = String.Empty;
+            if (exam.Length > Constants.MAX_LENGTH_NEWLINE)
+            {
+                temp1 = exam.Substring(0, Constants.MAX_LENGTH_NEWLINE);
+                temp2 = exam.Substring(Constants.MAX_LENGTH_NEWLINE);
+                if (temp1.Contains("、"))
+                {
+                    for (int i = 1; i < 5; i++)
+                        if (temp1.LastIndexOf("、") == temp1.Length - i)
+                            return temp1.Substring(0, temp1.LastIndexOf("、") + 1) + Environment.NewLine +
+                                XuLyXuongHangExampleJP(exam.Substring(temp1.LastIndexOf("、") + 1));
+                    return temp1 + Environment.NewLine +
+                        XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                }
+                else
+                {
+                    if (temp2.Contains("、"))
+                    {
+                        for (int j = 0; j < 3; j++)
+                            if (temp2.LastIndexOf("、") == j)
+                                return exam.Substring(0, Constants.MAX_LENGTH_NEWLINE + j + 1) + Environment.NewLine +
+                                    XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE + j + 1));
+                        return temp1 + Environment.NewLine +
+                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                    }
+                    else
+                        return temp1 + Environment.NewLine +
+                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                }
+            }
+            else
+                return exam;
         }
 
         /// <summary>
         /// Xus the ly xuong hang example VN.
         /// </summary>
         /// <returns></returns>
-        public string XuLyXuongHangExampleVN()
+        public string XuLyXuongHangExampleVN(string exam)
         {
-            return "";
+            string temp = String.Empty;
+            if (exam.Length > Constants.MAX_LENGTH_NEWLINE)
+            {
+                temp = exam.Substring(0, Constants.MAX_LENGTH_NEWLINE);
+                if (temp.Contains(" "))
+                    if (temp.LastIndexOf(" ") + 1 == Constants.MAX_LENGTH_NEWLINE)
+                        return temp.Substring(0, Constants.MAX_LENGTH_NEWLINE - 1) + Environment.NewLine +
+                            XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                    else
+                        return temp.Substring(0, temp.LastIndexOf(" ")) + Environment.NewLine +
+                            XuLyXuongHangExampleVN(exam.Substring(temp.LastIndexOf(" ") + 1));
+                else
+                    return temp + Environment.NewLine + XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+            }
+            else
+                return exam;
         }
 
         /// <summary>
@@ -147,10 +194,20 @@ namespace JCard
         /// <returns></returns>
         public string GetExample(int exIndex, bool exam_vn_displayed, bool type)
         {
-            if (type)
-                return arrExampleJP[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
+            if (exam_vn_displayed)
+            {
+                if (type)
+                    return arrExampleJP[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
+                else
+                    return XuLyXuongHangExampleJP(arrExampleJP[exIndex].ToString()) + Environment.NewLine + XuLyXuongHangExampleVN(arrExampleVN[exIndex].ToString());
+            }
             else
-                return XuLyXuongHangExampleJP() + Environment.NewLine + XuLyXuongHangExampleVN();
+            {
+                if (type)
+                    return arrExampleJP[exIndex].ToString();
+                else
+                    return XuLyXuongHangExampleJP(arrExampleJP[exIndex].ToString());
+            }
         }
     }
 }
