@@ -126,6 +126,9 @@
   <data name="btncancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
+  <data name="btnclose" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
   <data name="btnimport" xml:space="preserve">
     <value>Thêm Vào</value>
   </data>
