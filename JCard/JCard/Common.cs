@@ -109,6 +109,22 @@ namespace JCard
         }
 
         /// <summary>
+        /// Show warning message
+        /// </summary>
+        /// <param name="ci"></param>
+        /// <param name="rm"></param>
+        /// <param name="strMsg"></param>
+        /// <param name="strDefMsg"></param>
+        public static void ShowWarningMsg(CultureInfo ci, ResourceManager rm, string strMsg, string strDefMsg)
+        {
+            string msg = GetResourceValue(strMsg, ci, rm, strDefMsg);
+
+            string title = GetResourceValue(Constants.RES_WARN_TITLE_NAME, ci, rm, Constants.RES_WARN_TITLE_VALUE);
+
+            MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        /// <summary>
         /// Show confirm message
         /// </summary>
         /// <param name="ci"></param>
