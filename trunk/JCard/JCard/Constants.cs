@@ -208,6 +208,10 @@ namespace JCard
         public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";
 
         // Resource DTO_Grammar
-        public const int MAX_LENGTH_NEWLINE = 50;
+        public const int MAX_LENGTH_JP_NEWLINE = 75;
+        public const int MAX_LENGTH_VN_NEWLINE = 150;
+        public const string COMMA_JP = "、";
+        public const string DOT_JP = "。";
+        public const string SPACE = " ";
     }
 }
