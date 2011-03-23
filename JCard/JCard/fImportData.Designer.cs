@@ -177,6 +177,7 @@ namespace JCard
             // 
             // cbCategory
             // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(129, 107);
             this.cbCategory.Name = "cbCategory";
@@ -216,6 +217,7 @@ namespace JCard
             this.Name = "fImportData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Data From Excel";
+            this.Load += new System.EventHandler(this.fImportData_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
