@@ -98,7 +98,7 @@ namespace JCard
                 arr_CardForward.Add(index_entry);
                 arr_CardExampleForward.Add(index_entry);
                 max_entry = arr_Entry.Count;
-                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.Count;
                 if (example_ini < max_example)
                 {
                     sum_of_display_example = example_ini;
@@ -115,9 +115,9 @@ namespace JCard
                 {
                     index_example = rand.Next(0, max_example - 1);
                     arr_ExampleForward.Add(index_example);
-                    lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                    lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString();
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
-                    ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
+                    ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.RemoveAt(index_example);
                     max_example--;
                 }
             }
@@ -365,7 +365,7 @@ namespace JCard
                         index_entry = rand.Next(0, max_entry - 1);
 
                         count_example = 0;
-                        max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.Count;
+                        max_example = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.Count;
                         if (example_ini < max_example)
                         {
                             sum_of_display_example = example_ini;
@@ -404,16 +404,16 @@ namespace JCard
 
                 // Lay random example tiep theo
                 index_example = rand.Next(0, max_example - 1);
-                lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString();
+                lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString();
                 toolTip4.SetToolTip(lblExample, lblExample.Text);
                 /* Xu ly get back example */
-                for (i = 0; i < ((DTO_Grammar)arr_tempEntry[j]).ArrExample.Count; i++)
-                    if (((DTO_Grammar)arr_tempEntry[j]).ArrExample[i].ToString().Equals(((DTO_Grammar)arr_Entry[index_entry]).ArrExample[index_example].ToString()))
+                for (i = 0; i < ((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP.Count; i++)
+                    if (((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP[i].ToString().Equals(((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString()))
                     {
                         arr_ExampleForward.Add(i);
                         break;
                     }
-                ((DTO_Grammar)arr_Entry[index_entry]).ArrExample.RemoveAt(index_example);
+                ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.RemoveAt(index_example);
                 max_example--; // Do vua display 1 example nen phai giam bien nay xuong 1
             }
             else
@@ -624,11 +624,11 @@ namespace JCard
                 count_forward++;
                 int temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
-                int temp_max_example = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample.Count;
+                int temp_max_example = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP.Count;
                 if (temp_max_example >= 1 && example_ini >= 1)
                 {
                     int temp_index_example = rand.Next(0, temp_max_example - 1);
-                    lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
+                    lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP[temp_index_example].ToString();
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
                 }
                 else
@@ -659,7 +659,7 @@ namespace JCard
                 int temp_index_entry = (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward];
                 int temp_index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - count_example_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
-                lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExample[temp_index_example].ToString();
+                lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP[temp_index_example].ToString();
                 toolTip4.SetToolTip(lblExample, lblExample.Text);
             }
         }
