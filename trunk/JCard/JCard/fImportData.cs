@@ -177,6 +177,8 @@ namespace JCard
             string dbFilePath = Application.StartupPath;
             txtS3GTDB.Text = dbFilePath + "\\" + Constants.DATABASE_PATH;
             getCategories(txtS3GTDB.Text);
+
+            SetDisplayLabel();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
