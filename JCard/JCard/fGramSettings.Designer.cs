@@ -286,7 +286,7 @@
             // 
             // numDisTim
             // 
-            this.numDisTim.Location = new System.Drawing.Point(104, 88);
+            this.numDisTim.Location = new System.Drawing.Point(117, 88);
             this.numDisTim.Maximum = new decimal(new int[] {
             60,
             0,
@@ -310,7 +310,7 @@
             // 
             // numNoDis
             // 
-            this.numNoDis.Location = new System.Drawing.Point(104, 57);
+            this.numNoDis.Location = new System.Drawing.Point(117, 57);
             this.numNoDis.Maximum = new decimal(new int[] {
             10,
             0,
