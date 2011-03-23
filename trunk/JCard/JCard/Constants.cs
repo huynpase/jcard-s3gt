@@ -181,7 +181,7 @@ namespace JCard
         public const string RES_EXCEL_OPEN_TITLE_NAME = "MsgExcelOpenTitle";
         public const string RES_EXCEL_OPEN_TITLE_VALUE = "Hãy chọn file Excel";
         public const string RES_ERROR_NAME = "MsgError";
-        public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
+        public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
         public const string RES_SELECT_GRAM_INFO_NAME = "MsgSelectGram";
         public const string RES_SELECT_GRAM_INFO_VALUE = "Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.";
         public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";
@@ -202,6 +202,8 @@ namespace JCard
         public const string RES_ADD_CAT_FAIL_VALUE = "Thất bại trong quá trình thêm dữ liệu vào Cơ Sở Dữ Liệu.";
         public const string RES_ADD_CAT_SUCESSFULL_NAME = "MsgAddCatSucessfull";
         public const string RES_ADD_CAT_SUCESSFULL_VALUE = "Đã thêm dữ liệu thành công.";
+        public const string RES_SAVE_SETTING_SUCESSFULL_NAME = "MsgSaveSettingSucessfull";
+        public const string RES_SAVE_SETTING_SUCESSFULL_VALUE = "Đã lưu cấu hình thành công.";
 
         // Resource DTO_Grammar
         public const int MAX_LENGTH_NEWLINE = 150;

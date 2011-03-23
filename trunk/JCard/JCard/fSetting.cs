@@ -13,6 +13,9 @@ namespace JCard
     public partial class fSetting : Form
     {
         string strFileSettingPath = Application.StartupPath + @"\Setting.ini";
+        ResourceManager objResourceManager;
+        CultureInfo objCulInfo;
+
         public fSetting()
         {
             InitializeComponent();
@@ -43,12 +46,11 @@ namespace JCard
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not save setting to file");
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
             }
-           
-            
 
-            MessageBox.Show("Save Successful.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME, 
+                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);            
             this.Close();
         }
 
@@ -61,22 +63,13 @@ namespace JCard
         {
             DTO_Setting dtoSetting = new DTO_Setting();
             BUS_Setting bus = new BUS_Setting();
-            try
-            {
-                dtoSetting = bus.ReadSetting(strFileSettingPath);
-                comDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
-                comDeplayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
-                comFontKanji.Text = dtoSetting.FontSizeKanjiVOC.ToString();
-                comFontKana.Text = dtoSetting.FontSizeKanaVOC.ToString();
-                comFontHanNom.Text = dtoSetting.FontSizeHanNom.ToString();
-                comFontMeaning.Text = dtoSetting.FontSizeImiVOC.ToString();
-            }
-            catch
-            {
-
-                MessageBox.Show("Error when read file setting");
-            }
-            
+            dtoSetting = bus.ReadSetting(strFileSettingPath);
+            comDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
+            comDeplayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
+            comFontKanji.Text = dtoSetting.FontSizeKanjiVOC.ToString();
+            comFontKana.Text = dtoSetting.FontSizeKanaVOC.ToString();
+            comFontHanNom.Text = dtoSetting.FontSizeHanNom.ToString();
+            comFontMeaning.Text = dtoSetting.FontSizeImiVOC.ToString();            
         }
 
         private void fSetting_Load(object sender, EventArgs e)
@@ -86,8 +79,8 @@ namespace JCard
 
         public void SetDisplayLabel()
         {
-            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fSetting).Assembly);
-            CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fSetting).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
             if (objResourceManager != null)
             {
                 this.Text = Common.GetResourceValue(Constants.RES_VOCABSETT_NAME, objCulInfo, objResourceManager, Constants.RES_VOCABSETT_VALUE);

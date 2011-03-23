@@ -15,6 +15,8 @@ namespace JCard
     {
         DTO_GramSetting ChangeGramSett = new DTO_GramSetting();
         BUS_GramSetting busGramSett = new BUS_GramSetting();
+        ResourceManager objResourceManager;
+        CultureInfo objCulInfo;
 
         public fGramSetts()
         {
@@ -165,7 +167,18 @@ namespace JCard
             ChangeGramSett.Ex_VN_IsDisplayed = chkboxEx.Checked;
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
-            busGramSett.SaveGramSetting(ChangeGramSett, filePath);
+
+            try
+            {
+                busGramSett.SaveGramSetting(ChangeGramSett, filePath);
+            }
+            catch (Exception ex)
+            {
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            }
+
+            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME,
+                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);            
             this.Close();
         }
 
@@ -192,8 +205,8 @@ namespace JCard
         public void SetDisplayLabel()
         {
             // Create a resource manager to retrieve resources.
-            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fGramSetts).Assembly);
-            CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fGramSetts).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
 
             if (objResourceManager != null)
             {
