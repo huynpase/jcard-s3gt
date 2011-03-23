@@ -470,7 +470,6 @@
         private System.Windows.Forms.TabPage tabGrammar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private rdbBR setting1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSetting;
 
