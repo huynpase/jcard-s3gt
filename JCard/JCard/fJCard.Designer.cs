@@ -268,6 +268,7 @@ namespace JCard
             this.MinimizeBox = false;
             this.Name = "fJCard";
             this.Opacity = 0D;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard- Vocabulary";
             this.Load += new System.EventHandler(this.FJCardLoad);

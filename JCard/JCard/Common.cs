@@ -136,9 +136,9 @@ namespace JCard
         {
             string msg = GetResourceValue(strMsg, ci, rm, strDefMsg);
 
-            string title = GetResourceValue(Constants.RES_INFO_TITLE_NAME, ci, rm, Constants.RES_INFO_TITLE_VALUE);
+            string title = GetResourceValue(Constants.RES_CONFIRM_TITLE_NAME, ci, rm, Constants.RES_CONFIRM_TITLE_VALUE);
 
-            return MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Question);  
+            return MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);  
         }
         #endregion
     }

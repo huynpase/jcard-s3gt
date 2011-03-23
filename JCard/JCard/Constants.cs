@@ -204,8 +204,10 @@ namespace JCard
         public const string RES_ADD_CAT_SUCESSFULL_VALUE = "Đã thêm dữ liệu thành công.";
         public const string RES_SAVE_SETTING_SUCESSFULL_NAME = "MsgSaveSettingSucessfull";
         public const string RES_SAVE_SETTING_SUCESSFULL_VALUE = "Đã lưu cấu hình thành công.";
+        public const string RES_CLOSE_PROGRAM_NAME = "MsgCloseProgram";
+        public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";
 
         // Resource DTO_Grammar
-        public const int MAX_LENGTH_NEWLINE = 150;
+        public const int MAX_LENGTH_NEWLINE = 50;
     }
 }
