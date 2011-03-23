@@ -5,11 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Resources;
+using System.Globalization;
 
 namespace JCard
 {
     public partial class fAddCategory : Form
     {
+        #region Variables for resource
+        ResourceManager objResourceManager;
+        CultureInfo objCulInfo;
+        #endregion
+
         private fImportData fImportForm;
         public fImportData FImportForm
         {
@@ -47,7 +54,8 @@ namespace JCard
             {
                 if (String.Compare(txtCat_Name.Text, "") == 0)
                 {
-                    MessageBox.Show("The category's name can not empty!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_CAT_NAME_EMPTY_NAME,
+                                            Constants.RES_CAT_NAME_EMPTY_VALUE);
                     return;
                 }
                 //Add new category
@@ -55,20 +63,29 @@ namespace JCard
                 BUS_Category catBus = new BUS_Category(FImportForm.getS3GTDBFile());
                 if (catBus.AddNewCategory(cat))
                 {
-                    MessageBox.Show("Add category sucessfull!!!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_ADD_CAT_SUCESSFULL_NAME,
+                            Constants.RES_ADD_CAT_SUCESSFULL_VALUE);
                     FImportForm.getCategories(FImportForm.getS3GTDBFile());
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Add category fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_ADD_CAT_FAIL_NAME,
+                                            Constants.RES_ADD_CAT_FAIL_VALUE);
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
             }
+        }
+
+        public void SetDisplayLabel()
+        {
+            // Create a resource manager to retrieve resources.
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
         }
     }
 }

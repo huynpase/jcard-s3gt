@@ -172,15 +172,35 @@ namespace JCard
         public const string RES_ERROR_TITLE_VALUE = "Thông Báo Lỗi";
         public const string RES_INFO_TITLE_NAME = "MsgInfoTitle";
         public const string RES_INFO_TITLE_VALUE = "Thông Báo";
+        public const string RES_WARN_TITLE_NAME = "MsgWarnTitle";
+        public const string RES_WARN_TITLE_VALUE = "Cảnh Báo";
         public const string RES_CONFIRM_TITLE_NAME = "MsgConfirmTitle";
         public const string RES_CONFIRM_TITLE_VALUE = "Thông Báo Xác Nhận";
         public const string RES_S3GT_OPEN_TITLE_NAME = "MsgS3gtOpenTitle";
         public const string RES_S3GT_OPEN_TITLE_VALUE = "Hãy chọn file CSDL S3GT";
+        public const string RES_EXCEL_OPEN_TITLE_NAME = "MsgExcelOpenTitle";
+        public const string RES_EXCEL_OPEN_TITLE_VALUE = "Hãy chọn file Excel";
         public const string RES_ERROR_NAME = "MsgError";
         public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
         public const string RES_SELECT_GRAM_INFO_NAME = "MsgSelectGram";
         public const string RES_SELECT_GRAM_INFO_VALUE = "Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.";
         public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";
         public const string RES_SELECT_TOPIC_INFO_VALUE = "Hãy chọn ít nhất một chủ đề trước khi bắt đầu học.";
+        public const string RES_EMPTY_EXCEL_FILE_NAME = "MsgEmptyExcel";
+        public const string RES_EMPTY_EXCEL_FILE_VALUE = "Không có dữ liệu trong file Excel.\nVui lòng chọn file Excel khác để import.";
+        public const string RES_IMPORT_FAIL_NAME = "MsgImportFail";
+        public const string RES_IMPORT_FAIL_VALUE = "Thất bại trong quá trình import vào Cơ Sở Dữ Liệu.";
+        public const string RES_IMPORT_SUCESSFULL_NAME = "MsgImportSucessfull";
+        public const string RES_IMPORT_SUCESSFULL_VALUE = "Đã import dữ liệu thành công.";
+        public const string RES_SELECT_EXCEL_FILE_NAME = "MsgSelectExcel";
+        public const string RES_SELECT_EXCEL_FILE_VALUE = "Hãy chọn file Excel trước khi thực hiện import";
+        public const string RES_SELECT_S3GT_FILE_NAME = "MsgSelectS3gt";
+        public const string RES_SELECT_S3GT_FILE_VALUE = "Hãy chọn file CSDL S3GT trước khi thực hiện import";
+        public const string RES_CAT_NAME_EMPTY_NAME = "MsgCatNameEmpty";
+        public const string RES_CAT_NAME_EMPTY_VALUE = "Tên Phân Loại không được phép rỗng.\nVui lòng nhập Tên Phân Loại trước khi lưu.";
+        public const string RES_ADD_CAT_FAIL_NAME = "MsgAddCatFail";
+        public const string RES_ADD_CAT_FAIL_VALUE = "Thất bại trong quá trình thêm dữ liệu vào Cơ Sở Dữ Liệu.";
+        public const string RES_ADD_CAT_SUCESSFULL_NAME = "MsgAddCatSucessfull";
+        public const string RES_ADD_CAT_SUCESSFULL_VALUE = "Đã thêm dữ liệu thành công.";
     }
 }
