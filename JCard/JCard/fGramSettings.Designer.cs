@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGramSetts));
             this.grbSample = new System.Windows.Forms.GroupBox();
             this.pnlSampleFClr = new System.Windows.Forms.Panel();
             this.pnlSampleBgClr = new System.Windows.Forms.Panel();
@@ -426,11 +427,11 @@
             this.Controls.Add(this.grbVie);
             this.Controls.Add(this.grbJap);
             this.Controls.Add(this.grbSample);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fGramSetts";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grammar Card Settings";
             this.grbSample.ResumeLayout(false);
