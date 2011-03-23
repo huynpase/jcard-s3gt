@@ -51,7 +51,7 @@ namespace JCard
                 {
                     string tempEx = reader["Example" + (i + 1).ToString()].ToString();
                     if (tempEx != string.Empty && tempEx != null)
-                        gramCard.ArrExample.Add(tempEx);
+                        gramCard.ArrExampleJP.Add(tempEx);
                 }
 
                 result.Add(gramCard);
@@ -88,7 +88,7 @@ namespace JCard
                 {
                     string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
                     if (tempEx_JP != string.Empty && tempEx_JP != null)
-                        gramCard.ArrExample.Add(tempEx_JP);
+                        gramCard.ArrExampleJP.Add(tempEx_JP);
                     
                     string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
                     if (tempEx_VN != string.Empty && tempEx_VN != null)
@@ -192,7 +192,7 @@ namespace JCard
                             String tmpStr = "@Example";
                             tmpStr += (j + 1).ToString() + "_JP";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
-                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
                             //Example VN
                             tmpStr = "@Example";
                             tmpStr += (j + 1).ToString() + "_VN";
@@ -222,7 +222,7 @@ namespace JCard
                             String tmpStr = "@Example";
                             tmpStr += (j + 1).ToString() + "_JP";
                             cmd.Parameters.Add(tmpStr, OleDbType.WChar);
-                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExample[j].ToString();
+                            cmd.Parameters[tmpStr].Value = arrDTOGram[i].ArrExampleJP[j].ToString();
                             //Example VN
                             tmpStr = "@Example";
                             tmpStr += (j + 1).ToString() + "_VN";
@@ -342,7 +342,7 @@ namespace JCard
                     for (; j < m; j++)
                     {
                         if ((j % 2) == 0)//Example_JP
-                            result[i].ArrExample.Add(ds.Tables[0].Rows[i][j].ToString());
+                            result[i].ArrExampleJP.Add(ds.Tables[0].Rows[i][j].ToString());
                         else//Example_VN
                             result[i].ArrExampleVN.Add(ds.Tables[0].Rows[i][j].ToString());
                     }

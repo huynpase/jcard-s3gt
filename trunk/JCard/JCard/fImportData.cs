@@ -42,7 +42,8 @@ namespace JCard
             openFileDialog_S3GTDB.Title = "Please choose database of S3GT";
             openFileDialog_S3GTDB.FileName = "";
             openFileDialog_S3GTDB.Filter = "S3GT DB (*.mdb)|*.mdb";
-            openFileDialog_S3GTDB.InitialDirectory = System.IO.Directory.GetCurrentDirectory().ToString() + "\\datasource\\";
+            //openFileDialog_S3GTDB.InitialDirectory = System.IO.Directory.GetCurrentDirectory().ToString() + "\\datasource\\";
+            openFileDialog_S3GTDB.InitialDirectory = Constants.DATABASE_PATH;
             if (openFileDialog_S3GTDB.ShowDialog() == DialogResult.OK)
             {
                 txtS3GTDB.Text = openFileDialog_S3GTDB.FileName;
@@ -136,7 +137,7 @@ namespace JCard
                 }
                 //Insert to combo-box                
                 cbCategory.DataSource = catList;
-                cbCategory.DisplayMember = "str_Name";
+                cbCategory.DisplayMember = "strName";
             }
             catch (Exception ex)
             {

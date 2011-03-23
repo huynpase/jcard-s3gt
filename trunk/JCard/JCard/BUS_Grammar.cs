@@ -83,7 +83,7 @@ namespace JCard
 
             DAO_Category daoCat = new DAO_Category(str_datasource);
             ArrayList arrCats = daoCat.GetAllCats();
-            
+
             DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
             ArrayList arrCards = daoGram.GetAllGrammarCard();
 
@@ -112,7 +112,7 @@ namespace JCard
         /// <returns>Index of Root Node</returns>
         private int GetRootNode(ArrayList arrCats, ref List<TreeNode> lstCards, long catID)
         {
-            for (int i = lstCards.Count - 1; i >= 0 ; i--)
+            for (int i = lstCards.Count - 1; i >= 0; i--)
             {
                 TreeNode node = lstCards[i];
                 if (node.Name == catID.ToString())
@@ -132,7 +132,7 @@ namespace JCard
 
                     lstCards.Add(node);
 
-                    return lstCards.Count-1;
+                    return lstCards.Count - 1;
                 }
             }
 
