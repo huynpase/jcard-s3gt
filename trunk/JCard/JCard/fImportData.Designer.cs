@@ -35,7 +35,7 @@ namespace JCard
             this.txtS3GTDB = new System.Windows.Forms.TextBox();
             this.butExcel = new System.Windows.Forms.Button();
             this.butS3GTDB = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.radDelete = new System.Windows.Forms.RadioButton();
             this.radKeep = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -104,15 +104,15 @@ namespace JCard
             this.butS3GTDB.UseVisualStyleBackColor = true;
             this.butS3GTDB.Click += new System.EventHandler(this.butS3GTDB_Click);
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(18, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Choose Category:";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(18, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Choose Category:";
             // 
             // radDelete
             // 
@@ -207,7 +207,7 @@ namespace JCard
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.butConvert);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.butS3GTDB);
             this.Controls.Add(this.butExcel);
             this.Controls.Add(this.txtS3GTDB);
@@ -237,7 +237,7 @@ namespace JCard
         private System.Windows.Forms.TextBox txtS3GTDB;
         private System.Windows.Forms.Button butExcel;
         private System.Windows.Forms.Button butS3GTDB;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radDelete;
         private System.Windows.Forms.RadioButton radKeep;
         private System.Windows.Forms.Panel panel1;
