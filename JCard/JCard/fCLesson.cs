@@ -103,7 +103,7 @@ namespace JCard
                 button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
                 ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
                 button1.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
-                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXGRAMMAR_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXGRAMMAR_VALUE);
                 chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
                 chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
                 btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
@@ -112,6 +112,7 @@ namespace JCard
                 button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
                 btnBrowseGram.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
                 btnBrowseVoc.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+                linkLabel1.Text = Common.GetResourceValue(Constants.RES_ABOUT_NAME, objCulInfo, objResourceManager, Constants.RES_ABOUT_VALUE);
             }
         }
         #endregion

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>Thông Tin Jcard</value>
+  </data>
   <data name="btnaddcat" xml:space="preserve">
     <value>Thêm Nhóm</value>
   </data>
@@ -148,6 +151,12 @@
     <value>Hiển Thị</value>
     <comment>:</comment>
   </data>
+  <data name="chkboxvnisdisplayed" xml:space="preserve">
+    <value>Hiển thị ví dụ Tiếng Việt</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>Bản Quyền thuộc về JCD - FSOFT HCM 2011</value>
+  </data>
   <data name="grbex" xml:space="preserve">
     <value>Ví Dụ</value>
   </data>
@@ -166,8 +175,11 @@
   <data name="grbvie" xml:space="preserve">
     <value>Nghĩa Tiếng Việt</value>
   </data>
-  <data name="groupboxvocab" xml:space="preserve">
+  <data name="groupboxgrammar" xml:space="preserve">
     <value>Chọn mẫu ngữ pháp để học</value>
+  </data>
+  <data name="groupboxvocab" xml:space="preserve">
+    <value>Chọn mẫu từ vựng để học</value>
   </data>
   <data name="groupboxvocablearn" xml:space="preserve">
     <value>Học Từ Vựng</value>
@@ -188,7 +200,7 @@
     <value>Nguồn Dữ Liệu</value>
   </data>
   <data name="lbldelay" xml:space="preserve">
-    <value>Delay Time (s):</value>
+    <value>Thời Gian Ẩn (s):</value>
   </data>
   <data name="lbldisplay" xml:space="preserve">
     <value>Thời Gian Hiển Thị (s):</value>
@@ -210,6 +222,9 @@
   </data>
   <data name="lblfmeaning" xml:space="preserve">
     <value>Cỡ Chữ Phần Nghĩa</value>
+  </data>
+  <data name="members" xml:space="preserve">
+    <value>Các Thành Viên của Dự Án:</value>
   </data>
   <data name="programname" xml:space="preserve">
     <value>Chương trình J-Card</value>

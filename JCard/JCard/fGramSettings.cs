@@ -40,6 +40,7 @@ namespace JCard
             numNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
             numDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
             numDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
+            chkboxEx.Checked = ChangeGramSett.Ex_VN_IsDisplayed;
         }
 
         //Sample GroupBox
@@ -161,6 +162,7 @@ namespace JCard
             ChangeGramSett.Ex_NoOfDisplay = int.Parse(numNoDis.Text);
             ChangeGramSett.Ex_DisplayTime = int.Parse(numDisTim.Text);
             ChangeGramSett.Ex_DelayTime = int.Parse(numDelayTim.Text);
+            ChangeGramSett.Ex_VN_IsDisplayed = chkboxEx.Checked;
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
             busGramSett.SaveGramSetting(ChangeGramSett, filePath);
@@ -213,6 +215,7 @@ namespace JCard
                 lblExNoDis.Text = Common.GetResourceValue(Constants.RES_LBLEXNUM_NAME, objCulInfo, objResourceManager,Constants.RES_LBLEXNUM_VALUE);
                 lblDisTim.Text = Common.GetResourceValue(Constants.RES_LBLDISPLAY_NAME, objCulInfo, objResourceManager,Constants.RES_LBLDISPLAY_VALUE);
                 lblDelayTim.Text = Common.GetResourceValue(Constants.RES_LBLDELAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDELAY_VALUE);
+                chkboxEx.Text = Common.GetResourceValue(Constants.RES_CHKBOXVNISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXVNISDISPLAYED_VALUE);
                 btnSave.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSAVE_VALUE);
                 btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
             }

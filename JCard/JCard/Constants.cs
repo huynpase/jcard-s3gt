@@ -26,6 +26,7 @@ namespace JCard
         public const string Ex_NoOfDisplay = "10";
         public const string Ex_DisplayTime = "30";
         public const string Ex_DelayTime = "3";
+        public const string Ex_VNIsDisplayed = "True";
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
         public const int Timer_Interval = 2500;
@@ -56,6 +57,7 @@ namespace JCard
         public const string RES_S3GTLABEL_NAME = "lableS3GT";       
         public const string RES_TABGRAM_NAME = "TabGrammar";
         public const string RES_GROUPBOXVOCAB_NAME = "groupboxvocab";
+        public const string RES_GROUPBOXGRAMMAR_NAME = "groupboxgrammar";
         public const string RES_CHKBOXALL_NAME = "chkboxall";
         public const string RES_CHKBOXCOLLAPSE_NAME = "chkboxcollapse";
         public const string RES_GROUPBOXVOCABLEARN_NAME = "groupboxvocablearn";
@@ -70,11 +72,11 @@ namespace JCard
         public const string RES_BTNBROWSE_NAME = "btnbrowse";
         public const string RES_BTNCLOSE_NAME = "btnclose";
 
-
         public const string RES_TABVOCAB_VALUE = "Từ Vựng";
         public const string RES_S3GTLABEL_VALUE = "CSDL S3GT:";
         public const string RES_TABGRAM_VALUE = "Ngữ Pháp";
-        public const string RES_GROUPBOXVOCAB_VALUE = "Chọn mẫu ngữ pháp để học";
+        public const string RES_GROUPBOXVOCAB_VALUE = "Chọn mẫu từ vựng để học";
+        public const string RES_GROUPBOXGRAMMAR_VALUE = "Chọn mẫu ngữ pháp để học";
         public const string RES_CHKBOXALL_VALUE = "Tất Cả";
         public const string RES_CHKBOXCOLLAPSE_VALUE = "Thu Gọn";
         public const string RES_GROUPBOXVOCABLEARN_VALUE = "Học Từ Vựng";
@@ -101,6 +103,7 @@ namespace JCard
         public const string RES_LBLEXNUM_NAME = "lblexnum";
         public const string RES_LBLDISPLAY_NAME = "lbldisplay";
         public const string RES_LBLDELAY_NAME = "lbldelay";
+        public const string RES_CHKBOXVNISDISPLAYED_NAME = "chkboxvnisdisplayed";
 
         public const string RES_GRAMSETT_VALUE = "Cấu Hình Card Ngữ Pháp";
         public const string RES_GRBSAMPLE_VALUE = "Mẫu Ngữ Pháp";
@@ -112,7 +115,8 @@ namespace JCard
         public const string RES_CHKBOXISDISPLAYED_VALUE = "Hiển Thị";
         public const string RES_LBLEXNUM_VALUE = "Số Lượng Hiển Thị:";
         public const string RES_LBLDISPLAY_VALUE = "Thời Gian Hiển Thị (s):";
-        public const string RES_LBLDELAY_VALUE = "Thời Gian Chậm (s):";
+        public const string RES_LBLDELAY_VALUE = "Thời Gian Ẩn (s):";
+        public const string RES_CHKBOXVNISDISPLAYED_VALUE = "Hiển thị ví dụ Tiếng Việt";
 
         //Resource fSetting
         public const string RES_VOCABSETT_NAME = "vocabsett";
@@ -154,7 +158,15 @@ namespace JCard
         public const string RES_RADDEL_VALUE = "Thay thế ngữ pháp cũ trong nhóm bằng ngữ pháp mới";
         public const string RES_RADKEEP_VALUE = "Giữ nguyên ngữ pháp cũ và chèn thêm ngữ pháp mới";
 
-    
+        //Resource About Form
+        public const string RES_ABOUT_NAME = "about";
+        public const string RES_COPYRIGHT_NAME = "copyright";
+        public const string RES_MEMBERS_NAME = "members";
+
+        public const string RES_ABOUT_VALUE = "Thông Tin Jcard";
+        public const string RES_COPYRIGHT_VALUE = "Bản Quyền thuộc về JCD - FSOFT HCM 2011";
+        public const string RES_MEMBERS_VALUE = "Các Thành Viên của Dự Án:";
+
         // Resource Messages
         public const string RES_ERROR_TITLE_NAME = "MsgErrorTitle";
         public const string RES_ERROR_TITLE_VALUE = "Thông Báo Lỗi";

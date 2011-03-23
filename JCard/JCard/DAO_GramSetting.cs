@@ -36,6 +36,7 @@ namespace JCard
                 gramSettDTO.Ex_NoOfDisplay = int.Parse(ini.ReadValue("Example", "Ex_NoOfDisplay", Constants.Ex_NoOfDisplay));
                 gramSettDTO.Ex_DisplayTime = int.Parse(ini.ReadValue("Example", "Ex_DisplayTime", Constants.Ex_DisplayTime));
                 gramSettDTO.Ex_DelayTime = int.Parse(ini.ReadValue("Example", "Ex_DelayTime", Constants.Ex_DelayTime));
+                gramSettDTO.Ex_VN_IsDisplayed = bool.Parse(ini.ReadValue("Example", "Ex_VNIsDiplayed", Constants.Ex_VNIsDisplayed));
             }
             catch
             {
@@ -58,6 +59,7 @@ namespace JCard
                 gramSettDTO.Ex_NoOfDisplay = int.Parse(Constants.Ex_NoOfDisplay);
                 gramSettDTO.Ex_DisplayTime = int.Parse(Constants.Ex_DisplayTime);
                 gramSettDTO.Ex_DelayTime = int.Parse(Constants.Ex_DelayTime);
+                gramSettDTO.Ex_VN_IsDisplayed = bool.Parse(Constants.Ex_VNIsDisplayed);
             }
             return gramSettDTO;
         }
@@ -85,6 +87,7 @@ namespace JCard
             ini.WriteValue("Example", "Ex_NoOfDisplay", gramSettDTO.Ex_NoOfDisplay.ToString());
             ini.WriteValue("Example", "Ex_DisplayTime", gramSettDTO.Ex_DisplayTime.ToString());
             ini.WriteValue("Example", "Ex_DelayTime", gramSettDTO.Ex_DelayTime.ToString());
+            ini.WriteValue("Example", "Ex_VNIsDiplayed", gramSettDTO.Ex_VN_IsDisplayed.ToString());
         }
     }
 }
