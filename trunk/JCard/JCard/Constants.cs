@@ -68,6 +68,8 @@ namespace JCard
         public const string RES_BTNCANCEL_NAME = "btncancel";
         public const string RES_BTNIMPORT_NAME = "btnimport";
         public const string RES_BTNBROWSE_NAME = "btnbrowse";
+        public const string RES_BTNCLOSE_NAME = "btnclose";
+
 
         public const string RES_TABVOCAB_VALUE = "Từ Vựng";
         public const string RES_S3GTLABEL_VALUE = "CSDL S3GT:";
@@ -85,6 +87,7 @@ namespace JCard
         public const string RES_BTNCANCEL_VALUE = "Hủy Bỏ";
         public const string RES_BTNIMPORT_VALUE = "Thêm Vào";
         public const string RES_BTNBROWSE_VALUE = "Duyệt...";
+        public const string RES_BTNCLOSE_VALUE = "Đóng";
 
         // Resource fGramSettings
         public const string RES_GRAMSETT_NAME = "SettingGrammar";
