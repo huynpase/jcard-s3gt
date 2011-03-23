@@ -187,7 +187,7 @@ namespace JCard
             // Resize
             if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
             {
-                if (!dto_gramSetting.Ex_VN_IsDisplayed)
+                if (!dto_gramSetting.Ex_VN_IsDisplayed || dto_gramSetting.Ex_NoOfDisplay == 0)
                 {
                     this.Height = 38;
 
