@@ -28,6 +28,7 @@ namespace JCard
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fImportData));
             this.label1 = new System.Windows.Forms.Label();
             this.txtExcel = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@ namespace JCard
             this.butConvert = new System.Windows.Forms.Button();
             this.openFileDialog_Excel = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_S3GTDB = new System.Windows.Forms.OpenFileDialog();
-            this.progBarImport = new System.Windows.Forms.ProgressBar();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -109,9 +110,9 @@ namespace JCard
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(18, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Choose Category";
+            this.label4.Text = "Choose Category:";
             // 
             // radDelete
             // 
@@ -148,10 +149,10 @@ namespace JCard
             // butConvert
             // 
             this.butConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butConvert.ForeColor = System.Drawing.Color.Blue;
-            this.butConvert.Location = new System.Drawing.Point(220, 234);
+            this.butConvert.ForeColor = System.Drawing.Color.Black;
+            this.butConvert.Location = new System.Drawing.Point(190, 234);
             this.butConvert.Name = "butConvert";
-            this.butConvert.Size = new System.Drawing.Size(164, 37);
+            this.butConvert.Size = new System.Drawing.Size(95, 31);
             this.butConvert.TabIndex = 7;
             this.butConvert.Text = "&Import";
             this.butConvert.UseVisualStyleBackColor = true;
@@ -165,15 +166,16 @@ namespace JCard
             // 
             this.openFileDialog_S3GTDB.FileName = "openFileDialog_S3GTDB";
             // 
-            // progBarImport
+            // btnCancel
             // 
-            this.progBarImport.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.progBarImport.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progBarImport.Location = new System.Drawing.Point(0, 286);
-            this.progBarImport.Name = "progBarImport";
-            this.progBarImport.Size = new System.Drawing.Size(594, 23);
-            this.progBarImport.TabIndex = 8;
-            this.progBarImport.Visible = false;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.Location = new System.Drawing.Point(308, 234);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 31);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cbCategory
             // 
@@ -181,16 +183,16 @@ namespace JCard
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(129, 107);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbCategory.Size = new System.Drawing.Size(181, 21);
             this.cbCategory.TabIndex = 10;
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(257, 107);
+            this.btnAddCategory.Location = new System.Drawing.Point(316, 107);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(107, 23);
+            this.btnAddCategory.Size = new System.Drawing.Size(75, 23);
             this.btnAddCategory.TabIndex = 11;
-            this.btnAddCategory.Text = "Add category";
+            this.btnAddCategory.Text = "Add New";
             this.btnAddCategory.UseVisualStyleBackColor = true;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
@@ -199,10 +201,10 @@ namespace JCard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.ClientSize = new System.Drawing.Size(594, 309);
-            this.Controls.Add(this.btnAddCategory);
+            this.ClientSize = new System.Drawing.Size(594, 278);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbCategory);
-            this.Controls.Add(this.progBarImport);
+            this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.butConvert);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -212,6 +214,8 @@ namespace JCard
             this.Controls.Add(this.txtExcel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fImportData";
@@ -240,7 +244,7 @@ namespace JCard
         private System.Windows.Forms.Button butConvert;
         private System.Windows.Forms.OpenFileDialog openFileDialog_Excel;
         private System.Windows.Forms.OpenFileDialog openFileDialog_S3GTDB;
-        private System.Windows.Forms.ProgressBar progBarImport;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddCategory;
     }
