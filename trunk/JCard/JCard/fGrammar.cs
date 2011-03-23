@@ -5,11 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Resources;
+using System.Globalization;
 
 namespace JCard
 {
     public partial class fGrammar : Form
     {
+        #region Variables for resource
+        ResourceManager objResourceManager;
+        CultureInfo objCulInfo;
+        #endregion
+
         /* Dong ho do dac thoi gian display va delay */
         private Timer timer;
         private Timer timer_wait;
@@ -57,6 +64,8 @@ namespace JCard
         {
             InitializeComponent();
             //setFormPosAtBottomRight();
+
+            SetDisplayLabel();
 
             /* Khoi tao dong ho de do luong thoi gian hien thi grammar card */
             timer = new Timer();
@@ -128,6 +137,13 @@ namespace JCard
             }
         }
 
+        public void SetDisplayLabel()
+        {
+            // Create a resource manager to retrieve resources.
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+        }
+
         // Set vi tri ban dau cua form
         private void setFormPosAtBottomRight()
         {
@@ -160,8 +176,6 @@ namespace JCard
             pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
             pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
 
-            // Set width
-            SetWidthOfArea();
 
             // Set top, left and height of Meaning            
             lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
@@ -170,17 +184,49 @@ namespace JCard
             lblVNMeaning.Top = lblJPMeaning.Top;
             lblVNMeaning.Left = lblJPMeaning.Left;
 
-            // Display or Non-Display JP/VN Meaning area
-            if (!dto_gramSetting.JP_Isdisplayed && dto_gramSetting.VN_IsDisplayed)
+            // Resize
+            if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
             {
-                lblVNMeaning.Height = lblVNMeaning.Height * 2;
-                lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+                if (!dto_gramSetting.Ex_VN_IsDisplayed)
+                {
+                    this.Height = 38;
+
+                    btnExampleNxt.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+                    btnExampleNxt.Height = this.Height / 2;
+
+                    btnExamplePrev.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+                    btnExamplePrev.Height = this.Height / 2;
+
+                    btnNext.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+                    btnNext.Height = this.Height / 2;
+
+                    btnPrevious.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+                    btnPrevious.Height = this.Height / 2;
+
+                    pnlSample.Height = this.Height;
+                    pnlExample.Height = this.Height;
+                    pnlJPMeaning.Height = pnlVNMeaning.Height = this.Height;
+                }
+                else
+                {
+                    // Display or Non-Display JP/VN Meaning area
+                    if (dto_gramSetting.VN_IsDisplayed)
+                    {
+                        pnlVNMeaning.Height = pnlVNMeaning.Height * 2;
+                        lblVNMeaning.Height = lblVNMeaning.Height * 2;
+                        lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+                    }
+                    else if (dto_gramSetting.JP_Isdisplayed)
+                    {
+                        pnlJPMeaning.Height = pnlJPMeaning.Height * 2;
+                        lblJPMeaning.Height = lblJPMeaning.Height * 2;
+                        lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+                    }
+                }
             }
-            else if (!dto_gramSetting.VN_IsDisplayed && dto_gramSetting.JP_Isdisplayed)
-            {
-                lblJPMeaning.Height = lblJPMeaning.Height * 2;
-                lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-            }
+
+            // Set width
+            SetWidthOfArea();
         }
 
         private void SetWidthOfArea()
@@ -218,12 +264,12 @@ namespace JCard
                     pnlExample.Visible = false;
 
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width;
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width + pnlSample.Width;
                 }
                 else
                 {
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width + pnlExample.Width;
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width + pnlSample.Width + pnlExample.Width;
                 }
             }
             else
@@ -232,14 +278,12 @@ namespace JCard
                 {
                     pnlJPMeaning.Visible = false;
                     pnlVNMeaning.Visible = true;
-                    pnlVNMeaning.Top = 0;
-                    pnlVNMeaning.Height = pnlVNMeaning.Height * 2;
+                    pnlVNMeaning.Top = 0;                    
                 }
                 else if (!dto_gramSetting.VN_IsDisplayed)
                 {
                     pnlJPMeaning.Visible = true;
                     pnlVNMeaning.Visible = false;
-                    pnlJPMeaning.Height = pnlJPMeaning.Height * 2;
                 }
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
@@ -250,13 +294,13 @@ namespace JCard
                     pnlExample.Visible = false;
 
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width +
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width +
                                 pnlSample.Width + pnlJPMeaning.Width;
                 }
                 else
                 {
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width +
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width +
                                 pnlSample.Width + pnlJPMeaning.Width +
                                 pnlExample.Width;
                 }
@@ -444,7 +488,8 @@ namespace JCard
         // Khi click exit tren contextMenuStrip
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit this program ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            DialogResult dr = Common.ShowConfirmMsg(objCulInfo, objResourceManager, 
+                Constants.RES_CLOSE_PROGRAM_NAME, Constants.RES_CLOSE_PROGRAM_VALUE);
             if (dr == DialogResult.Yes)
             {
                 // Save settings
@@ -818,6 +863,12 @@ namespace JCard
                                 pnlSample.Width + pnlJPMeaning.Width +
                                 pnlExample.Width;
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About fabout = new About();
+            fabout.ShowDialog();
         }
     }
 }
