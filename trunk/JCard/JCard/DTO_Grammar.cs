@@ -128,33 +128,60 @@ namespace JCard
         {
             string temp1 = String.Empty;
             string temp2 = String.Empty;
-            if (exam.Length > Constants.MAX_LENGTH_NEWLINE)
+            if (exam.Length > Constants.MAX_LENGTH_JP_NEWLINE)
             {
-                temp1 = exam.Substring(0, Constants.MAX_LENGTH_NEWLINE);
-                temp2 = exam.Substring(Constants.MAX_LENGTH_NEWLINE);
-                if (temp1.Contains("、"))
+                temp1 = exam.Substring(0, Constants.MAX_LENGTH_JP_NEWLINE);
+                temp2 = exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE);
+                int last_index_of = 0;
+                int last_index_of_comma = 0;
+                int last_index_of_dot = 0;
+                if (temp1.Contains(Constants.COMMA_JP))
                 {
+                    last_index_of_comma = temp1.LastIndexOf(Constants.COMMA_JP);
+                    if(temp1.Contains(Constants.DOT_JP))
+                    {
+                        last_index_of_dot = temp1.LastIndexOf(Constants.DOT_JP);
+                        if (last_index_of_comma > last_index_of_dot)
+                            last_index_of = last_index_of_comma;
+                        else
+                            last_index_of = last_index_of_dot;
+                    }
+                    else
+                        last_index_of = last_index_of_comma;
+                    
                     for (int i = 1; i < 5; i++)
-                        if (temp1.LastIndexOf("、") == temp1.Length - i)
-                            return temp1.Substring(0, temp1.LastIndexOf("、") + 1) + Environment.NewLine +
-                                XuLyXuongHangExampleJP(exam.Substring(temp1.LastIndexOf("、") + 1));
+                        if (last_index_of == temp1.Length - i)
+                            return temp1.Substring(0, last_index_of + 1) + Environment.NewLine +
+                                XuLyXuongHangExampleJP(exam.Substring(last_index_of + 1));
                     return temp1 + Environment.NewLine +
-                        XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                        XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                 }
                 else
                 {
-                    if (temp2.Contains("、"))
+                    if (temp2.Contains(Constants.COMMA_JP))
                     {
+                        last_index_of_comma = temp2.IndexOf(Constants.COMMA_JP);
+                        if (temp2.Contains(Constants.DOT_JP))
+                        {
+                            last_index_of_dot = temp2.IndexOf(Constants.DOT_JP);
+                            if (last_index_of_comma > last_index_of_dot)
+                                last_index_of = last_index_of_dot;
+                            else
+                                last_index_of = last_index_of_comma;
+                        }
+                        else
+                            last_index_of = last_index_of_comma;
+
                         for (int j = 0; j < 3; j++)
-                            if (temp2.LastIndexOf("、") == j)
-                                return exam.Substring(0, Constants.MAX_LENGTH_NEWLINE + j + 1) + Environment.NewLine +
-                                    XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE + j + 1));
+                            if (last_index_of == j)
+                                return exam.Substring(0, Constants.MAX_LENGTH_JP_NEWLINE + j + 1) + Environment.NewLine +
+                                    XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE + j + 1));
                         return temp1 + Environment.NewLine +
-                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                     }
                     else
                         return temp1 + Environment.NewLine +
-                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                 }
             }
             else
@@ -167,19 +194,34 @@ namespace JCard
         /// <returns></returns>
         public string XuLyXuongHangExampleVN(string exam)
         {
-            string temp = String.Empty;
-            if (exam.Length > Constants.MAX_LENGTH_NEWLINE)
+            string temp1 = String.Empty;
+            string temp2 = String.Empty;
+            if (exam.Length > Constants.MAX_LENGTH_VN_NEWLINE)
             {
-                temp = exam.Substring(0, Constants.MAX_LENGTH_NEWLINE);
-                if (temp.Contains(" "))
-                    if (temp.LastIndexOf(" ") + 1 == Constants.MAX_LENGTH_NEWLINE)
-                        return temp.Substring(0, Constants.MAX_LENGTH_NEWLINE - 1) + Environment.NewLine +
-                            XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                temp1 = exam.Substring(0, Constants.MAX_LENGTH_VN_NEWLINE);
+                temp2 = exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE);
+                int last_index_of = 0;
+                if (temp1.Contains(Constants.SPACE))
+                {
+                    last_index_of = temp1.LastIndexOf(Constants.SPACE);
+                    if (last_index_of + 1 == Constants.MAX_LENGTH_VN_NEWLINE)
+                        return temp1.Substring(0, Constants.MAX_LENGTH_VN_NEWLINE - 1) + Environment.NewLine +
+                            XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE));
                     else
-                        return temp.Substring(0, temp.LastIndexOf(" ")) + Environment.NewLine +
-                            XuLyXuongHangExampleVN(exam.Substring(temp.LastIndexOf(" ") + 1));
+                        return temp1.Substring(0, last_index_of) + Environment.NewLine +
+                            XuLyXuongHangExampleVN(exam.Substring(last_index_of + 1));
+                }
                 else
-                    return temp + Environment.NewLine + XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_NEWLINE));
+                {
+                    if (temp2.Contains(Constants.SPACE))
+                    {
+                        last_index_of = temp2.IndexOf(Constants.SPACE);
+                        return exam.Substring(0, Constants.MAX_LENGTH_VN_NEWLINE + last_index_of) + Environment.NewLine +
+                                    XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE + last_index_of + 1));
+                    }
+                    else
+                        return exam;
+                }
             }
             else
                 return exam;
