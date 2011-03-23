@@ -23,7 +23,7 @@ namespace JCard
         private DTO_GramSetting dto_gramSetting;
         /* file path of grammar setting file */
         private string strSettingFile = @"\GramSettings.ini";
-                
+
         /* So example da duoc hien thi */
         private int count_example;
         /* Vi tri example trong 1 list example cua 1 mau grammar card */
@@ -40,7 +40,7 @@ namespace JCard
         private int max_entry;
         private ArrayList arr_Entry;
         private ArrayList arr_tempEntry;
-        
+
         /* Lay random 1 mau grammar card hoac 1 example bat ky */
         private Random rand;
 
@@ -49,10 +49,10 @@ namespace JCard
 
         /* Xu ly get Back-Next example */
         ArrayList arr_CardExampleForward = new ArrayList(); // List luu giu cac grammar card truoc do - 
-                                                            // Xu ly trong truong hop da hien thi het vi du truoc do
-                                                            // cua grammar card hien tai
+        // Xu ly trong truong hop da hien thi het vi du truoc do
+        // cua grammar card hien tai
         ArrayList arr_ExampleForward = new ArrayList(); // List luu giu cac example truoc do
-                
+
         public fGrammar(ArrayList arr_GramCards)
         {
             InitializeComponent();
@@ -73,9 +73,9 @@ namespace JCard
             dto_gramSetting = buGramSett.ReadGramSetting(strSettingFile);
 
             // Set thuộc tính hiển thị
-            SetDisplayProperties();            
+            SetDisplayProperties();
             //*/           
-            
+
             ///* Tạo một bản Copy của arr_Entry
             arr_Entry = arr_GramCards;
             arr_tempEntry = new ArrayList();
@@ -107,7 +107,7 @@ namespace JCard
                 {
                     sum_of_display_example = max_example;
                 }
-                
+
                 /* Khoi tao, hien thi grammar card dau tien khi load ung dung len */
                 SetControlValues(arr_Entry, index_entry);
                 count_example = 0;
@@ -138,23 +138,23 @@ namespace JCard
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(dto_gramSetting.Left, dto_gramSetting.Top);
-            
+
             // Sample area
             pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
-            
+
             // JP Meaning area
             pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
             pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
-            
+
             // VN Meaning area
             pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
             pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
-            
+
             // Example area
             pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
             pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
-           
+
             // Set width
             SetWidthOfArea();
 
@@ -193,7 +193,7 @@ namespace JCard
 
             // VN Meaning area            
             pnlVNMeaning.Width = dto_gramSetting.VN_Width;
-            pnlVNMeaning.Left = pnlJPMeaning.Left;            
+            pnlVNMeaning.Left = pnlJPMeaning.Left;
             lblVNMeaning.Width = lblJPMeaning.Width;
 
             // Example area
@@ -238,7 +238,7 @@ namespace JCard
                 }
 
                 pnlExample.Left = pnlJPMeaning.Left + pnlJPMeaning.Width;
-                
+
                 // Check no of display.
                 if (dto_gramSetting.Ex_NoOfDisplay == 0)
                 {
@@ -252,10 +252,10 @@ namespace JCard
                 {
                     // Set with of screen
                     this.Width = pnlTitle.Width + pnlButtons.Width +
-                                pnlSample.Width + pnlJPMeaning.Width + 
+                                pnlSample.Width + pnlJPMeaning.Width +
                                 pnlExample.Width;
                 }
-            }   
+            }
         }
 
         // Save settings when closing
@@ -277,7 +277,7 @@ namespace JCard
                 {
                     flag = false;
                     timer.Enabled = false;
-                    timer_wait.Interval = dto_gramSetting.Ex_DisplayTime*1000;
+                    timer_wait.Interval = dto_gramSetting.Ex_DisplayTime * 1000;
                     timer_wait.Start();
                 }
                 else
@@ -358,7 +358,7 @@ namespace JCard
                             if (((DTO_Grammar)arr_tempEntry[i]).LGR_ID == ((DTO_Grammar)arr_Entry[index_entry]).LGR_ID)
                                 break;
                         arr_CardForward.Add(i);
-                    
+
                         count_forward = 0;
                         arr_Entry.RemoveAt(index_entry);
                         max_entry--;
@@ -422,7 +422,7 @@ namespace JCard
                 toolTip4.SetToolTip(lblExample, lblExample.Text);
             }
         }
-        
+
         //Form fGrammar duoc load len
         private void fGrammar_Load(object sender, EventArgs e)
         {
@@ -619,7 +619,7 @@ namespace JCard
         // Hien thi grammar card truoc do
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(arr_CardForward.Count > 1 && count_forward < arr_CardForward.Count)
+            if (arr_CardForward.Count > 1 && count_forward < arr_CardForward.Count)
             {
                 count_forward++;
                 int temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
@@ -715,7 +715,7 @@ namespace JCard
 
         private void panel5_MouseLeave(object sender, EventArgs e)
         {
-            if(!bool_display)
+            if (!bool_display)
                 timer.Enabled = true;
         }
 
@@ -759,9 +759,9 @@ namespace JCard
                         dto_gramSetting.JP_Width = temp;
                         dto_gramSetting.VN_Width = temp;
                         flUpdate = true;
-                    }                                                            
+                    }
                 }
-                
+
                 if (flUpdate) SetWidthOfArea();
             }
         }
@@ -782,7 +782,7 @@ namespace JCard
                 pnlJPMeanWidth.Visible = false;
                 pnlExample.Visible = false;
                 pnlExWidth.Visible = false;
-                this.Width = pnlTitle.Width + pnlButtons.Width*2;
+                this.Width = pnlTitle.Width + pnlButtons.Width * 2;
                 timer.Enabled = false;
                 this.Opacity = 1;
             }

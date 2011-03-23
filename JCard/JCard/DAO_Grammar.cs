@@ -31,34 +31,40 @@ namespace JCard
         public ArrayList GetGrammarCardByLevel(int catID)
         {
             ArrayList result = new ArrayList();
-
             DataProvider provider = new DataProvider(str_datasource);
-
             String sql = "SELECT * FROM S3GT_GRAM WHERE CAT_ID='" + catID.ToString() + "'";
             IDataReader reader = provider.excuteQuery(sql);
-
-            while (reader.Read())
+            try
             {
-                DTO_Grammar gramCard = new DTO_Grammar();
-                gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
-                gramCard.LCAT_ID = catID;
-                gramCard.STR_Sample = reader["Sample"].ToString();
-                gramCard.STR_Syntax = reader["Syntax"].ToString();
-                gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
-                gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
-
-                for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
+                while (reader.Read())
                 {
-                    string tempEx = reader["Example" + (i + 1).ToString()].ToString();
-                    if (tempEx != string.Empty && tempEx != null)
-                        gramCard.ArrExampleJP.Add(tempEx);
+                    DTO_Grammar gramCard = new DTO_Grammar();
+                    gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
+                    gramCard.LCAT_ID = catID;
+                    gramCard.STR_Sample = reader["Sample"].ToString();
+                    gramCard.STR_Syntax = reader["Syntax"].ToString();
+                    gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
+                    gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
+
+                    for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
+                    {
+                        string tempEx = reader["Example" + (i + 1).ToString()].ToString();
+                        if (tempEx != string.Empty && tempEx != null)
+                            gramCard.ArrExampleJP.Add(tempEx);
+                    }
+
+                    result.Add(gramCard);
                 }
-
-                result.Add(gramCard);
+                return result;
             }
-            reader.Close();
-
-            return result;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                reader.Close();
+            }
         }
 
         /// <summary>
@@ -68,38 +74,44 @@ namespace JCard
         public ArrayList GetAllGrammarCard()
         {
             ArrayList result = new ArrayList();
-
             DataProvider provider = new DataProvider(str_datasource);
-
             String sql = "Select * from S3GT_GRAM";
             IDataReader reader = provider.excuteQuery(sql);
-
-            while (reader.Read())
+            try
             {
-                DTO_Grammar gramCard = new DTO_Grammar();
-                gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
-                gramCard.LCAT_ID = long.Parse(reader["CAT_ID"].ToString());
-                gramCard.STR_Sample = reader["Sample"].ToString();
-                gramCard.STR_Syntax = reader["Syntax"].ToString();
-                gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
-                gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
-
-                for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
+                while (reader.Read())
                 {
-                    string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
-                    if (tempEx_JP != string.Empty && tempEx_JP != null)
-                        gramCard.ArrExampleJP.Add(tempEx_JP);
-                    
-                    string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
-                    if (tempEx_VN != string.Empty && tempEx_VN != null)
-                        gramCard.ArrExampleVN.Add(tempEx_VN);
+                    DTO_Grammar gramCard = new DTO_Grammar();
+                    gramCard.LGR_ID = long.Parse(reader["GR_ID"].ToString());
+                    gramCard.LCAT_ID = long.Parse(reader["CAT_ID"].ToString());
+                    gramCard.STR_Sample = reader["Sample"].ToString();
+                    gramCard.STR_Syntax = reader["Syntax"].ToString();
+                    gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
+                    gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
+
+                    for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
+                    {
+                        string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
+                        if (tempEx_JP != string.Empty && tempEx_JP != null)
+                            gramCard.ArrExampleJP.Add(tempEx_JP);
+
+                        string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
+                        if (tempEx_VN != string.Empty && tempEx_VN != null)
+                            gramCard.ArrExampleVN.Add(tempEx_VN);
+                    }
+
+                    result.Add(gramCard);
                 }
-
-                result.Add(gramCard);
+                return result;
             }
-            reader.Close();
-
-            return result;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                reader.Close();
+            }
         }
 
         /// <summary>
@@ -113,21 +125,22 @@ namespace JCard
             cn = DataProvider.ConnectData(str_datasource);
             //
             string strSQL = "DELETE * FROM S3GT_GRAM WHERE CAT_ID=?";
+            OleDbCommand cmd = new OleDbCommand(strSQL, cn);
             try
             {
-                OleDbCommand cmd = new OleDbCommand(strSQL, cn);
                 cmd.Parameters.Add("@CAT_ID", OleDbType.Integer);
                 cmd.Parameters["@CAT_ID"].Value = catID;
-                //
                 cmd.ExecuteNonQuery();
-                cmd.Cancel();
-                cn.Close();
                 return true;
             }
             catch (OleDbException ex)
             {
-                Console.WriteLine(ex.Message);
-                return false;
+                throw ex;
+            }
+            finally
+            {
+                cmd.Cancel();
+                cn.Close();
             }
         }
 
@@ -234,14 +247,17 @@ namespace JCard
                     //Execute
                     cmd.ExecuteNonQuery();
                 }
-                //Close
-                cmd.Cancel();
-                cn.Close();
                 return true;
             }
             catch (OleDbException ex)
             {
                 throw (ex);
+            }
+            finally
+            {
+                //Close
+                cmd.Cancel();
+                cn.Close();
             }
         }
 
@@ -319,10 +335,10 @@ namespace JCard
                 da.Fill(ds, sheetname);
                 srcConn.Close();
                 //Check the right data
-                if (String.Compare(ds.Tables[0].Columns["MauCau"].ToString(), "MauCau") != 0 ||
-                    String.Compare(ds.Tables[0].Columns["CuPhap"].ToString(), "CuPhap") != 0 ||
-                    String.Compare(ds.Tables[0].Columns["YNghia_JP"].ToString(), "YNghia_JP") != 0 ||
-                    String.Compare(ds.Tables[0].Columns["YNghia_VN"].ToString(), "YNghia_VN") != 0)
+                if (String.Compare(ds.Tables[0].Columns[0].ToString(), "MauCau") != 0 ||
+                    String.Compare(ds.Tables[0].Columns[1].ToString(), "CuPhap") != 0 ||
+                    String.Compare(ds.Tables[0].Columns[2].ToString(), "YNghia_JP") != 0 ||
+                    String.Compare(ds.Tables[0].Columns[3].ToString(), "YNghia_VN") != 0)
                     return result;
                 //Return to suitable result
                 int n = ds.Tables[0].Rows.Count;
