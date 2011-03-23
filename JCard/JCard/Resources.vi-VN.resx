@@ -226,6 +226,63 @@
   <data name="members" xml:space="preserve">
     <value>Các Thành Viên của Dự Án:</value>
   </data>
+  <data name="MsgAddCatFail" xml:space="preserve">
+    <value>Thất bại trong quá trình thêm dữ liệu vào Cơ Sở Dữ Liệu.</value>
+  </data>
+  <data name="MsgAddCatSucessfull" xml:space="preserve">
+    <value>Đã thêm dữ liệu thành công.</value>
+  </data>
+  <data name="MsgCatNameEmpty" xml:space="preserve">
+    <value>Tên Phân Loại không được phép rỗng.\nVui lòng nhập Tên Phân Loại trước khi lưu.</value>
+  </data>
+  <data name="MsgCloseProgram" xml:space="preserve">
+    <value>Bạn có muốn thoát khỏi chương trình hay không?</value>
+  </data>
+  <data name="MsgConfirmTitle" xml:space="preserve">
+    <value>Thông Báo Xác Nhận</value>
+  </data>
+  <data name="MsgEmptyExcel" xml:space="preserve">
+    <value>Không có dữ liệu trong file Excel.\nVui lòng chọn file Excel khác để import.</value>
+  </data>
+  <data name="MsgError" xml:space="preserve">
+    <value>Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:</value>
+  </data>
+  <data name="MsgErrorTitle" xml:space="preserve">
+    <value>Thông Báo Lỗi</value>
+  </data>
+  <data name="MsgExcelOpenTitle" xml:space="preserve">
+    <value>Hãy chọn file Excel</value>
+  </data>
+  <data name="MsgImportFail" xml:space="preserve">
+    <value>Thất bại trong quá trình import vào Cơ Sở Dữ Liệu.</value>
+  </data>
+  <data name="MsgImportSucessfull" xml:space="preserve">
+    <value>Đã import dữ liệu thành công.</value>
+  </data>
+  <data name="MsgInfoTitle" xml:space="preserve">
+    <value>Thông Báo</value>
+  </data>
+  <data name="MsgS3gtOpenTitle" xml:space="preserve">
+    <value>Hãy chọn file CSDL S3GT</value>
+  </data>
+  <data name="MsgSaveSettingSucessfull" xml:space="preserve">
+    <value>Đã lưu cấu hình thành công.</value>
+  </data>
+  <data name="MsgSelectExcel" xml:space="preserve">
+    <value>Hãy chọn file Excel trước khi thực hiện import.</value>
+  </data>
+  <data name="MsgSelectGram" xml:space="preserve">
+    <value>Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.</value>
+  </data>
+  <data name="MsgSelectS3gt" xml:space="preserve">
+    <value>Hãy chọn file CSDL S3GT trước khi thực hiện import.</value>
+  </data>
+  <data name="MsgSelectTopic" xml:space="preserve">
+    <value>Hãy chọn ít nhất một chủ đề trước khi bắt đầu học.</value>
+  </data>
+  <data name="MsgWarnTitle" xml:space="preserve">
+    <value>Cảnh Báo</value>
+  </data>
   <data name="programname" xml:space="preserve">
     <value>Chương trình J-Card</value>
     <comment>Program name displayed on main screen</comment>
