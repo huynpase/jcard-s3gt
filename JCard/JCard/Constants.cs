@@ -44,7 +44,7 @@ namespace JCard
         // App Config
         public const string CONFIG_LANGUAGE_KEY = "Language";
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
-        public const string DATABASE_PATH = "datasource\\s3gt_db.mdb";
+        public const string DATABASE_PATH = "datasource\\s3gt_db-Copy.mdb";
         public const string CONFIG_DATABASE_PATH_KEY = "DatabasePath";
 
         // Resource Program
