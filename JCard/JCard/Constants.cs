@@ -202,5 +202,8 @@ namespace JCard
         public const string RES_ADD_CAT_FAIL_VALUE = "Thất bại trong quá trình thêm dữ liệu vào Cơ Sở Dữ Liệu.";
         public const string RES_ADD_CAT_SUCESSFULL_NAME = "MsgAddCatSucessfull";
         public const string RES_ADD_CAT_SUCESSFULL_VALUE = "Đã thêm dữ liệu thành công.";
+
+        // Resource DTO_Grammar
+        public const int MAX_LENGTH_NEWLINE = 150;
     }
 }
