@@ -35,7 +35,7 @@ namespace JCard
             openFileDialog_Excel.Title = Common.GetResourceValue(Constants.RES_EXCEL_OPEN_TITLE_NAME, objCulInfo,
                 objResourceManager, Constants.RES_EXCEL_OPEN_TITLE_VALUE);
             openFileDialog_Excel.FileName = "";
-            openFileDialog_Excel.Filter = "*.xls|*.xls";
+            openFileDialog_Excel.Filter = "*.xls|*.xlsx";
             if (openFileDialog_Excel.ShowDialog() == DialogResult.OK)
                 txtExcel.Text = openFileDialog_Excel.FileName;
         }
@@ -188,9 +188,19 @@ namespace JCard
 
         public void SetDisplayLabel()
         {
-            // Create a resource manager to retrieve resources.
             objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            this.Text = Common.GetResourceValue(Constants.RES_IMPORTDATA_NAME, objCulInfo, objResourceManager, Constants.RES_IMPORTDATA_VALUE);
+            label1.Text = Common.GetResourceValue(Constants.RES_LBLDATASOURCE_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDATASOURCE_VALUE);
+            label2.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+            label3.Text = Common.GetResourceValue(Constants.RES_LBLCHOOSECAT_NAME, objCulInfo, objResourceManager, Constants.RES_LBLCHOOSECAT_VALUE);
+            butExcel.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+            butS3GTDB.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+            btnAddCategory.Text = Common.GetResourceValue(Constants.RES_BTNADDCAT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNADDCAT_VALUE);
+            radDelete.Text = Common.GetResourceValue(Constants.RES_RADDEL_NAME, objCulInfo, objResourceManager, Constants.RES_RADDEL_VALUE);
+            radKeep.Text = Common.GetResourceValue(Constants.RES_RADKEEP_NAME,objCulInfo,objResourceManager,Constants.RES_RADKEEP_VALUE);
+            butConvert.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
+            btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
         }
     }
 }

@@ -81,39 +81,33 @@ namespace JCard
 
         public void SetDisplayLabel()
         {
-            // Create a resource manager to retrieve resources.
             objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
-
-            if (objResourceManager != null)
-            {
-                //Main screen
-                this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
-                tabVocabulary.Text = Common.GetResourceValue(Constants.RES_TABVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_TABVOCAB_VALUE);
-                tabGrammar.Text = Common.GetResourceValue(Constants.RES_TABGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_TABGRAM_VALUE);
-                lblGramS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
-                lblVocabS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
-                groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
-                chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
-                cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
-                groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
-                radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
-                radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
-                radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
-                button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
-                ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
-                button1.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
-                groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXGRAMMAR_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXGRAMMAR_VALUE);
-                chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
-                chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
-                btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
-                btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
-                button2.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
-                button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
-                btnBrowseGram.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
-                btnBrowseVoc.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
-                linkLabel1.Text = Common.GetResourceValue(Constants.RES_ABOUT_NAME, objCulInfo, objResourceManager, Constants.RES_ABOUT_VALUE);
-            }
+            this.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
+            tabVocabulary.Text = Common.GetResourceValue(Constants.RES_TABVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_TABVOCAB_VALUE);
+            tabGrammar.Text = Common.GetResourceValue(Constants.RES_TABGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_TABGRAM_VALUE);
+            lblGramS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+            lblVocabS3GT.Text = Common.GetResourceValue(Constants.RES_S3GTLABEL_NAME, objCulInfo, objResourceManager, Constants.RES_S3GTLABEL_VALUE);
+            groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
+            chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+            cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+            groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
+            radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
+            radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
+            radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
+            button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+            ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+            button1.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
+            groupBox2.Text = Common.GetResourceValue(Constants.RES_GROUPBOXGRAMMAR_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXGRAMMAR_VALUE);
+            chbGramAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
+            chbGramColAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
+            btnImport.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
+            btnSetting.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
+            button2.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
+            button3.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
+            btnBrowseGram.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+            btnBrowseVoc.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
+            linkLabel1.Text = Common.GetResourceValue(Constants.RES_ABOUT_NAME, objCulInfo, objResourceManager, Constants.RES_ABOUT_VALUE);
         }
         #endregion
 
