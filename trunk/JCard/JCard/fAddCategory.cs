@@ -87,5 +87,10 @@ namespace JCard
             objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
         }
+
+        private void fAddCategory_Load(object sender, EventArgs e)
+        {
+            SetDisplayLabel();
+        }
     }
 }
