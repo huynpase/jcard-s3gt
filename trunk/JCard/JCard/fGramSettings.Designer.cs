@@ -59,6 +59,7 @@
             this.lblExBgClr = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.chkboxEx = new System.Windows.Forms.CheckBox();
             this.grbSample.SuspendLayout();
             this.grbJap.SuspendLayout();
             this.grbVie.SuspendLayout();
@@ -243,6 +244,7 @@
             // grbEx
             // 
             this.grbEx.BackColor = System.Drawing.Color.Transparent;
+            this.grbEx.Controls.Add(this.chkboxEx);
             this.grbEx.Controls.Add(this.numDelayTim);
             this.grbEx.Controls.Add(this.numDisTim);
             this.grbEx.Controls.Add(this.numNoDis);
@@ -253,16 +255,16 @@
             this.grbEx.Controls.Add(this.lblExNoDis);
             this.grbEx.Controls.Add(this.lblExFClr);
             this.grbEx.Controls.Add(this.lblExBgClr);
-            this.grbEx.Location = new System.Drawing.Point(13, 300);
+            this.grbEx.Location = new System.Drawing.Point(13, 306);
             this.grbEx.Name = "grbEx";
-            this.grbEx.Size = new System.Drawing.Size(389, 117);
+            this.grbEx.Size = new System.Drawing.Size(389, 151);
             this.grbEx.TabIndex = 3;
             this.grbEx.TabStop = false;
             this.grbEx.Text = "Examples";
             // 
             // numDelayTim
             // 
-            this.numDelayTim.Location = new System.Drawing.Point(299, 88);
+            this.numDelayTim.Location = new System.Drawing.Point(299, 116);
             this.numDelayTim.Maximum = new decimal(new int[] {
             10,
             0,
@@ -286,7 +288,7 @@
             // 
             // numDisTim
             // 
-            this.numDisTim.Location = new System.Drawing.Point(117, 88);
+            this.numDisTim.Location = new System.Drawing.Point(117, 116);
             this.numDisTim.Maximum = new decimal(new int[] {
             60,
             0,
@@ -310,7 +312,7 @@
             // 
             // numNoDis
             // 
-            this.numNoDis.Location = new System.Drawing.Point(117, 57);
+            this.numNoDis.Location = new System.Drawing.Point(117, 85);
             this.numNoDis.Maximum = new decimal(new int[] {
             10,
             0,
@@ -330,7 +332,7 @@
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlExFClr.Location = new System.Drawing.Point(299, 14);
+            this.pnlExFClr.Location = new System.Drawing.Point(299, 42);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 3;
@@ -339,7 +341,7 @@
             // pnlExBgClr
             // 
             this.pnlExBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlExBgClr.Location = new System.Drawing.Point(104, 14);
+            this.pnlExBgClr.Location = new System.Drawing.Point(104, 42);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 1;
@@ -348,7 +350,7 @@
             // lblDelayTim
             // 
             this.lblDelayTim.AutoSize = true;
-            this.lblDelayTim.Location = new System.Drawing.Point(219, 90);
+            this.lblDelayTim.Location = new System.Drawing.Point(219, 118);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
             this.lblDelayTim.TabIndex = 8;
@@ -357,7 +359,7 @@
             // lblDisTim
             // 
             this.lblDisTim.AutoSize = true;
-            this.lblDisTim.Location = new System.Drawing.Point(5, 90);
+            this.lblDisTim.Location = new System.Drawing.Point(5, 118);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(84, 13);
             this.lblDisTim.TabIndex = 6;
@@ -366,7 +368,7 @@
             // lblExNoDis
             // 
             this.lblExNoDis.AutoSize = true;
-            this.lblExNoDis.Location = new System.Drawing.Point(5, 59);
+            this.lblExNoDis.Location = new System.Drawing.Point(5, 87);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
             this.lblExNoDis.TabIndex = 4;
@@ -375,7 +377,7 @@
             // lblExFClr
             // 
             this.lblExFClr.AutoSize = true;
-            this.lblExFClr.Location = new System.Drawing.Point(219, 26);
+            this.lblExFClr.Location = new System.Drawing.Point(219, 54);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(58, 13);
             this.lblExFClr.TabIndex = 2;
@@ -384,7 +386,7 @@
             // lblExBgClr
             // 
             this.lblExBgClr.AutoSize = true;
-            this.lblExBgClr.Location = new System.Drawing.Point(6, 26);
+            this.lblExBgClr.Location = new System.Drawing.Point(6, 54);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblExBgClr.TabIndex = 0;
@@ -394,7 +396,7 @@
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.Location = new System.Drawing.Point(105, 434);
+            this.btnSave.Location = new System.Drawing.Point(105, 463);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 29);
             this.btnSave.TabIndex = 4;
@@ -407,7 +409,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancel.Location = new System.Drawing.Point(214, 434);
+            this.btnCancel.Location = new System.Drawing.Point(214, 463);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 29);
             this.btnCancel.TabIndex = 5;
@@ -415,12 +417,22 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // chkboxEx
+            // 
+            this.chkboxEx.AutoSize = true;
+            this.chkboxEx.Location = new System.Drawing.Point(6, 19);
+            this.chkboxEx.Name = "chkboxEx";
+            this.chkboxEx.Size = new System.Drawing.Size(185, 17);
+            this.chkboxEx.TabIndex = 10;
+            this.chkboxEx.Text = "Vietnamese Meaning Is Displayed";
+            this.chkboxEx.UseVisualStyleBackColor = true;
+            // 
             // fGramSetts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.ClientSize = new System.Drawing.Size(419, 477);
+            this.ClientSize = new System.Drawing.Size(419, 504);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grbEx);
@@ -481,5 +493,6 @@
         private System.Windows.Forms.NumericUpDown numDelayTim;
         private System.Windows.Forms.NumericUpDown numDisTim;
         private System.Windows.Forms.NumericUpDown numNoDis;
+        private System.Windows.Forms.CheckBox chkboxEx;
     }
 }
