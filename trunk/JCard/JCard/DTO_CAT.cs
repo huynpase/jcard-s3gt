@@ -4,13 +4,14 @@ using System.Text;
 
 namespace JCard
 {
-    class DTO_CAT
+    class DTO_Category
     {
-        int intID;
-        public int IntID        
+        long lCAT_ID;
+
+        public long LCAT_ID
         {
-            get { return intID; }
-            set { intID = value; }
+            get { return lCAT_ID; }
+            set { lCAT_ID = value; }
         }
 
         string strName;
@@ -21,10 +22,33 @@ namespace JCard
         }
 
         string strDesc;
-        public string StrDesc        
+        public string StrDesc
         {
             get { return strDesc; }
             set { strDesc = value; }
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DTO_Category"/> class.
+        /// </summary>
+        public DTO_Category()
+        {
+            lCAT_ID = 1;
+            strName = "";
+            strDesc = "";
+        }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DTO_Category"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="desc">The desc.</param>
+        public DTO_Category(string name, string desc)
+        {
+            strName = name;
+            strDesc = desc;
+        }
+
     }
 }

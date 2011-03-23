@@ -91,7 +91,7 @@ namespace JCard
                     //Import to S3GT_DB    
                     //Get the category
                     DTO_Category selectedCat = (DTO_Category)cbCategory.SelectedValue;
-                    int catID = (int)selectedCat.CAT_ID;
+                    int catID = (int)selectedCat.LCAT_ID;
                     ////Get the methods of add
                     if (radDelete.Checked)
                         busGram.DeleteGrammarCards(catID);
@@ -136,7 +136,7 @@ namespace JCard
             try
             {
                 BUS_Category busCat = new BUS_Category(dbFile);
-                ArrayList catList = busCat.readAllCategories();
+                ArrayList catList = busCat.GetAllCats();
                 if (catList == null)
                 {
                     MessageBox.Show("Problem when read S3GT database file!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
