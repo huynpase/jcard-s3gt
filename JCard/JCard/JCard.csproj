@@ -138,12 +138,6 @@
     </Compile>
     <Compile Include="Ini.cs" />
     <Compile Include="ReduceMemory.cs" />
-    <Compile Include="fControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fControl.Designer.cs">
-      <DependentUpon>fControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="fJCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,22 +152,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setting.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Setting.Designer.cs">
-      <DependentUpon>Setting.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="About.resx">
       <SubType>Designer</SubType>
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAddCategory.resx">
       <DependentUpon>fAddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fControl.resx">
-      <DependentUpon>fControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="fGrammar.resx">
       <SubType>Designer</SubType>
@@ -212,10 +196,6 @@
     </Compile>
     <EmbeddedResource Include="Resources.en-US.resx" />
     <EmbeddedResource Include="Resources.vi-VN.resx" />
-    <EmbeddedResource Include="Setting.resx">
-      <DependentUpon>Setting.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
