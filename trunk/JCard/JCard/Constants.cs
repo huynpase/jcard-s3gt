@@ -193,9 +193,9 @@ namespace JCard
         public const string RES_IMPORT_SUCESSFULL_NAME = "MsgImportSucessfull";
         public const string RES_IMPORT_SUCESSFULL_VALUE = "Đã import dữ liệu thành công.";
         public const string RES_SELECT_EXCEL_FILE_NAME = "MsgSelectExcel";
-        public const string RES_SELECT_EXCEL_FILE_VALUE = "Hãy chọn file Excel trước khi thực hiện import";
+        public const string RES_SELECT_EXCEL_FILE_VALUE = "Hãy chọn file Excel trước khi thực hiện import.";
         public const string RES_SELECT_S3GT_FILE_NAME = "MsgSelectS3gt";
-        public const string RES_SELECT_S3GT_FILE_VALUE = "Hãy chọn file CSDL S3GT trước khi thực hiện import";
+        public const string RES_SELECT_S3GT_FILE_VALUE = "Hãy chọn file CSDL S3GT trước khi thực hiện import.";
         public const string RES_CAT_NAME_EMPTY_NAME = "MsgCatNameEmpty";
         public const string RES_CAT_NAME_EMPTY_VALUE = "Tên Phân Loại không được phép rỗng.\nVui lòng nhập Tên Phân Loại trước khi lưu.";
         public const string RES_ADD_CAT_FAIL_NAME = "MsgAddCatFail";
