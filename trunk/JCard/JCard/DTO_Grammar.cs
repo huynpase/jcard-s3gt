@@ -111,7 +111,7 @@ namespace JCard
             str_Syntax = grammar.STR_Syntax;
             arrExampleJP = new ArrayList();
             arrExampleVN = new ArrayList();
-
+            
             int j = 0;
             for (j = 0; j < grammar.ArrExampleJP.Count; j++)
                 arrExampleJP.Add(grammar.ArrExampleJP[j].ToString());

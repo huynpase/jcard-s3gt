@@ -43,8 +43,7 @@ namespace JCard
             }
             catch (OleDbException ex)
             {
-                Console.WriteLine(ex.Message);
-                return cn;
+                throw ex;
             }
         }
 
@@ -74,7 +73,7 @@ namespace JCard
             {
                 _command.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
