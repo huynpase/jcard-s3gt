@@ -149,7 +149,7 @@
             // 
             this.radCombine.Location = new System.Drawing.Point(6, 95);
             this.radCombine.Name = "radCombine";
-            this.radCombine.Size = new System.Drawing.Size(51, 24);
+            this.radCombine.Size = new System.Drawing.Size(76, 24);
             this.radCombine.TabIndex = 14;
             this.radCombine.Text = "All";
             this.radCombine.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(12, 390);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 31);
@@ -197,7 +197,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(387, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 31);
@@ -251,7 +251,7 @@
             // 
             // ButtCopy
             // 
-            this.ButtCopy.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtCopy.Location = new System.Drawing.Point(281, 390);
             this.ButtCopy.Name = "ButtCopy";
             this.ButtCopy.Size = new System.Drawing.Size(94, 31);
@@ -353,7 +353,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Location = new System.Drawing.Point(12, 390);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(94, 31);
@@ -364,7 +364,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(387, 390);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 31);
@@ -375,7 +375,7 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.Location = new System.Drawing.Point(117, 390);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(94, 31);
@@ -386,7 +386,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(281, 390);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 31);

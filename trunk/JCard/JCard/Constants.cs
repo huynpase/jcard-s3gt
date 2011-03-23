@@ -72,7 +72,7 @@ namespace JCard
         public const string RES_TABVOCAB_VALUE = "Từ Vựng";
         public const string RES_S3GTLABEL_VALUE = "CSDL S3GT:";
         public const string RES_TABGRAM_VALUE = "Ngữ Pháp";
-        public const string RES_GROUPBOXVOCAB_VALUE = "Chọn chủ đề học";
+        public const string RES_GROUPBOXVOCAB_VALUE = "Chọn mẫu ngữ pháp để học";
         public const string RES_CHKBOXALL_VALUE = "Tất Cả";
         public const string RES_CHKBOXCOLLAPSE_VALUE = "Thu Gọn";
         public const string RES_GROUPBOXVOCABLEARN_VALUE = "Học Từ Vựng";
@@ -82,7 +82,7 @@ namespace JCard
         public const string RES_BTNSETTING_VALUE = "Cấu Hình";
         public const string RES_BTNSTART_VALUE = "Bắt Đầu";
         public const string RES_BTNSAVE_VALUE = "Lưu";
-        public const string RES_BTNCANCEL_VALUE = "Hủy";
+        public const string RES_BTNCANCEL_VALUE = "Hủy Bỏ";
         public const string RES_BTNIMPORT_VALUE = "Thêm Vào";
         public const string RES_BTNBROWSE_VALUE = "Duyệt...";
 
@@ -135,6 +135,22 @@ namespace JCard
         public const string RES_LBLFKANA_VALUE = "Cỡ Chữ Kana";
         public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm";
         public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa";
+
+        //Resource fImportaData
+        public const string RES_IMPORTDATA_NAME = "importdata";
+        public const string RES_LBLDATASOURCE_NAME = "lbldatasource";
+        public const string RES_LBLCHOOSECAT_NAME = "lblchoosecat";
+        public const string RES_BTNADDCAT_NAME = "btnaddcat";
+        public const string RES_RADDEL_NAME = "raddel";
+        public const string RES_RADKEEP_NAME = "radkeep";
+
+        public const string RES_IMPORTDATA_VALUE = "Nhập Dữ Liệu Từ file Excel";
+        public const string RES_LBLDATASOURCE_VALUE = "Nguồn Dữ Liệu";
+        public const string RES_LBLCHOOSECAT_VALUE = "Chọn Nhóm";
+        public const string RES_BTNADDCAT_VALUE = "Thêm Nhóm";
+        public const string RES_RADDEL_VALUE = "Thay thế ngữ pháp cũ trong nhóm bằng ngữ pháp mới";
+        public const string RES_RADKEEP_VALUE = "Giữ nguyên ngữ pháp cũ và chèn thêm ngữ pháp mới";
+
     
         // Resource Messages
         public const string RES_ERROR_TITLE_NAME = "MsgErrorTitle";

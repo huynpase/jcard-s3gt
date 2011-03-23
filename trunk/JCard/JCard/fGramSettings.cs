@@ -213,6 +213,8 @@ namespace JCard
                 lblExNoDis.Text = Common.GetResourceValue(Constants.RES_LBLEXNUM_NAME, objCulInfo, objResourceManager,Constants.RES_LBLEXNUM_VALUE);
                 lblDisTim.Text = Common.GetResourceValue(Constants.RES_LBLDISPLAY_NAME, objCulInfo, objResourceManager,Constants.RES_LBLDISPLAY_VALUE);
                 lblDelayTim.Text = Common.GetResourceValue(Constants.RES_LBLDELAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDELAY_VALUE);
+                btnSave.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSAVE_VALUE);
+                btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
             }
         }
 

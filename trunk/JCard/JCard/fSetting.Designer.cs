@@ -55,6 +55,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(203, 290);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(73, 30);
@@ -65,6 +66,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(109, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 30);
@@ -107,7 +109,7 @@
             "18",
             "19",
             "20"});
-            this.comFontMeaning.Location = new System.Drawing.Point(110, 154);
+            this.comFontMeaning.Location = new System.Drawing.Point(120, 153);
             this.comFontMeaning.Name = "comFontMeaning";
             this.comFontMeaning.Size = new System.Drawing.Size(69, 21);
             this.comFontMeaning.TabIndex = 28;
@@ -134,7 +136,7 @@
             "18",
             "19",
             "20"});
-            this.comFontHanNom.Location = new System.Drawing.Point(110, 127);
+            this.comFontHanNom.Location = new System.Drawing.Point(120, 126);
             this.comFontHanNom.Name = "comFontHanNom";
             this.comFontHanNom.Size = new System.Drawing.Size(69, 21);
             this.comFontHanNom.TabIndex = 26;
@@ -161,7 +163,7 @@
             "18",
             "19",
             "20"});
-            this.comFontKana.Location = new System.Drawing.Point(110, 100);
+            this.comFontKana.Location = new System.Drawing.Point(120, 99);
             this.comFontKana.Name = "comFontKana";
             this.comFontKana.Size = new System.Drawing.Size(69, 21);
             this.comFontKana.TabIndex = 24;
@@ -188,7 +190,7 @@
             "18",
             "19",
             "20"});
-            this.comFontKanji.Location = new System.Drawing.Point(110, 73);
+            this.comFontKanji.Location = new System.Drawing.Point(120, 72);
             this.comFontKanji.Name = "comFontKanji";
             this.comFontKanji.Size = new System.Drawing.Size(69, 21);
             this.comFontKanji.TabIndex = 22;
@@ -222,7 +224,7 @@
             "13",
             "14",
             "15"});
-            this.comDisTime.Location = new System.Drawing.Point(111, 46);
+            this.comDisTime.Location = new System.Drawing.Point(120, 46);
             this.comDisTime.Name = "comDisTime";
             this.comDisTime.Size = new System.Drawing.Size(69, 21);
             this.comDisTime.TabIndex = 15;
@@ -247,7 +249,7 @@
             "13",
             "14",
             "15"});
-            this.comDeplayTime.Location = new System.Drawing.Point(111, 21);
+            this.comDeplayTime.Location = new System.Drawing.Point(120, 20);
             this.comDeplayTime.Name = "comDeplayTime";
             this.comDeplayTime.Size = new System.Drawing.Size(69, 21);
             this.comDeplayTime.TabIndex = 14;

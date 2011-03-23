@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnaddcat" xml:space="preserve">
+    <value>Thêm Nhóm</value>
+  </data>
   <data name="btnbrowse" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
@@ -161,16 +164,25 @@
     <value>Nghĩa Tiếng Việt</value>
   </data>
   <data name="groupboxvocab" xml:space="preserve">
-    <value>Chọn chủ đề học</value>
+    <value>Chọn mẫu ngữ pháp để học</value>
   </data>
   <data name="groupboxvocablearn" xml:space="preserve">
     <value>Học Từ Vựng</value>
+  </data>
+  <data name="importdata" xml:space="preserve">
+    <value>Nhập Dữ Liệu Từ file Excel</value>
   </data>
   <data name="lableS3GTs" xml:space="preserve">
     <value>CSDL S3GT:</value>
   </data>
   <data name="lblbgclr" xml:space="preserve">
     <value>Màu Nền:</value>
+  </data>
+  <data name="lblchoosecat" xml:space="preserve">
+    <value>Chọn Nhóm</value>
+  </data>
+  <data name="lbldatasource" xml:space="preserve">
+    <value>Nguồn Dữ Liệu</value>
   </data>
   <data name="lbldelay" xml:space="preserve">
     <value>Delay Time (s):</value>
@@ -206,6 +218,9 @@
   <data name="radbr" xml:space="preserve">
     <value>Phía Dưới Bên Phải</value>
   </data>
+  <data name="raddel" xml:space="preserve">
+    <value>Thay thế ngữ pháp cũ trong nhóm bằng ngữ pháp mới</value>
+  </data>
   <data name="radiovocaball" xml:space="preserve">
     <value>Tất Cả</value>
   </data>
@@ -214,6 +229,9 @@
   </data>
   <data name="radiovocabnew" xml:space="preserve">
     <value>Từ Mới</value>
+  </data>
+  <data name="radkeep" xml:space="preserve">
+    <value>Giữ nguyên ngữ pháp cũ và chèn thêm ngữ pháp mới</value>
   </data>
   <data name="radtl" xml:space="preserve">
     <value>Phía Trên Bên Trái</value>
