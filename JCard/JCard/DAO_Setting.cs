@@ -106,23 +106,15 @@ namespace JCard
            return dto;
        }
         public void SaveSetting(DTO_Setting settingDTO, string filePath)
-        {                     
-            try
-            {               
-               IniFile ini = new IniFile(filePath);
-               ini.WriteValue("Jcard", "PositionVOC", settingDTO.PositionVOC);
-               ini.WriteValue("Jcard", "DisplayTimeVOC", ((int)settingDTO.DisplayTimeVOC).ToString());
-               ini.WriteValue("Jcard", "WaitingTimeVOC", ((int)settingDTO.WaitingTimeVOC).ToString());
-               ini.WriteValue("Jcard", "FontSizeKanjVOC", ((int)settingDTO.FontSizeKanjiVOC).ToString());
-               ini.WriteValue("Jcard", "FontSizeHiraganaVOC", ((int)settingDTO.FontSizeKanaVOC).ToString());
-               ini.WriteValue("Jcard", "FontSizeImiVOC", ((int)settingDTO.FontSizeImiVOC).ToString());
-               ini.WriteValue("Jcard", "FontSizeHanNom", ((int)settingDTO.FontSizeHanNom).ToString());
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Can't save setting.");
-            }
+        {
+            IniFile ini = new IniFile(filePath);
+            ini.WriteValue("Jcard", "PositionVOC", settingDTO.PositionVOC);
+            ini.WriteValue("Jcard", "DisplayTimeVOC", ((int)settingDTO.DisplayTimeVOC).ToString());
+            ini.WriteValue("Jcard", "WaitingTimeVOC", ((int)settingDTO.WaitingTimeVOC).ToString());
+            ini.WriteValue("Jcard", "FontSizeKanjVOC", ((int)settingDTO.FontSizeKanjiVOC).ToString());
+            ini.WriteValue("Jcard", "FontSizeHiraganaVOC", ((int)settingDTO.FontSizeKanaVOC).ToString());
+            ini.WriteValue("Jcard", "FontSizeImiVOC", ((int)settingDTO.FontSizeImiVOC).ToString());
+            ini.WriteValue("Jcard", "FontSizeHanNom", ((int)settingDTO.FontSizeHanNom).ToString());
         }
     }
 }
