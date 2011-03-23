@@ -16,7 +16,6 @@ namespace JCard
         public fImportData()
         {
             InitializeComponent();
-            progBarImport.Visible = false;
         }
 
         /// <summary>
@@ -26,7 +25,6 @@ namespace JCard
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void butExcel_Click(object sender, EventArgs e)
         {
-            //txtExcel.Clear();
             openFileDialog_Excel.Title = "Please choose excel data source file";
             openFileDialog_Excel.FileName = "";
             openFileDialog_Excel.Filter = "*.xls|*.xls";
@@ -41,12 +39,10 @@ namespace JCard
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void butS3GTDB_Click(object sender, EventArgs e)
         {
-            //txtS3GTDB.Clear();
             openFileDialog_S3GTDB.Title = "Please choose database of S3GT";
             openFileDialog_S3GTDB.FileName = "";
-            openFileDialog_S3GTDB.Filter = "s3gt_db*.mdb|*.mdb";
-            //openFileDialog_S3GTDB.InitialDirectory = "C:\\Program Files\\S3_JCD\\S3GT\\datasource\\"; // default path
-            openFileDialog_S3GTDB.InitialDirectory = Constants.DATABASE_PATH;
+            openFileDialog_S3GTDB.Filter = "S3GT DB (*.mdb)|*.mdb";
+            openFileDialog_S3GTDB.InitialDirectory = System.IO.Directory.GetCurrentDirectory().ToString() + "\\datasource\\";
             if (openFileDialog_S3GTDB.ShowDialog() == DialogResult.OK)
             {
                 txtS3GTDB.Text = openFileDialog_S3GTDB.FileName;
@@ -64,14 +60,17 @@ namespace JCard
         {
             if (txtExcel.Text == "")
             {
-                MessageBox.Show("Excel file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Excel file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtS3GTDB.Text == "")
             {
-                MessageBox.Show("S3GT_DB File is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("S3GT_DB file is invalid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+                        
+            this.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
 
             try
             {
@@ -80,11 +79,7 @@ namespace JCard
                 DTO_Grammar[] gramCards = busGram.ReadExcelFile(txtExcel.Text);
                 if (gramCards == null)
                 {
-                    if (MessageBox.Show("Ivalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                    {
-                        progBarImport.Value = 0;
-                        progBarImport.Visible = false;
-                    }
+                    MessageBox.Show("Invalid Excel data!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -97,25 +92,22 @@ namespace JCard
                         busGram.DeleteGrammarCards(catID);
                     if (!busGram.InsertGrammarCards(gramCards, catID))
                     {
-                        if (MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-                        {
-                            progBarImport.Value = 0;
-                            progBarImport.Visible = false;
-                        }
+                        MessageBox.Show("Import data fail!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        if (MessageBox.Show("Import data sucessfull!!!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                        {
-                            progBarImport.Value = 0;
-                            progBarImport.Visible = false;
-                        }
+                        MessageBox.Show("Import data sucessfull!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+                this.Enabled = true;
             }
         }
 
@@ -176,5 +168,12 @@ namespace JCard
             }
         }
 
+        private void fImportData_Load(object sender, EventArgs e)
+        {
+            // Default file path.
+            string dbFilePath = Application.StartupPath;
+            txtS3GTDB.Text = dbFilePath + "\\" + Constants.DATABASE_PATH;
+            getCategories(txtS3GTDB.Text);
+        }
     }
 }
