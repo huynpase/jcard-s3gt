@@ -97,6 +97,29 @@ namespace JCard
             arrExampleVN = exampleVN;
             arrExampleJP = exampleJP;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DTO_Grammar"/> class.
+        /// </summary>
+        /// <param name="grammar">Grammar khoi tao</param>
+        public DTO_Grammar(DTO_Grammar grammar)
+        {
+            lGR_ID = grammar.LGR_ID;
+            str_Sample = grammar.STR_Sample;
+            str_Meaning_JP = grammar.STR_Meaning_JP;
+            str_Meaning_VN = grammar.STR_Meaning_VN;
+            str_Syntax = grammar.STR_Syntax;
+            arrExampleJP = new ArrayList();
+            arrExampleVN = new ArrayList();
+
+            int j = 0;
+            for (j = 0; j < grammar.ArrExampleJP.Count; j++)
+                arrExampleJP.Add(grammar.ArrExampleJP[j].ToString());
+
+            for (j = 0; j < grammar.ArrExampleVN.Count; j++)
+                arrExampleVN.Add(grammar.ArrExampleVN[j].ToString());
+        }
+
         /// <summary>
         /// Xus the ly xuong hang example JP.
         /// </summary>
