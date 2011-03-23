@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -99,6 +100,12 @@
     <Compile Include="DTO_Topic.cs" />
     <Compile Include="DTO_TopicGroup.cs" />
     <Compile Include="DTO_VOC.cs" />
+    <Compile Include="fAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddCategory.designer.cs">
+      <DependentUpon>fAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCLesson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +167,9 @@
     <EmbeddedResource Include="About.resx">
       <SubType>Designer</SubType>
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddCategory.resx">
+      <DependentUpon>fAddCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fControl.resx">
       <DependentUpon>fControl.cs</DependentUpon>

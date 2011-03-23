@@ -53,7 +53,7 @@ namespace JCard
                 //Add new category
                 DTO_Category cat = new DTO_Category(txtCat_Name.Text, txtCat_Desc.Text);
                 BUS_Category catBus = new BUS_Category(FImportForm.getS3GTDBFile());
-                if (catBus.addNewCategory(cat))
+                if (catBus.AddNewCategory(cat))
                 {
                     MessageBox.Show("Add category sucessfull!!!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FImportForm.getCategories(FImportForm.getS3GTDBFile());

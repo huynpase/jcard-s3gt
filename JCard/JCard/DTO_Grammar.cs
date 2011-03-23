@@ -59,11 +59,11 @@ namespace JCard
             set { arrExampleVN = value; }
         }
 
-        ArrayList arrExampleJP;
-        public ArrayList ArrExampleJP
+        ArrayList arrExample;
+        public ArrayList ArrExample
         {
-            get { return arrExampleJP; }
-            set { arrExampleJP = value; }
+            get { return arrExample; }
+            set { arrExample = value; }
         }
 
         /// <summary>
@@ -77,25 +77,27 @@ namespace JCard
             str_Syntax = "";
             str_Meaning_JP = "";
             str_Meaning_VN = "";
-
+            arrExample = new ArrayList();
             arrExampleVN = new ArrayList();
-            arrExampleJP = new ArrayList();
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DTO_Grammar"/> class.
-        /// </summary>
-        /// <param name="sample">The sample.</param>
-        /// <param name="meaning_jp">The meaning_jp.</param>
-        /// <param name="meaning_vn">The meaning_vn.</param>
-        /// <param name="example">The example.</param>
-        public DTO_Grammar(string sample, string meaning_jp, string meaning_vn, ArrayList exampleVN, ArrayList exampleJP)
+        public DTO_Grammar(DTO_Grammar grammar)
         {
-            str_Sample = sample;
-            str_Meaning_JP = meaning_jp;
-            str_Meaning_VN = meaning_vn;
-            arrExampleVN = exampleVN;
-            arrExampleJP = exampleJP;
+            lGR_ID = grammar.LGR_ID;
+            str_Sample = grammar.STR_Sample;
+            str_Meaning_JP = grammar.STR_Meaning_JP;
+            str_Meaning_VN = grammar.STR_Meaning_VN;
+            lCAT_ID = grammar.LCAT_ID;
+            str_Syntax = grammar.STR_Syntax;
+            arrExample = new ArrayList();
+            arrExampleVN = new ArrayList();
+
+            int j = 0;
+            for (j = 0; j < grammar.ArrExample.Count; j++)
+                arrExample.Add(grammar.ArrExample[j].ToString());
+
+            for (j = 0; j < grammar.ArrExampleVN.Count; j++)
+                arrExampleVN.Add(grammar.ArrExampleVN[j].ToString());
         }
     }
 }
