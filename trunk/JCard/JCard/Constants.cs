@@ -143,7 +143,7 @@ namespace JCard
         public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm";
         public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa";
 
-        //Resource fImportaData
+        //Resource Import Data Form
         public const string RES_IMPORTDATA_NAME = "importdata";
         public const string RES_LBLDATASOURCE_NAME = "lbldatasource";
         public const string RES_LBLCHOOSECAT_NAME = "lblchoosecat";
@@ -157,6 +157,22 @@ namespace JCard
         public const string RES_BTNADDCAT_VALUE = "Thêm Nhóm";
         public const string RES_RADDEL_VALUE = "Thay thế ngữ pháp cũ trong nhóm bằng ngữ pháp mới";
         public const string RES_RADKEEP_VALUE = "Giữ nguyên ngữ pháp cũ và chèn thêm ngữ pháp mới";
+
+        //Resource Add Category Form
+        public const string RES_CATEGORYNAME_NAME = "categoryname";
+        public const string RES_DESCRIPTION_NAME = "description";
+
+        public const string RES_CATEGORYNAME_VALUE = "Tên Nhóm:";
+        public const string RES_DESCRIPTION_VALUE = "Mô tả về nhóm:";
+
+        //Resource Context Menu
+        public const string RES_MAINSCREEN_NAME = "mainscreen";
+        public const string RES_EXIT_NAME = "exit"; 
+        public const string RES_VOCABULARY_NAME = "vocabulary"; 
+
+        public const string RES_MAINSCREEN_VALUE = "Trở lại Màn hình chính";
+        public const string RES_EXIT_VALUE = "Thoát";
+        public const string RES_VOCABULARY_VALUE = "JCard - Từ Vựng";
 
         //Resource About Form
         public const string RES_ABOUT_NAME = "about";

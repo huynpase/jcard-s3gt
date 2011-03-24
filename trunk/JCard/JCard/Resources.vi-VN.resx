@@ -326,4 +326,19 @@
   <data name="vocabsett" xml:space="preserve">
     <value>Cấu Hình Card Từ Vựng</value>
   </data>
+  <data name="categoryname" xml:space="preserve">
+    <value>Tên Nhóm:</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Mô tả về nhóm:</value>
+  </data>
+  <data name="mainscreen" xml:space="preserve">
+    <value>Trở lại Màn hình chính</value>
+  </data>
+  <data name="exit" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="vocabulary" xml:space="preserve">
+    <value>JCard - Từ Vựng</value>
+  </data>
 </root>

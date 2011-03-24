@@ -12,10 +12,8 @@ namespace JCard
 {
     public partial class fAddCategory : Form
     {
-        #region Variables for resource
         ResourceManager objResourceManager;
         CultureInfo objCulInfo;
-        #endregion
 
         private fImportData fImportForm;
         public fImportData FImportForm
@@ -84,8 +82,13 @@ namespace JCard
         public void SetDisplayLabel()
         {
             // Create a resource manager to retrieve resources.
-            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
-            objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            ResourceManager objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            CultureInfo objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            this.Text = Common.GetResourceValue(Constants.RES_BTNADDCAT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNADDCAT_VALUE);
+            label3.Text = Common.GetResourceValue(Constants.RES_CATEGORYNAME_NAME, objCulInfo, objResourceManager,Constants.RES_CATEGORYNAME_VALUE);
+            label1.Text = Common.GetResourceValue(Constants.RES_DESCRIPTION_NAME, objCulInfo, objResourceManager,Constants.RES_DESCRIPTION_VALUE);
+            button2.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME,objCulInfo,objResourceManager,Constants.RES_BTNSAVE_VALUE);
+            button1.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
         }
 
         private void fAddCategory_Load(object sender, EventArgs e)
