@@ -59,6 +59,7 @@ namespace JCard
             timer2.Stop();
             fSplash.CloseForm();
             this.TopMost = true;
+            this.Activate();
             timer3.Interval = 50;
             timer3.Start();
             Thread.Sleep(1000);
@@ -70,7 +71,7 @@ namespace JCard
                 this.Opacity += opacityInc;
             else if (this.Opacity == 1)
             {
-                this.TopMost = false;
+                this.TopMost = false;                
                 timer3.Stop();
             }
         }
