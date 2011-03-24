@@ -245,7 +245,7 @@
     <value>Không có dữ liệu trong file Excel.\nVui lòng chọn file Excel khác để import.</value>
   </data>
   <data name="MsgError" xml:space="preserve">
-    <value>Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:</value>
+    <value>Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File. Vui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:</value>
   </data>
   <data name="MsgErrorTitle" xml:space="preserve">
     <value>Thông Báo Lỗi</value>
