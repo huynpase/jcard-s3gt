@@ -140,8 +140,11 @@ namespace JCard
         public void SetDisplayLabel()
         {
             // Create a resource manager to retrieve resources.
-            objResourceManager = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+            objResourceManager = new ResourceManager("JCard.Resources", typeof(fGrammar).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            backToMainScreenToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_MAINSCREEN_NAME, objCulInfo, objResourceManager, Constants.RES_MAINSCREEN_VALUE);
+            aboutToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_ABOUT_NAME, objCulInfo, objResourceManager, Constants.RES_ABOUT_VALUE);
+            exitToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_EXIT_NAME, objCulInfo, objResourceManager, Constants.RES_EXIT_VALUE);
         }
 
         // Set vi tri ban dau cua form
@@ -870,5 +873,6 @@ namespace JCard
             About fabout = new About();
             fabout.ShowDialog();
         }
+
     }
 }
