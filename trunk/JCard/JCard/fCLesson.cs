@@ -397,8 +397,14 @@ namespace JCard
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            fImportData fImport = new fImportData();
-            fImport.ShowDialog();
+            //fImportData fImport = new fImportData();
+            fImportData fImport = new fImportData(txtDatabaseGram.Text);
+            if (fImport.ShowDialog() == DialogResult.OK)
+            {
+                //Update tree view
+                trvGrammars.Nodes.Clear();
+                InitGramTreeView(txtDatabaseGram.Text);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
