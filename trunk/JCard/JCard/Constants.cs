@@ -45,7 +45,7 @@ namespace JCard
         // App Config
         public const string CONFIG_LANGUAGE_KEY = "Language";
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
-        public const string DATABASE_PATH = "datasource\\s3gt_db-Copy.mdb";
+        public const string DATABASE_PATH = "datasource\\s3gt_db.mdb";
         public const string CONFIG_DATABASE_PATH_KEY = "DatabasePath";
 
         // Resource Program
@@ -197,7 +197,7 @@ namespace JCard
         public const string RES_EXCEL_OPEN_TITLE_NAME = "MsgExcelOpenTitle";
         public const string RES_EXCEL_OPEN_TITLE_VALUE = "Hãy chọn file Excel";
         public const string RES_ERROR_NAME = "MsgError";
-        public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
+        public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File. Vui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
         public const string RES_SELECT_GRAM_INFO_NAME = "MsgSelectGram";
         public const string RES_SELECT_GRAM_INFO_VALUE = "Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.";
         public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";        
