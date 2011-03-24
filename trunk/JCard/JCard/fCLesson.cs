@@ -58,6 +58,7 @@ namespace JCard
         {
             timer2.Stop();
             fSplash.CloseForm();
+            this.TopMost = true;
             timer3.Interval = 50;
             timer3.Start();
             Thread.Sleep(1000);
@@ -65,17 +66,12 @@ namespace JCard
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (opacityInc > 0)
+            if (this.Opacity < 1)
+                this.Opacity += opacityInc;
+            else if (this.Opacity == 1)
             {
-                if (this.Opacity < 1)
-                    this.Opacity += opacityInc;
-            }
-            else
-            {
-                if (this.Opacity > 0)
-                    this.Opacity += opacityInc;
-                else
-                    this.Close();
+                this.TopMost = false;
+                timer3.Stop();
             }
         }
 
