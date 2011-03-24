@@ -184,8 +184,10 @@ namespace JCard
         public const string RES_ERROR_VALUE = "Lỗi khi thao tác Cơ Sở Dữ Liệu hoặc File.\nVui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:";
         public const string RES_SELECT_GRAM_INFO_NAME = "MsgSelectGram";
         public const string RES_SELECT_GRAM_INFO_VALUE = "Hãy chọn ít nhất một mẫu ngữ pháp trước khi bắt đầu học.";
-        public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";
-        public const string RES_SELECT_TOPIC_INFO_VALUE = "Hãy chọn ít nhất một chủ đề trước khi bắt đầu học.";
+        public const string RES_SELECT_TOPIC_INFO_NAME = "MsgSelectTopic";        
+        public const string RES_SELECT_TOPIC_INFO_VALUE = "Hãy chọn ít nhất một chủ đề trước khi bắt đầu học.";        
+        public const string RES_SELECT_CAT_FAIL_NAME = "MsgSelectCatFail";        
+        public const string RES_SELECT_CAT_FAIL_VALUE = "Vui lòng chọn category cần để nhập dữ liệu?";        
         public const string RES_EMPTY_EXCEL_FILE_NAME = "MsgEmptyExcel";
         public const string RES_EMPTY_EXCEL_FILE_VALUE = "Không có dữ liệu trong file Excel.\nVui lòng chọn file Excel khác để import.";
         public const string RES_IMPORT_FAIL_NAME = "MsgImportFail";
@@ -205,7 +207,7 @@ namespace JCard
         public const string RES_SAVE_SETTING_SUCESSFULL_NAME = "MsgSaveSettingSucessfull";
         public const string RES_SAVE_SETTING_SUCESSFULL_VALUE = "Đã lưu cấu hình thành công.";
         public const string RES_CLOSE_PROGRAM_NAME = "MsgCloseProgram";
-        public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";
+        public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";       
 
         // Resource DTO_Grammar
         public const int MAX_LENGTH_JP_NEWLINE = 25;

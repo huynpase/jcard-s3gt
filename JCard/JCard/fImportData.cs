@@ -35,7 +35,7 @@ namespace JCard
             strParentDB = strCurDatabase;
             txtS3GTDB.Text = strCurDatabase;
         }
-        
+
         /// <summary>
         /// Handles the Click event of the butExcel control.
         /// </summary>
@@ -89,7 +89,7 @@ namespace JCard
                         Constants.RES_SELECT_S3GT_FILE_VALUE);
                 return;
             }
-                        
+
             this.Enabled = false;
             this.Cursor = Cursors.WaitCursor;
 
@@ -100,13 +100,19 @@ namespace JCard
                 DTO_Grammar[] gramCards = busGram.ReadExcelFile(txtExcel.Text);
                 if (gramCards.Length == 0)
                 {
-                    Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_EMPTY_EXCEL_FILE_NAME, 
+                    Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_EMPTY_EXCEL_FILE_NAME,
                         Constants.RES_EMPTY_EXCEL_FILE_VALUE);
                 }
                 else
                 {
                     //Import to S3GT_DB    
                     //Get the category
+                    if (cbCategory.SelectedValue == null)
+                    {
+                        Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_CAT_FAIL_NAME,
+                        Constants.RES_SELECT_CAT_FAIL_VALUE);
+                        return;
+                    }
                     DTO_Category selectedCat = (DTO_Category)cbCategory.SelectedValue;
                     int catID = (int)selectedCat.LCAT_ID;
                     ////Get the methods of add
@@ -114,11 +120,11 @@ namespace JCard
                         busGram.DeleteGrammarCards(catID);
                     if (!busGram.InsertGrammarCards(gramCards, catID))
                     {
-                        Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_IMPORT_FAIL_NAME, 
+                        Common.ShowWarningMsg(objCulInfo, objResourceManager, Constants.RES_IMPORT_FAIL_NAME,
                             Constants.RES_IMPORT_FAIL_VALUE);
                     }
                     else
-                    {                        
+                    {
                         Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_IMPORT_SUCESSFULL_NAME,
                             Constants.RES_IMPORT_SUCESSFULL_VALUE);
                         if (strParentDB.CompareTo(txtS3GTDB.Text) == 0)
@@ -213,7 +219,7 @@ namespace JCard
             butS3GTDB.Text = Common.GetResourceValue(Constants.RES_BTNBROWSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNBROWSE_VALUE);
             btnAddCategory.Text = Common.GetResourceValue(Constants.RES_BTNADDCAT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNADDCAT_VALUE);
             radDelete.Text = Common.GetResourceValue(Constants.RES_RADDEL_NAME, objCulInfo, objResourceManager, Constants.RES_RADDEL_VALUE);
-            radKeep.Text = Common.GetResourceValue(Constants.RES_RADKEEP_NAME,objCulInfo,objResourceManager,Constants.RES_RADKEEP_VALUE);
+            radKeep.Text = Common.GetResourceValue(Constants.RES_RADKEEP_NAME, objCulInfo, objResourceManager, Constants.RES_RADKEEP_VALUE);
             butConvert.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
             btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
         }
