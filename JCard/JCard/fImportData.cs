@@ -17,6 +17,9 @@ namespace JCard
         CultureInfo objCulInfo;
         #endregion
 
+        private string strParentDB;
+        private bool isUpdatedDB = false;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="fImportData"/> class.
         /// </summary>
@@ -25,6 +28,14 @@ namespace JCard
             InitializeComponent();
         }
 
+        public fImportData(string strCurDatabase)
+        {
+            InitializeComponent();
+
+            strParentDB = strCurDatabase;
+            txtS3GTDB.Text = strCurDatabase;
+        }
+        
         /// <summary>
         /// Handles the Click event of the butExcel control.
         /// </summary>
@@ -35,7 +46,7 @@ namespace JCard
             openFileDialog_Excel.Title = Common.GetResourceValue(Constants.RES_EXCEL_OPEN_TITLE_NAME, objCulInfo,
                 objResourceManager, Constants.RES_EXCEL_OPEN_TITLE_VALUE);
             openFileDialog_Excel.FileName = "";
-            openFileDialog_Excel.Filter = "*.xls|*.xlsx";
+            openFileDialog_Excel.Filter = "Excel (*.xlsx;*.xls)|*.xlsx;*.xls";
             if (openFileDialog_Excel.ShowDialog() == DialogResult.OK)
                 txtExcel.Text = openFileDialog_Excel.FileName;
         }
@@ -107,9 +118,13 @@ namespace JCard
                             Constants.RES_IMPORT_FAIL_VALUE);
                     }
                     else
-                    {
+                    {                        
                         Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_IMPORT_SUCESSFULL_NAME,
                             Constants.RES_IMPORT_SUCESSFULL_VALUE);
+                        if (strParentDB.CompareTo(txtS3GTDB.Text) == 0)
+                        {
+                            isUpdatedDB = true;
+                        }
                     }
                 }
             }
@@ -174,8 +189,8 @@ namespace JCard
         private void fImportData_Load(object sender, EventArgs e)
         {
             // Default file path.
-            string dbFilePath = Application.StartupPath;
-            txtS3GTDB.Text = dbFilePath + "\\" + Constants.DATABASE_PATH;
+            //string dbFilePath = Application.StartupPath;
+            //txtS3GTDB.Text = dbFilePath + "\\" + Constants.DATABASE_PATH;
             getCategories(txtS3GTDB.Text);
 
             SetDisplayLabel();
@@ -201,6 +216,18 @@ namespace JCard
             radKeep.Text = Common.GetResourceValue(Constants.RES_RADKEEP_NAME,objCulInfo,objResourceManager,Constants.RES_RADKEEP_VALUE);
             butConvert.Text = Common.GetResourceValue(Constants.RES_BTNIMPORT_NAME, objCulInfo, objResourceManager, Constants.RES_BTNIMPORT_VALUE);
             btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
+        }
+
+        private void fImportData_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isUpdatedDB)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
     }
 }

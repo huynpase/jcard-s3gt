@@ -221,6 +221,7 @@ namespace JCard
             this.Name = "fImportData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Data From Excel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fImportData_FormClosed);
             this.Load += new System.EventHandler(this.fImportData_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
