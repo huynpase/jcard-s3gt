@@ -372,25 +372,27 @@ namespace JCard
             if (dto_gramSetting.JP_Isdisplayed)
             {
                 lblJPMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
-                toolTip2.SetToolTip(pnlJPMeaning, lblJPMeaning.Text);
-                toolTip2.SetToolTip(lblJPMeaning, lblJPMeaning.Text);
+                string strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaningJP();
+                toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
+                toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
                 if (!dto_gramSetting.VN_IsDisplayed)
                 {
                     lblVNMeaning.Text = lblJPMeaning.Text;
-                    toolTip3.SetToolTip(pnlVNMeaning, lblVNMeaning.Text);
-                    toolTip3.SetToolTip(lblVNMeaning, lblVNMeaning.Text);
+                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningJP);
+                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningJP);
                 }
             }
             if (dto_gramSetting.VN_IsDisplayed)
             {
                 lblVNMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_VN;
-                toolTip3.SetToolTip(pnlVNMeaning, lblVNMeaning.Text);
-                toolTip3.SetToolTip(lblVNMeaning, lblVNMeaning.Text);
+                string strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaningVN();
+                toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
+                toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
                 if (!dto_gramSetting.JP_Isdisplayed)
                 {
                     lblJPMeaning.Text = lblVNMeaning.Text;
-                    toolTip2.SetToolTip(pnlJPMeaning, lblJPMeaning.Text);
-                    toolTip2.SetToolTip(lblJPMeaning, lblJPMeaning.Text);
+                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningVN);
+                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningVN);
                 }
             }
         }
