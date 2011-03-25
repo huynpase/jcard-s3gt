@@ -92,12 +92,16 @@ namespace JCard
                     for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                     {
                         string tempEx_JP = reader["Example" + (i + 1).ToString() + "_JP"].ToString();
-                        if (tempEx_JP != string.Empty && tempEx_JP != null)
-                            gramCard.ArrExampleJP.Add(tempEx_JP);
-
                         string tempEx_VN = reader["Example" + (i + 1).ToString() + "_VN"].ToString();
-                        if (tempEx_VN != string.Empty && tempEx_VN != null)
+
+                        if (tempEx_JP == null) tempEx_JP = string.Empty;
+                        if (tempEx_VN == null) tempEx_VN = string.Empty;
+
+                        if ((tempEx_JP != string.Empty) || (tempEx_VN != string.Empty))
+                        {
+                            gramCard.ArrExampleJP.Add(tempEx_JP);
                             gramCard.ArrExampleVN.Add(tempEx_VN);
+                        }
                     }
 
                     result.Add(gramCard);
