@@ -123,8 +123,9 @@ namespace JCard
         /// <summary>
         /// Xus the ly xuong hang example JP.
         /// </summary>
-        /// <returns></returns>
-        public string XuLyXuongHangExampleJP(string exam)
+        /// <param name="exam">Chuoi JP can xu ly xuong hang.</param>
+        /// <returns>Chuoi da xu ly</returns>
+        public string XuLyXuongHangJP(string exam)
         {
             string temp1 = String.Empty;
             string temp2 = String.Empty;
@@ -152,9 +153,9 @@ namespace JCard
                     for (int i = 1; i < 5; i++)
                         if (last_index_of == temp1.Length - i)
                             return temp1.Substring(0, last_index_of + 1) + Environment.NewLine +
-                                XuLyXuongHangExampleJP(exam.Substring(last_index_of + 1));
+                                XuLyXuongHangJP(exam.Substring(last_index_of + 1));
                     return temp1 + Environment.NewLine +
-                        XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
+                        XuLyXuongHangJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                 }
                 else
                 {
@@ -175,13 +176,13 @@ namespace JCard
                         for (int j = 0; j < 3; j++)
                             if (last_index_of == j)
                                 return exam.Substring(0, Constants.MAX_LENGTH_JP_NEWLINE + j + 1) + Environment.NewLine +
-                                    XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE + j + 1));
+                                    XuLyXuongHangJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE + j + 1));
                         return temp1 + Environment.NewLine +
-                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
+                            XuLyXuongHangJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                     }
                     else
                         return temp1 + Environment.NewLine +
-                            XuLyXuongHangExampleJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
+                            XuLyXuongHangJP(exam.Substring(Constants.MAX_LENGTH_JP_NEWLINE));
                 }
             }
             else
@@ -191,8 +192,9 @@ namespace JCard
         /// <summary>
         /// Xus the ly xuong hang example VN.
         /// </summary>
-        /// <returns></returns>
-        public string XuLyXuongHangExampleVN(string exam)
+        /// <param name="exam">Chuoi VN can xu ly xuong hang.</param>
+        /// <returns>Chuoi da xu ly</returns>
+        public string XuLyXuongHangVN(string exam)
         {
             string temp1 = String.Empty;
             string temp2 = String.Empty;
@@ -206,10 +208,10 @@ namespace JCard
                     last_index_of = temp1.LastIndexOf(Constants.SPACE);
                     if (last_index_of + 1 == Constants.MAX_LENGTH_VN_NEWLINE)
                         return temp1.Substring(0, Constants.MAX_LENGTH_VN_NEWLINE - 1) + Environment.NewLine +
-                            XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE));
+                            XuLyXuongHangVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE));
                     else
                         return temp1.Substring(0, last_index_of) + Environment.NewLine +
-                            XuLyXuongHangExampleVN(exam.Substring(last_index_of + 1));
+                            XuLyXuongHangVN(exam.Substring(last_index_of + 1));
                 }
                 else
                 {
@@ -217,7 +219,7 @@ namespace JCard
                     {
                         last_index_of = temp2.IndexOf(Constants.SPACE);
                         return exam.Substring(0, Constants.MAX_LENGTH_VN_NEWLINE + last_index_of) + Environment.NewLine +
-                                    XuLyXuongHangExampleVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE + last_index_of + 1));
+                                    XuLyXuongHangVN(exam.Substring(Constants.MAX_LENGTH_VN_NEWLINE + last_index_of + 1));
                     }
                     else
                         return exam;
@@ -233,7 +235,7 @@ namespace JCard
         /// <param name="exIndex">Index of the ex.</param>
         /// <param name="exam_vn_displayed">if set to <c>true</c> [exam_vn_displayed].</param>
         /// <param name="type">if set to <c>true</c> [type].</param>
-        /// <returns></returns>
+        /// <returns>Chuoi vi du</returns>
         public string GetExample(int exIndex, bool exam_vn_displayed, bool type)
         {
             if (exam_vn_displayed)
@@ -241,15 +243,37 @@ namespace JCard
                 if (type)
                     return arrExampleJP[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
                 else
-                    return XuLyXuongHangExampleJP(arrExampleJP[exIndex].ToString()) + Environment.NewLine + XuLyXuongHangExampleVN(arrExampleVN[exIndex].ToString());
+                    return XuLyXuongHangJP(arrExampleJP[exIndex].ToString()) + Environment.NewLine + XuLyXuongHangVN(arrExampleVN[exIndex].ToString());
             }
             else
             {
                 if (type)
                     return arrExampleJP[exIndex].ToString();
                 else
-                    return XuLyXuongHangExampleJP(arrExampleJP[exIndex].ToString());
+                    return XuLyXuongHangJP(arrExampleJP[exIndex].ToString());
             }
+        }
+
+        /// <summary>
+        /// Gets the meaning of jp.
+        /// </summary>
+        /// <returns>Chuoi meaning jp</returns>
+        public string GetMeaningJP()
+        {
+            if (str_Meaning_JP == null)
+                return String.Empty;
+            return XuLyXuongHangJP(str_Meaning_JP);
+        }
+
+        /// <summary>
+        /// Gets the meaning of vn.
+        /// </summary>
+        /// <returns>Chuoi meaning vn</returns>
+        public string GetMeaningVN()
+        {
+            if (str_Meaning_VN == null)
+                return String.Empty;
+            return XuLyXuongHangVN(str_Meaning_VN);
         }
     }
 }
