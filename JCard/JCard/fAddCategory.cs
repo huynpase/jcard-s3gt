@@ -64,6 +64,7 @@ namespace JCard
                     Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_ADD_CAT_SUCESSFULL_NAME,
                             Constants.RES_ADD_CAT_SUCESSFULL_VALUE);
                     FImportForm.getCategories(FImportForm.getS3GTDBFile());
+                    FImportForm.getLastCategory();
                     this.Close();
                 }
                 else
