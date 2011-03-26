@@ -275,5 +275,16 @@ namespace JCard
                 return String.Empty;
             return XuLyXuongHangVN(str_Meaning_VN);
         }
+
+        /// <summary>
+        /// Gets the sample.
+        /// </summary>
+        /// <returns>Chuoi sample</returns>
+        public string GetSample()
+        {
+            if (str_Sample == null)
+                return String.Empty;
+            return XuLyXuongHangJP(str_Sample);
+        }
     }
 }

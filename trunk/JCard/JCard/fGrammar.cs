@@ -265,9 +265,11 @@ namespace JCard
                 if (dto_gramSetting.Ex_NoOfDisplay == 0)
                 {
                     pnlExample.Visible = false;
+                    pnlButtons2.Visible = false;
+                    pnlSample.Left = pnlButtons.Left + pnlButtons.Width;
 
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width + pnlSample.Width;
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width;
                 }
                 else
                 {
@@ -281,7 +283,7 @@ namespace JCard
                 {
                     pnlJPMeaning.Visible = false;
                     pnlVNMeaning.Visible = true;
-                    pnlVNMeaning.Top = 0;                    
+                    pnlVNMeaning.Top = 0;
                 }
                 else if (!dto_gramSetting.VN_IsDisplayed)
                 {
@@ -295,9 +297,13 @@ namespace JCard
                 if (dto_gramSetting.Ex_NoOfDisplay == 0)
                 {
                     pnlExample.Visible = false;
+                    pnlButtons2.Visible = false;
+                    pnlSample.Left = pnlButtons.Left + pnlButtons.Width;
+                    pnlJPMeaning.Left = pnlSample.Left + pnlSample.Width;
+                    pnlVNMeaning.Left = pnlJPMeaning.Left;
 
                     // Set with of screen
-                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlButtons2.Width +
+                    this.Width = pnlTitle.Width + pnlButtons.Width +
                                 pnlSample.Width + pnlJPMeaning.Width;
                 }
                 else
@@ -367,8 +373,9 @@ namespace JCard
         private void SetControlValues(ArrayList arr_gram, int index)
         {
             lblSample.Text = ((DTO_Grammar)arr_gram[index]).STR_Sample;
-            toolTip1.SetToolTip(pnlSample, lblSample.Text);
-            toolTip1.SetToolTip(lblSample, lblSample.Text);
+            string strTooltipSampleJP = ((DTO_Grammar)arr_gram[index]).GetSample();
+            toolTip1.SetToolTip(pnlSample, strTooltipSampleJP);
+            toolTip1.SetToolTip(lblSample, strTooltipSampleJP);
             if (dto_gramSetting.JP_Isdisplayed)
             {
                 lblJPMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
@@ -850,7 +857,10 @@ namespace JCard
                 pnlJPMeanWidth.Visible = false;
                 pnlExample.Visible = false;
                 pnlExWidth.Visible = false;
-                this.Width = pnlTitle.Width + pnlButtons.Width * 2;
+                if (dto_gramSetting.Ex_NoOfDisplay == 0)
+                    this.Width = pnlTitle.Width + pnlButtons.Width;
+                else
+                    this.Width = pnlTitle.Width + pnlButtons.Width * 2;
                 timer.Enabled = false;
                 this.Opacity = 1;
             }
@@ -864,7 +874,10 @@ namespace JCard
                 pnlJPMeanWidth.Visible = true;
                 pnlExample.Visible = true;
                 pnlExWidth.Visible = true;
-                this.Width = pnlTitle.Width + pnlButtons.Width +
+                if (dto_gramSetting.Ex_NoOfDisplay == 0)
+                    this.Width = pnlTitle.Width + pnlButtons.Width + pnlSample.Width + pnlJPMeaning.Width;
+                else
+                    this.Width = pnlTitle.Width + pnlButtons.Width * 2 +
                                 pnlSample.Width + pnlJPMeaning.Width +
                                 pnlExample.Width;
             }
