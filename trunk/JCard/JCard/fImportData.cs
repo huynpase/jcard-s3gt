@@ -175,6 +175,21 @@ namespace JCard
         }
 
         /// <summary>
+        /// Gets the last category.
+        /// </summary>
+        public void getLastCategory()
+        {
+            try
+            {
+                cbCategory.SelectedIndex = cbCategory.Items.Count - 1;
+            }
+            catch (Exception ex)
+            {
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Handles the Click event of the btnAddCategory control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
