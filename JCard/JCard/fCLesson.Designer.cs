@@ -437,6 +437,7 @@
             this.Name = "fCLesson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard ";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabVocabulary.ResumeLayout(false);
