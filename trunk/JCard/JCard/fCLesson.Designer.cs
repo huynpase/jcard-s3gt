@@ -89,7 +89,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(516, 471);
-            this.tabControl1.TabIndex = 10;
+            this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabVocabulary
@@ -119,7 +119,7 @@
             this.groupBox3.Location = new System.Drawing.Point(387, 42);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(116, 128);
-            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Learn vocabulary";
             // 
@@ -129,7 +129,7 @@
             this.radNewTopic.Location = new System.Drawing.Point(6, 35);
             this.radNewTopic.Name = "radNewTopic";
             this.radNewTopic.Size = new System.Drawing.Size(103, 24);
-            this.radNewTopic.TabIndex = 13;
+            this.radNewTopic.TabIndex = 0;
             this.radNewTopic.TabStop = true;
             this.radNewTopic.Text = "New vocabulary";
             this.radNewTopic.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             this.radLastTopic.Location = new System.Drawing.Point(6, 65);
             this.radLastTopic.Name = "radLastTopic";
             this.radLastTopic.Size = new System.Drawing.Size(103, 24);
-            this.radLastTopic.TabIndex = 12;
+            this.radLastTopic.TabIndex = 1;
             this.radLastTopic.Text = "Last vocabulary";
             this.radLastTopic.UseVisualStyleBackColor = true;
             this.radLastTopic.CheckedChanged += new System.EventHandler(this.radLastTopic_CheckedChanged);
@@ -150,7 +150,7 @@
             this.radCombine.Location = new System.Drawing.Point(6, 95);
             this.radCombine.Name = "radCombine";
             this.radCombine.Size = new System.Drawing.Size(76, 24);
-            this.radCombine.TabIndex = 14;
+            this.radCombine.TabIndex = 2;
             this.radCombine.Text = "All";
             this.radCombine.UseVisualStyleBackColor = true;
             this.radCombine.CheckedChanged += new System.EventHandler(this.radCombine_CheckedChanged);
@@ -161,7 +161,7 @@
             this.button4.Location = new System.Drawing.Point(12, 390);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 31);
-            this.button4.TabIndex = 26;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Se&tting";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
@@ -172,7 +172,7 @@
             this.txtS3GTDB.Name = "txtS3GTDB";
             this.txtS3GTDB.ReadOnly = true;
             this.txtS3GTDB.Size = new System.Drawing.Size(286, 20);
-            this.txtS3GTDB.TabIndex = 24;
+            this.txtS3GTDB.TabIndex = 1;
             this.txtS3GTDB.Text = "datasource\\\\s3gt_db.mdb";
             // 
             // lblVocabS3GT
@@ -182,7 +182,7 @@
             this.lblVocabS3GT.Location = new System.Drawing.Point(9, 15);
             this.lblVocabS3GT.Name = "lblVocabS3GT";
             this.lblVocabS3GT.Size = new System.Drawing.Size(87, 13);
-            this.lblVocabS3GT.TabIndex = 23;
+            this.lblVocabS3GT.TabIndex = 0;
             this.lblVocabS3GT.Text = "S3GT Database:";
             // 
             // btnBrowseVoc
@@ -190,7 +190,7 @@
             this.btnBrowseVoc.Location = new System.Drawing.Point(387, 9);
             this.btnBrowseVoc.Name = "btnBrowseVoc";
             this.btnBrowseVoc.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowseVoc.TabIndex = 20;
+            this.btnBrowseVoc.TabIndex = 2;
             this.btnBrowseVoc.Text = "Browse...";
             this.btnBrowseVoc.UseVisualStyleBackColor = true;
             this.btnBrowseVoc.Click += new System.EventHandler(this.button5_Click);
@@ -201,7 +201,7 @@
             this.button1.Location = new System.Drawing.Point(387, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 31);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 7;
             this.button1.Text = "&Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -214,7 +214,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(378, 341);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please choose glossary(ies)  to learn";
             // 
@@ -224,7 +224,7 @@
             this.treeView1.Location = new System.Drawing.Point(9, 35);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(363, 300);
-            this.treeView1.TabIndex = 0;
+            this.treeView1.TabIndex = 2;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // chBoxAll
@@ -233,18 +233,20 @@
             this.chBoxAll.Location = new System.Drawing.Point(217, 12);
             this.chBoxAll.Name = "chBoxAll";
             this.chBoxAll.Size = new System.Drawing.Size(70, 17);
-            this.chBoxAll.TabIndex = 16;
+            this.chBoxAll.TabIndex = 0;
             this.chBoxAll.Text = "Check all";
             this.chBoxAll.UseVisualStyleBackColor = true;
-            this.chBoxAll.CheckedChanged += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
+            this.chBoxAll.Click += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
             // 
             // cBoxCollapse
             // 
             this.cBoxCollapse.AutoSize = true;
+            this.cBoxCollapse.Checked = true;
+            this.cBoxCollapse.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cBoxCollapse.Location = new System.Drawing.Point(293, 12);
             this.cBoxCollapse.Name = "cBoxCollapse";
             this.cBoxCollapse.Size = new System.Drawing.Size(79, 17);
-            this.cBoxCollapse.TabIndex = 17;
+            this.cBoxCollapse.TabIndex = 1;
             this.cBoxCollapse.Text = "Collapse all";
             this.cBoxCollapse.UseVisualStyleBackColor = true;
             this.cBoxCollapse.CheckedChanged += new System.EventHandler(this.cBoxCollapse_CheckedChanged_1);
@@ -255,7 +257,7 @@
             this.ButtCopy.Location = new System.Drawing.Point(281, 390);
             this.ButtCopy.Name = "ButtCopy";
             this.ButtCopy.Size = new System.Drawing.Size(94, 31);
-            this.ButtCopy.TabIndex = 10;
+            this.ButtCopy.TabIndex = 6;
             this.ButtCopy.Text = "&Start";
             this.ButtCopy.UseVisualStyleBackColor = true;
             this.ButtCopy.Click += new System.EventHandler(this.ButtCopy_Click);
@@ -285,7 +287,7 @@
             this.txtDatabaseGram.Name = "txtDatabaseGram";
             this.txtDatabaseGram.ReadOnly = true;
             this.txtDatabaseGram.Size = new System.Drawing.Size(286, 20);
-            this.txtDatabaseGram.TabIndex = 28;
+            this.txtDatabaseGram.TabIndex = 1;
             this.txtDatabaseGram.Text = "datasource\\\\s3gt_db.mdb";
             // 
             // lblGramS3GT
@@ -295,7 +297,7 @@
             this.lblGramS3GT.Location = new System.Drawing.Point(9, 15);
             this.lblGramS3GT.Name = "lblGramS3GT";
             this.lblGramS3GT.Size = new System.Drawing.Size(87, 13);
-            this.lblGramS3GT.TabIndex = 27;
+            this.lblGramS3GT.TabIndex = 0;
             this.lblGramS3GT.Text = "S3GT Database:";
             // 
             // btnBrowseGram
@@ -303,7 +305,7 @@
             this.btnBrowseGram.Location = new System.Drawing.Point(387, 9);
             this.btnBrowseGram.Name = "btnBrowseGram";
             this.btnBrowseGram.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowseGram.TabIndex = 26;
+            this.btnBrowseGram.TabIndex = 2;
             this.btnBrowseGram.Text = "Browse...";
             this.btnBrowseGram.UseVisualStyleBackColor = true;
             this.btnBrowseGram.Click += new System.EventHandler(this.button5_Click);
@@ -316,7 +318,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(378, 341);
-            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Please choose grammar(s)  to learn";
             // 
@@ -326,7 +328,7 @@
             this.trvGrammars.Location = new System.Drawing.Point(9, 35);
             this.trvGrammars.Name = "trvGrammars";
             this.trvGrammars.Size = new System.Drawing.Size(363, 300);
-            this.trvGrammars.TabIndex = 0;
+            this.trvGrammars.TabIndex = 2;
             this.trvGrammars.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // chbGramAll
@@ -335,18 +337,20 @@
             this.chbGramAll.Location = new System.Drawing.Point(217, 12);
             this.chbGramAll.Name = "chbGramAll";
             this.chbGramAll.Size = new System.Drawing.Size(70, 17);
-            this.chbGramAll.TabIndex = 16;
+            this.chbGramAll.TabIndex = 0;
             this.chbGramAll.Text = "Check all";
             this.chbGramAll.UseVisualStyleBackColor = true;
-            this.chbGramAll.CheckedChanged += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
+            this.chbGramAll.Click += new System.EventHandler(this.chBoxAll_CheckedChanged_1);
             // 
             // chbGramColAll
             // 
             this.chbGramColAll.AutoSize = true;
+            this.chbGramColAll.Checked = true;
+            this.chbGramColAll.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbGramColAll.Location = new System.Drawing.Point(293, 12);
             this.chbGramColAll.Name = "chbGramColAll";
             this.chbGramColAll.Size = new System.Drawing.Size(79, 17);
-            this.chbGramColAll.TabIndex = 17;
+            this.chbGramColAll.TabIndex = 1;
             this.chbGramColAll.Text = "Collapse all";
             this.chbGramColAll.UseVisualStyleBackColor = true;
             this.chbGramColAll.CheckedChanged += new System.EventHandler(this.cBoxCollapse_CheckedChanged_1);
@@ -357,7 +361,7 @@
             this.btnImport.Location = new System.Drawing.Point(12, 390);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(94, 31);
-            this.btnImport.TabIndex = 5;
+            this.btnImport.TabIndex = 4;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -368,7 +372,7 @@
             this.button2.Location = new System.Drawing.Point(387, 390);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 31);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 7;
             this.button2.Text = "&Close";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -379,7 +383,7 @@
             this.btnSetting.Location = new System.Drawing.Point(117, 390);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(94, 31);
-            this.btnSetting.TabIndex = 4;
+            this.btnSetting.TabIndex = 5;
             this.btnSetting.Text = "Se&tting";
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -390,7 +394,7 @@
             this.button3.Location = new System.Drawing.Point(281, 390);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 31);
-            this.button3.TabIndex = 2;
+            this.button3.TabIndex = 6;
             this.button3.Text = "&Start";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -400,7 +404,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(516, 22);
-            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // linkLabel1
@@ -409,7 +413,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(419, 454);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(65, 13);
-            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "About JCard";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);

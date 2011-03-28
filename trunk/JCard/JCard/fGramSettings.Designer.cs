@@ -47,6 +47,7 @@
             this.lblVieBgClr = new System.Windows.Forms.Label();
             this.chkboxVie = new System.Windows.Forms.CheckBox();
             this.grbEx = new System.Windows.Forms.GroupBox();
+            this.chkboxEx = new System.Windows.Forms.CheckBox();
             this.numDelayTim = new System.Windows.Forms.NumericUpDown();
             this.numDisTim = new System.Windows.Forms.NumericUpDown();
             this.numNoDis = new System.Windows.Forms.NumericUpDown();
@@ -59,7 +60,6 @@
             this.lblExBgClr = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.chkboxEx = new System.Windows.Forms.CheckBox();
             this.grbSample.SuspendLayout();
             this.grbJap.SuspendLayout();
             this.grbVie.SuspendLayout();
@@ -262,6 +262,16 @@
             this.grbEx.TabStop = false;
             this.grbEx.Text = "Examples";
             // 
+            // chkboxEx
+            // 
+            this.chkboxEx.AutoSize = true;
+            this.chkboxEx.Location = new System.Drawing.Point(6, 19);
+            this.chkboxEx.Name = "chkboxEx";
+            this.chkboxEx.Size = new System.Drawing.Size(185, 17);
+            this.chkboxEx.TabIndex = 0;
+            this.chkboxEx.Text = "Vietnamese Meaning Is Displayed";
+            this.chkboxEx.UseVisualStyleBackColor = true;
+            // 
             // numDelayTim
             // 
             this.numDelayTim.Location = new System.Drawing.Point(299, 116);
@@ -277,7 +287,7 @@
             0});
             this.numDelayTim.Name = "numDelayTim";
             this.numDelayTim.Size = new System.Drawing.Size(71, 20);
-            this.numDelayTim.TabIndex = 9;
+            this.numDelayTim.TabIndex = 10;
             this.numDelayTim.Value = new decimal(new int[] {
             1,
             0,
@@ -301,7 +311,7 @@
             0});
             this.numDisTim.Name = "numDisTim";
             this.numDisTim.Size = new System.Drawing.Size(71, 20);
-            this.numDisTim.TabIndex = 7;
+            this.numDisTim.TabIndex = 8;
             this.numDisTim.Value = new decimal(new int[] {
             1,
             0,
@@ -320,7 +330,7 @@
             0});
             this.numNoDis.Name = "numNoDis";
             this.numNoDis.Size = new System.Drawing.Size(71, 20);
-            this.numNoDis.TabIndex = 5;
+            this.numNoDis.TabIndex = 6;
             this.numNoDis.Value = new decimal(new int[] {
             1,
             0,
@@ -335,7 +345,7 @@
             this.pnlExFClr.Location = new System.Drawing.Point(299, 42);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlExFClr.TabIndex = 3;
+            this.pnlExFClr.TabIndex = 4;
             this.pnlExFClr.DoubleClick += new System.EventHandler(this.pnlExFClr_DoubleClick);
             // 
             // pnlExBgClr
@@ -344,7 +354,7 @@
             this.pnlExBgClr.Location = new System.Drawing.Point(104, 42);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlExBgClr.TabIndex = 1;
+            this.pnlExBgClr.TabIndex = 2;
             this.pnlExBgClr.DoubleClick += new System.EventHandler(this.pnlExBgClr_DoubleClick);
             // 
             // lblDelayTim
@@ -353,7 +363,7 @@
             this.lblDelayTim.Location = new System.Drawing.Point(219, 118);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
-            this.lblDelayTim.TabIndex = 8;
+            this.lblDelayTim.TabIndex = 9;
             this.lblDelayTim.Text = "Delay Time (s):";
             // 
             // lblDisTim
@@ -362,7 +372,7 @@
             this.lblDisTim.Location = new System.Drawing.Point(5, 118);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(84, 13);
-            this.lblDisTim.TabIndex = 6;
+            this.lblDisTim.TabIndex = 7;
             this.lblDisTim.Text = "Display Time (s):";
             // 
             // lblExNoDis
@@ -371,7 +381,7 @@
             this.lblExNoDis.Location = new System.Drawing.Point(5, 87);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
-            this.lblExNoDis.TabIndex = 4;
+            this.lblExNoDis.TabIndex = 5;
             this.lblExNoDis.Text = "Number of Display:";
             // 
             // lblExFClr
@@ -380,7 +390,7 @@
             this.lblExFClr.Location = new System.Drawing.Point(219, 54);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(58, 13);
-            this.lblExFClr.TabIndex = 2;
+            this.lblExFClr.TabIndex = 3;
             this.lblExFClr.Text = "Font Color:";
             // 
             // lblExBgClr
@@ -389,7 +399,7 @@
             this.lblExBgClr.Location = new System.Drawing.Point(6, 54);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
-            this.lblExBgClr.TabIndex = 0;
+            this.lblExBgClr.TabIndex = 1;
             this.lblExBgClr.Text = "Background Color:";
             // 
             // btnSave
@@ -416,16 +426,6 @@
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // chkboxEx
-            // 
-            this.chkboxEx.AutoSize = true;
-            this.chkboxEx.Location = new System.Drawing.Point(6, 19);
-            this.chkboxEx.Name = "chkboxEx";
-            this.chkboxEx.Size = new System.Drawing.Size(185, 17);
-            this.chkboxEx.TabIndex = 10;
-            this.chkboxEx.Text = "Vietnamese Meaning Is Displayed";
-            this.chkboxEx.UseVisualStyleBackColor = true;
             // 
             // fGramSetts
             // 

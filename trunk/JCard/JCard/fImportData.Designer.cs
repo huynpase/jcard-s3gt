@@ -73,7 +73,7 @@ namespace JCard
             this.label2.Location = new System.Drawing.Point(18, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 3;
             this.label2.Text = "S3GT Database:";
             // 
             // txtS3GTDB
@@ -82,14 +82,14 @@ namespace JCard
             this.txtS3GTDB.Name = "txtS3GTDB";
             this.txtS3GTDB.ReadOnly = true;
             this.txtS3GTDB.Size = new System.Drawing.Size(357, 20);
-            this.txtS3GTDB.TabIndex = 1;
+            this.txtS3GTDB.TabIndex = 4;
             // 
             // butExcel
             // 
             this.butExcel.Location = new System.Drawing.Point(492, 27);
             this.butExcel.Name = "butExcel";
             this.butExcel.Size = new System.Drawing.Size(75, 23);
-            this.butExcel.TabIndex = 3;
+            this.butExcel.TabIndex = 2;
             this.butExcel.Text = "Browse...";
             this.butExcel.UseVisualStyleBackColor = true;
             this.butExcel.Click += new System.EventHandler(this.butExcel_Click);
@@ -99,7 +99,7 @@ namespace JCard
             this.butS3GTDB.Location = new System.Drawing.Point(492, 64);
             this.butS3GTDB.Name = "butS3GTDB";
             this.butS3GTDB.Size = new System.Drawing.Size(75, 23);
-            this.butS3GTDB.TabIndex = 3;
+            this.butS3GTDB.TabIndex = 5;
             this.butS3GTDB.Text = "Browse...";
             this.butS3GTDB.UseVisualStyleBackColor = true;
             this.butS3GTDB.Click += new System.EventHandler(this.butS3GTDB_Click);
@@ -111,7 +111,7 @@ namespace JCard
             this.label3.Location = new System.Drawing.Point(18, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Choose Category:";
             // 
             // radDelete
@@ -121,7 +121,7 @@ namespace JCard
             this.radDelete.Location = new System.Drawing.Point(15, 15);
             this.radDelete.Name = "radDelete";
             this.radDelete.Size = new System.Drawing.Size(316, 17);
-            this.radDelete.TabIndex = 4;
+            this.radDelete.TabIndex = 0;
             this.radDelete.TabStop = true;
             this.radDelete.Text = "Delete existing grammars of this category and insert new data.";
             this.radDelete.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace JCard
             this.radKeep.Location = new System.Drawing.Point(15, 47);
             this.radKeep.Name = "radKeep";
             this.radKeep.Size = new System.Drawing.Size(310, 17);
-            this.radKeep.TabIndex = 4;
+            this.radKeep.TabIndex = 1;
             this.radKeep.Text = "Keep existing grammars of this category and insert new data.";
             this.radKeep.UseVisualStyleBackColor = true;
             // 
@@ -144,7 +144,7 @@ namespace JCard
             this.panel1.Location = new System.Drawing.Point(129, 144);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 84);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 9;
             // 
             // butConvert
             // 
@@ -153,7 +153,7 @@ namespace JCard
             this.butConvert.Location = new System.Drawing.Point(190, 234);
             this.butConvert.Name = "butConvert";
             this.butConvert.Size = new System.Drawing.Size(95, 31);
-            this.butConvert.TabIndex = 7;
+            this.butConvert.TabIndex = 10;
             this.butConvert.Text = "&Import";
             this.butConvert.UseVisualStyleBackColor = true;
             this.butConvert.Click += new System.EventHandler(this.butConvert_Click);
@@ -172,7 +172,7 @@ namespace JCard
             this.btnCancel.Location = new System.Drawing.Point(308, 234);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 31);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "&Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -184,14 +184,14 @@ namespace JCard
             this.cbCategory.Location = new System.Drawing.Point(129, 107);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(181, 21);
-            this.cbCategory.TabIndex = 10;
+            this.cbCategory.TabIndex = 7;
             // 
             // btnAddCategory
             // 
             this.btnAddCategory.Location = new System.Drawing.Point(316, 107);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(75, 23);
-            this.btnAddCategory.TabIndex = 11;
+            this.btnAddCategory.TabIndex = 8;
             this.btnAddCategory.Text = "Add New";
             this.btnAddCategory.UseVisualStyleBackColor = true;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);

@@ -60,8 +60,13 @@ namespace JCard
         // cua grammar card hien tai
         ArrayList arr_ExampleForward = new ArrayList(); // List luu giu cac example truoc do
 
-        public fGrammar(ArrayList arr_GramCards)
+        // Parent form used when back to Parent form
+        fCLesson frmParent;
+
+        public fGrammar(ArrayList arr_GramCards, fCLesson frmParent)
         {
+            this.frmParent = frmParent;
+
             InitializeComponent();
             //setFormPosAtBottomRight();
 
@@ -449,8 +454,9 @@ namespace JCard
                     }
                     else
                     {
-                        this.Dispose();
-                        Application.Restart();
+                        //this.Dispose();
+                        //Application.Restart();
+                        this.Close();
                     }
                 }
             }
@@ -515,11 +521,15 @@ namespace JCard
         // Khi tien hanh close chuong trinh bang cach righ-click len icon cua ch/tr tren taskbar va click [x]
         private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
         {
+            timer.Stop();
+
             // Save settings
             SaveSettings();
 
-            this.Dispose();
-            Application.Exit();
+            frmParent.ReShow(); // Reshow Main Screen
+
+            //this.Dispose();
+            //Application.Exit();
         }
         #endregion
 
@@ -750,10 +760,10 @@ namespace JCard
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Save settings
-            SaveSettings();
-
-            this.Dispose();
-            Application.Restart();
+            //SaveSettings();            
+            this.Close();
+            //this.Dispose();
+            //Application.Restart();
         }
 
         #region  Xu li Drag&Drop
