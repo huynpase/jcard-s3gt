@@ -521,13 +521,13 @@ namespace JCard
         // Khi tien hanh close chuong trinh bang cach righ-click len icon cua ch/tr tren taskbar va click [x]
         private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            timer.Stop();
+            timer_wait.Enabled = false;
+            timer.Enabled = false;            
 
             // Save settings
             SaveSettings();
-
+            
             frmParent.ReShow(); // Reshow Main Screen
-
             //this.Dispose();
             //Application.Exit();
         }
