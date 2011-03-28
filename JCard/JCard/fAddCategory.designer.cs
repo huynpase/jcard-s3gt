@@ -44,7 +44,7 @@
             this.label3.Location = new System.Drawing.Point(17, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Category Name:";
             // 
             // label1
@@ -54,7 +54,7 @@
             this.label1.Location = new System.Drawing.Point(17, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Description:";
             // 
             // txtCat_Name
@@ -62,7 +62,7 @@
             this.txtCat_Name.Location = new System.Drawing.Point(104, 23);
             this.txtCat_Name.Name = "txtCat_Name";
             this.txtCat_Name.Size = new System.Drawing.Size(198, 20);
-            this.txtCat_Name.TabIndex = 4;
+            this.txtCat_Name.TabIndex = 1;
             // 
             // txtCat_Desc
             // 
@@ -70,7 +70,7 @@
             this.txtCat_Desc.Multiline = true;
             this.txtCat_Desc.Name = "txtCat_Desc";
             this.txtCat_Desc.Size = new System.Drawing.Size(198, 89);
-            this.txtCat_Desc.TabIndex = 5;
+            this.txtCat_Desc.TabIndex = 3;
             // 
             // button1
             // 
@@ -78,7 +78,7 @@
             this.button1.Location = new System.Drawing.Point(207, 176);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 31);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 5;
             this.button1.Text = "&Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -89,7 +89,7 @@
             this.button2.Location = new System.Drawing.Point(104, 176);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 31);
-            this.button2.TabIndex = 7;
+            this.button2.TabIndex = 4;
             this.button2.Text = "&Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

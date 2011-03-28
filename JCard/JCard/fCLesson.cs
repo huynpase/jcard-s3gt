@@ -42,6 +42,13 @@ namespace JCard
         public SendData sendData;
 
         #region Form Load
+        public void ReShow()
+        {
+            this.Show();
+            this.Activate();
+            tabControl1_SelectedIndexChanged(null, null);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             fSplash.ShowSplashScreen();
@@ -137,7 +144,9 @@ namespace JCard
                 arrTopic = busJcard.GetTopic();
                 arrTopicGroup = busJcard.GetTopicGroup();
                 AddToTreeView(arrTopicGroup, arrTopic);
-                treeView1.ExpandAll();
+
+                cBoxCollapse_CheckedChanged_1(cBoxCollapse, null);
+                chBoxAll_CheckedChanged_1(chBoxAll, null);
             }
             catch (Exception ex)
             {
@@ -216,7 +225,8 @@ namespace JCard
 
                 trvGrammars.Nodes.AddRange(lstNodes.ToArray());
 
-                trvGrammars.ExpandAll();
+                cBoxCollapse_CheckedChanged_1(chbGramColAll, null);
+                chBoxAll_CheckedChanged_1(chbGramAll, null);
             }
             catch (Exception ex)
             {
@@ -243,6 +253,15 @@ namespace JCard
                     blnAll |= node.Checked;
                 }
                 e.Node.Parent.Checked = blnAll;
+            }
+
+            if (sender == treeView1)
+            {
+                if (chBoxAll.Checked && !e.Node.Checked) chBoxAll.CheckState = CheckState.Unchecked;
+            }
+            else if (sender == trvGrammars)
+            {
+                if (chbGramAll.Checked && !e.Node.Checked) chbGramAll.CheckState = CheckState.Unchecked;
             }
         }
 
@@ -374,11 +393,11 @@ namespace JCard
                 ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
                 //*/
 
-                fGrammar fg = new fGrammar(arr_Entry);
+                fGrammar fg = new fGrammar(arr_Entry, this);
                 fg.Show();
-
+                
                 trvGrammars.Nodes.Clear();
-                this.Hide();
+                this.Hide();                               
             }
             else
             {
@@ -434,7 +453,8 @@ namespace JCard
                         arrListTopic = GetListTopicChosen();
                         arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
                         oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        //fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc, this);
                         fjcard.Show();
                         this.Hide();
                     }
@@ -454,7 +474,8 @@ namespace JCard
                 {
                     arrListTopic = oJcard.GetTopicIsLastTopic();
                     arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                    fJCard fjcard = new fJCard(iFlag, arrVoc);
+                    //fJCard fjcard = new fJCard(iFlag, arrVoc);
+                    fJCard fjcard = new fJCard(iFlag, arrVoc, this);
                     fjcard.Show();
                     this.Hide();
                 }
@@ -474,7 +495,8 @@ namespace JCard
                         CombineArrayList(ref arrListTopic, arrListLastTopic);
                         arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
                         oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        //fJCard fjcard = new fJCard(iFlag, arrVoc);
+                        fJCard fjcard = new fJCard(iFlag, arrVoc, this);
                         fjcard.Show();
                         this.Hide();
                     }

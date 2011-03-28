@@ -59,7 +59,7 @@
             this.button2.Location = new System.Drawing.Point(203, 290);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(73, 30);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 3;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -70,7 +70,7 @@
             this.button1.Location = new System.Drawing.Point(109, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 30);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 2;
             this.button1.Text = "&Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -112,7 +112,7 @@
             this.comFontMeaning.Location = new System.Drawing.Point(120, 153);
             this.comFontMeaning.Name = "comFontMeaning";
             this.comFontMeaning.Size = new System.Drawing.Size(69, 21);
-            this.comFontMeaning.TabIndex = 28;
+            this.comFontMeaning.TabIndex = 11;
             this.comFontMeaning.Text = "5";
             // 
             // label8
@@ -121,7 +121,7 @@
             this.label8.Location = new System.Drawing.Point(9, 156);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 13);
-            this.label8.TabIndex = 27;
+            this.label8.TabIndex = 10;
             this.label8.Text = "Font size Meaning";
             // 
             // comFontHanNom
@@ -139,7 +139,7 @@
             this.comFontHanNom.Location = new System.Drawing.Point(120, 126);
             this.comFontHanNom.Name = "comFontHanNom";
             this.comFontHanNom.Size = new System.Drawing.Size(69, 21);
-            this.comFontHanNom.TabIndex = 26;
+            this.comFontHanNom.TabIndex = 9;
             this.comFontHanNom.Text = "5";
             // 
             // label7
@@ -148,7 +148,7 @@
             this.label7.Location = new System.Drawing.Point(9, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 25;
+            this.label7.TabIndex = 8;
             this.label7.Text = "Font size Han Nom";
             // 
             // comFontKana
@@ -166,7 +166,7 @@
             this.comFontKana.Location = new System.Drawing.Point(120, 99);
             this.comFontKana.Name = "comFontKana";
             this.comFontKana.Size = new System.Drawing.Size(69, 21);
-            this.comFontKana.TabIndex = 24;
+            this.comFontKana.TabIndex = 7;
             this.comFontKana.Text = "5";
             // 
             // label4
@@ -175,7 +175,7 @@
             this.label4.Location = new System.Drawing.Point(9, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 23;
+            this.label4.TabIndex = 6;
             this.label4.Text = "Font size Kana";
             // 
             // comFontKanji
@@ -193,7 +193,7 @@
             this.comFontKanji.Location = new System.Drawing.Point(120, 72);
             this.comFontKanji.Name = "comFontKanji";
             this.comFontKanji.Size = new System.Drawing.Size(69, 21);
-            this.comFontKanji.TabIndex = 22;
+            this.comFontKanji.TabIndex = 5;
             this.comFontKanji.Text = "5";
             // 
             // label1
@@ -202,7 +202,7 @@
             this.label1.Location = new System.Drawing.Point(9, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 21;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Font size Kanji";
             // 
             // comDisTime
@@ -227,7 +227,7 @@
             this.comDisTime.Location = new System.Drawing.Point(120, 46);
             this.comDisTime.Name = "comDisTime";
             this.comDisTime.Size = new System.Drawing.Size(69, 21);
-            this.comDisTime.TabIndex = 15;
+            this.comDisTime.TabIndex = 3;
             this.comDisTime.Text = "5";
             // 
             // comDeplayTime
@@ -252,7 +252,7 @@
             this.comDeplayTime.Location = new System.Drawing.Point(120, 20);
             this.comDeplayTime.Name = "comDeplayTime";
             this.comDeplayTime.Size = new System.Drawing.Size(69, 21);
-            this.comDeplayTime.TabIndex = 14;
+            this.comDeplayTime.TabIndex = 1;
             this.comDeplayTime.Text = "5";
             // 
             // label3
@@ -261,7 +261,7 @@
             this.label3.Location = new System.Drawing.Point(9, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 12;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Display Time (s):";
             // 
             // label2
@@ -270,7 +270,7 @@
             this.label2.Location = new System.Drawing.Point(9, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Deplay Time (s):";
             // 
             // groupBox1
@@ -294,7 +294,7 @@
             this.radioButton1.Location = new System.Drawing.Point(12, 20);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(65, 17);
-            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabIndex = 0;
             this.radioButton1.Text = "Top Left";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
@@ -317,7 +317,7 @@
             this.radioButton4.Location = new System.Drawing.Point(159, 20);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(72, 17);
-            this.radioButton4.TabIndex = 2;
+            this.radioButton4.TabIndex = 1;
             this.radioButton4.Text = "Top Right";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
@@ -328,7 +328,7 @@
             this.radioButton2.Location = new System.Drawing.Point(12, 42);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.Text = "Bottom Left";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
