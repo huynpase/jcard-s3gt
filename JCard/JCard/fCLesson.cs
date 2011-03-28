@@ -44,9 +44,11 @@ namespace JCard
         #region Form Load
         public void ReShow()
         {
+            this.TopMost = true;
             this.Show();
-            this.Activate();
+            this.Activate();            
             tabControl1_SelectedIndexChanged(null, null);
+            this.TopMost = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
