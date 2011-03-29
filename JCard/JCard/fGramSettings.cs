@@ -214,7 +214,7 @@ namespace JCard
             grbEx.Text = Common.GetResourceValue(Constants.RES_GRBEX_NAME, objCulInfo, objResourceManager, Constants.RES_GRBEX_VALUE);
             lblSampleBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLBGCLR_VALUE);
             lblSampleFclr.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
-            chkboxJap.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
+            chkboxJap.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
             lblJapBgClr.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLBGCLR_VALUE);
             lblJapFClr.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
             chkboxVie.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
