@@ -17,6 +17,7 @@ namespace JCard
         CultureInfo objCulInfo;
         #endregion
 
+        #region Variables for class
         /* Dong ho do dac thoi gian display va delay */
         private Timer timer;
         private Timer timer_wait;
@@ -62,7 +63,9 @@ namespace JCard
 
         // Parent form used when back to Parent form
         fCLesson frmParent;
+        #endregion
 
+        #region Methods for class
         public fGrammar(ArrayList arr_GramCards, fCLesson frmParent)
         {
             this.frmParent = frmParent;
@@ -129,8 +132,6 @@ namespace JCard
                 {
                     index_example = rand.Next(0, max_example - 1);
                     arr_ExampleForward.Add(index_example);
-                    // lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString();
-                    // toolTip4.SetToolTip(lblExample, lblExample.Text);
                     lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
                         index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
                     toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
@@ -409,6 +410,7 @@ namespace JCard
             }
         }
         /* Ham xu ly chinh dung de hien thi grammar card va example */
+        private bool flag_closed = false;
         private void Display()
         {
             int i = 0, j = 0;
@@ -425,7 +427,6 @@ namespace JCard
                                 break;
                         arr_CardForward.Add(i);
 
-                        count_forward = 0;
                         arr_Entry.RemoveAt(index_entry);
                         max_entry--;
                         index_entry = rand.Next(0, max_entry - 1);
@@ -442,6 +443,7 @@ namespace JCard
                         }
                     }
 
+                    count_forward = 0;
                     count_example_forward = 1;
                     SetControlValues(arr_Entry, index_entry);
                 }
@@ -449,6 +451,7 @@ namespace JCard
                 {// Truong hop da hien thi het tat ca grammar card
                     if (!(count_example == sum_of_display_example || sum_of_display_example == 0))
                     {
+                        count_forward = 0;
                         count_example_forward = 1;
                         SetControlValues(arr_Entry, index_entry);
                     }
@@ -456,6 +459,7 @@ namespace JCard
                     {
                         //this.Dispose();
                         //Application.Restart();
+                        flag_closed = true;
                         this.Close();
                     }
                 }
@@ -471,19 +475,18 @@ namespace JCard
 
                 // Lay random example tiep theo
                 index_example = rand.Next(0, max_example - 1);
-                //lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString();
-                //toolTip4.SetToolTip(lblExample, lblExample.Text);
                 lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
                         index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
                 toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
                         index_example, dto_gramSetting.Ex_VN_IsDisplayed, false));
                 /* Xu ly get back example */
-                for (i = 0; i < ((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP.Count; i++)
-                    if (((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP[i].ToString().Equals(((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString()))
-                    {
-                        arr_ExampleForward.Add(i);
-                        break;
-                    }
+                if (((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP.Contains(
+                    ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString()))
+                {
+                    i = ((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP.IndexOf(
+                        ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString());
+                    arr_ExampleForward.Add(i);
+                }
                 ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.RemoveAt(index_example);
                 ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleVN.RemoveAt(index_example);
                 max_example--; // Do vua display 1 example nen phai giam bien nay xuong 1
@@ -651,7 +654,8 @@ namespace JCard
         private void btnNext_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
-                timer.Enabled = true;
+                if (!flag_closed)
+                    timer.Enabled = true;
         }
 
         private void btnDisplay_MouseMove(object sender, MouseEventArgs e)
@@ -687,7 +691,8 @@ namespace JCard
         private void btnExampleNxt_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
-                timer.Enabled = true;
+                if(!flag_closed)
+                    timer.Enabled = true;
         }
         #endregion
 
@@ -696,17 +701,46 @@ namespace JCard
         // Hien thi grammar card truoc do
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (arr_CardForward.Count > 1 && count_forward < arr_CardForward.Count)
+            if (arr_CardForward.Count > 1 && count_forward + 1 < arr_CardForward.Count)
             {
+                int temp_index_entry = 0, temp_index_example = 0;
                 count_forward++;
-                int temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
+
+                /* Xu ly tuong quan giua back grammar card va back example --> */
+                if (count_example_forward != 1 && count_forward == 1)
+                {// Khi dang trong qua trinh thao tac voi chuc nang Back Example thi chuyen sang 
+                 // thao tac voi chuc nang Back Grammar.
+                 // Tinh grammar card hien tai de xu ly chuc nang back Grammar
+                    if (arr_CardForward.Contains((int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward]))
+                    {
+                        count_forward = arr_CardForward.Count - arr_CardForward.IndexOf(
+                            (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward]);
+                        if (count_forward + 1 < arr_CardForward.Count)
+                            count_forward++;
+                        else
+                            return;
+                    }
+                    else
+                        count_forward = 1;
+                }
+                for (int i = 0; ; i++)
+                    if (count_example_forward + i < arr_CardExampleForward.Count)
+                    {
+                        if ((int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward] !=
+                            (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward - i])
+                        {// Example cuoi cung da duoc hien thi cua grammar card hien tai
+                            count_example_forward += i;
+                            temp_index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - count_example_forward];
+                            break;
+                        }
+                    }
+                /* <-- Ket thuc xu ly tuong quan */
+
+                temp_index_entry = (int)arr_CardForward[arr_CardForward.Count - count_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
                 int temp_max_example = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP.Count;
                 if (temp_max_example >= 1 && example_ini >= 1)
                 {
-                    int temp_index_example = rand.Next(0, temp_max_example - 1);
-                    //lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP[temp_index_example].ToString();
-                    //toolTip4.SetToolTip(lblExample, lblExample.Text);
                     lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
                         temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
                     toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
@@ -717,9 +751,6 @@ namespace JCard
                     lblExample.Text = string.Empty;
                     toolTip4.SetToolTip(lblExample, lblExample.Text);
                 }
-
-                //arr_CardForward.RemoveAt(arr_CardForward.Count - 1);
-                count_example = sum_of_display_example - 1;
             }
         }
 
@@ -737,11 +768,13 @@ namespace JCard
             if (arr_CardExampleForward.Count > 1 && count_example_forward < arr_CardExampleForward.Count)
             {
                 count_example_forward++;
+                // Trong qua trinh thao tac voi chuc nang Back Grammar thi chuyen sang thao tac voi Back Example
+                if (count_forward != 0)
+                    count_forward = 0;
+                
                 int temp_index_entry = (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward];
                 int temp_index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - count_example_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
-                //lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).ArrExampleJP[temp_index_example].ToString();
-                //toolTip4.SetToolTip(lblExample, lblExample.Text);
                 lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
                         temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
                 toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
@@ -760,7 +793,8 @@ namespace JCard
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Save settings
-            //SaveSettings();            
+            //SaveSettings();
+            flag_closed = true;
             this.Close();
             //this.Dispose();
             //Application.Restart();
@@ -898,6 +932,6 @@ namespace JCard
             About fabout = new About();
             fabout.ShowDialog();
         }
-
+        #endregion
     }
 }
