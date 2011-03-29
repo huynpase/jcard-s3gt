@@ -84,7 +84,7 @@ namespace JCard
             this.Text = Common.GetResourceValue(Constants.RES_VOCABSETT_NAME, objCulInfo, objResourceManager, Constants.RES_VOCABSETT_VALUE);
             groupBox1.Text = Common.GetResourceValue(Constants.RES_GRBPOS_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPOS_VALUE);
             groupBox2.Text = Common.GetResourceValue(Constants.RES_GRBPROP_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPROP_VALUE);
-            radioButton1.Text = Common.GetResourceValue(Constants.RES_RADTR_NAME, objCulInfo, objResourceManager, Constants.RES_RADTR_VALUE);
+            radioButton1.Text = Common.GetResourceValue(Constants.RES_RADTL_NAME, objCulInfo, objResourceManager, Constants.RES_RADTL_VALUE);
             radioButton2.Text = Common.GetResourceValue(Constants.RES_RADBL_NAME, objCulInfo, objResourceManager, Constants.RES_RADBL_VALUE);
             radioButton4.Text = Common.GetResourceValue(Constants.RES_RADTR_NAME, objCulInfo, objResourceManager, Constants.RES_RADTR_VALUE);
             radBottRight.Text = Common.GetResourceValue(Constants.RES_RADBR_NAME, objCulInfo, objResourceManager, Constants.RES_RADBR_VALUE);
