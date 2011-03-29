@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
+using System.Resources;
+using System.Globalization;
 
 namespace JCard
 {
@@ -24,7 +26,10 @@ namespace JCard
                 }
                 else
                 {
-                    MessageBox.Show("JCard is running. Please check program on taskbar!","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ResourceManager objRM = new ResourceManager("JCard.Resources", typeof(fCLesson).Assembly);
+                    CultureInfo objCI = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+
+                    Common.ShowInfoMsg(objCI, objRM, Constants.RES_START_PROGRAM_NAME, Constants.RES_START_PROGRAM_VALUE);
                     return;
                 }
             }

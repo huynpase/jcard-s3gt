@@ -148,6 +148,7 @@ namespace JCard
             // Create a resource manager to retrieve resources.
             objResourceManager = new ResourceManager("JCard.Resources", typeof(fGrammar).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
+            notifyIcon1.Text = Common.GetResourceValue(Constants.RES_PROGRAM_NAME, objCulInfo, objResourceManager, Constants.RES_PROGRAM_VALUE);
             backToMainScreenToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_MAINSCREEN_NAME, objCulInfo, objResourceManager, Constants.RES_MAINSCREEN_VALUE);
             aboutToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_ABOUT_NAME, objCulInfo, objResourceManager, Constants.RES_ABOUT_VALUE);
             exitToolStripMenuItem.Text = Common.GetResourceValue(Constants.RES_EXIT_NAME, objCulInfo, objResourceManager, Constants.RES_EXIT_VALUE);

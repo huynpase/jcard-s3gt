@@ -138,10 +138,10 @@ namespace JCard
         public const string RES_RADTL_VALUE = "Phía Trên Bên Trái";
         public const string RES_RADBR_VALUE = "Phía Dưới Bên Phải";
         public const string RES_RADBL_VALUE = "Phía Dưới Bên Trái";
-        public const string RES_LBLFKANJI_VALUE = "Cỡ Chữ Kanji";
-        public const string RES_LBLFKANA_VALUE = "Cỡ Chữ Kana";
-        public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm";
-        public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa";
+        public const string RES_LBLFKANJI_VALUE = "Cỡ Chữ Kanji:";
+        public const string RES_LBLFKANA_VALUE = "Cỡ Chữ Kana:";
+        public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm:";
+        public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa:";
 
         //Resource Import Data Form
         public const string RES_IMPORTDATA_NAME = "importdata";
@@ -152,8 +152,8 @@ namespace JCard
         public const string RES_RADKEEP_NAME = "radkeep";
 
         public const string RES_IMPORTDATA_VALUE = "Nhập Dữ Liệu Từ file Excel";
-        public const string RES_LBLDATASOURCE_VALUE = "Nguồn Dữ Liệu";
-        public const string RES_LBLCHOOSECAT_VALUE = "Chọn Nhóm";
+        public const string RES_LBLDATASOURCE_VALUE = "Nguồn Dữ Liệu:";
+        public const string RES_LBLCHOOSECAT_VALUE = "Chọn Nhóm:";
         public const string RES_BTNADDCAT_VALUE = "Thêm Nhóm";
         public const string RES_RADDEL_VALUE = "Thay thế ngữ pháp cũ trong nhóm bằng ngữ pháp mới";
         public const string RES_RADKEEP_VALUE = "Giữ nguyên ngữ pháp cũ và chèn thêm ngữ pháp mới";
@@ -172,14 +172,14 @@ namespace JCard
 
         public const string RES_MAINSCREEN_VALUE = "Trở lại Màn hình chính";
         public const string RES_EXIT_VALUE = "Thoát";
-        public const string RES_VOCABULARY_VALUE = "JCard - Từ Vựng";
+        public const string RES_VOCABULARY_VALUE = "J-Card - Từ Vựng";
 
         //Resource About Form
         public const string RES_ABOUT_NAME = "about";
         public const string RES_COPYRIGHT_NAME = "copyright";
         public const string RES_MEMBERS_NAME = "members";
 
-        public const string RES_ABOUT_VALUE = "Thông Tin Jcard";
+        public const string RES_ABOUT_VALUE = "Thông Tin J-Card";
         public const string RES_COPYRIGHT_VALUE = "Bản Quyền thuộc về JCD - FSOFT HCM 2011";
         public const string RES_MEMBERS_VALUE = "Các Thành Viên của Dự Án:";
 
@@ -215,7 +215,7 @@ namespace JCard
         public const string RES_SELECT_S3GT_FILE_NAME = "MsgSelectS3gt";
         public const string RES_SELECT_S3GT_FILE_VALUE = "Hãy chọn file CSDL S3GT trước khi thực hiện import.";
         public const string RES_CAT_NAME_EMPTY_NAME = "MsgCatNameEmpty";
-        public const string RES_CAT_NAME_EMPTY_VALUE = "Tên Phân Loại không được phép rỗng.\nVui lòng nhập Tên Phân Loại trước khi lưu.";
+        public const string RES_CAT_NAME_EMPTY_VALUE = "Tên Nhóm không được phép rỗng.\nVui lòng nhập Tên Nhóm trước khi lưu.";
         public const string RES_ADD_CAT_FAIL_NAME = "MsgAddCatFail";
         public const string RES_ADD_CAT_FAIL_VALUE = "Thất bại trong quá trình thêm dữ liệu vào Cơ Sở Dữ Liệu.";
         public const string RES_ADD_CAT_SUCESSFULL_NAME = "MsgAddCatSucessfull";
@@ -223,7 +223,9 @@ namespace JCard
         public const string RES_SAVE_SETTING_SUCESSFULL_NAME = "MsgSaveSettingSucessfull";
         public const string RES_SAVE_SETTING_SUCESSFULL_VALUE = "Đã lưu cấu hình thành công.";
         public const string RES_CLOSE_PROGRAM_NAME = "MsgCloseProgram";
-        public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";       
+        public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";     
+        public const string RES_START_PROGRAM_NAME = "MsgStartProgram";
+        public const string RES_START_PROGRAM_VALUE = "Chương trình J-Card đang mở.\nVui lòng kiểm tra lại chương trình trên thanh Taskbar hoặc System Tray.";
 
         // Resource DTO_Grammar
         public const int MAX_LENGTH_JP_NEWLINE = 25;

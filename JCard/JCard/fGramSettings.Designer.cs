@@ -86,7 +86,7 @@
             // pnlSampleFClr
             // 
             this.pnlSampleFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlSampleFClr.Location = new System.Drawing.Point(300, 13);
+            this.pnlSampleFClr.Location = new System.Drawing.Point(303, 13);
             this.pnlSampleFClr.Name = "pnlSampleFClr";
             this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleFClr.TabIndex = 3;
@@ -95,7 +95,7 @@
             // pnlSampleBgClr
             // 
             this.pnlSampleBgClr.BackColor = System.Drawing.Color.Maroon;
-            this.pnlSampleBgClr.Location = new System.Drawing.Point(105, 13);
+            this.pnlSampleBgClr.Location = new System.Drawing.Point(118, 13);
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 1;
@@ -137,7 +137,7 @@
             // pnlJapFClr
             // 
             this.pnlJapFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJapFClr.Location = new System.Drawing.Point(300, 41);
+            this.pnlJapFClr.Location = new System.Drawing.Point(303, 41);
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapFClr.TabIndex = 4;
@@ -146,7 +146,7 @@
             // pnlJapBgClr
             // 
             this.pnlJapBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJapBgClr.Location = new System.Drawing.Point(105, 41);
+            this.pnlJapBgClr.Location = new System.Drawing.Point(118, 41);
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapBgClr.TabIndex = 2;
@@ -198,7 +198,7 @@
             // pnlVieFClr
             // 
             this.pnlVieFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlVieFClr.Location = new System.Drawing.Point(299, 41);
+            this.pnlVieFClr.Location = new System.Drawing.Point(302, 41);
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieFClr.TabIndex = 4;
@@ -207,7 +207,7 @@
             // pnlVieBgClr
             // 
             this.pnlVieBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlVieBgClr.Location = new System.Drawing.Point(104, 41);
+            this.pnlVieBgClr.Location = new System.Drawing.Point(117, 41);
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieBgClr.TabIndex = 2;
@@ -274,7 +274,7 @@
             // 
             // numDelayTim
             // 
-            this.numDelayTim.Location = new System.Drawing.Point(299, 116);
+            this.numDelayTim.Location = new System.Drawing.Point(302, 116);
             this.numDelayTim.Maximum = new decimal(new int[] {
             10,
             0,
@@ -342,7 +342,7 @@
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlExFClr.Location = new System.Drawing.Point(299, 42);
+            this.pnlExFClr.Location = new System.Drawing.Point(302, 42);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 4;
@@ -351,7 +351,7 @@
             // pnlExBgClr
             // 
             this.pnlExBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlExBgClr.Location = new System.Drawing.Point(104, 42);
+            this.pnlExBgClr.Location = new System.Drawing.Point(117, 42);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 2;
