@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("J-Card")]
-[assembly: AssemblyDescription("This is free version of PhuongHD and JCD-FSOFTHCM")]
+[assembly: AssemblyDescription("JCD-FSOFTHCM")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JCD-FSOFTHCM")]
 [assembly: AssemblyProduct("J-Card")]
-[assembly: AssemblyCopyright("Copyright © PHUONGHD 2010")]
+[assembly: AssemblyCopyright("Copyright © JCD-FSOFTHCM 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,8 +29,8 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.5.0.0")]
+[assembly: AssemblyFileVersion("1.5.0.0")]
 
 ///*************************************************************************************************************************
 /// Assembly Name   : J-Card 
@@ -49,4 +49,13 @@ using System.Runtime.InteropServices;
 ///                             - Start displaying Grammar Cards                                
 ///                             - Display Grammar Cards
 ///                             - Change setting values on Grammar Card screen
+///
+///     1.5.0.0     3           Update according to comments of JCD-FSOFTHCM    2011/03/21      
+///                             - Update J-Card Vocablary                                       PhuongHD(Fsoft HCM)
+///                             - Update J-Card Grammar                                         MinhHN(Fsoft HCM - K10/2010)
+///                                                                                             QuyenNX(Fsoft HCM - K10/2010)
+///                                                                                             DungLA3(Fsoft HCM - K10/2010)
+///                                                                                             VietNQ3(Fsoft HCM - K10/2010)                           
+///*************************************************************************************************************************
+
                                     
