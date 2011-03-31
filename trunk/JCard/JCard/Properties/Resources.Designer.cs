@@ -73,5 +73,12 @@ namespace JCard.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap J_Card_Icon_ {
+            get {
+                object obj = ResourceManager.GetObject("J-Card(Icon)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
