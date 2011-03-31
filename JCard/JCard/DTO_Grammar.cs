@@ -242,16 +242,14 @@ namespace JCard
             {
                 if (type)
                     return arrExampleJP[exIndex].ToString() + Environment.NewLine + arrExampleVN[exIndex].ToString();
-                else
-                    return XuLyXuongHangJP(arrExampleJP[exIndex].ToString()) + Environment.NewLine + XuLyXuongHangVN(arrExampleVN[exIndex].ToString());
             }
             else
             {
                 if (type)
                     return arrExampleJP[exIndex].ToString();
-                else
-                    return XuLyXuongHangJP(arrExampleJP[exIndex].ToString());
             }
+
+            return XuLyXuongHangJP(arrExampleJP[exIndex].ToString()) + Environment.NewLine + XuLyXuongHangVN(arrExampleVN[exIndex].ToString());
         }
 
         /// <summary>
@@ -274,6 +272,19 @@ namespace JCard
             if (str_Meaning_VN == null)
                 return String.Empty;
             return XuLyXuongHangVN(str_Meaning_VN);
+        }
+
+        /// <summary>
+        /// Gets the meaning for tooltip: include of JP meaning and VN meaning.
+        /// </summary>
+        /// <returns>Chuoi meaning jp+vn</returns>
+        public string GetMeaning()
+        {
+            if (str_Meaning_JP == null)
+                return GetMeaningVN();
+            if (str_Meaning_VN == null)
+                return GetMeaningJP();
+            return GetMeaningJP() + Environment.NewLine + GetMeaningVN();
         }
 
         /// <summary>
