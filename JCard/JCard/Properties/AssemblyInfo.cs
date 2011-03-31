@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("J-Card")]
-[assembly: AssemblyDescription("JCD-FSOFTHCM")]
+[assembly: AssemblyDescription("J-Card is a tool which help people who want to study vocabulary and grammar of Japanese.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("JCD-FSOFTHCM")]
+[assembly: AssemblyCompany("FSOFTHCM")]
 [assembly: AssemblyProduct("J-Card")]
-[assembly: AssemblyCopyright("Copyright © JCD-FSOFTHCM 2011")]
+[assembly: AssemblyCopyright("Copyright © FSOFTHCM (JCD) 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,8 +29,8 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.5.0.0")]
-[assembly: AssemblyFileVersion("1.5.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
 
 ///*************************************************************************************************************************
 /// Assembly Name   : J-Card 
@@ -39,10 +39,8 @@ using System.Runtime.InteropServices;
 ///     Version     No.(@)      Comment                                         Date            Name
 ///     ----------- ----------- ----------------------------------------------- --------------- ---------------------------
 ///     1.0.0.0     1           Create J-card (Displaying Vocalbulary Card)     2010/09/09      PhuongHD(Fsoft HCM)
-///                                                                                             SonLT(Fsoft HCM)
-///                                                                                             NguyenTHL(Fsoft HCM)
 ///
-///     1.1.0.0     2           Create J-card (Displaying Grammar Card),        2011/03/02      MinhHN(Fsoft HCM - K10/2010)
+///                 2           Create J-card (Displaying Grammar Card),        2011/03/02      MinhHN(Fsoft HCM - K10/2010)
 ///                             includes:                                                       QuyenNX(Fsoft HCM - K10/2010)
 ///                             - Import data from Excel file                                   DungLA3(Fsoft HCM - K10/2010)
 ///                             - Set setting values of Grammar Card                            VietNQ3(Fsoft HCM - K10/2010)
@@ -50,7 +48,7 @@ using System.Runtime.InteropServices;
 ///                             - Display Grammar Cards
 ///                             - Change setting values on Grammar Card screen
 ///
-///     1.5.0.0     3           Update according to comments of JCD-FSOFTHCM    2011/03/21      
+///                 3           Update according to comments of JCD-FSOFTHCM    2011/03/21      
 ///                             - Update J-Card Vocablary                                       PhuongHD(Fsoft HCM)
 ///                             - Update J-Card Grammar                                         MinhHN(Fsoft HCM - K10/2010)
 ///                                                                                             QuyenNX(Fsoft HCM - K10/2010)
