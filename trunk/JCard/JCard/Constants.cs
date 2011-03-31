@@ -180,7 +180,7 @@ namespace JCard
         public const string RES_MEMBERS_NAME = "members";
 
         public const string RES_ABOUT_VALUE = "Thông Tin J-Card";
-        public const string RES_COPYRIGHT_VALUE = "Bản Quyền thuộc về JCD - FSOFT HCM 2011";
+        public const string RES_COPYRIGHT_VALUE = "Bản Quyền thuộc về FSOFT HCM (JCD) 2011";
         public const string RES_MEMBERS_VALUE = "Các Thành Viên của Dự Án:";
 
         // Resource Messages
