@@ -409,27 +409,41 @@ namespace JCard
             if (dto_gramSetting.JP_Isdisplayed)
             {
                 lblJPMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
-                string strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaningJP();
-                toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
-                toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
+                string strTooltipMeaningJP = String.Empty;
                 if (!dto_gramSetting.VN_IsDisplayed)
                 {
                     lblVNMeaning.Text = lblJPMeaning.Text;
+                    strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaning();
+                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
+                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
                     toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningJP);
                     toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningJP);
+                }
+                else
+                {
+                    strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaningJP();
+                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
+                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
                 }
             }
             if (dto_gramSetting.VN_IsDisplayed)
             {
                 lblVNMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_VN;
-                string strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaningVN();
-                toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
-                toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
+                string strTooltipMeaningVN = String.Empty;
                 if (!dto_gramSetting.JP_Isdisplayed)
                 {
                     lblJPMeaning.Text = lblVNMeaning.Text;
+                    strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaning();
                     toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningVN);
                     toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningVN);
+                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
+                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
+                }
+                else
+                {
+                    strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaningVN();
+                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
+                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
                 }
             }
         }
