@@ -21,6 +21,8 @@ namespace JCard
         /* Dong ho do dac thoi gian display va delay */
         private Timer timer;
         private Timer timer_wait;
+        /* Dong ho ho tro visible tooltip trong suot thoi gian xay ra su kien mouse move */
+        private Timer timer_tooltip;
         /* Bien flag cho biet dang o trang thai delay hay display
          * flag = true  : Delay
          * flag = false : Display
@@ -83,6 +85,13 @@ namespace JCard
             timer_wait.Tick += new EventHandler(timer_wait_Tick);
             flag = true;
 
+            /* Khoi tao dong ho support visible tooltip */
+            timer_tooltip = new Timer();
+            timer_tooltip.Interval = toolTip1.ReshowDelay;
+            timer_tooltip.Tick += new EventHandler(timer_tooltip_Tick);
+            pnlExample.MouseMove += new MouseEventHandler(pnlExample_MouseMove);
+            pnlExample.MouseLeave += new EventHandler(pnlExample_MouseLeave);
+            
             ///* Get Gram Setting        
             // Đọc setting values
             strSettingFile = Application.StartupPath + strSettingFile;
@@ -376,6 +385,20 @@ namespace JCard
             timer_wait.Stop();
         }
 
+        /* Ham xu ly support visible tooltip trong thoi gian mouse move cho den khi mouse leave */
+        void timer_tooltip_Tick(object sender, EventArgs e)
+        {
+            timer_tooltip.Stop();
+            lblSample.MouseMove += new MouseEventHandler(label1_MouseMove);
+            pnlSample.MouseMove += new MouseEventHandler(panel1_MouseMove);
+            lblJPMeaning.MouseMove += new MouseEventHandler(label3_MouseMove);
+            pnlJPMeaning.MouseMove += new MouseEventHandler(panel2_MouseMove);
+            lblVNMeaning.MouseMove += new MouseEventHandler(label4_MouseMove);
+            pnlVNMeaning.MouseMove += new MouseEventHandler(panel4_MouseMove);
+            lblExample.MouseMove += new MouseEventHandler(textBox1_MouseMove);
+            pnlExample.MouseMove += new MouseEventHandler(pnlExample_MouseMove);
+        }
+
         /* Set gia tri Sample, Meaning_JP, Meaning_VN, Examples */
         private void SetControlValues(ArrayList arr_gram, int index)
         {
@@ -554,6 +577,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            pnlSample.MouseMove -= new MouseEventHandler(panel1_MouseMove);
+            toolTip1.SetToolTip(pnlSample, toolTip1.GetToolTip(lblSample));
+            timer_tooltip.Start();
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)
@@ -566,6 +594,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            lblSample.MouseMove -= new MouseEventHandler(label1_MouseMove);
+            toolTip1.SetToolTip(lblSample, toolTip1.GetToolTip(lblSample));
+            timer_tooltip.Start();
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -578,6 +611,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            pnlJPMeaning.MouseMove -= new MouseEventHandler(panel2_MouseMove);
+            toolTip2.SetToolTip(pnlJPMeaning, toolTip2.GetToolTip(lblJPMeaning));
+            timer_tooltip.Start();
         }
 
         private void panel2_MouseLeave(object sender, EventArgs e)
@@ -590,6 +628,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            lblJPMeaning.MouseMove -= new MouseEventHandler(label3_MouseMove);
+            toolTip2.SetToolTip(lblJPMeaning, toolTip2.GetToolTip(lblJPMeaning));
+            timer_tooltip.Start();
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
@@ -602,6 +645,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            pnlVNMeaning.MouseMove -= new MouseEventHandler(panel4_MouseMove);
+            toolTip3.SetToolTip(pnlVNMeaning, toolTip3.GetToolTip(lblVNMeaning));
+            timer_tooltip.Start();
         }
 
         private void panel4_MouseLeave(object sender, EventArgs e)
@@ -614,6 +662,11 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            lblVNMeaning.MouseMove -= new MouseEventHandler(label4_MouseMove);
+            toolTip3.SetToolTip(lblVNMeaning, toolTip3.GetToolTip(lblVNMeaning));
+            timer_tooltip.Start();
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
@@ -626,9 +679,31 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            lblExample.MouseMove -= new MouseEventHandler(textBox1_MouseMove);
+            toolTip4.SetToolTip(lblExample, toolTip4.GetToolTip(lblExample));
+            timer_tooltip.Start();
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (!bool_display)
+                timer.Enabled = true;
+        }
+
+        private void pnlExample_MouseMove(object sender, MouseEventArgs e)
+        {
+            timer.Enabled = false;
+            this.Opacity = 1;
+
+            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
+            pnlExample.MouseMove -= new MouseEventHandler(pnlExample_MouseMove);
+            toolTip4.SetToolTip(pnlExample, toolTip4.GetToolTip(lblExample));
+            timer_tooltip.Start();
+        }
+
+        private void pnlExample_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
                 timer.Enabled = true;
