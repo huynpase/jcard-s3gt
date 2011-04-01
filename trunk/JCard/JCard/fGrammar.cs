@@ -21,8 +21,6 @@ namespace JCard
         /* Dong ho do dac thoi gian display va delay */
         private Timer timer;
         private Timer timer_wait;
-        /* Dong ho ho tro visible tooltip trong suot thoi gian xay ra su kien mouse move */
-        private Timer timer_tooltip;
         /* Bien flag cho biet dang o trang thai delay hay display
          * flag = true  : Delay
          * flag = false : Display
@@ -85,10 +83,7 @@ namespace JCard
             timer_wait.Tick += new EventHandler(timer_wait_Tick);
             flag = true;
 
-            /* Khoi tao dong ho support visible tooltip */
-            timer_tooltip = new Timer();
-            timer_tooltip.Interval = toolTip1.ReshowDelay;
-            timer_tooltip.Tick += new EventHandler(timer_tooltip_Tick);
+            /* Gan event MouseMove va MouseLeave cho pnlExample */
             pnlExample.MouseMove += new MouseEventHandler(pnlExample_MouseMove);
             pnlExample.MouseLeave += new EventHandler(pnlExample_MouseLeave);
             
@@ -143,8 +138,8 @@ namespace JCard
                     arr_ExampleForward.Add(index_example);
                     lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
                         index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
-                    toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
-                        index_example, dto_gramSetting.Ex_VN_IsDisplayed, false));
+                    strTooltipExample = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
+                        index_example, dto_gramSetting.Ex_VN_IsDisplayed, false);
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP.RemoveAt(index_example);
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleVN.RemoveAt(index_example);
                     max_example--;
@@ -385,66 +380,38 @@ namespace JCard
             timer_wait.Stop();
         }
 
-        /* Ham xu ly support visible tooltip trong thoi gian mouse move cho den khi mouse leave */
-        void timer_tooltip_Tick(object sender, EventArgs e)
-        {
-            timer_tooltip.Stop();
-            lblSample.MouseMove += new MouseEventHandler(label1_MouseMove);
-            pnlSample.MouseMove += new MouseEventHandler(panel1_MouseMove);
-            lblJPMeaning.MouseMove += new MouseEventHandler(label3_MouseMove);
-            pnlJPMeaning.MouseMove += new MouseEventHandler(panel2_MouseMove);
-            lblVNMeaning.MouseMove += new MouseEventHandler(label4_MouseMove);
-            pnlVNMeaning.MouseMove += new MouseEventHandler(panel4_MouseMove);
-            lblExample.MouseMove += new MouseEventHandler(textBox1_MouseMove);
-            pnlExample.MouseMove += new MouseEventHandler(pnlExample_MouseMove);
-        }
-
         /* Set gia tri Sample, Meaning_JP, Meaning_VN, Examples */
+        private string strTooltipSampleJP = String.Empty;
+        private string strTooltipMeaningJP;
+        private string strTooltipMeaningVN;
+        private string strTooltipExample = String.Empty;
         private void SetControlValues(ArrayList arr_gram, int index)
         {
             lblSample.Text = ((DTO_Grammar)arr_gram[index]).STR_Sample;
-            string strTooltipSampleJP = ((DTO_Grammar)arr_gram[index]).GetSample();
-            toolTip1.SetToolTip(pnlSample, strTooltipSampleJP);
-            toolTip1.SetToolTip(lblSample, strTooltipSampleJP);
+            strTooltipSampleJP = ((DTO_Grammar)arr_gram[index]).GetSample();
             if (dto_gramSetting.JP_Isdisplayed)
             {
                 lblJPMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_JP;
-                string strTooltipMeaningJP = String.Empty;
+                strTooltipMeaningJP = String.Empty;
                 if (!dto_gramSetting.VN_IsDisplayed)
                 {
                     lblVNMeaning.Text = lblJPMeaning.Text;
                     strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaning();
-                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
-                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
-                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningJP);
-                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningJP);
                 }
                 else
-                {
                     strTooltipMeaningJP = ((DTO_Grammar)arr_gram[index]).GetMeaningJP();
-                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningJP);
-                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningJP);
-                }
             }
             if (dto_gramSetting.VN_IsDisplayed)
             {
                 lblVNMeaning.Text = ((DTO_Grammar)arr_gram[index]).STR_Meaning_VN;
-                string strTooltipMeaningVN = String.Empty;
+                strTooltipMeaningVN = String.Empty;
                 if (!dto_gramSetting.JP_Isdisplayed)
                 {
                     lblJPMeaning.Text = lblVNMeaning.Text;
                     strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaning();
-                    toolTip2.SetToolTip(pnlJPMeaning, strTooltipMeaningVN);
-                    toolTip2.SetToolTip(lblJPMeaning, strTooltipMeaningVN);
-                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
-                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
                 }
                 else
-                {
                     strTooltipMeaningVN = ((DTO_Grammar)arr_gram[index]).GetMeaningVN();
-                    toolTip3.SetToolTip(pnlVNMeaning, strTooltipMeaningVN);
-                    toolTip3.SetToolTip(lblVNMeaning, strTooltipMeaningVN);
-                }
             }
         }
         /* Ham xu ly chinh dung de hien thi grammar card va example */
@@ -515,8 +482,8 @@ namespace JCard
                 index_example = rand.Next(0, max_example - 1);
                 lblExample.Text = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
                         index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
-                toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
-                        index_example, dto_gramSetting.Ex_VN_IsDisplayed, false));
+                strTooltipExample = ((DTO_Grammar)arr_Entry[index_entry]).GetExample(
+                        index_example, dto_gramSetting.Ex_VN_IsDisplayed, false);
                 /* Xu ly get back example */
                 if (((DTO_Grammar)arr_tempEntry[j]).ArrExampleJP.Contains(
                     ((DTO_Grammar)arr_Entry[index_entry]).ArrExampleJP[index_example].ToString()))
@@ -532,7 +499,7 @@ namespace JCard
             else
             {
                 lblExample.Text = string.Empty;
-                toolTip4.SetToolTip(lblExample, lblExample.Text);
+                strTooltipExample = string.Empty;
             }
         }
 
@@ -593,15 +560,21 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            pnlSample.MouseMove -= new MouseEventHandler(panel1_MouseMove);
-            toolTip1.SetToolTip(pnlSample, toolTip1.GetToolTip(lblSample));
-            timer_tooltip.Start();
+            string str = toolTip1.GetToolTip(pnlSample);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                BringToFront();
+                toolTip1.Show(strTooltipSampleJP, pnlSample, e.X, e.Y);
+            }
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip1.Hide(pnlSample);
+            }
         }
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
@@ -610,15 +583,18 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            lblSample.MouseMove -= new MouseEventHandler(label1_MouseMove);
-            toolTip1.SetToolTip(lblSample, toolTip1.GetToolTip(lblSample));
-            timer_tooltip.Start();
+            string str = toolTip1.GetToolTip(lblSample);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+                toolTip1.Show(strTooltipSampleJP, lblSample, e.X, e.Y);
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip1.Hide(lblSample);
+            }
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -627,15 +603,27 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            pnlJPMeaning.MouseMove -= new MouseEventHandler(panel2_MouseMove);
-            toolTip2.SetToolTip(pnlJPMeaning, toolTip2.GetToolTip(lblJPMeaning));
-            timer_tooltip.Start();
+            string str = toolTip2.GetToolTip(pnlJPMeaning);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                BringToFront();
+                if (dto_gramSetting.JP_Isdisplayed)
+                    toolTip2.Show(strTooltipMeaningJP, pnlJPMeaning, e.X, e.Y);
+                else
+                {
+                    if (dto_gramSetting.VN_IsDisplayed)
+                        toolTip2.Show(strTooltipMeaningVN, pnlJPMeaning, e.X, e.Y);
+                }
+            }
         }
 
         private void panel2_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip2.Hide(pnlJPMeaning);
+            }
         }
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
@@ -644,15 +632,26 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            lblJPMeaning.MouseMove -= new MouseEventHandler(label3_MouseMove);
-            toolTip2.SetToolTip(lblJPMeaning, toolTip2.GetToolTip(lblJPMeaning));
-            timer_tooltip.Start();
+            string str = toolTip2.GetToolTip(lblJPMeaning);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                if (dto_gramSetting.JP_Isdisplayed)
+                    toolTip2.Show(strTooltipMeaningJP, lblJPMeaning, e.X, e.Y);
+                else
+                {
+                    if (dto_gramSetting.VN_IsDisplayed)
+                        toolTip2.Show(strTooltipMeaningVN, lblJPMeaning, e.X, e.Y);
+                }
+            }
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip2.Hide(lblJPMeaning);
+            }
         }
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
@@ -661,15 +660,28 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            pnlVNMeaning.MouseMove -= new MouseEventHandler(panel4_MouseMove);
-            toolTip3.SetToolTip(pnlVNMeaning, toolTip3.GetToolTip(lblVNMeaning));
-            timer_tooltip.Start();
+            string str = toolTip3.GetToolTip(pnlVNMeaning);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                BringToFront();
+                if (dto_gramSetting.VN_IsDisplayed)
+                    toolTip3.Show(strTooltipMeaningVN, pnlVNMeaning, e.X, e.Y);
+                else
+                {
+                    if (dto_gramSetting.JP_Isdisplayed)
+                        toolTip3.Show(strTooltipMeaningJP, pnlVNMeaning, e.X, e.Y);
+                }
+            }
+
         }
 
         private void panel4_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip3.Hide(pnlVNMeaning);
+            }
         }
 
         private void label4_MouseMove(object sender, MouseEventArgs e)
@@ -678,15 +690,26 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            lblVNMeaning.MouseMove -= new MouseEventHandler(label4_MouseMove);
-            toolTip3.SetToolTip(lblVNMeaning, toolTip3.GetToolTip(lblVNMeaning));
-            timer_tooltip.Start();
+            string str = toolTip3.GetToolTip(lblVNMeaning);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                if (dto_gramSetting.VN_IsDisplayed)
+                    toolTip3.Show(strTooltipMeaningVN, lblVNMeaning, e.X, e.Y);
+                else
+                {
+                    if (dto_gramSetting.JP_Isdisplayed)
+                        toolTip3.Show(strTooltipMeaningJP, lblVNMeaning, e.X, e.Y);
+                }
+            }
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip3.Hide(lblVNMeaning);
+            }
         }
 
         private void textBox1_MouseMove(object sender, MouseEventArgs e)
@@ -695,15 +718,21 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            lblExample.MouseMove -= new MouseEventHandler(textBox1_MouseMove);
-            toolTip4.SetToolTip(lblExample, toolTip4.GetToolTip(lblExample));
-            timer_tooltip.Start();
+            string str = toolTip4.GetToolTip(lblExample);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                BringToFront();
+                toolTip4.Show(strTooltipExample, lblExample, e.X, e.Y);
+            }
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip4.Hide(lblExample);
+            }
         }
 
         private void pnlExample_MouseMove(object sender, MouseEventArgs e)
@@ -712,15 +741,21 @@ namespace JCard
             this.Opacity = 1;
 
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            pnlExample.MouseMove -= new MouseEventHandler(pnlExample_MouseMove);
-            toolTip4.SetToolTip(pnlExample, toolTip4.GetToolTip(lblExample));
-            timer_tooltip.Start();
+            string str = toolTip4.GetToolTip(pnlExample);
+            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
+            {
+                BringToFront();
+                toolTip4.Show(strTooltipExample, pnlExample, e.X, e.Y);
+            }
         }
 
         private void pnlExample_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
+            {
                 timer.Enabled = true;
+                toolTip4.Hide(pnlExample);
+            }
         }
 
         private void btnPrevious_MouseMove(object sender, MouseEventArgs e)
@@ -833,13 +868,13 @@ namespace JCard
                 {
                     lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
                         temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
-                    toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
-                        temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, false));
+                    strTooltipExample = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
+                        temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, false);
                 }
                 else
                 {
                     lblExample.Text = string.Empty;
-                    toolTip4.SetToolTip(lblExample, lblExample.Text);
+                    strTooltipExample = string.Empty;
                 }
             }
         }
@@ -867,8 +902,8 @@ namespace JCard
                 SetControlValues(arr_tempEntry, temp_index_entry);
                 lblExample.Text = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
                         temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, true);
-                toolTip4.SetToolTip(lblExample, ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
-                        temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, false));
+                strTooltipExample = ((DTO_Grammar)arr_tempEntry[temp_index_entry]).GetExample(
+                        temp_index_example, dto_gramSetting.Ex_VN_IsDisplayed, false);
             }
         }
 
