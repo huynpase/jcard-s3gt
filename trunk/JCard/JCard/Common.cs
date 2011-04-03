@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Resources;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace JCard
 {
@@ -139,6 +140,105 @@ namespace JCard
             string title = GetResourceValue(Constants.RES_CONFIRM_TITLE_NAME, ci, rm, Constants.RES_CONFIRM_TITLE_VALUE);
 
             return MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);  
+        }
+        #endregion
+
+        #region Xử lý Tooltip
+        /// <summary>
+        /// Draw ellipsis text on Label
+        /// </summary>
+        /// <param name="lbl">Label</param>
+        /// <param name="g">Graphics</param>
+        public static void DrawEllipsisText(Label lbl, Graphics g)
+        {
+            SolidBrush br = new SolidBrush(lbl.ForeColor);
+            StringFormat sf = new StringFormat();
+
+            switch (lbl.TextAlign)
+            {
+                case ContentAlignment.TopLeft:
+                    sf.Alignment = StringAlignment.Near;
+                    sf.LineAlignment = StringAlignment.Near;
+                    break;
+                case ContentAlignment.TopRight:
+                    sf.Alignment = StringAlignment.Far;
+                    sf.LineAlignment = StringAlignment.Near;
+                    break;
+                case ContentAlignment.TopCenter:
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Near;
+                    break;
+                case ContentAlignment.MiddleLeft:
+                    sf.Alignment = StringAlignment.Near;
+                    sf.LineAlignment = StringAlignment.Center;
+                    break;
+                case ContentAlignment.MiddleRight:
+                    sf.Alignment = StringAlignment.Far;
+                    sf.LineAlignment = StringAlignment.Center;
+                    break;
+                case ContentAlignment.MiddleCenter:
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
+                    break;
+                case ContentAlignment.BottomLeft:
+                    sf.Alignment = StringAlignment.Near;
+                    sf.LineAlignment = StringAlignment.Far;
+                    break;
+                case ContentAlignment.BottomRight:
+                    sf.Alignment = StringAlignment.Far;
+                    sf.LineAlignment = StringAlignment.Far;
+                    break;
+                case ContentAlignment.BottomCenter:
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Far;
+                    break;
+            }
+
+            sf.Trimming = StringTrimming.EllipsisCharacter;
+            sf.FormatFlags = StringFormatFlags.LineLimit;
+
+            g.Clear(lbl.BackColor);
+            g.DrawString(lbl.Text, lbl.Font, br, lbl.DisplayRectangle, sf);
+        }
+
+        /// <summary>
+        /// Get Height Position of Tooltip
+        /// </summary>
+        /// <param name="tooltip">string of tooltip</param>
+        /// <param name="control">control of tooltip</param>
+        /// <returns>Top Position</returns>
+        public static int GetTopPosOfTooltip(string tooltip, Control control)
+        {
+            int line = CountNewLineChar(tooltip);
+            if (tooltip.LastIndexOf("\n") == tooltip.Length - 1) line--;
+            int height = 20 + line * 15;
+            int res = -height;
+
+            Point pnt = control.PointToScreen(new Point(0, 0));
+            if (pnt.Y < height)
+            {
+                res = control.Height;
+            }
+
+            return res;
+        }
+
+        /// <summary>
+        /// Count number of NewLine Character
+        /// </summary>
+        /// <param name="str">String for counting</param>
+        /// <returns>Number of Newline Character</returns>
+        public static int CountNewLineChar(string str)
+        {
+            int res = 0;
+            int idx = str.IndexOf("\n", 0);
+            if (idx != -1)
+            {
+                res++;
+                res += CountNewLineChar(str.Substring(idx + 1));
+            }
+
+            return res;
         }
         #endregion
     }
