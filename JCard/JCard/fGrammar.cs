@@ -177,7 +177,7 @@ namespace JCard
             // Sample area
             pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
-
+            
             // JP Meaning area
             pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
             pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
@@ -558,14 +558,6 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
-
-            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            string str = toolTip1.GetToolTip(pnlSample);
-            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
-            {
-                BringToFront();
-                toolTip1.Show(strTooltipSampleJP, pnlSample, e.X, e.Y);
-            }
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)
@@ -573,7 +565,6 @@ namespace JCard
             if (!bool_display)
             {
                 timer.Enabled = true;
-                toolTip1.Hide(pnlSample);
             }
         }
 
@@ -585,7 +576,11 @@ namespace JCard
             /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
             string str = toolTip1.GetToolTip(lblSample);
             if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
-                toolTip1.Show(strTooltipSampleJP, lblSample, e.X, e.Y);
+            {
+                BringToFront();
+                int Y = Common.GetTopPosOfTooltip(strTooltipSampleJP, lblSample);
+                toolTip1.Show(strTooltipSampleJP, lblSample, e.X, Y);
+            }
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -601,20 +596,6 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
-
-            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            string str = toolTip2.GetToolTip(pnlJPMeaning);
-            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
-            {
-                BringToFront();
-                if (dto_gramSetting.JP_Isdisplayed)
-                    toolTip2.Show(strTooltipMeaningJP, pnlJPMeaning, e.X, e.Y);
-                else
-                {
-                    if (dto_gramSetting.VN_IsDisplayed)
-                        toolTip2.Show(strTooltipMeaningVN, pnlJPMeaning, e.X, e.Y);
-                }
-            }
         }
 
         private void panel2_MouseLeave(object sender, EventArgs e)
@@ -622,7 +603,6 @@ namespace JCard
             if (!bool_display)
             {
                 timer.Enabled = true;
-                toolTip2.Hide(pnlJPMeaning);
             }
         }
 
@@ -635,12 +615,19 @@ namespace JCard
             string str = toolTip2.GetToolTip(lblJPMeaning);
             if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
             {
+                BringToFront();
                 if (dto_gramSetting.JP_Isdisplayed)
-                    toolTip2.Show(strTooltipMeaningJP, lblJPMeaning, e.X, e.Y);
+                {
+                    int Y = Common.GetTopPosOfTooltip(strTooltipMeaningJP, lblJPMeaning);
+                    toolTip2.Show(strTooltipMeaningJP, lblJPMeaning, e.X, Y);
+                }
                 else
                 {
                     if (dto_gramSetting.VN_IsDisplayed)
+                    {
+                        int Y = Common.GetTopPosOfTooltip(strTooltipMeaningVN, lblJPMeaning);
                         toolTip2.Show(strTooltipMeaningVN, lblJPMeaning, e.X, e.Y);
+                    }
                 }
             }
         }
@@ -658,21 +645,6 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
-
-            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            string str = toolTip3.GetToolTip(pnlVNMeaning);
-            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
-            {
-                BringToFront();
-                if (dto_gramSetting.VN_IsDisplayed)
-                    toolTip3.Show(strTooltipMeaningVN, pnlVNMeaning, e.X, e.Y);
-                else
-                {
-                    if (dto_gramSetting.JP_Isdisplayed)
-                        toolTip3.Show(strTooltipMeaningJP, pnlVNMeaning, e.X, e.Y);
-                }
-            }
-
         }
 
         private void panel4_MouseLeave(object sender, EventArgs e)
@@ -680,7 +652,6 @@ namespace JCard
             if (!bool_display)
             {
                 timer.Enabled = true;
-                toolTip3.Hide(pnlVNMeaning);
             }
         }
 
@@ -693,12 +664,19 @@ namespace JCard
             string str = toolTip3.GetToolTip(lblVNMeaning);
             if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
             {
+                BringToFront();
                 if (dto_gramSetting.VN_IsDisplayed)
-                    toolTip3.Show(strTooltipMeaningVN, lblVNMeaning, e.X, e.Y);
+                {
+                    int Y = Common.GetTopPosOfTooltip(strTooltipMeaningVN, lblVNMeaning);
+                    toolTip3.Show(strTooltipMeaningVN, lblVNMeaning, e.X, Y);
+                }
                 else
                 {
                     if (dto_gramSetting.JP_Isdisplayed)
-                        toolTip3.Show(strTooltipMeaningJP, lblVNMeaning, e.X, e.Y);
+                    {
+                        int Y = Common.GetTopPosOfTooltip(strTooltipMeaningJP, lblVNMeaning);
+                        toolTip3.Show(strTooltipMeaningJP, lblVNMeaning, e.X, Y);
+                    }
                 }
             }
         }
@@ -722,7 +700,8 @@ namespace JCard
             if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
             {
                 BringToFront();
-                toolTip4.Show(strTooltipExample, lblExample, e.X, e.Y);
+                int Y = Common.GetTopPosOfTooltip(strTooltipExample, lblExample);
+                toolTip4.Show(strTooltipExample, lblExample, e.X, Y);
             }
         }
 
@@ -739,14 +718,6 @@ namespace JCard
         {
             timer.Enabled = false;
             this.Opacity = 1;
-
-            /* Support tooltip visible tu khi mouse move cho den khi mouse leave */
-            string str = toolTip4.GetToolTip(pnlExample);
-            if (string.IsNullOrEmpty(str))// kiem tra co dang show tooltip hay khong
-            {
-                BringToFront();
-                toolTip4.Show(strTooltipExample, pnlExample, e.X, e.Y);
-            }
         }
 
         private void pnlExample_MouseLeave(object sender, EventArgs e)
@@ -754,7 +725,6 @@ namespace JCard
             if (!bool_display)
             {
                 timer.Enabled = true;
-                toolTip4.Hide(pnlExample);
             }
         }
 
@@ -917,12 +887,8 @@ namespace JCard
         // Tro ve man hinh chinh
         private void backToMainScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Save settings
-            //SaveSettings();
             flag_closed = true;
             this.Close();
-            //this.Dispose();
-            //Application.Restart();
         }
 
         #region  Xu li Drag&Drop
@@ -1056,6 +1022,13 @@ namespace JCard
         {
             About fabout = new About();
             fabout.ShowDialog();
+        }
+        #endregion
+
+        #region Paint Ellipsis Text of Label
+        private void Ellipsis_Label_Paint(object sender, PaintEventArgs e)
+        {
+            Common.DrawEllipsisText((Label)sender, e.Graphics);
         }
         #endregion
     }
