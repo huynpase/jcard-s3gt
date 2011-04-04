@@ -5,108 +5,118 @@ namespace JCard
 {
     class DTO_Setting
     {
-        //Cac thuoc tinh chi mang tinh tam thoi, co the them bot tuy sau nay phat trien, sua doi
-        //nhu mau sac font, mau background,...
-        string _PositionVOC;//Set vi tri cua Vocabalary
+        //Set values for Form Vocabulary
+        #region Position
+        string _PositionVOC;
+        int _DisplayTimeVOC,_WaitingTimeVOC;
 
         public string PositionVOC
         {
             get { return _PositionVOC; }
             set { _PositionVOC = value; }
         }
-        //string _PositionGMR;//Set vi tri cua Grammer
 
-        //public string PositionGMR
-        //{
-        //    get { return _PositionGMR; }
-        //    set { _PositionGMR = value; }
-        //}
-        float _DisplayTimeVOC;//Set thoi gian xuat hien cua Vocabalary
-
-        public float DisplayTimeVOC
+        public int DisplayTimeVOC
         {
             get { return _DisplayTimeVOC; }
             set { _DisplayTimeVOC = value; }
         }
-        //int _DisplayTimeGMR;//Set thoi gian xuat hien cua Grammer
-
-        //public int DisplayTimeGMR
-        //{
-        //    get { return _DisplayTimeGMR; }
-        //    set { _DisplayTimeGMR = value; }
-        //}
-        float _WaitingTimeVOC;
-
-        public float WaitingTimeVOC
+       
+        public int WaitingTimeVOC
         {
             get { return _WaitingTimeVOC; }
             set { _WaitingTimeVOC = value; }
         }
-        float _FontSizeKanjiVOC;//Set font cho loai chu Kanji
+        #endregion
 
-        public float FontSizeKanjiVOC
-        {
-            get { return _FontSizeKanjiVOC; }
-            set { _FontSizeKanjiVOC = value; }
-        }
-        float _FontSizeKanaVOC;//Set font cho loai chu Kana (bao gom Hiragana va Katakana)
+        //Set values for Kanji field
+        #region Kanji
+        int _Kanji_BackColor, _Kanji_ForeColor, _Kanji_FontSize, _Kanji_Width;
+        bool _Kanji_IsDisplayed;
 
-        public float FontSizeKanaVOC
+        public int Kanji_BackColor
         {
-            get { return _FontSizeKanaVOC; }
-            set { _FontSizeKanaVOC = value; }
-        }
-        float _FontSizeImiVOC;
-
-        public float FontSizeImiVOC
-        {
-            get { return _FontSizeImiVOC; }
-            set { _FontSizeImiVOC = value; }
+            get { return _Kanji_BackColor; }
+            set { _Kanji_BackColor = value; }
         }
 
-        public float FontSizeHanNom
+        public int Kanji_FontColor
         {
-            get { return _FontSizeHanNom; }
-            set { _FontSizeHanNom = value; }
+            get { return _Kanji_ForeColor; }
+            set { _Kanji_ForeColor = value; }
         }
 
-        private float _FontSizeHanNom;
-
-        //float _FontSizeGrammer1;//Set font cho chu cua Grammer, tuy sau nay phat trien the nao
-
-        //public float FontSizeGrammer1
-        //{
-        //    get { return _FontSizeGrammer1; }
-        //    set { _FontSizeGrammer1 = value; }
-        //}
-        //float _FontSizeGrammer2;
-
-        //public float FontSizeGrammer2
-        //{
-        //    get { return _FontSizeGrammer2; }
-        //    set { _FontSizeGrammer2 = value; }
-        //}
-        //float _FontSizeGrammer3;
-
-        //public float FontSizeGrammer3
-        //{
-        //    get { return _FontSizeGrammer3; }
-        //    set { _FontSizeGrammer3 = value; }
-        //}
-
-        public DTO_Setting()
+        public int Kanji_Fontsize
         {
-            PositionVOC = "BR";
-            //PositionGMR = "BR";
-            FontSizeKanjiVOC = 19;
-            FontSizeKanaVOC = 16;
-            FontSizeImiVOC = 13;
-            DisplayTimeVOC = 5;
-            FontSizeHanNom = 16;
-            //DisplayTimeGMR = 5;
-            //FontSizeGrammer3 = 13;
-            //FontSizeGrammer2 = 13;
-            //FontSizeGrammer1 = 13;
+            get { return _Kanji_FontSize; }
+            set { _Kanji_FontSize = value; }
         }
+
+        public bool Kanji_IsDisplayed
+        {
+            get { return _Kanji_IsDisplayed; }
+            set { _Kanji_IsDisplayed = value; }
+        }
+        #endregion
+
+        //Set values for Hiragana field
+        #region Hiragana
+        int _Hiragana_BackColor, _Hiragana_ForeColor, _Hiragana_FontSize, _Hiragana_Width;
+        bool _Hiragana_IsDisplayed;
+
+        public int Hiragana_BackColor
+        {
+            get { return _Hiragana_BackColor; }
+            set { _Hiragana_BackColor = value; }
+        }
+
+        public int Hiragana_FontColor
+        {
+            get { return _Hiragana_ForeColor; }
+            set { _Hiragana_ForeColor = value; }
+        }
+
+        public int Hiragana_Fontsize
+        {
+            get { return _Hiragana_FontSize; }
+            set { _Hiragana_FontSize = value; }
+        }
+
+        public bool Hiragana_IsDisplayed
+        {
+            get { return _Hiragana_IsDisplayed; }
+            set { _Hiragana_IsDisplayed = value; }
+        }
+        #endregion
+
+        //Set values for Meaning field
+        #region Meaning
+        int _Meaning_BackColor, _Meaning_ForeColor, _Meaning_FontSize, _Meaning_Width;
+        bool _Meaning_IsDisplayed;
+
+        public int Meaning_BackColor
+        {
+            get { return _Meaning_BackColor; }
+            set { _Meaning_BackColor = value; }
+        }
+
+        public int Meaning_FontColor
+        {
+            get { return _Meaning_ForeColor; }
+            set { _Meaning_ForeColor = value; }
+        }
+
+        public int Meaning_Fontsize
+        {
+            get { return _Meaning_FontSize; }
+            set { _Meaning_FontSize = value; }
+        }
+
+        public bool Meaning_IsDisplayed
+        {
+            get { return _Meaning_IsDisplayed; }
+            set { _Meaning_IsDisplayed = value; }
+        }
+        #endregion
     }
 }

@@ -32,15 +32,25 @@ namespace JCard
         public const int Timer_Interval = 2500;
         public const int sleepTime = 3000;
 
-
-        //20100312: phuonghd : add code declare constant variable for setting jcard vocabulary
+        //Setting Vocabulary
         public const string PositionVOC = "BR";
-        public const float DisplayTimeVOC = 5;
-        public const float WaitingTimeVOC = 3;
-        public const float FontSizeKanjiVOC = 19;
-        public const float FontSizeImiVOC = 13;
-        public const float FontSizeKanaVOC = 16;
-        public const float FontSizeHanNom = 16;
+        public const string DisplayTimeVOC = "5";
+        public const string WaitingTimeVOC = "3";
+
+        public const string Kanji_BackColor = "-32640";
+        public const string Kanji_FontColor = "-16777216";
+        public const string Kanji_IsDisplayed = "True";
+        public const string Kanji_Fontsize = "20";
+
+        public const string Hiragana_BackColor = "-4128832";
+        public const string Hiragana_FontColor = "-16777216";
+        public const string Hiragana_IsDisplayed = "True";
+        public const string Hiragana_Fontsize = "15";
+
+        public const string Meaning_BackColor = "-8000";
+        public const string Meaning_FontColor = "-16777216";
+        public const string Meaning_IsDisplayed = "True";
+        public const string Meaning_Fontsize = "15";
 
         // App Config
         public const string CONFIG_LANGUAGE_KEY = "Language";

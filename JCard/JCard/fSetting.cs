@@ -35,11 +35,9 @@ namespace JCard
                 dtoSetting.PositionVOC = "BR";
                 dtoSetting.DisplayTimeVOC = int.Parse(comDisTime.Text);
                 dtoSetting.WaitingTimeVOC = int.Parse(comDeplayTime.Text);
-                dtoSetting.FontSizeKanjiVOC = int.Parse(comFontKanji.Text);
-                dtoSetting.FontSizeKanaVOC = int.Parse(comFontKana.Text);
-                dtoSetting.FontSizeHanNom = int.Parse(comFontHanNom.Text);
-                dtoSetting.FontSizeImiVOC = int.Parse(comFontMeaning.Text);
-
+                dtoSetting.Kanji_Fontsize = int.Parse(comFontKanji.Text);
+                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);
+                dtoSetting.Hiragana_Fontsize = int.Parse(comFontHanNom.Text);
                 
                 busSetting.SaveSetting(dtoSetting,strFileSettingPath);
                 
@@ -66,10 +64,9 @@ namespace JCard
             dtoSetting = bus.ReadSetting(strFileSettingPath);
             comDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
             comDeplayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
-            comFontKanji.Text = dtoSetting.FontSizeKanjiVOC.ToString();
-            comFontKana.Text = dtoSetting.FontSizeKanaVOC.ToString();
-            comFontHanNom.Text = dtoSetting.FontSizeHanNom.ToString();
-            comFontMeaning.Text = dtoSetting.FontSizeImiVOC.ToString();            
+            comFontKanji.Text = dtoSetting.Kanji_Fontsize.ToString();
+            comFontKana.Text = dtoSetting.Hiragana_Fontsize.ToString();
+            comFontMeaning.Text = dtoSetting.Meaning_Fontsize.ToString();            
         }
 
         private void fSetting_Load(object sender, EventArgs e)
