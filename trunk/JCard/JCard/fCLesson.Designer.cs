@@ -33,10 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVocabulary = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radNewTopic = new System.Windows.Forms.RadioButton();
-            this.radLastTopic = new System.Windows.Forms.RadioButton();
-            this.radCombine = new System.Windows.Forms.RadioButton();
             this.button4 = new System.Windows.Forms.Button();
             this.txtS3GTDB = new System.Windows.Forms.TextBox();
             this.lblVocabS3GT = new System.Windows.Forms.Label();
@@ -65,7 +61,6 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabVocabulary.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabGrammar.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,14 +83,13 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(516, 471);
+            this.tabControl1.Size = new System.Drawing.Size(479, 471);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabVocabulary
             // 
             this.tabVocabulary.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.tabVocabulary.Controls.Add(this.groupBox3);
             this.tabVocabulary.Controls.Add(this.button4);
             this.tabVocabulary.Controls.Add(this.txtS3GTDB);
             this.tabVocabulary.Controls.Add(this.lblVocabS3GT);
@@ -106,54 +100,10 @@
             this.tabVocabulary.Location = new System.Drawing.Point(4, 22);
             this.tabVocabulary.Name = "tabVocabulary";
             this.tabVocabulary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVocabulary.Size = new System.Drawing.Size(508, 445);
+            this.tabVocabulary.Size = new System.Drawing.Size(471, 445);
             this.tabVocabulary.TabIndex = 0;
             this.tabVocabulary.Text = "Vocabulary";
             this.tabVocabulary.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radNewTopic);
-            this.groupBox3.Controls.Add(this.radLastTopic);
-            this.groupBox3.Controls.Add(this.radCombine);
-            this.groupBox3.Location = new System.Drawing.Point(387, 42);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(116, 128);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Learn vocabulary";
-            // 
-            // radNewTopic
-            // 
-            this.radNewTopic.Checked = true;
-            this.radNewTopic.Location = new System.Drawing.Point(6, 35);
-            this.radNewTopic.Name = "radNewTopic";
-            this.radNewTopic.Size = new System.Drawing.Size(103, 24);
-            this.radNewTopic.TabIndex = 0;
-            this.radNewTopic.TabStop = true;
-            this.radNewTopic.Text = "New vocabulary";
-            this.radNewTopic.UseVisualStyleBackColor = true;
-            this.radNewTopic.CheckedChanged += new System.EventHandler(this.radNewTopic_CheckedChanged);
-            // 
-            // radLastTopic
-            // 
-            this.radLastTopic.Location = new System.Drawing.Point(6, 65);
-            this.radLastTopic.Name = "radLastTopic";
-            this.radLastTopic.Size = new System.Drawing.Size(103, 24);
-            this.radLastTopic.TabIndex = 1;
-            this.radLastTopic.Text = "Last vocabulary";
-            this.radLastTopic.UseVisualStyleBackColor = true;
-            this.radLastTopic.CheckedChanged += new System.EventHandler(this.radLastTopic_CheckedChanged);
-            // 
-            // radCombine
-            // 
-            this.radCombine.Location = new System.Drawing.Point(6, 95);
-            this.radCombine.Name = "radCombine";
-            this.radCombine.Size = new System.Drawing.Size(76, 24);
-            this.radCombine.TabIndex = 2;
-            this.radCombine.Text = "All";
-            this.radCombine.UseVisualStyleBackColor = true;
-            this.radCombine.CheckedChanged += new System.EventHandler(this.radCombine_CheckedChanged);
             // 
             // button4
             // 
@@ -198,7 +148,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(387, 390);
+            this.button1.Location = new System.Drawing.Point(359, 389);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 31);
             this.button1.TabIndex = 7;
@@ -213,7 +163,7 @@
             this.groupBox1.Controls.Add(this.cBoxCollapse);
             this.groupBox1.Location = new System.Drawing.Point(3, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 341);
+            this.groupBox1.Size = new System.Drawing.Size(459, 341);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please choose glossary(ies)  to learn";
@@ -223,14 +173,14 @@
             this.treeView1.CheckBoxes = true;
             this.treeView1.Location = new System.Drawing.Point(9, 35);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(363, 300);
+            this.treeView1.Size = new System.Drawing.Size(441, 300);
             this.treeView1.TabIndex = 2;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // chBoxAll
             // 
             this.chBoxAll.AutoSize = true;
-            this.chBoxAll.Location = new System.Drawing.Point(217, 12);
+            this.chBoxAll.Location = new System.Drawing.Point(290, 12);
             this.chBoxAll.Name = "chBoxAll";
             this.chBoxAll.Size = new System.Drawing.Size(70, 17);
             this.chBoxAll.TabIndex = 0;
@@ -243,7 +193,7 @@
             this.cBoxCollapse.AutoSize = true;
             this.cBoxCollapse.Checked = true;
             this.cBoxCollapse.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cBoxCollapse.Location = new System.Drawing.Point(293, 12);
+            this.cBoxCollapse.Location = new System.Drawing.Point(366, 12);
             this.cBoxCollapse.Name = "cBoxCollapse";
             this.cBoxCollapse.Size = new System.Drawing.Size(79, 17);
             this.cBoxCollapse.TabIndex = 1;
@@ -254,7 +204,7 @@
             // ButtCopy
             // 
             this.ButtCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtCopy.Location = new System.Drawing.Point(281, 390);
+            this.ButtCopy.Location = new System.Drawing.Point(259, 389);
             this.ButtCopy.Name = "ButtCopy";
             this.ButtCopy.Size = new System.Drawing.Size(94, 31);
             this.ButtCopy.TabIndex = 6;
@@ -276,7 +226,7 @@
             this.tabGrammar.Location = new System.Drawing.Point(4, 22);
             this.tabGrammar.Name = "tabGrammar";
             this.tabGrammar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGrammar.Size = new System.Drawing.Size(508, 445);
+            this.tabGrammar.Size = new System.Drawing.Size(471, 445);
             this.tabGrammar.TabIndex = 1;
             this.tabGrammar.Text = "Grammar";
             this.tabGrammar.UseVisualStyleBackColor = true;
@@ -317,7 +267,7 @@
             this.groupBox2.Controls.Add(this.chbGramColAll);
             this.groupBox2.Location = new System.Drawing.Point(3, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(378, 341);
+            this.groupBox2.Size = new System.Drawing.Size(459, 341);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Please choose grammar(s)  to learn";
@@ -327,14 +277,14 @@
             this.trvGrammars.CheckBoxes = true;
             this.trvGrammars.Location = new System.Drawing.Point(9, 35);
             this.trvGrammars.Name = "trvGrammars";
-            this.trvGrammars.Size = new System.Drawing.Size(363, 300);
+            this.trvGrammars.Size = new System.Drawing.Size(441, 300);
             this.trvGrammars.TabIndex = 2;
             this.trvGrammars.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // chbGramAll
             // 
             this.chbGramAll.AutoSize = true;
-            this.chbGramAll.Location = new System.Drawing.Point(217, 12);
+            this.chbGramAll.Location = new System.Drawing.Point(290, 12);
             this.chbGramAll.Name = "chbGramAll";
             this.chbGramAll.Size = new System.Drawing.Size(70, 17);
             this.chbGramAll.TabIndex = 0;
@@ -347,7 +297,7 @@
             this.chbGramColAll.AutoSize = true;
             this.chbGramColAll.Checked = true;
             this.chbGramColAll.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbGramColAll.Location = new System.Drawing.Point(293, 12);
+            this.chbGramColAll.Location = new System.Drawing.Point(366, 12);
             this.chbGramColAll.Name = "chbGramColAll";
             this.chbGramColAll.Size = new System.Drawing.Size(79, 17);
             this.chbGramColAll.TabIndex = 1;
@@ -369,7 +319,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(387, 390);
+            this.button2.Location = new System.Drawing.Point(359, 389);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 31);
             this.button2.TabIndex = 7;
@@ -380,7 +330,7 @@
             // btnSetting
             // 
             this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.Location = new System.Drawing.Point(117, 390);
+            this.btnSetting.Location = new System.Drawing.Point(112, 389);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(94, 31);
             this.btnSetting.TabIndex = 5;
@@ -391,7 +341,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(281, 390);
+            this.button3.Location = new System.Drawing.Point(259, 389);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 31);
             this.button3.TabIndex = 6;
@@ -403,14 +353,14 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(516, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(479, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(419, 454);
+            this.linkLabel1.Location = new System.Drawing.Point(379, 454);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(65, 13);
             this.linkLabel1.TabIndex = 2;
@@ -430,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 471);
+            this.ClientSize = new System.Drawing.Size(479, 471);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
@@ -446,7 +396,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabVocabulary.ResumeLayout(false);
             this.tabVocabulary.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabGrammar.ResumeLayout(false);
@@ -466,9 +415,6 @@
         private System.Windows.Forms.CheckBox cBoxCollapse;
         private System.Windows.Forms.CheckBox chBoxAll;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radCombine;
-        private System.Windows.Forms.RadioButton radLastTopic;
-        private System.Windows.Forms.RadioButton radNewTopic;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button ButtCopy;
@@ -487,7 +433,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtS3GTDB;
         private System.Windows.Forms.Label lblVocabS3GT;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtDatabaseGram;
         private System.Windows.Forms.Label lblGramS3GT;
         private System.Windows.Forms.Button btnBrowseGram;

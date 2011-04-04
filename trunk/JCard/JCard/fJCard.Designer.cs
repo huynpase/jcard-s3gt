@@ -43,26 +43,22 @@ namespace JCard
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnlMeaning = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlImi_Left = new System.Windows.Forms.Panel();
+            this.pnlImi_Right = new System.Windows.Forms.Panel();
             this.txtMeaning = new System.Windows.Forms.Label();
-            this.pnlHanNom = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtHanNom = new System.Windows.Forms.Label();
             this.pnlHiragana = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlHiragana_Left = new System.Windows.Forms.Panel();
+            this.pnlHiragana_Right = new System.Windows.Forms.Panel();
             this.txtHiragana = new System.Windows.Forms.Label();
             this.pnlKanji = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlKanji_Left = new System.Windows.Forms.Panel();
+            this.pnlKanji_Right = new System.Windows.Forms.Panel();
             this.txtKanji = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlMeaning.SuspendLayout();
-            this.pnlHanNom.SuspendLayout();
             this.pnlHiragana.SuspendLayout();
             this.pnlKanji.SuspendLayout();
             this.SuspendLayout();
@@ -138,199 +134,161 @@ namespace JCard
             // panel4
             // 
             this.panel4.Controls.Add(this.pnlMeaning);
-            this.panel4.Controls.Add(this.pnlHanNom);
             this.panel4.Controls.Add(this.pnlHiragana);
             this.panel4.Controls.Add(this.pnlKanji);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(194, 160);
+            this.panel4.Size = new System.Drawing.Size(194, 150);
             this.panel4.TabIndex = 3;
             // 
             // pnlMeaning
             // 
             this.pnlMeaning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnlMeaning.Controls.Add(this.panel11);
-            this.pnlMeaning.Controls.Add(this.panel8);
+            this.pnlMeaning.Controls.Add(this.pnlImi_Left);
+            this.pnlMeaning.Controls.Add(this.pnlImi_Right);
             this.pnlMeaning.Controls.Add(this.txtMeaning);
             this.pnlMeaning.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlMeaning.Location = new System.Drawing.Point(0, 120);
+            this.pnlMeaning.Location = new System.Drawing.Point(0, 100);
             this.pnlMeaning.Name = "pnlMeaning";
-            this.pnlMeaning.Size = new System.Drawing.Size(194, 40);
+            this.pnlMeaning.Size = new System.Drawing.Size(194, 50);
             this.pnlMeaning.TabIndex = 107;
             // 
-            // panel11
+            // pnlImi_Left
             // 
-            this.panel11.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(2, 40);
-            this.panel11.TabIndex = 10009;
-            this.panel11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
-            this.panel11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlImi_Left.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlImi_Left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlImi_Left.Location = new System.Drawing.Point(0, 0);
+            this.pnlImi_Left.Name = "pnlImi_Left";
+            this.pnlImi_Left.Size = new System.Drawing.Size(2, 50);
+            this.pnlImi_Left.TabIndex = 2;
+            this.pnlImi_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlImi_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlImi_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
-            // panel8
+            // pnlImi_Right
             // 
-            this.panel8.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(192, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2, 40);
-            this.panel8.TabIndex = 10008;
-            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
-            this.panel8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlImi_Right.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlImi_Right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlImi_Right.Location = new System.Drawing.Point(192, 0);
+            this.pnlImi_Right.Name = "pnlImi_Right";
+            this.pnlImi_Right.Size = new System.Drawing.Size(2, 50);
+            this.pnlImi_Right.TabIndex = 10008;
+            this.pnlImi_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlImi_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlImi_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtMeaning
             // 
-            this.txtMeaning.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMeaning.Location = new System.Drawing.Point(7, 8);
+            this.txtMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMeaning.Location = new System.Drawing.Point(7, 10);
             this.txtMeaning.Name = "txtMeaning";
-            this.txtMeaning.Size = new System.Drawing.Size(180, 23);
-            this.txtMeaning.TabIndex = 10007;
+            this.txtMeaning.Size = new System.Drawing.Size(180, 30);
+            this.txtMeaning.TabIndex = 1;
             this.txtMeaning.Text = "label2";
             this.txtMeaning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlHanNom
-            // 
-            this.pnlHanNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnlHanNom.Controls.Add(this.panel10);
-            this.pnlHanNom.Controls.Add(this.panel7);
-            this.pnlHanNom.Controls.Add(this.txtHanNom);
-            this.pnlHanNom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHanNom.Location = new System.Drawing.Point(0, 80);
-            this.pnlHanNom.Name = "pnlHanNom";
-            this.pnlHanNom.Size = new System.Drawing.Size(194, 40);
-            this.pnlHanNom.TabIndex = 105;
-            // 
-            // panel10
-            // 
-            this.panel10.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(2, 40);
-            this.panel10.TabIndex = 10008;
-            this.panel10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
-            this.panel10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
-            // 
-            // panel7
-            // 
-            this.panel7.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(192, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 40);
-            this.panel7.TabIndex = 10007;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
-            this.panel7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
-            // 
-            // txtHanNom
-            // 
-            this.txtHanNom.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHanNom.Location = new System.Drawing.Point(7, 8);
-            this.txtHanNom.Name = "txtHanNom";
-            this.txtHanNom.Size = new System.Drawing.Size(180, 23);
-            this.txtHanNom.TabIndex = 10006;
-            this.txtHanNom.Text = "label2";
-            this.txtHanNom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtMeaning.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
+            this.txtMeaning.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtMeaning.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // pnlHiragana
             // 
             this.pnlHiragana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pnlHiragana.Controls.Add(this.panel9);
-            this.pnlHiragana.Controls.Add(this.panel6);
+            this.pnlHiragana.Controls.Add(this.pnlHiragana_Left);
+            this.pnlHiragana.Controls.Add(this.pnlHiragana_Right);
             this.pnlHiragana.Controls.Add(this.txtHiragana);
             this.pnlHiragana.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHiragana.Location = new System.Drawing.Point(0, 40);
+            this.pnlHiragana.Location = new System.Drawing.Point(0, 50);
             this.pnlHiragana.Name = "pnlHiragana";
-            this.pnlHiragana.Size = new System.Drawing.Size(194, 40);
+            this.pnlHiragana.Size = new System.Drawing.Size(194, 50);
             this.pnlHiragana.TabIndex = 104;
             // 
-            // panel9
+            // pnlHiragana_Left
             // 
-            this.panel9.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2, 40);
-            this.panel9.TabIndex = 10007;
-            this.panel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
-            this.panel9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlHiragana_Left.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlHiragana_Left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlHiragana_Left.Location = new System.Drawing.Point(0, 0);
+            this.pnlHiragana_Left.Name = "pnlHiragana_Left";
+            this.pnlHiragana_Left.Size = new System.Drawing.Size(2, 50);
+            this.pnlHiragana_Left.TabIndex = 2;
+            this.pnlHiragana_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlHiragana_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlHiragana_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
-            // panel6
+            // pnlHiragana_Right
             // 
-            this.panel6.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(192, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 40);
-            this.panel6.TabIndex = 10006;
-            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
-            this.panel6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlHiragana_Right.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlHiragana_Right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlHiragana_Right.Location = new System.Drawing.Point(192, 0);
+            this.pnlHiragana_Right.Name = "pnlHiragana_Right";
+            this.pnlHiragana_Right.Size = new System.Drawing.Size(2, 50);
+            this.pnlHiragana_Right.TabIndex = 10006;
+            this.pnlHiragana_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlHiragana_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlHiragana_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtHiragana
             // 
-            this.txtHiragana.Font = new System.Drawing.Font("MS Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHiragana.Location = new System.Drawing.Point(7, 8);
+            this.txtHiragana.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHiragana.Location = new System.Drawing.Point(7, 10);
             this.txtHiragana.Name = "txtHiragana";
-            this.txtHiragana.Size = new System.Drawing.Size(180, 23);
-            this.txtHiragana.TabIndex = 10005;
+            this.txtHiragana.Size = new System.Drawing.Size(180, 30);
+            this.txtHiragana.TabIndex = 0;
             this.txtHiragana.Text = "label2";
             this.txtHiragana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtHiragana.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
+            this.txtHiragana.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtHiragana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // pnlKanji
             // 
             this.pnlKanji.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pnlKanji.Controls.Add(this.panel2);
-            this.pnlKanji.Controls.Add(this.panel5);
+            this.pnlKanji.Controls.Add(this.pnlKanji_Left);
+            this.pnlKanji.Controls.Add(this.pnlKanji_Right);
             this.pnlKanji.Controls.Add(this.txtKanji);
             this.pnlKanji.Controls.Add(this.label1);
             this.pnlKanji.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlKanji.Location = new System.Drawing.Point(0, 0);
             this.pnlKanji.Name = "pnlKanji";
-            this.pnlKanji.Size = new System.Drawing.Size(194, 40);
-            this.pnlKanji.TabIndex = 103;
+            this.pnlKanji.Size = new System.Drawing.Size(194, 50);
+            this.pnlKanji.TabIndex = 1;
             // 
-            // panel2
+            // pnlKanji_Left
             // 
-            this.panel2.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 40);
-            this.panel2.TabIndex = 10006;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
-            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlKanji_Left.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlKanji_Left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlKanji_Left.Location = new System.Drawing.Point(0, 0);
+            this.pnlKanji_Left.Name = "pnlKanji_Left";
+            this.pnlKanji_Left.Size = new System.Drawing.Size(2, 50);
+            this.pnlKanji_Left.TabIndex = 0;
+            this.pnlKanji_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlKanji_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlKanji_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
-            // panel5
+            // pnlKanji_Right
             // 
-            this.panel5.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(192, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 40);
-            this.panel5.TabIndex = 10005;
-            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
-            this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
-            this.panel5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
+            this.pnlKanji_Right.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pnlKanji_Right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlKanji_Right.Location = new System.Drawing.Point(192, 0);
+            this.pnlKanji_Right.Name = "pnlKanji_Right";
+            this.pnlKanji_Right.Size = new System.Drawing.Size(2, 50);
+            this.pnlKanji_Right.TabIndex = 10005;
+            this.pnlKanji_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            this.pnlKanji_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlKanji_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtKanji
             // 
-            this.txtKanji.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKanji.Location = new System.Drawing.Point(7, 8);
+            this.txtKanji.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtKanji.Location = new System.Drawing.Point(7, 10);
             this.txtKanji.Name = "txtKanji";
-            this.txtKanji.Size = new System.Drawing.Size(180, 23);
-            this.txtKanji.TabIndex = 10004;
+            this.txtKanji.Size = new System.Drawing.Size(180, 30);
+            this.txtKanji.TabIndex = 1;
             this.txtKanji.Text = "label2";
             this.txtKanji.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtKanji.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
+            this.txtKanji.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtKanji.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // label1
             // 
@@ -345,11 +303,11 @@ namespace JCard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(194, 160);
+            this.ClientSize = new System.Drawing.Size(194, 150);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.tempTextbox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -359,12 +317,9 @@ namespace JCard
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard- Vocabulary";
             this.Load += new System.EventHandler(this.FJCardLoad);
-            this.MouseLeave += new System.EventHandler(this.FJCardMouseLeave);
-            this.MouseHover += new System.EventHandler(this.FJCardMouseHover);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.pnlMeaning.ResumeLayout(false);
-            this.pnlHanNom.ResumeLayout(false);
             this.pnlHiragana.ResumeLayout(false);
             this.pnlKanji.ResumeLayout(false);
             this.pnlKanji.PerformLayout();
@@ -389,22 +344,19 @@ namespace JCard
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel pnlMeaning;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel pnlImi_Left;
+        private System.Windows.Forms.Panel pnlImi_Right;
         private System.Windows.Forms.Label txtMeaning;
-        private System.Windows.Forms.Panel pnlHanNom;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label txtHanNom;
         private System.Windows.Forms.Panel pnlHiragana;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlHiragana_Left;
+        private System.Windows.Forms.Panel pnlHiragana_Right;
         private System.Windows.Forms.Label txtHiragana;
         private System.Windows.Forms.Panel pnlKanji;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlKanji_Left;
+        private System.Windows.Forms.Panel pnlKanji_Right;
         private System.Windows.Forms.Label txtKanji;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

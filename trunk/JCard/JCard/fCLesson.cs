@@ -95,10 +95,10 @@ namespace JCard
             groupBox1.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCAB_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCAB_VALUE);
             chBoxAll.Text = Common.GetResourceValue(Constants.RES_CHKBOXALL_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXALL_VALUE);
             cBoxCollapse.Text = Common.GetResourceValue(Constants.RES_CHKBOXCOLLAPSE_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXCOLLAPSE_VALUE);
-            groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
-            radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
-            radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
-            radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
+            //groupBox3.Text = Common.GetResourceValue(Constants.RES_GROUPBOXVOCABLEARN_NAME, objCulInfo, objResourceManager, Constants.RES_GROUPBOXVOCABLEARN_VALUE);
+            //radNewTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABNEW_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABNEW_VALUE);
+            //radLastTopic.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABLAST_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABLAST_VALUE);
+            //radCombine.Text = Common.GetResourceValue(Constants.RES_RADIOVOCABALL_NAME, objCulInfo, objResourceManager, Constants.RES_RADIOVOCABALL_VALUE);
             button4.Text = Common.GetResourceValue(Constants.RES_BTNSETTING_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSETTING_VALUE);
             ButtCopy.Text = Common.GetResourceValue(Constants.RES_BTNSTART_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSTART_VALUE);
             button1.Text = Common.GetResourceValue(Constants.RES_BTNCLOSE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCLOSE_VALUE);
@@ -146,7 +146,8 @@ namespace JCard
                 AddToTreeView(arrTopicGroup, arrTopic);
 
                 cBoxCollapse_CheckedChanged_1(cBoxCollapse, null);
-                chBoxAll_CheckedChanged_1(chBoxAll, null);
+
+                if (chBoxAll.Checked) CheckAll(treeView1, chBoxAll.Checked);
             }
             catch (Exception ex)
             {
@@ -210,6 +211,13 @@ namespace JCard
                         TreeNode node = new TreeNode();
                         node = treeView1.Nodes[j].Nodes.Add(dto.StrName);
                         node.Name = dto.IID.ToString();
+
+                        // set selected status for IsLastTopic
+                        if (dto.IsLastTopic)
+                        {
+                            node.Checked = true;
+                            treeView1.Nodes[j].Checked = true;
+                        }
                     }
                 }
             }
@@ -440,39 +448,15 @@ namespace JCard
             ArrayList arrVoc = new ArrayList();
             ArrayList arrListTopic = new ArrayList();
             ArrayList arrListLastTopic = new ArrayList();
-
-            // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
-            if (radNewTopic.Checked) // is new topic
-            {
-                if (CheckChosedDataOfTreeView() != false)
-                {
-                    try
-                    {
-                        oJcard.ResetIsLastTopic();
-                        arrListTopic = GetListTopicChosen();
-                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                        oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        //fJCard fjcard = new fJCard(iFlag, arrVoc);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc, this);
-                        fjcard.Show();
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
-                    }
-                }
-                else
-                {
-                    Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
-                }
-            }
-            else if (radLastTopic.Checked)
+                        
+            if (CheckChosedDataOfTreeView() != false)
             {
                 try
                 {
-                    arrListTopic = oJcard.GetTopicIsLastTopic();
+                    oJcard.ResetIsLastTopic();
+                    arrListTopic = GetListTopicChosen();
                     arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+                    oJcard.UpdateIsLastTopic(arrListTopic, true);
                     //fJCard fjcard = new fJCard(iFlag, arrVoc);
                     fJCard fjcard = new fJCard(iFlag, arrVoc, this);
                     fjcard.Show();
@@ -485,31 +469,79 @@ namespace JCard
             }
             else
             {
-                if (CheckChosedDataOfTreeView() != false)
-                {
-                    try
-                    {
-                        arrListLastTopic = oJcard.GetTopicIsLastTopic();
-                        arrListTopic = GetListTopicChosen();
-                        CombineArrayList(ref arrListTopic, arrListLastTopic);
-                        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
-                        oJcard.UpdateIsLastTopic(arrListTopic, true);
-                        //fJCard fjcard = new fJCard(iFlag, arrVoc);
-                        fJCard fjcard = new fJCard(iFlag, arrVoc, this);
-                        fjcard.Show();
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
-                    }
-                }
-                else
-                {
-                    Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
-                }
+                Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
             }
 
+            #region Delete 
+            // Cho nay se lam them check kiem tra 3 option nguoi dung chon: new topic, last topic, new + last
+            //if (radNewTopic.Checked) // is new topic
+            //{
+            //    if (CheckChosedDataOfTreeView() != false)
+            //    {
+            //        try
+            //        {
+            //            oJcard.ResetIsLastTopic();
+            //            arrListTopic = GetListTopicChosen();
+            //            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+            //            oJcard.UpdateIsLastTopic(arrListTopic, true);
+            //            //fJCard fjcard = new fJCard(iFlag, arrVoc);
+            //            fJCard fjcard = new fJCard(iFlag, arrVoc, this);
+            //            fjcard.Show();
+            //            this.Hide();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
+            //    }
+            //}
+            //else if (radLastTopic.Checked)
+            //{
+            //    try
+            //    {
+            //        arrListTopic = oJcard.GetTopicIsLastTopic();
+            //        arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+            //        //fJCard fjcard = new fJCard(iFlag, arrVoc);
+            //        fJCard fjcard = new fJCard(iFlag, arrVoc, this);
+            //        fjcard.Show();
+            //        this.Hide();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            //    }
+            //}
+            //else
+            //{
+            //    if (CheckChosedDataOfTreeView() != false)
+            //    {
+            //        try
+            //        {
+            //            arrListLastTopic = oJcard.GetTopicIsLastTopic();
+            //            arrListTopic = GetListTopicChosen();
+            //            CombineArrayList(ref arrListTopic, arrListLastTopic);
+            //            arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+            //            oJcard.UpdateIsLastTopic(arrListTopic, true);
+            //            //fJCard fjcard = new fJCard(iFlag, arrVoc);
+            //            fJCard fjcard = new fJCard(iFlag, arrVoc, this);
+            //            fjcard.Show();
+            //            this.Hide();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SELECT_TOPIC_INFO_NAME, Constants.RES_SELECT_TOPIC_INFO_VALUE);
+            //    }
+            //}
+            #endregion
         }
 
         private void CombineArrayList(ref ArrayList arrReturn, ArrayList arrNeedCopy)
@@ -562,21 +594,6 @@ namespace JCard
         {
             About ab = new About();
             ab.ShowDialog();
-        }
-
-        private void radLastTopic_CheckedChanged(object sender, EventArgs e)
-        {
-            treeView1.Enabled = false;
-        }
-
-        private void radCombine_CheckedChanged(object sender, EventArgs e)
-        {
-            treeView1.Enabled = true;
-        }
-
-        private void radNewTopic_CheckedChanged(object sender, EventArgs e)
-        {
-            treeView1.Enabled = true;
         }
         #endregion     
     }
