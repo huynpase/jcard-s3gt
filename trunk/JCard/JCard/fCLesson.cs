@@ -47,7 +47,6 @@ namespace JCard
             this.TopMost = true;
             this.Show();
             this.Activate();            
-            tabControl1_SelectedIndexChanged(null, null);
             this.TopMost = false;
         }
 
@@ -57,7 +56,6 @@ namespace JCard
             timer2.Interval = Constants.Timer_Interval;
             timer2.Start();
             this.Opacity = 0;
-            // notifyIcon1.Visible = false;
             this.tabVocabulary.Select();
 
             InitTreeView(txtS3GTDB.Text);
@@ -398,7 +396,6 @@ namespace JCard
                 fGrammar fg = new fGrammar(arr_Entry, this);
                 fg.Show();
                 
-                trvGrammars.Nodes.Clear();
                 this.Hide();                               
             }
             else
