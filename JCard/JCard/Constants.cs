@@ -11,17 +11,21 @@ namespace JCard
         public const string Left = "0";
         public const string BackColor = "-256";
         public const string ForeColor = "-16777216";
+        public const string Fontsize = "20";
         public const string Width = "130";
         public const string JP_BackColor = "-16724737";
         public const string JP_ForeColor = "-16777216";
+        public const string JP_Fontsize = "15";
         public const string JP_Width = "200";
         public const string JP_IsDisplayed = "True";
         public const string VN_BackColor = "-6697984";
         public const string VN_ForeColor = "-16777216";
+        public const string VN_Fontsize = "15";
         public const string VN_Width = "200";
         public const string VN_IsDisplayed = "True";
         public const string Ex_BackColor = "-4144960";
         public const string Ex_ForeColor = "-16777216";
+        public const string Ex_Fontsize = "12";
         public const string Ex_Width = "250";
         public const string Ex_NoOfDisplay = "10";
         public const string Ex_DisplayTime = "30";
@@ -45,7 +49,7 @@ namespace JCard
         public const string Hiragana_BackColor = "-4128832";
         public const string Hiragana_FontColor = "-16777216";
         public const string Hiragana_IsDisplayed = "True";
-        public const string Hiragana_Fontsize = "15";
+        public const string Hiragana_Fontsize = "17";
 
         public const string Meaning_BackColor = "-8000";
         public const string Meaning_FontColor = "-16777216";
@@ -114,6 +118,7 @@ namespace JCard
         public const string RES_LBLDISPLAY_NAME = "lbldisplay";
         public const string RES_LBLDELAY_NAME = "lbldelay";
         public const string RES_CHKBOXVNISDISPLAYED_NAME = "chkboxvnisdisplayed";
+        public const string RES_FONTSIZE_NAME = "fontsize";
 
         public const string RES_GRAMSETT_VALUE = "Cấu Hình Card Ngữ Pháp";
         public const string RES_GRBSAMPLE_VALUE = "Mẫu Ngữ Pháp";
@@ -127,6 +132,7 @@ namespace JCard
         public const string RES_LBLDISPLAY_VALUE = "Thời Gian Hiển Thị (s):";
         public const string RES_LBLDELAY_VALUE = "Thời Gian Ẩn (s):";
         public const string RES_CHKBOXVNISDISPLAYED_VALUE = "Hiển thị ví dụ Tiếng Việt";
+        public const string RES_FONTSIZE_VALUE = "Cỡ Chữ:";
 
         //Resource fSetting
         public const string RES_VOCABSETT_NAME = "vocabsett";

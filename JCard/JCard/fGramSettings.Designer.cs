@@ -30,23 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGramSetts));
             this.grbSample = new System.Windows.Forms.GroupBox();
+            this.numSmplFontsize = new System.Windows.Forms.NumericUpDown();
             this.pnlSampleFClr = new System.Windows.Forms.Panel();
+            this.lblFontsize = new System.Windows.Forms.Label();
             this.pnlSampleBgClr = new System.Windows.Forms.Panel();
             this.lblSampleFclr = new System.Windows.Forms.Label();
             this.lblSampleBgClr = new System.Windows.Forms.Label();
             this.grbJap = new System.Windows.Forms.GroupBox();
+            this.numJapFontsize = new System.Windows.Forms.NumericUpDown();
+            this.lblJapFontSize = new System.Windows.Forms.Label();
             this.pnlJapFClr = new System.Windows.Forms.Panel();
             this.pnlJapBgClr = new System.Windows.Forms.Panel();
             this.lblJapFClr = new System.Windows.Forms.Label();
             this.lblJapBgClr = new System.Windows.Forms.Label();
             this.chkboxJap = new System.Windows.Forms.CheckBox();
             this.grbVie = new System.Windows.Forms.GroupBox();
+            this.numVieFontsize = new System.Windows.Forms.NumericUpDown();
             this.pnlVieFClr = new System.Windows.Forms.Panel();
+            this.lblVieFontSize = new System.Windows.Forms.Label();
             this.pnlVieBgClr = new System.Windows.Forms.Panel();
             this.lblVieFClr = new System.Windows.Forms.Label();
             this.lblVieBgClr = new System.Windows.Forms.Label();
             this.chkboxVie = new System.Windows.Forms.CheckBox();
             this.grbEx = new System.Windows.Forms.GroupBox();
+            this.numExFontsize = new System.Windows.Forms.NumericUpDown();
+            this.lblExFontSize = new System.Windows.Forms.Label();
             this.chkboxEx = new System.Windows.Forms.CheckBox();
             this.numDelayTim = new System.Windows.Forms.NumericUpDown();
             this.numDisTim = new System.Windows.Forms.NumericUpDown();
@@ -61,9 +69,13 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.grbSample.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSmplFontsize)).BeginInit();
             this.grbJap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numJapFontsize)).BeginInit();
             this.grbVie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVieFontsize)).BeginInit();
             this.grbEx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numExFontsize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).BeginInit();
@@ -72,30 +84,63 @@
             // grbSample
             // 
             this.grbSample.BackColor = System.Drawing.Color.Transparent;
+            this.grbSample.Controls.Add(this.numSmplFontsize);
             this.grbSample.Controls.Add(this.pnlSampleFClr);
+            this.grbSample.Controls.Add(this.lblFontsize);
             this.grbSample.Controls.Add(this.pnlSampleBgClr);
             this.grbSample.Controls.Add(this.lblSampleFclr);
             this.grbSample.Controls.Add(this.lblSampleBgClr);
-            this.grbSample.Location = new System.Drawing.Point(12, 12);
+            this.grbSample.Location = new System.Drawing.Point(13, 12);
             this.grbSample.Name = "grbSample";
-            this.grbSample.Size = new System.Drawing.Size(390, 57);
+            this.grbSample.Size = new System.Drawing.Size(390, 76);
             this.grbSample.TabIndex = 0;
             this.grbSample.TabStop = false;
             this.grbSample.Text = "Sample";
             // 
+            // numSmplFontsize
+            // 
+            this.numSmplFontsize.Location = new System.Drawing.Point(116, 16);
+            this.numSmplFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numSmplFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numSmplFontsize.Name = "numSmplFontsize";
+            this.numSmplFontsize.Size = new System.Drawing.Size(70, 20);
+            this.numSmplFontsize.TabIndex = 16;
+            this.numSmplFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // pnlSampleFClr
             // 
             this.pnlSampleFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlSampleFClr.Location = new System.Drawing.Point(303, 13);
+            this.pnlSampleFClr.Location = new System.Drawing.Point(303, 42);
             this.pnlSampleFClr.Name = "pnlSampleFClr";
             this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleFClr.TabIndex = 3;
             this.pnlSampleFClr.DoubleClick += new System.EventHandler(this.pnlSampleFClr_DoubleClick);
             // 
+            // lblFontsize
+            // 
+            this.lblFontsize.AutoSize = true;
+            this.lblFontsize.Location = new System.Drawing.Point(6, 18);
+            this.lblFontsize.Name = "lblFontsize";
+            this.lblFontsize.Size = new System.Drawing.Size(51, 13);
+            this.lblFontsize.TabIndex = 15;
+            this.lblFontsize.Text = "Font Size";
+            // 
             // pnlSampleBgClr
             // 
             this.pnlSampleBgClr.BackColor = System.Drawing.Color.Maroon;
-            this.pnlSampleBgClr.Location = new System.Drawing.Point(118, 13);
+            this.pnlSampleBgClr.Location = new System.Drawing.Point(118, 42);
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 1;
@@ -104,7 +149,7 @@
             // lblSampleFclr
             // 
             this.lblSampleFclr.AutoSize = true;
-            this.lblSampleFclr.Location = new System.Drawing.Point(220, 25);
+            this.lblSampleFclr.Location = new System.Drawing.Point(220, 54);
             this.lblSampleFclr.Name = "lblSampleFclr";
             this.lblSampleFclr.Size = new System.Drawing.Size(58, 13);
             this.lblSampleFclr.TabIndex = 2;
@@ -113,7 +158,7 @@
             // lblSampleBgClr
             // 
             this.lblSampleBgClr.AutoSize = true;
-            this.lblSampleBgClr.Location = new System.Drawing.Point(6, 25);
+            this.lblSampleBgClr.Location = new System.Drawing.Point(6, 54);
             this.lblSampleBgClr.Name = "lblSampleBgClr";
             this.lblSampleBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblSampleBgClr.TabIndex = 0;
@@ -122,22 +167,55 @@
             // grbJap
             // 
             this.grbJap.BackColor = System.Drawing.Color.Transparent;
+            this.grbJap.Controls.Add(this.numJapFontsize);
+            this.grbJap.Controls.Add(this.lblJapFontSize);
             this.grbJap.Controls.Add(this.pnlJapFClr);
             this.grbJap.Controls.Add(this.pnlJapBgClr);
             this.grbJap.Controls.Add(this.lblJapFClr);
             this.grbJap.Controls.Add(this.lblJapBgClr);
             this.grbJap.Controls.Add(this.chkboxJap);
-            this.grbJap.Location = new System.Drawing.Point(12, 87);
+            this.grbJap.Location = new System.Drawing.Point(13, 94);
             this.grbJap.Name = "grbJap";
-            this.grbJap.Size = new System.Drawing.Size(389, 84);
+            this.grbJap.Size = new System.Drawing.Size(390, 100);
             this.grbJap.TabIndex = 1;
             this.grbJap.TabStop = false;
             this.grbJap.Text = "Japanese Meaning";
             // 
+            // numJapFontsize
+            // 
+            this.numJapFontsize.Location = new System.Drawing.Point(116, 36);
+            this.numJapFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numJapFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numJapFontsize.Name = "numJapFontsize";
+            this.numJapFontsize.Size = new System.Drawing.Size(70, 20);
+            this.numJapFontsize.TabIndex = 14;
+            this.numJapFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // lblJapFontSize
+            // 
+            this.lblJapFontSize.AutoSize = true;
+            this.lblJapFontSize.Location = new System.Drawing.Point(6, 38);
+            this.lblJapFontSize.Name = "lblJapFontSize";
+            this.lblJapFontSize.Size = new System.Drawing.Size(51, 13);
+            this.lblJapFontSize.TabIndex = 13;
+            this.lblJapFontSize.Text = "Font Size";
+            // 
             // pnlJapFClr
             // 
             this.pnlJapFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJapFClr.Location = new System.Drawing.Point(303, 41);
+            this.pnlJapFClr.Location = new System.Drawing.Point(303, 65);
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapFClr.TabIndex = 4;
@@ -146,7 +224,7 @@
             // pnlJapBgClr
             // 
             this.pnlJapBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJapBgClr.Location = new System.Drawing.Point(118, 41);
+            this.pnlJapBgClr.Location = new System.Drawing.Point(118, 65);
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlJapBgClr.TabIndex = 2;
@@ -155,7 +233,7 @@
             // lblJapFClr
             // 
             this.lblJapFClr.AutoSize = true;
-            this.lblJapFClr.Location = new System.Drawing.Point(220, 53);
+            this.lblJapFClr.Location = new System.Drawing.Point(220, 77);
             this.lblJapFClr.Name = "lblJapFClr";
             this.lblJapFClr.Size = new System.Drawing.Size(58, 13);
             this.lblJapFClr.TabIndex = 3;
@@ -164,7 +242,7 @@
             // lblJapBgClr
             // 
             this.lblJapBgClr.AutoSize = true;
-            this.lblJapBgClr.Location = new System.Drawing.Point(6, 53);
+            this.lblJapBgClr.Location = new System.Drawing.Point(6, 77);
             this.lblJapBgClr.Name = "lblJapBgClr";
             this.lblJapBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblJapBgClr.TabIndex = 1;
@@ -173,7 +251,7 @@
             // chkboxJap
             // 
             this.chkboxJap.AutoSize = true;
-            this.chkboxJap.Location = new System.Drawing.Point(9, 19);
+            this.chkboxJap.Location = new System.Drawing.Point(9, 16);
             this.chkboxJap.Name = "chkboxJap";
             this.chkboxJap.Size = new System.Drawing.Size(83, 17);
             this.chkboxJap.TabIndex = 0;
@@ -183,31 +261,64 @@
             // grbVie
             // 
             this.grbVie.BackColor = System.Drawing.Color.Transparent;
+            this.grbVie.Controls.Add(this.numVieFontsize);
             this.grbVie.Controls.Add(this.pnlVieFClr);
+            this.grbVie.Controls.Add(this.lblVieFontSize);
             this.grbVie.Controls.Add(this.pnlVieBgClr);
             this.grbVie.Controls.Add(this.lblVieFClr);
             this.grbVie.Controls.Add(this.lblVieBgClr);
             this.grbVie.Controls.Add(this.chkboxVie);
-            this.grbVie.Location = new System.Drawing.Point(13, 193);
+            this.grbVie.Location = new System.Drawing.Point(12, 200);
             this.grbVie.Name = "grbVie";
-            this.grbVie.Size = new System.Drawing.Size(389, 84);
+            this.grbVie.Size = new System.Drawing.Size(391, 96);
             this.grbVie.TabIndex = 2;
             this.grbVie.TabStop = false;
             this.grbVie.Text = "Vietnamese Meaning";
             // 
+            // numVieFontsize
+            // 
+            this.numVieFontsize.Location = new System.Drawing.Point(116, 34);
+            this.numVieFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numVieFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numVieFontsize.Name = "numVieFontsize";
+            this.numVieFontsize.Size = new System.Drawing.Size(70, 20);
+            this.numVieFontsize.TabIndex = 14;
+            this.numVieFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // pnlVieFClr
             // 
             this.pnlVieFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlVieFClr.Location = new System.Drawing.Point(302, 41);
+            this.pnlVieFClr.Location = new System.Drawing.Point(302, 59);
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieFClr.TabIndex = 4;
             this.pnlVieFClr.DoubleClick += new System.EventHandler(this.pnlVieFClr_DoubleClick);
             // 
+            // lblVieFontSize
+            // 
+            this.lblVieFontSize.AutoSize = true;
+            this.lblVieFontSize.Location = new System.Drawing.Point(6, 36);
+            this.lblVieFontSize.Name = "lblVieFontSize";
+            this.lblVieFontSize.Size = new System.Drawing.Size(51, 13);
+            this.lblVieFontSize.TabIndex = 13;
+            this.lblVieFontSize.Text = "Font Size";
+            // 
             // pnlVieBgClr
             // 
             this.pnlVieBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlVieBgClr.Location = new System.Drawing.Point(117, 41);
+            this.pnlVieBgClr.Location = new System.Drawing.Point(117, 59);
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieBgClr.TabIndex = 2;
@@ -216,7 +327,7 @@
             // lblVieFClr
             // 
             this.lblVieFClr.AutoSize = true;
-            this.lblVieFClr.Location = new System.Drawing.Point(219, 53);
+            this.lblVieFClr.Location = new System.Drawing.Point(219, 71);
             this.lblVieFClr.Name = "lblVieFClr";
             this.lblVieFClr.Size = new System.Drawing.Size(58, 13);
             this.lblVieFClr.TabIndex = 3;
@@ -225,7 +336,7 @@
             // lblVieBgClr
             // 
             this.lblVieBgClr.AutoSize = true;
-            this.lblVieBgClr.Location = new System.Drawing.Point(5, 53);
+            this.lblVieBgClr.Location = new System.Drawing.Point(5, 71);
             this.lblVieBgClr.Name = "lblVieBgClr";
             this.lblVieBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblVieBgClr.TabIndex = 1;
@@ -234,7 +345,7 @@
             // chkboxVie
             // 
             this.chkboxVie.AutoSize = true;
-            this.chkboxVie.Location = new System.Drawing.Point(6, 19);
+            this.chkboxVie.Location = new System.Drawing.Point(6, 16);
             this.chkboxVie.Name = "chkboxVie";
             this.chkboxVie.Size = new System.Drawing.Size(83, 17);
             this.chkboxVie.TabIndex = 0;
@@ -244,6 +355,8 @@
             // grbEx
             // 
             this.grbEx.BackColor = System.Drawing.Color.Transparent;
+            this.grbEx.Controls.Add(this.numExFontsize);
+            this.grbEx.Controls.Add(this.lblExFontSize);
             this.grbEx.Controls.Add(this.chkboxEx);
             this.grbEx.Controls.Add(this.numDelayTim);
             this.grbEx.Controls.Add(this.numDisTim);
@@ -255,12 +368,43 @@
             this.grbEx.Controls.Add(this.lblExNoDis);
             this.grbEx.Controls.Add(this.lblExFClr);
             this.grbEx.Controls.Add(this.lblExBgClr);
-            this.grbEx.Location = new System.Drawing.Point(13, 306);
+            this.grbEx.Location = new System.Drawing.Point(12, 303);
             this.grbEx.Name = "grbEx";
-            this.grbEx.Size = new System.Drawing.Size(389, 151);
+            this.grbEx.Size = new System.Drawing.Size(391, 178);
             this.grbEx.TabIndex = 3;
             this.grbEx.TabStop = false;
             this.grbEx.Text = "Examples";
+            // 
+            // numExFontsize
+            // 
+            this.numExFontsize.Location = new System.Drawing.Point(117, 48);
+            this.numExFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numExFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numExFontsize.Name = "numExFontsize";
+            this.numExFontsize.Size = new System.Drawing.Size(70, 20);
+            this.numExFontsize.TabIndex = 12;
+            this.numExFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // lblExFontSize
+            // 
+            this.lblExFontSize.AutoSize = true;
+            this.lblExFontSize.Location = new System.Drawing.Point(7, 50);
+            this.lblExFontSize.Name = "lblExFontSize";
+            this.lblExFontSize.Size = new System.Drawing.Size(51, 13);
+            this.lblExFontSize.TabIndex = 11;
+            this.lblExFontSize.Text = "Font Size";
             // 
             // chkboxEx
             // 
@@ -274,7 +418,7 @@
             // 
             // numDelayTim
             // 
-            this.numDelayTim.Location = new System.Drawing.Point(302, 116);
+            this.numDelayTim.Location = new System.Drawing.Point(303, 147);
             this.numDelayTim.Maximum = new decimal(new int[] {
             10,
             0,
@@ -298,7 +442,7 @@
             // 
             // numDisTim
             // 
-            this.numDisTim.Location = new System.Drawing.Point(117, 116);
+            this.numDisTim.Location = new System.Drawing.Point(118, 147);
             this.numDisTim.Maximum = new decimal(new int[] {
             60,
             0,
@@ -310,7 +454,7 @@
             0,
             0});
             this.numDisTim.Name = "numDisTim";
-            this.numDisTim.Size = new System.Drawing.Size(71, 20);
+            this.numDisTim.Size = new System.Drawing.Size(70, 20);
             this.numDisTim.TabIndex = 8;
             this.numDisTim.Value = new decimal(new int[] {
             1,
@@ -322,7 +466,7 @@
             // 
             // numNoDis
             // 
-            this.numNoDis.Location = new System.Drawing.Point(117, 85);
+            this.numNoDis.Location = new System.Drawing.Point(118, 116);
             this.numNoDis.Maximum = new decimal(new int[] {
             10,
             0,
@@ -342,7 +486,7 @@
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlExFClr.Location = new System.Drawing.Point(302, 42);
+            this.pnlExFClr.Location = new System.Drawing.Point(303, 73);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 4;
@@ -351,7 +495,7 @@
             // pnlExBgClr
             // 
             this.pnlExBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlExBgClr.Location = new System.Drawing.Point(117, 42);
+            this.pnlExBgClr.Location = new System.Drawing.Point(118, 73);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 2;
@@ -360,7 +504,7 @@
             // lblDelayTim
             // 
             this.lblDelayTim.AutoSize = true;
-            this.lblDelayTim.Location = new System.Drawing.Point(219, 118);
+            this.lblDelayTim.Location = new System.Drawing.Point(220, 149);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
             this.lblDelayTim.TabIndex = 9;
@@ -369,7 +513,7 @@
             // lblDisTim
             // 
             this.lblDisTim.AutoSize = true;
-            this.lblDisTim.Location = new System.Drawing.Point(5, 118);
+            this.lblDisTim.Location = new System.Drawing.Point(6, 149);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(84, 13);
             this.lblDisTim.TabIndex = 7;
@@ -378,7 +522,7 @@
             // lblExNoDis
             // 
             this.lblExNoDis.AutoSize = true;
-            this.lblExNoDis.Location = new System.Drawing.Point(5, 87);
+            this.lblExNoDis.Location = new System.Drawing.Point(6, 118);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
             this.lblExNoDis.TabIndex = 5;
@@ -387,7 +531,7 @@
             // lblExFClr
             // 
             this.lblExFClr.AutoSize = true;
-            this.lblExFClr.Location = new System.Drawing.Point(219, 54);
+            this.lblExFClr.Location = new System.Drawing.Point(220, 85);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(58, 13);
             this.lblExFClr.TabIndex = 3;
@@ -396,7 +540,7 @@
             // lblExBgClr
             // 
             this.lblExBgClr.AutoSize = true;
-            this.lblExBgClr.Location = new System.Drawing.Point(6, 54);
+            this.lblExBgClr.Location = new System.Drawing.Point(7, 85);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblExBgClr.TabIndex = 1;
@@ -406,7 +550,7 @@
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.Location = new System.Drawing.Point(105, 463);
+            this.btnSave.Location = new System.Drawing.Point(105, 486);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 29);
             this.btnSave.TabIndex = 4;
@@ -419,7 +563,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancel.Location = new System.Drawing.Point(214, 463);
+            this.btnCancel.Location = new System.Drawing.Point(214, 486);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 29);
             this.btnCancel.TabIndex = 5;
@@ -432,7 +576,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.ClientSize = new System.Drawing.Size(419, 504);
+            this.ClientSize = new System.Drawing.Size(419, 524);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grbEx);
@@ -448,12 +592,16 @@
             this.Text = "Grammar Card Settings";
             this.grbSample.ResumeLayout(false);
             this.grbSample.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSmplFontsize)).EndInit();
             this.grbJap.ResumeLayout(false);
             this.grbJap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numJapFontsize)).EndInit();
             this.grbVie.ResumeLayout(false);
             this.grbVie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVieFontsize)).EndInit();
             this.grbEx.ResumeLayout(false);
             this.grbEx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numExFontsize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDelayTim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDisTim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNoDis)).EndInit();
@@ -494,5 +642,13 @@
         private System.Windows.Forms.NumericUpDown numDisTim;
         private System.Windows.Forms.NumericUpDown numNoDis;
         private System.Windows.Forms.CheckBox chkboxEx;
+        private System.Windows.Forms.NumericUpDown numJapFontsize;
+        private System.Windows.Forms.Label lblJapFontSize;
+        private System.Windows.Forms.NumericUpDown numVieFontsize;
+        private System.Windows.Forms.Label lblVieFontSize;
+        private System.Windows.Forms.NumericUpDown numExFontsize;
+        private System.Windows.Forms.Label lblExFontSize;
+        private System.Windows.Forms.NumericUpDown numSmplFontsize;
+        private System.Windows.Forms.Label lblFontsize;
     }
 }

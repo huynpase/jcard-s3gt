@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="about" xml:space="preserve">
     <value>Thông Tin J-Card</value>
@@ -346,5 +346,8 @@ Vui lòng gửi nội dung lỗi sau đây cho người tạo chương trình:</
   <data name="MsgStartProgram" xml:space="preserve">
     <value>Chương trình J-Card đang mở.
 Vui lòng kiểm tra lại chương trình trên thanh Taskbar hoặc System Tray.</value>
+  </data>
+  <data name="fontsize" xml:space="preserve">
+    <value>Cỡ Chữ:</value>
   </data>
 </root>
