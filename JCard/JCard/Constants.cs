@@ -6,6 +6,7 @@ namespace JCard
 {
     public class Constants
     {
+        //Grammar Card
         public const int MAX_GRAMMAR_EXAMPLE = 10;       
         public const string Top = "0";
         public const string Left = "0";
@@ -33,13 +34,12 @@ namespace JCard
         public const string Ex_VNIsDisplayed = "True";
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
-        public const int Timer_Interval = 2500;
-        public const int sleepTime = 3000;
 
-        //Setting Vocabulary
+        //Vocabulary Card
         public const string PositionVOC = "BR";
         public const string DisplayTimeVOC = "5";
         public const string WaitingTimeVOC = "3";
+        public const string VocabWidth = "200";
 
         public const string Kanji_BackColor = "-32640";
         public const string Kanji_FontColor = "-16777216";
@@ -61,6 +61,8 @@ namespace JCard
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
         public const string DATABASE_PATH = "datasource\\s3gt_db.mdb";
         public const string CONFIG_DATABASE_PATH_KEY = "DatabasePath";
+        public const int Timer_Interval = 2500;
+        public const int sleepTime = 3000;
 
         // Resource Program
         public const string RES_PROGRAM_NAME = "ProgramName";
@@ -136,28 +138,20 @@ namespace JCard
 
         //Resource fSetting
         public const string RES_VOCABSETT_NAME = "vocabsett";
-        public const string RES_GRBPOS_NAME = "grbpos";
-        public const string RES_GRBPROP_NAME = "grbprop";
+        public const string RES_GRBGEN_NAME = "grbgen";
+        public const string RES_GRBPROP_NAME = "grbmeaning";
         public const string RES_RADTR_NAME = "radtr";
         public const string RES_RADTL_NAME = "radtl";
         public const string RES_RADBR_NAME = "radbr";
         public const string RES_RADBL_NAME = "radbl";
-        public const string RES_LBLFKANJI_NAME = "lblfkanji";
-        public const string RES_LBLFKANA_NAME = "lblfkana";
-        public const string RES_LBLFHAN_NAME = "lblfhan";
-        public const string RES_LBLFMEANING_NAME = "lblfmeaning";
 
         public const string RES_VOCABSETT_VALUE = "Cấu Hình Card Từ Vựng";
-        public const string RES_GRBPOS_VALUE = "Vị Trí Hiển Thị";
-        public const string RES_GRBPROP_VALUE = "Các Thiết Lập";
+        public const string RES_GRBGEN_VALUE = "Cấu Hình Chung";
+        public const string RES_GRBPROP_VALUE = "Ý Nghĩa";
         public const string RES_RADTR_VALUE = "Phía Trên Bên Phải";
         public const string RES_RADTL_VALUE = "Phía Trên Bên Trái";
         public const string RES_RADBR_VALUE = "Phía Dưới Bên Phải";
         public const string RES_RADBL_VALUE = "Phía Dưới Bên Trái";
-        public const string RES_LBLFKANJI_VALUE = "Cỡ Chữ Kanji:";
-        public const string RES_LBLFKANA_VALUE = "Cỡ Chữ Kana:";
-        public const string RES_LBLFHAN_VALUE = "Cỡ Chữ Hán Nôm:";
-        public const string RES_LBLFMEANING_VALUE = "Cỡ Chữ Phần Nghĩa:";
 
         //Resource Import Data Form
         public const string RES_IMPORTDATA_NAME = "importdata";

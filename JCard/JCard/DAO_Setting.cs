@@ -21,6 +21,7 @@ namespace JCard
                dto.PositionVOC = ini.ReadValue("Vocabulary", "PositionVOC", Constants.PositionVOC);
                dto.DisplayTimeVOC = int.Parse(ini.ReadValue("Vocabulary", "DisplayTimeVOC", Constants.DisplayTimeVOC));
                dto.WaitingTimeVOC = int.Parse(ini.ReadValue("Vocabulary", "WaitingTimeVOC", Constants.WaitingTimeVOC));
+               dto.Width = int.Parse(ini.ReadValue("Sample", "Width", Constants.VocabWidth));
                dto.Kanji_BackColor = int.Parse(ini.ReadValue("Kanji", "Kanji_BackColor", Constants.Kanji_BackColor));
                dto.Kanji_FontColor = int.Parse(ini.ReadValue("Kanji", "Kanji_FontColor", Constants.Kanji_FontColor));
                dto.Kanji_Fontsize = int.Parse(ini.ReadValue("Kanji", "Kanji_Fontsize", Constants.Kanji_Fontsize));
@@ -39,6 +40,7 @@ namespace JCard
                dto.PositionVOC = Constants.PositionVOC;
                dto.DisplayTimeVOC = int.Parse(Constants.DisplayTimeVOC);
                dto.WaitingTimeVOC = int.Parse(Constants.WaitingTimeVOC);
+               dto.Width = int.Parse(Constants.VocabWidth);
                dto.Kanji_BackColor = int.Parse(Constants.Kanji_BackColor);
                dto.Kanji_FontColor = int.Parse(Constants.Kanji_FontColor);
                dto.Kanji_Fontsize = int.Parse(Constants.Kanji_Fontsize);
@@ -60,6 +62,7 @@ namespace JCard
             ini.WriteValue("Vocabulary", "PositionVOC", settingDTO.PositionVOC);
             ini.WriteValue("Vocabulary", "DisplayTimeVOC", settingDTO.DisplayTimeVOC.ToString());
             ini.WriteValue("Vocabulary", "WaitingTimeVOC", settingDTO.WaitingTimeVOC.ToString());
+            ini.WriteValue("Vocabulary", "Width", settingDTO.Width.ToString());
             ini.WriteValue("Kanji", "Kanji_BackColor", settingDTO.Kanji_BackColor.ToString());
             ini.WriteValue("Kanji", "Kanji_FontColor", settingDTO.Kanji_FontColor.ToString());
             ini.WriteValue("Kanji", "Kanji_Fontsize", settingDTO.Kanji_Fontsize.ToString());

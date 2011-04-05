@@ -37,7 +37,6 @@ namespace JCard
                 dtoSetting.WaitingTimeVOC = int.Parse(comDeplayTime.Text);
                 dtoSetting.Kanji_Fontsize = int.Parse(comFontKanji.Text);
                 dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);
-                dtoSetting.Hiragana_Fontsize = int.Parse(comFontHanNom.Text);
                 
                 busSetting.SaveSetting(dtoSetting,strFileSettingPath);
                 
@@ -79,20 +78,29 @@ namespace JCard
             objResourceManager = new ResourceManager("JCard.Resources", typeof(fSetting).Assembly);
             objCulInfo = new CultureInfo(Common.GetConfigValue(Constants.CONFIG_LANGUAGE_KEY, Constants.CONFIG_LANGUAGE_VALUE));
             this.Text = Common.GetResourceValue(Constants.RES_VOCABSETT_NAME, objCulInfo, objResourceManager, Constants.RES_VOCABSETT_VALUE);
-            groupBox1.Text = Common.GetResourceValue(Constants.RES_GRBPOS_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPOS_VALUE);
-            groupBox2.Text = Common.GetResourceValue(Constants.RES_GRBPROP_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPROP_VALUE);
+            groupBox1.Text = Common.GetResourceValue(Constants.RES_GRBGEN_NAME, objCulInfo, objResourceManager, Constants.RES_GRBGEN_VALUE);
+            grbMeaning.Text = Common.GetResourceValue(Constants.RES_GRBPROP_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPROP_VALUE);
             radioButton1.Text = Common.GetResourceValue(Constants.RES_RADTL_NAME, objCulInfo, objResourceManager, Constants.RES_RADTL_VALUE);
             radioButton2.Text = Common.GetResourceValue(Constants.RES_RADBL_NAME, objCulInfo, objResourceManager, Constants.RES_RADBL_VALUE);
             radioButton4.Text = Common.GetResourceValue(Constants.RES_RADTR_NAME, objCulInfo, objResourceManager, Constants.RES_RADTR_VALUE);
             radBottRight.Text = Common.GetResourceValue(Constants.RES_RADBR_NAME, objCulInfo, objResourceManager, Constants.RES_RADBR_VALUE);
             label2.Text = Common.GetResourceValue(Constants.RES_LBLDISPLAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDISPLAY_VALUE);
             label3.Text = Common.GetResourceValue(Constants.RES_LBLDELAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDELAY_VALUE);
-            label1.Text = Common.GetResourceValue(Constants.RES_LBLFKANJI_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFKANJI_VALUE);
-            label4.Text = Common.GetResourceValue(Constants.RES_LBLFKANA_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFKANA_VALUE);
-            label7.Text = Common.GetResourceValue(Constants.RES_LBLFHAN_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFHAN_VALUE);
-            label8.Text = Common.GetResourceValue(Constants.RES_LBLFMEANING_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFMEANING_VALUE);
+            lblKanjiFontsize.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
+            lblHiraganaFontsize.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
+            lblMeaningFColor.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
+            lblMeaningFontsize.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
             button1.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSAVE_VALUE);
             button2.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+            lblKanjiBgColor.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLBGCLR_VALUE);
+            lblKanjiFColor.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
+            lblHiraganaBgColor.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLBGCLR_VALUE);
+            lblHiraganaFColor.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
+            lblMeaningBgColor.Text = Common.GetResourceValue(Constants.RES_LBLBGCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLBGCLR_VALUE);
+            lblMeaningFColor.Text = Common.GetResourceValue(Constants.RES_LBLFCLR_NAME, objCulInfo, objResourceManager, Constants.RES_LBLFCLR_VALUE);
+            chkboxKanji.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
+            chkboxHiragana.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
+            chkboxMeaning.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
         }
     }
 }

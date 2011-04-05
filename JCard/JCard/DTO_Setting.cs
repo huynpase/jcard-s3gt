@@ -8,7 +8,7 @@ namespace JCard
         //Set values for Form Vocabulary
         #region Position
         string _PositionVOC;
-        int _DisplayTimeVOC,_WaitingTimeVOC;
+        int _DisplayTimeVOC, _WaitingTimeVOC, _Width;
 
         public string PositionVOC
         {
@@ -27,6 +27,13 @@ namespace JCard
             get { return _WaitingTimeVOC; }
             set { _WaitingTimeVOC = value; }
         }
+
+        public int Width
+        {
+            get { return _Width; }
+            set { _Width = value; }
+        }
+
         #endregion
 
         //Set values for Kanji field
