@@ -300,7 +300,7 @@
             // pnlVieFClr
             // 
             this.pnlVieFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlVieFClr.Location = new System.Drawing.Point(302, 59);
+            this.pnlVieFClr.Location = new System.Drawing.Point(304, 59);
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlVieFClr.TabIndex = 4;
@@ -486,7 +486,7 @@
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlExFClr.Location = new System.Drawing.Point(303, 73);
+            this.pnlExFClr.Location = new System.Drawing.Point(304, 73);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 4;
