@@ -24,7 +24,6 @@ namespace JCard
         #endregion
 
         private double opacityInc = .05;
-        private bool blFlagUpdated = false; // true: update manual.
 
         public fCLesson()
         {
@@ -230,7 +229,6 @@ namespace JCard
         {
             try
             {
-                blFlagUpdated = true;
                 // Get Grammars
                 BUS_Grammar buGram = new BUS_Grammar(strFilePath);
                 List<TreeNode> lstNodes = buGram.GetGrammarCardTree();
@@ -240,7 +238,6 @@ namespace JCard
                 cBoxCollapse_CheckedChanged_1(chbGramColAll, null);
 
                 if (chbGramAll.Checked) chBoxAll_CheckedChanged_1(chbGramAll, null);
-                blFlagUpdated = false;
             }
             catch (Exception ex)
             {
@@ -299,7 +296,6 @@ namespace JCard
         /// <param name="flag">ON/OFF</param>
         private void CheckAll(TreeView tv, bool flag)
         {
-            blFlagUpdated = true;
             if (flag)
             {
                 foreach (TreeNode tn in tv.Nodes)
@@ -322,7 +318,6 @@ namespace JCard
                     }
                 }
             }
-            blFlagUpdated = false;
         }
 
         private void cBoxCollapse_CheckedChanged_1(object sender, EventArgs e)
