@@ -13,6 +13,8 @@ namespace JCard
     public partial class fSetting : Form
     {
         string strFileSettingPath = Application.StartupPath + @"\Setting.ini";
+        DTO_Setting dtoSetting = new DTO_Setting();
+        BUS_Setting busSetting = new BUS_Setting();
         ResourceManager objResourceManager;
         CultureInfo objCulInfo;
 
@@ -25,28 +27,23 @@ namespace JCard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Ghi gia tri xuong file setting.ini
-            //PhuongHD add code 20110312
-            DTO_Setting dtoSetting = new DTO_Setting();
-            BUS_Setting busSetting = new BUS_Setting();
-            // postition display from hien tai set mot vi tri la bottom right
             try
             {
                 dtoSetting.PositionVOC = "BR";
-                dtoSetting.DisplayTimeVOC = int.Parse(comDisTime.Text);
-                dtoSetting.WaitingTimeVOC = int.Parse(comDeplayTime.Text);
+                dtoSetting.DisplayTimeVOC = int.Parse(numDisTime.Text);
+                dtoSetting.WaitingTimeVOC = int.Parse(numDelayTime.Text);
                 //Kanji
-                dtoSetting.Kanji_Fontsize = int.Parse(comFontKanji.Text);
+                dtoSetting.Kanji_Fontsize = int.Parse(numKanjiFontsize.Text);
                 dtoSetting.Kanji_BackColor = pnlKanjiBgClr.BackColor.ToArgb();
                 dtoSetting.Kanji_FontColor = pnlKanjiFClr.BackColor.ToArgb();
                 dtoSetting.Kanji_IsDisplayed = chkboxKanji.Checked;
                 //Hiragana
-                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);
+                dtoSetting.Hiragana_Fontsize = int.Parse(numHiraganaFontsize.Text);
                 dtoSetting.Hiragana_BackColor = pnlHiraganaBgClr.BackColor.ToArgb();
                 dtoSetting.Hiragana_FontColor = pnlHiraganaFClr.BackColor.ToArgb();
                 dtoSetting.Hiragana_IsDisplayed = chkboxHiragana.Checked;
                 //Meaning
-                dtoSetting.Meaning_Fontsize = int.Parse(comFontMeaning.Text);
+                dtoSetting.Meaning_Fontsize = int.Parse(numMeaningFontsize.Text);
                 dtoSetting.Meaning_BackColor = pnlMeaningBgClr.BackColor.ToArgb();
                 dtoSetting.Meaning_FontColor = pnlMeaningFClr.BackColor.ToArgb();
                 dtoSetting.Meaning_IsDisplayed = chkboxMeaning.Checked;
@@ -74,23 +71,23 @@ namespace JCard
             BUS_Setting bus = new BUS_Setting();
             dtoSetting = bus.ReadSetting(strFileSettingPath);
             //
-            comDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
-            comDeplayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
+            numDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
+            numDelayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
             //Kanji
             pnlKanjiBgClr.BackColor = Color.FromArgb(dtoSetting.Kanji_BackColor);
             pnlKanjiFClr.BackColor = Color.FromArgb(dtoSetting.Kanji_FontColor);
             chkboxKanji.Checked = dtoSetting.Kanji_IsDisplayed;
-            comFontKanji.Text = dtoSetting.Kanji_Fontsize.ToString();           
+            numKanjiFontsize.Text = dtoSetting.Kanji_Fontsize.ToString();           
             //Hiragana
             pnlHiraganaBgClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_BackColor);
             pnlHiraganaFClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_FontColor);
             chkboxHiragana.Checked = dtoSetting.Hiragana_IsDisplayed;
-            comFontKana.Text = dtoSetting.Hiragana_Fontsize.ToString();
+            numKanjiFontsize.Text = dtoSetting.Hiragana_Fontsize.ToString();
             //Meaning
             pnlMeaningBgClr.BackColor = Color.FromArgb(dtoSetting.Meaning_BackColor);
             pnlMeaningFClr.BackColor = Color.FromArgb(dtoSetting.Meaning_FontColor);
             chkboxMeaning.Checked = dtoSetting.Meaning_IsDisplayed;
-            comFontMeaning.Text = dtoSetting.Meaning_Fontsize.ToString();                                   
+            numMeaningFontsize.Text = dtoSetting.Meaning_Fontsize.ToString();                                   
         }
 
         private void fSetting_Load(object sender, EventArgs e)
@@ -153,7 +150,6 @@ namespace JCard
             }
         }
         #endregion
-
 
         #region Hiragana
 
