@@ -23,7 +23,7 @@ namespace JCard
         #endregion
         //Set values for Sample Panel
         #region Sample
-        int _BackColor, _ForeColor, _Width;
+        int _BackColor, _ForeColor, _Width, _Fontsize;
         public int BackColor
         {
             get { return _BackColor; }
@@ -41,10 +41,16 @@ namespace JCard
             get { return _Width; }
             set { _Width = value; }
         }
+
+        public int Fontsize
+        {
+            get { return _Fontsize; }
+            set { _Fontsize = value; }
+        }
         #endregion
         //Set values for Japanese Meaning Panel
         #region Japanese Meaning
-        int _JP_BackColor, _JP_ForeColor, _JP_Width;
+        int _JP_BackColor, _JP_ForeColor, _JP_Width, _JP_Fontsize;
         bool _JP_IsDiplayed;
 
         public int JP_BackColor
@@ -65,6 +71,12 @@ namespace JCard
             set { _JP_Width = value; }
         }
 
+        public int JP_Fontsize
+        {
+            get { return _JP_Fontsize; }
+            set { _JP_Fontsize = value; }
+        }
+
         public bool JP_Isdisplayed
         {
             get { return _JP_IsDiplayed; }
@@ -73,7 +85,7 @@ namespace JCard
         #endregion
         //Set values for Vietnamese Meaning Panel
         #region Vietnamese Meaning
-        int _VN_BackColor, _VN_ForeColor, _VN_Width;
+        int _VN_BackColor, _VN_ForeColor, _VN_Width, _VN_Fontsize;
         bool _VN_IsDisplayed;
 
         public int VN_BackColor
@@ -94,6 +106,12 @@ namespace JCard
             set { _VN_Width = value; }
         }
 
+        public int VN_Fontsize
+        {
+            get { return _VN_Fontsize; }
+            set { _VN_Fontsize = value; }
+        }
+
         public bool VN_IsDisplayed
         {
             get { return _VN_IsDisplayed; }
@@ -102,7 +120,7 @@ namespace JCard
         #endregion
         //Set values for Example Panel
         #region Example
-        int _Ex_BackColor, _Ex_ForeColor, _Ex_Width, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime;
+        int _Ex_BackColor, _Ex_ForeColor, _Ex_Width, _Ex_NoOfDisplay, _Ex_DisplayTime, _Ex_DelayTime, _Ex_Fontsize;
         bool _Ex_VN_IsDisplayed;
         public int Ex_BackColor
         {
@@ -138,6 +156,12 @@ namespace JCard
         {
             get { return _Ex_DelayTime; }
             set { _Ex_DelayTime = value; }
+        }
+
+        public int Ex_Fontsize
+        {
+            get { return _Ex_Fontsize; }
+            set { _Ex_Fontsize = value; }
         }
 
         public bool Ex_VN_IsDisplayed

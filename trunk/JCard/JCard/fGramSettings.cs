@@ -28,17 +28,21 @@ namespace JCard
             // Sample
             pnlSampleBgClr.BackColor = Color.FromArgb(ChangeGramSett.BackColor);
             pnlSampleFClr.BackColor = Color.FromArgb(ChangeGramSett.ForeColor);
+            numSmplFontsize.Text = ChangeGramSett.Fontsize.ToString();
             //Japanese Meaning
             pnlJapBgClr.BackColor = Color.FromArgb(ChangeGramSett.JP_BackColor);
             pnlJapFClr.BackColor = Color.FromArgb(ChangeGramSett.JP_ForeColor);
             chkboxJap.Checked = ChangeGramSett.JP_Isdisplayed;
+            numJapFontsize.Text = ChangeGramSett.JP_Fontsize.ToString();
             //Vietnamese Meaning
             pnlVieBgClr.BackColor = Color.FromArgb(ChangeGramSett.VN_BackColor);
             pnlVieFClr.BackColor = Color.FromArgb(ChangeGramSett.VN_ForeColor);
             chkboxVie.Checked = ChangeGramSett.VN_IsDisplayed;
-            //Example Meaning
+            numVieFontsize.Text = ChangeGramSett.VN_Fontsize.ToString();
+            //Example 
             pnlExBgClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_BackColor);
             pnlExFClr.BackColor = Color.FromArgb(ChangeGramSett.Ex_ForeColor);
+            numExFontsize.Text = ChangeGramSett.Ex_Fontsize.ToString();
             numNoDis.Text = ChangeGramSett.Ex_NoOfDisplay.ToString();
             numDisTim.Text = ChangeGramSett.Ex_DisplayTime.ToString();
             numDelayTim.Text = ChangeGramSett.Ex_DelayTime.ToString();
@@ -151,16 +155,24 @@ namespace JCard
         #endregion
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Sample
             ChangeGramSett.BackColor = pnlSampleBgClr.BackColor.ToArgb();
             ChangeGramSett.ForeColor = pnlSampleFClr.BackColor.ToArgb();
+            ChangeGramSett.Fontsize = int.Parse(numSmplFontsize.Text);
+            //Japanese Meaning
             ChangeGramSett.JP_BackColor = pnlJapBgClr.BackColor.ToArgb();
             ChangeGramSett.JP_ForeColor = pnlJapFClr.BackColor.ToArgb();
+            ChangeGramSett.JP_Fontsize = int.Parse(numJapFontsize.Text);
             ChangeGramSett.JP_Isdisplayed = chkboxJap.Checked;
+            //Vietnamese Meaning
             ChangeGramSett.VN_BackColor = pnlVieBgClr.BackColor.ToArgb();
             ChangeGramSett.VN_ForeColor = pnlVieFClr.BackColor.ToArgb();
+            ChangeGramSett.VN_Fontsize = int.Parse(numVieFontsize.Text);
             ChangeGramSett.VN_IsDisplayed = chkboxVie.Checked;
+            //Example 
             ChangeGramSett.Ex_BackColor = pnlExBgClr.BackColor.ToArgb();
             ChangeGramSett.Ex_ForeColor = pnlExFClr.BackColor.ToArgb();
+            ChangeGramSett.Ex_Fontsize = int.Parse(numExFontsize.Text);
             ChangeGramSett.Ex_NoOfDisplay = int.Parse(numNoDis.Text);
             ChangeGramSett.Ex_DisplayTime = int.Parse(numDisTim.Text);
             ChangeGramSett.Ex_DelayTime = int.Parse(numDelayTim.Text);
@@ -228,6 +240,7 @@ namespace JCard
             chkboxEx.Text = Common.GetResourceValue(Constants.RES_CHKBOXVNISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXVNISDISPLAYED_VALUE);
             btnSave.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSAVE_VALUE);
             btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
+            lblFontsize.Text = lblJapFontSize.Text = lblVieFontSize.Text = lblExFontSize.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
         }
 
     }
