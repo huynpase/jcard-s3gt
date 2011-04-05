@@ -171,11 +171,12 @@
             // treeView1
             // 
             this.treeView1.CheckBoxes = true;
+            this.treeView1.HideSelection = false;
             this.treeView1.Location = new System.Drawing.Point(9, 35);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(441, 300);
             this.treeView1.TabIndex = 2;
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvGrammars_AfterCheck);
             // 
             // chBoxAll
             // 
@@ -275,11 +276,12 @@
             // trvGrammars
             // 
             this.trvGrammars.CheckBoxes = true;
+            this.trvGrammars.HideSelection = false;
             this.trvGrammars.Location = new System.Drawing.Point(9, 35);
             this.trvGrammars.Name = "trvGrammars";
             this.trvGrammars.Size = new System.Drawing.Size(441, 300);
             this.trvGrammars.TabIndex = 2;
-            this.trvGrammars.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.trvGrammars.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvGrammars_AfterCheck);
             // 
             // chbGramAll
             // 

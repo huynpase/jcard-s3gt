@@ -45,6 +45,7 @@ namespace JCard
                     gramCard.STR_Syntax = reader["Syntax"].ToString();
                     gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
                     gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
+                    gramCard.BL_IsLastSelected = bool.Parse(reader["IsLastSelected"].ToString()); // get last selected status
 
                     for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                     {
@@ -88,6 +89,7 @@ namespace JCard
                     gramCard.STR_Syntax = reader["Syntax"].ToString();
                     gramCard.STR_Meaning_JP = reader["Meaning_JP"].ToString();
                     gramCard.STR_Meaning_VN = reader["Meaning_VN"].ToString();
+                    gramCard.BL_IsLastSelected = bool.Parse(reader["IsLastSelected"].ToString()); // get last selected status
 
                     for (int i = 0; i < Constants.MAX_GRAMMAR_EXAMPLE; i++)
                     {
@@ -373,6 +375,45 @@ namespace JCard
                 throw (ex);
             }
             return result;
+        }
+
+        /// <summary>
+        /// Reset all values of field IsLastSelected become to false
+        /// </summary>
+        /// <param name="arrDtoGrams">Arraylist of updated Grammar</param>
+        public void UpdateIsLastSelected(ArrayList arrDtoGrams)
+        {
+            DataProvider dPro = new DataProvider(str_datasource);
+            string sql1 = "UPDATE S3GT_GRAM SET IsLastSelected=false WHERE IsLastSelected=true";
+            string sql2 = "UPDATE S3GT_GRAM SET IsLastSelected={0} WHERE GR_ID={1}";
+            string tempSql;
+
+            try
+            {
+                // begin transaction
+                dPro.beginTransaction();
+
+                dPro.executeNonQueryTrans(sql1);
+
+                for (int i = 0; i < arrDtoGrams.Count; i++)
+                {
+                    DTO_Grammar dto = (DTO_Grammar)arrDtoGrams[i];
+                    tempSql = String.Format(sql2, dto.BL_IsLastSelected.ToString(), dto.LGR_ID);
+
+                    dPro.executeNonQueryTrans(tempSql);
+                }
+
+                dPro.commitTransaction();
+            }
+            catch (Exception ex)
+            {
+                dPro.rollbackTransaction();
+                throw ex;
+            }
+            finally
+            {
+                dPro.endTransaction();
+            }
         }
         #endregion
     }

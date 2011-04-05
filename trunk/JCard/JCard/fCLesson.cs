@@ -24,6 +24,7 @@ namespace JCard
         #endregion
 
         private double opacityInc = .05;
+        private bool blFlagUpdated = false; // true: update manual.
 
         public fCLesson()
         {
@@ -48,6 +49,8 @@ namespace JCard
             this.Show();
             this.Activate();            
             this.TopMost = false;
+
+            tabControl1_SelectedIndexChanged(null, null);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -227,6 +230,7 @@ namespace JCard
         {
             try
             {
+                blFlagUpdated = true;
                 // Get Grammars
                 BUS_Grammar buGram = new BUS_Grammar(strFilePath);
                 List<TreeNode> lstNodes = buGram.GetGrammarCardTree();
@@ -234,42 +238,13 @@ namespace JCard
                 trvGrammars.Nodes.AddRange(lstNodes.ToArray());
 
                 cBoxCollapse_CheckedChanged_1(chbGramColAll, null);
-                chBoxAll_CheckedChanged_1(chbGramAll, null);
+
+                if (chbGramAll.Checked) chBoxAll_CheckedChanged_1(chbGramAll, null);
+                blFlagUpdated = false;
             }
             catch (Exception ex)
             {
                 Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
-            }
-        }
-
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            // TreeNode node;
-            // bool blnAll;
-            if (e.Node.Level == 0)
-            {
-                foreach (TreeNode node in e.Node.Nodes)
-                {
-                    node.Checked = e.Node.Checked;
-                }
-            }
-            else
-            {
-                bool blnAll = false;
-                foreach (TreeNode node in e.Node.Parent.Nodes)
-                {
-                    blnAll |= node.Checked;
-                }
-                e.Node.Parent.Checked = blnAll;
-            }
-
-            if (sender == treeView1)
-            {
-                if (chBoxAll.Checked && !e.Node.Checked) chBoxAll.CheckState = CheckState.Unchecked;
-            }
-            else if (sender == trvGrammars)
-            {
-                if (chbGramAll.Checked && !e.Node.Checked) chbGramAll.CheckState = CheckState.Unchecked;
             }
         }
 
@@ -292,6 +267,7 @@ namespace JCard
         /// <param name="flag">ON/OFF</param>
         private void CheckAll(TreeView tv, bool flag)
         {
+            blFlagUpdated = true;
             if (flag)
             {
                 foreach (TreeNode tn in tv.Nodes)
@@ -314,6 +290,7 @@ namespace JCard
                     }
                 }
             }
+            blFlagUpdated = false;
         }
 
         private void cBoxCollapse_CheckedChanged_1(object sender, EventArgs e)
@@ -382,6 +359,7 @@ namespace JCard
                         if (rootNode.Nodes[j].Checked)
                         {
                             DTO_Grammar dtoGram = (DTO_Grammar)rootNode.Nodes[j].Tag;
+                            dtoGram.BL_IsLastSelected = true;
                             result.Add(dtoGram);
                         }
                     }
@@ -399,12 +377,18 @@ namespace JCard
             {
                 ///* Get grammar cards frm database
                 ArrayList arr_Entry = GetSelectedGrammarCards(trvGrammars.Nodes);
-                //*/
+
+                //Clear treeview
+                trvGrammars.Nodes.Clear();
+                this.Hide();
+
+                // Update selected status.
+                BUS_Grammar buGram = new BUS_Grammar(txtDatabaseGram.Text);
+                buGram.UpdateIsLastSelected(arr_Entry);
+                //*/                            
 
                 fGrammar fg = new fGrammar(arr_Entry, this);
-                fg.Show();
-                
-                this.Hide();                               
+                fg.Show();                                               
             }
             else
             {
@@ -452,15 +436,19 @@ namespace JCard
             if (CheckChosedDataOfTreeView() != false)
             {
                 try
-                {
-                    oJcard.ResetIsLastTopic();
+                {   
                     arrListTopic = GetListTopicChosen();
                     arrVoc = oJcard.GetContentTableVocByTopicID(arrListTopic);
+
+                    treeView1.Nodes.Clear();
+                    this.Hide();
+
+                    oJcard.ResetIsLastTopic();
                     oJcard.UpdateIsLastTopic(arrListTopic, true);
-                    //fJCard fjcard = new fJCard(iFlag, arrVoc);
+
                     fJCard fjcard = new fJCard(iFlag, arrVoc, this);
                     fjcard.Show();
-                    this.Hide();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -596,5 +584,37 @@ namespace JCard
             ab.ShowDialog();
         }
         #endregion     
+
+        private void trvGrammars_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (e.Action == TreeViewAction.ByMouse || e.Action == TreeViewAction.ByKeyboard)
+            {
+                if (e.Node.Level == 0)
+                {
+                    foreach (TreeNode node in e.Node.Nodes)
+                    {
+                        node.Checked = e.Node.Checked;
+                    }
+                }
+                else
+                {
+                    bool blnAll = false;
+                    foreach (TreeNode node in e.Node.Parent.Nodes)
+                    {
+                        blnAll |= node.Checked;
+                    }
+                    e.Node.Parent.Checked = blnAll;
+                }
+
+                if (sender == treeView1)
+                {
+                    if (chBoxAll.Checked && !e.Node.Checked) chBoxAll.CheckState = CheckState.Unchecked;
+                }
+                else if (sender == trvGrammars)
+                {
+                    if (chbGramAll.Checked && !e.Node.Checked) chbGramAll.CheckState = CheckState.Unchecked;
+                }
+            }
+        }
     }
 }

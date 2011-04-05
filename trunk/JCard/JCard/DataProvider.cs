@@ -9,9 +9,10 @@ namespace JCard
 {
     public class DataProvider
     {
-
         protected OleDbCommand _command;
         protected String _ConnectionString;
+        protected OleDbTransaction _transaction;
+        protected OleDbConnection _connection;
 
         string str_datasource;
 
@@ -83,5 +84,53 @@ namespace JCard
             }
         }
 
+        public void beginTransaction()
+        {
+            _connection = this.Connect();
+            _transaction = _connection.BeginTransaction();
+            _command = _connection.CreateCommand();
+
+            _command.Connection = _connection;
+            _command.Transaction = _transaction;
+        }
+
+        public void executeNonQueryTrans(string strQuery)
+        {
+            _command.CommandText = strQuery;
+            _command.ExecuteNonQuery();
+        }
+
+        public void commitTransaction()
+        {
+            _transaction.Commit();
+        }
+
+        public void rollbackTransaction()
+        {
+            _transaction.Rollback();
+        }
+
+        public void endTransaction()
+        {
+            if (_connection != null)
+            {
+                if (_connection.State != ConnectionState.Closed)
+                {
+                    _connection.Close();
+                }
+
+                _connection.Dispose();
+            }
+
+            if (_command != null)
+            {
+                _command.Dispose();
+            }
+
+            if (_transaction != null)
+            {
+                _transaction.Dispose();
+            }
+        }
     }
 }
