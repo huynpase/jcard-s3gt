@@ -248,6 +248,38 @@ namespace JCard
             }
         }
 
+        private void trvGrammars_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (e.Action == TreeViewAction.ByMouse || e.Action == TreeViewAction.ByKeyboard)
+            {
+                if (e.Node.Level == 0)
+                {
+                    foreach (TreeNode node in e.Node.Nodes)
+                    {
+                        node.Checked = e.Node.Checked;
+                    }
+                }
+                else
+                {
+                    bool blnAll = false;
+                    foreach (TreeNode node in e.Node.Parent.Nodes)
+                    {
+                        blnAll |= node.Checked;
+                    }
+                    e.Node.Parent.Checked = blnAll;
+                }
+
+                if (sender == treeView1)
+                {
+                    if (chBoxAll.Checked && !e.Node.Checked) chBoxAll.CheckState = CheckState.Unchecked;
+                }
+                else if (sender == trvGrammars)
+                {
+                    if (chbGramAll.Checked && !e.Node.Checked) chbGramAll.CheckState = CheckState.Unchecked;
+                }
+            }
+        }
+
         private void chBoxAll_CheckedChanged_1(object sender, EventArgs e)
         {
             if (sender == chBoxAll)
@@ -583,38 +615,6 @@ namespace JCard
             About ab = new About();
             ab.ShowDialog();
         }
-        #endregion     
-
-        private void trvGrammars_AfterCheck(object sender, TreeViewEventArgs e)
-        {
-            if (e.Action == TreeViewAction.ByMouse || e.Action == TreeViewAction.ByKeyboard)
-            {
-                if (e.Node.Level == 0)
-                {
-                    foreach (TreeNode node in e.Node.Nodes)
-                    {
-                        node.Checked = e.Node.Checked;
-                    }
-                }
-                else
-                {
-                    bool blnAll = false;
-                    foreach (TreeNode node in e.Node.Parent.Nodes)
-                    {
-                        blnAll |= node.Checked;
-                    }
-                    e.Node.Parent.Checked = blnAll;
-                }
-
-                if (sender == treeView1)
-                {
-                    if (chBoxAll.Checked && !e.Node.Checked) chBoxAll.CheckState = CheckState.Unchecked;
-                }
-                else if (sender == trvGrammars)
-                {
-                    if (chbGramAll.Checked && !e.Node.Checked) chbGramAll.CheckState = CheckState.Unchecked;
-                }
-            }
-        }
+        #endregion
     }
 }
