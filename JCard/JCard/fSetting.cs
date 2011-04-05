@@ -36,8 +36,7 @@ namespace JCard
                 dtoSetting.DisplayTimeVOC = int.Parse(comDisTime.Text);
                 dtoSetting.WaitingTimeVOC = int.Parse(comDeplayTime.Text);
                 dtoSetting.Kanji_Fontsize = int.Parse(comFontKanji.Text);
-                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);
-                
+                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);                
                 busSetting.SaveSetting(dtoSetting,strFileSettingPath);
                 
             }
