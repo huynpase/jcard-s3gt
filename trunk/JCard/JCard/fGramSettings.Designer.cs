@@ -144,7 +144,7 @@
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 1;
-            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);           
+            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
             // 
@@ -370,14 +370,14 @@
             this.grbEx.Controls.Add(this.lblExBgClr);
             this.grbEx.Location = new System.Drawing.Point(12, 303);
             this.grbEx.Name = "grbEx";
-            this.grbEx.Size = new System.Drawing.Size(391, 178);
+            this.grbEx.Size = new System.Drawing.Size(391, 162);
             this.grbEx.TabIndex = 3;
             this.grbEx.TabStop = false;
             this.grbEx.Text = "Examples";
             // 
             // numExFontsize
             // 
-            this.numExFontsize.Location = new System.Drawing.Point(117, 48);
+            this.numExFontsize.Location = new System.Drawing.Point(117, 39);
             this.numExFontsize.Maximum = new decimal(new int[] {
             30,
             0,
@@ -400,7 +400,7 @@
             // lblExFontSize
             // 
             this.lblExFontSize.AutoSize = true;
-            this.lblExFontSize.Location = new System.Drawing.Point(7, 50);
+            this.lblExFontSize.Location = new System.Drawing.Point(7, 41);
             this.lblExFontSize.Name = "lblExFontSize";
             this.lblExFontSize.Size = new System.Drawing.Size(51, 13);
             this.lblExFontSize.TabIndex = 11;
@@ -418,7 +418,7 @@
             // 
             // numDelayTim
             // 
-            this.numDelayTim.Location = new System.Drawing.Point(303, 147);
+            this.numDelayTim.Location = new System.Drawing.Point(303, 132);
             this.numDelayTim.Maximum = new decimal(new int[] {
             10,
             0,
@@ -437,12 +437,12 @@
             0,
             0,
             0});
-            this.numDelayTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             this.numDelayTim.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numDelayTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // numDisTim
             // 
-            this.numDisTim.Location = new System.Drawing.Point(118, 147);
+            this.numDisTim.Location = new System.Drawing.Point(118, 132);
             this.numDisTim.Maximum = new decimal(new int[] {
             60,
             0,
@@ -461,12 +461,12 @@
             0,
             0,
             0});
-            this.numDisTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             this.numDisTim.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numDisTim.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // numNoDis
             // 
-            this.numNoDis.Location = new System.Drawing.Point(118, 116);
+            this.numNoDis.Location = new System.Drawing.Point(118, 101);
             this.numNoDis.Maximum = new decimal(new int[] {
             10,
             0,
@@ -480,13 +480,13 @@
             0,
             0,
             0});
-            this.numNoDis.Leave += new System.EventHandler(this.numNoDis_Leave);
             this.numNoDis.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numNoDis.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // pnlExFClr
             // 
             this.pnlExFClr.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlExFClr.Location = new System.Drawing.Point(304, 73);
+            this.pnlExFClr.Location = new System.Drawing.Point(304, 68);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExFClr.TabIndex = 4;
@@ -495,7 +495,7 @@
             // pnlExBgClr
             // 
             this.pnlExBgClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlExBgClr.Location = new System.Drawing.Point(118, 73);
+            this.pnlExBgClr.Location = new System.Drawing.Point(118, 68);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlExBgClr.TabIndex = 2;
@@ -504,7 +504,7 @@
             // lblDelayTim
             // 
             this.lblDelayTim.AutoSize = true;
-            this.lblDelayTim.Location = new System.Drawing.Point(220, 149);
+            this.lblDelayTim.Location = new System.Drawing.Point(220, 134);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
             this.lblDelayTim.TabIndex = 9;
@@ -513,7 +513,7 @@
             // lblDisTim
             // 
             this.lblDisTim.AutoSize = true;
-            this.lblDisTim.Location = new System.Drawing.Point(6, 149);
+            this.lblDisTim.Location = new System.Drawing.Point(6, 134);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(84, 13);
             this.lblDisTim.TabIndex = 7;
@@ -522,7 +522,7 @@
             // lblExNoDis
             // 
             this.lblExNoDis.AutoSize = true;
-            this.lblExNoDis.Location = new System.Drawing.Point(6, 118);
+            this.lblExNoDis.Location = new System.Drawing.Point(6, 103);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
             this.lblExNoDis.TabIndex = 5;
@@ -531,7 +531,7 @@
             // lblExFClr
             // 
             this.lblExFClr.AutoSize = true;
-            this.lblExFClr.Location = new System.Drawing.Point(220, 85);
+            this.lblExFClr.Location = new System.Drawing.Point(220, 80);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(58, 13);
             this.lblExFClr.TabIndex = 3;
@@ -540,7 +540,7 @@
             // lblExBgClr
             // 
             this.lblExBgClr.AutoSize = true;
-            this.lblExBgClr.Location = new System.Drawing.Point(7, 85);
+            this.lblExBgClr.Location = new System.Drawing.Point(7, 80);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
             this.lblExBgClr.TabIndex = 1;
@@ -550,7 +550,7 @@
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.Location = new System.Drawing.Point(105, 486);
+            this.btnSave.Location = new System.Drawing.Point(105, 478);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 29);
             this.btnSave.TabIndex = 4;
@@ -563,7 +563,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancel.Location = new System.Drawing.Point(214, 486);
+            this.btnCancel.Location = new System.Drawing.Point(214, 478);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 29);
             this.btnCancel.TabIndex = 5;
@@ -576,7 +576,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JCard.Properties.Resources.Back2;
-            this.ClientSize = new System.Drawing.Size(419, 524);
+            this.ClientSize = new System.Drawing.Size(419, 513);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grbEx);

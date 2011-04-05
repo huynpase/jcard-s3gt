@@ -38,7 +38,7 @@ namespace JCard
 
         //Set values for Kanji field
         #region Kanji
-        int _Kanji_BackColor, _Kanji_ForeColor, _Kanji_FontSize, _Kanji_Width;
+        int _Kanji_BackColor, _Kanji_ForeColor, _Kanji_FontSize;
         bool _Kanji_IsDisplayed;
 
         public int Kanji_BackColor
@@ -68,7 +68,7 @@ namespace JCard
 
         //Set values for Hiragana field
         #region Hiragana
-        int _Hiragana_BackColor, _Hiragana_ForeColor, _Hiragana_FontSize, _Hiragana_Width;
+        int _Hiragana_BackColor, _Hiragana_ForeColor, _Hiragana_FontSize;
         bool _Hiragana_IsDisplayed;
 
         public int Hiragana_BackColor
@@ -98,7 +98,7 @@ namespace JCard
 
         //Set values for Meaning field
         #region Meaning
-        int _Meaning_BackColor, _Meaning_ForeColor, _Meaning_FontSize, _Meaning_Width;
+        int _Meaning_BackColor, _Meaning_ForeColor, _Meaning_FontSize;
         bool _Meaning_IsDisplayed;
 
         public int Meaning_BackColor
