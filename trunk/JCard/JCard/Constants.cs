@@ -34,6 +34,8 @@ namespace JCard
         public const string Ex_VNIsDisplayed = "True";
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
+        public const int MinFontSizeVOC = 13;
+        public const int PaddingGRAM = 13;
 
         //Vocabulary Card
         public const string PositionVOC = "BR";
@@ -54,8 +56,7 @@ namespace JCard
         public const string Meaning_BackColor = "-8000";
         public const string Meaning_FontColor = "-16777216";
         public const string Meaning_IsDisplayed = "True";
-        public const string Meaning_Fontsize = "15";
-
+        public const string Meaning_Fontsize = "15";        
         // App Config
         public const string CONFIG_LANGUAGE_KEY = "Language";
         public const string CONFIG_LANGUAGE_VALUE = "vi-VN";
