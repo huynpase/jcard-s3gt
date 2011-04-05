@@ -25,7 +25,7 @@ namespace JCard
             string filePath = Application.StartupPath;
             filePath += @"\GramSettings.ini";
             ChangeGramSett = busGramSett.ReadGramSetting(filePath);
-            // Sample
+            // Sample            
             pnlSampleBgClr.BackColor = Color.FromArgb(ChangeGramSett.BackColor);
             pnlSampleFClr.BackColor = Color.FromArgb(ChangeGramSett.ForeColor);
             numSmplFontsize.Text = ChangeGramSett.Fontsize.ToString();
