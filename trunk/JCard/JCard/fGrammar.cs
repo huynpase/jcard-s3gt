@@ -86,7 +86,7 @@ namespace JCard
             /* Gan event MouseMove va MouseLeave cho pnlExample */
             pnlExample.MouseMove += new MouseEventHandler(pnlExample_MouseMove);
             pnlExample.MouseLeave += new EventHandler(pnlExample_MouseLeave);
-            
+
             ///* Get Gram Setting        
             // Đọc setting values
             strSettingFile = Application.StartupPath + strSettingFile;
@@ -166,6 +166,26 @@ namespace JCard
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
         }
 
+        /// <summary>
+        /// Changes the size of the font.
+        /// </summary>
+        /// <param name="font">The font.</param>
+        /// <param name="fontSize">Size of the font.</param>
+        /// <returns></returns>
+        private Font ChangeFontSize(Font font, float fontSize)
+        {
+            if (font != null)
+            {
+                float currentSize = font.Size;
+                if (currentSize != fontSize)
+                {
+                    font = new Font(font.Name, fontSize,
+                        font.Style, font.Unit,
+                        font.GdiCharSet, font.GdiVerticalFont);
+                }
+            }
+            return font;
+        }
         // Set thuộc tính hiển thị cho các area.
         private void SetDisplayProperties()
         {
@@ -174,22 +194,30 @@ namespace JCard
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(dto_gramSetting.Left, dto_gramSetting.Top);
 
-            // Sample area
+            // Sample area            
             pnlSample.BackColor = Color.FromArgb(dto_gramSetting.BackColor);
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
-            
+            lblSample.BackColor = pnlSample.BackColor;
+            lblSample.Font = ChangeFontSize(lblSample.Font, dto_gramSetting.Fontsize);
+            lblSample.Height = (int)(lblSample.Font.Size * Constants.RatioSizeGRAM) + 1;
+
             // JP Meaning area
             pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
             pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
+            lblJPMeaning.Font = ChangeFontSize(lblJPMeaning.Font, dto_gramSetting.JP_Fontsize);
+            lblJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;            
 
             // VN Meaning area
             pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
             pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
+            lblVNMeaning.Font = ChangeFontSize(lblVNMeaning.Font, dto_gramSetting.VN_Fontsize);
+            lblVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;
 
             // Example area
             pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
             pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
-
+            lblExample.Font = ChangeFontSize(lblExample.Font, dto_gramSetting.Ex_Fontsize);
+            lblExample.Height = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM) + 1;
 
             // Set top, left and height of Meaning            
             lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
@@ -197,7 +225,6 @@ namespace JCard
 
             lblVNMeaning.Top = lblJPMeaning.Top;
             lblVNMeaning.Left = lblJPMeaning.Left;
-
             // Resize
             if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
             {
@@ -238,7 +265,6 @@ namespace JCard
                     }
                 }
             }
-
             // Set width
             SetWidthOfArea();
         }
@@ -514,7 +540,7 @@ namespace JCard
         // Khi click exit tren contextMenuStrip
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = Common.ShowConfirmMsg(objCulInfo, objResourceManager, 
+            DialogResult dr = Common.ShowConfirmMsg(objCulInfo, objResourceManager,
                 Constants.RES_CLOSE_PROGRAM_NAME, Constants.RES_CLOSE_PROGRAM_VALUE);
             if (dr == DialogResult.Yes)
             {
@@ -530,11 +556,11 @@ namespace JCard
         private void fGrammar_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer_wait.Enabled = false;
-            timer.Enabled = false;            
+            timer.Enabled = false;
 
             // Save settings
             SaveSettings();
-            
+
             frmParent.ReShow(); // Reshow Main Screen
             //this.Dispose();
             //Application.Exit();
@@ -786,7 +812,7 @@ namespace JCard
         private void btnExampleNxt_MouseLeave(object sender, EventArgs e)
         {
             if (!bool_display)
-                if(!flag_closed)
+                if (!flag_closed)
                     timer.Enabled = true;
         }
         #endregion
@@ -804,8 +830,8 @@ namespace JCard
                 /* Xu ly tuong quan giua back grammar card va back example --> */
                 if (count_example_forward != 1 && count_forward == 1)
                 {// Khi dang trong qua trinh thao tac voi chuc nang Back Example thi chuyen sang 
-                 // thao tac voi chuc nang Back Grammar.
-                 // Tinh grammar card hien tai de xu ly chuc nang back Grammar
+                    // thao tac voi chuc nang Back Grammar.
+                    // Tinh grammar card hien tai de xu ly chuc nang back Grammar
                     if (arr_CardForward.Contains((int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward]))
                     {
                         count_forward = arr_CardForward.Count - arr_CardForward.IndexOf(
@@ -866,7 +892,7 @@ namespace JCard
                 // Trong qua trinh thao tac voi chuc nang Back Grammar thi chuyen sang thao tac voi Back Example
                 if (count_forward != 0)
                     count_forward = 0;
-                
+
                 int temp_index_entry = (int)arr_CardExampleForward[arr_CardExampleForward.Count - count_example_forward];
                 int temp_index_example = (int)arr_ExampleForward[arr_ExampleForward.Count - count_example_forward];
                 SetControlValues(arr_tempEntry, temp_index_entry);
