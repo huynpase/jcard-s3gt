@@ -32,8 +32,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.grbMeaning = new System.Windows.Forms.GroupBox();
+            this.pnlMeaningFClr = new System.Windows.Forms.Panel();
+            this.pnlMeaningBgClr = new System.Windows.Forms.Panel();
             this.comFontMeaning = new System.Windows.Forms.ComboBox();
+            this.chkboxMeaning = new System.Windows.Forms.CheckBox();
+            this.lblMeaningFColor = new System.Windows.Forms.Label();
             this.lblMeaningFontsize = new System.Windows.Forms.Label();
+            this.lblMeaningBgColor = new System.Windows.Forms.Label();
             this.comFontKana = new System.Windows.Forms.ComboBox();
             this.lblHiraganaFontsize = new System.Windows.Forms.Label();
             this.comFontKanji = new System.Windows.Forms.ComboBox();
@@ -48,22 +53,17 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.grbKanji = new System.Windows.Forms.GroupBox();
-            this.lblKanjiBgColor = new System.Windows.Forms.Label();
-            this.lblKanjiFColor = new System.Windows.Forms.Label();
+            this.pnlKanjiFClr = new System.Windows.Forms.Panel();
+            this.pnlKanjiBgClr = new System.Windows.Forms.Panel();
             this.chkboxKanji = new System.Windows.Forms.CheckBox();
+            this.lblKanjiFColor = new System.Windows.Forms.Label();
+            this.lblKanjiBgColor = new System.Windows.Forms.Label();
             this.grbHiragana = new System.Windows.Forms.GroupBox();
+            this.pnlHiraganaFClr = new System.Windows.Forms.Panel();
+            this.pnlHiraganaBgClr = new System.Windows.Forms.Panel();
             this.chkboxHiragana = new System.Windows.Forms.CheckBox();
             this.lblHiraganaFColor = new System.Windows.Forms.Label();
             this.lblHiraganaBgColor = new System.Windows.Forms.Label();
-            this.chkboxMeaning = new System.Windows.Forms.CheckBox();
-            this.lblMeaningFColor = new System.Windows.Forms.Label();
-            this.lblMeaningBgColor = new System.Windows.Forms.Label();
-            this.pnlSampleBgClr = new System.Windows.Forms.Panel();
-            this.pnlSampleFClr = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.grbMeaning.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grbKanji.SuspendLayout();
@@ -95,8 +95,8 @@
             // grbMeaning
             // 
             this.grbMeaning.BackColor = System.Drawing.Color.Transparent;
-            this.grbMeaning.Controls.Add(this.panel4);
-            this.grbMeaning.Controls.Add(this.panel3);
+            this.grbMeaning.Controls.Add(this.pnlMeaningFClr);
+            this.grbMeaning.Controls.Add(this.pnlMeaningBgClr);
             this.grbMeaning.Controls.Add(this.comFontMeaning);
             this.grbMeaning.Controls.Add(this.chkboxMeaning);
             this.grbMeaning.Controls.Add(this.lblMeaningFColor);
@@ -108,6 +108,24 @@
             this.grbMeaning.TabIndex = 1;
             this.grbMeaning.TabStop = false;
             this.grbMeaning.Text = "Meaning";
+            // 
+            // pnlMeaningFClr
+            // 
+            this.pnlMeaningFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlMeaningFClr.Location = new System.Drawing.Point(263, 42);
+            this.pnlMeaningFClr.Name = "pnlMeaningFClr";
+            this.pnlMeaningFClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlMeaningFClr.TabIndex = 6;
+            this.pnlMeaningFClr.DoubleClick += new System.EventHandler(this.pnlMeaningFClr_DoubleClick);
+            // 
+            // pnlMeaningBgClr
+            // 
+            this.pnlMeaningBgClr.BackColor = System.Drawing.Color.Maroon;
+            this.pnlMeaningBgClr.Location = new System.Drawing.Point(118, 42);
+            this.pnlMeaningBgClr.Name = "pnlMeaningBgClr";
+            this.pnlMeaningBgClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlMeaningBgClr.TabIndex = 14;
+            this.pnlMeaningBgClr.DoubleClick += new System.EventHandler(this.pnlMeaningBgClr_DoubleClick);
             // 
             // comFontMeaning
             // 
@@ -127,6 +145,25 @@
             this.comFontMeaning.TabIndex = 11;
             this.comFontMeaning.Text = "5";
             // 
+            // chkboxMeaning
+            // 
+            this.chkboxMeaning.AutoSize = true;
+            this.chkboxMeaning.Location = new System.Drawing.Point(12, 16);
+            this.chkboxMeaning.Name = "chkboxMeaning";
+            this.chkboxMeaning.Size = new System.Drawing.Size(83, 17);
+            this.chkboxMeaning.TabIndex = 10;
+            this.chkboxMeaning.Text = "Is Displayed";
+            this.chkboxMeaning.UseVisualStyleBackColor = true;
+            // 
+            // lblMeaningFColor
+            // 
+            this.lblMeaningFColor.AutoSize = true;
+            this.lblMeaningFColor.Location = new System.Drawing.Point(177, 54);
+            this.lblMeaningFColor.Name = "lblMeaningFColor";
+            this.lblMeaningFColor.Size = new System.Drawing.Size(55, 13);
+            this.lblMeaningFColor.TabIndex = 9;
+            this.lblMeaningFColor.Text = "Font Color";
+            // 
             // lblMeaningFontsize
             // 
             this.lblMeaningFontsize.AutoSize = true;
@@ -135,6 +172,15 @@
             this.lblMeaningFontsize.Size = new System.Drawing.Size(54, 13);
             this.lblMeaningFontsize.TabIndex = 10;
             this.lblMeaningFontsize.Text = "Font Size:";
+            // 
+            // lblMeaningBgColor
+            // 
+            this.lblMeaningBgColor.AutoSize = true;
+            this.lblMeaningBgColor.Location = new System.Drawing.Point(9, 54);
+            this.lblMeaningBgColor.Name = "lblMeaningBgColor";
+            this.lblMeaningBgColor.Size = new System.Drawing.Size(92, 13);
+            this.lblMeaningBgColor.TabIndex = 8;
+            this.lblMeaningBgColor.Text = "Background Color";
             // 
             // comFontKana
             // 
@@ -321,8 +367,8 @@
             // grbKanji
             // 
             this.grbKanji.BackColor = System.Drawing.Color.Transparent;
-            this.grbKanji.Controls.Add(this.pnlSampleFClr);
-            this.grbKanji.Controls.Add(this.pnlSampleBgClr);
+            this.grbKanji.Controls.Add(this.pnlKanjiFClr);
+            this.grbKanji.Controls.Add(this.pnlKanjiBgClr);
             this.grbKanji.Controls.Add(this.chkboxKanji);
             this.grbKanji.Controls.Add(this.lblKanjiFColor);
             this.grbKanji.Controls.Add(this.lblKanjiBgColor);
@@ -335,23 +381,23 @@
             this.grbKanji.TabStop = false;
             this.grbKanji.Text = "Kanji";
             // 
-            // lblKanjiBgColor
+            // pnlKanjiFClr
             // 
-            this.lblKanjiBgColor.AutoSize = true;
-            this.lblKanjiBgColor.Location = new System.Drawing.Point(9, 55);
-            this.lblKanjiBgColor.Name = "lblKanjiBgColor";
-            this.lblKanjiBgColor.Size = new System.Drawing.Size(92, 13);
-            this.lblKanjiBgColor.TabIndex = 0;
-            this.lblKanjiBgColor.Text = "Background Color";
+            this.pnlKanjiFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlKanjiFClr.Location = new System.Drawing.Point(263, 43);
+            this.pnlKanjiFClr.Name = "pnlKanjiFClr";
+            this.pnlKanjiFClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlKanjiFClr.TabIndex = 4;
+            this.pnlKanjiFClr.DoubleClick += new System.EventHandler(this.pnlKanjiFClr_DoubleClick);
             // 
-            // lblKanjiFColor
+            // pnlKanjiBgClr
             // 
-            this.lblKanjiFColor.AutoSize = true;
-            this.lblKanjiFColor.Location = new System.Drawing.Point(177, 55);
-            this.lblKanjiFColor.Name = "lblKanjiFColor";
-            this.lblKanjiFColor.Size = new System.Drawing.Size(55, 13);
-            this.lblKanjiFColor.TabIndex = 1;
-            this.lblKanjiFColor.Text = "Font Color";
+            this.pnlKanjiBgClr.BackColor = System.Drawing.Color.Maroon;
+            this.pnlKanjiBgClr.Location = new System.Drawing.Point(118, 43);
+            this.pnlKanjiBgClr.Name = "pnlKanjiBgClr";
+            this.pnlKanjiBgClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlKanjiBgClr.TabIndex = 12;
+            this.pnlKanjiBgClr.DoubleClick += new System.EventHandler(this.pnlKanjiBgClr_DoubleClick);
             // 
             // chkboxKanji
             // 
@@ -363,11 +409,29 @@
             this.chkboxKanji.Text = "Is Displayed";
             this.chkboxKanji.UseVisualStyleBackColor = true;
             // 
+            // lblKanjiFColor
+            // 
+            this.lblKanjiFColor.AutoSize = true;
+            this.lblKanjiFColor.Location = new System.Drawing.Point(177, 55);
+            this.lblKanjiFColor.Name = "lblKanjiFColor";
+            this.lblKanjiFColor.Size = new System.Drawing.Size(55, 13);
+            this.lblKanjiFColor.TabIndex = 1;
+            this.lblKanjiFColor.Text = "Font Color";
+            // 
+            // lblKanjiBgColor
+            // 
+            this.lblKanjiBgColor.AutoSize = true;
+            this.lblKanjiBgColor.Location = new System.Drawing.Point(9, 55);
+            this.lblKanjiBgColor.Name = "lblKanjiBgColor";
+            this.lblKanjiBgColor.Size = new System.Drawing.Size(92, 13);
+            this.lblKanjiBgColor.TabIndex = 0;
+            this.lblKanjiBgColor.Text = "Background Color";
+            // 
             // grbHiragana
             // 
             this.grbHiragana.BackColor = System.Drawing.Color.Transparent;
-            this.grbHiragana.Controls.Add(this.panel2);
-            this.grbHiragana.Controls.Add(this.panel1);
+            this.grbHiragana.Controls.Add(this.pnlHiraganaFClr);
+            this.grbHiragana.Controls.Add(this.pnlHiraganaBgClr);
             this.grbHiragana.Controls.Add(this.chkboxHiragana);
             this.grbHiragana.Controls.Add(this.lblHiraganaFColor);
             this.grbHiragana.Controls.Add(this.lblHiraganaBgColor);
@@ -379,6 +443,24 @@
             this.grbHiragana.TabIndex = 5;
             this.grbHiragana.TabStop = false;
             this.grbHiragana.Text = "Hiragana";
+            // 
+            // pnlHiraganaFClr
+            // 
+            this.pnlHiraganaFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlHiraganaFClr.Location = new System.Drawing.Point(263, 43);
+            this.pnlHiraganaFClr.Name = "pnlHiraganaFClr";
+            this.pnlHiraganaFClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlHiraganaFClr.TabIndex = 5;
+            this.pnlHiraganaFClr.DoubleClick += new System.EventHandler(this.pnlHiraganaFClr_DoubleClick);
+            // 
+            // pnlHiraganaBgClr
+            // 
+            this.pnlHiraganaBgClr.BackColor = System.Drawing.Color.Maroon;
+            this.pnlHiraganaBgClr.Location = new System.Drawing.Point(118, 43);
+            this.pnlHiraganaBgClr.Name = "pnlHiraganaBgClr";
+            this.pnlHiraganaBgClr.Size = new System.Drawing.Size(26, 25);
+            this.pnlHiraganaBgClr.TabIndex = 13;
+            this.pnlHiraganaBgClr.DoubleClick += new System.EventHandler(this.pnlHiraganaBgClr_DoubleClick);
             // 
             // chkboxHiragana
             // 
@@ -407,82 +489,6 @@
             this.lblHiraganaBgColor.Size = new System.Drawing.Size(92, 13);
             this.lblHiraganaBgColor.TabIndex = 0;
             this.lblHiraganaBgColor.Text = "Background Color";
-            // 
-            // chkboxMeaning
-            // 
-            this.chkboxMeaning.AutoSize = true;
-            this.chkboxMeaning.Location = new System.Drawing.Point(12, 16);
-            this.chkboxMeaning.Name = "chkboxMeaning";
-            this.chkboxMeaning.Size = new System.Drawing.Size(83, 17);
-            this.chkboxMeaning.TabIndex = 10;
-            this.chkboxMeaning.Text = "Is Displayed";
-            this.chkboxMeaning.UseVisualStyleBackColor = true;
-            // 
-            // lblMeaningFColor
-            // 
-            this.lblMeaningFColor.AutoSize = true;
-            this.lblMeaningFColor.Location = new System.Drawing.Point(177, 54);
-            this.lblMeaningFColor.Name = "lblMeaningFColor";
-            this.lblMeaningFColor.Size = new System.Drawing.Size(55, 13);
-            this.lblMeaningFColor.TabIndex = 9;
-            this.lblMeaningFColor.Text = "Font Color";
-            // 
-            // lblMeaningBgColor
-            // 
-            this.lblMeaningBgColor.AutoSize = true;
-            this.lblMeaningBgColor.Location = new System.Drawing.Point(9, 54);
-            this.lblMeaningBgColor.Name = "lblMeaningBgColor";
-            this.lblMeaningBgColor.Size = new System.Drawing.Size(92, 13);
-            this.lblMeaningBgColor.TabIndex = 8;
-            this.lblMeaningBgColor.Text = "Background Color";
-            // 
-            // pnlSampleBgClr
-            // 
-            this.pnlSampleBgClr.BackColor = System.Drawing.Color.Maroon;
-            this.pnlSampleBgClr.Location = new System.Drawing.Point(118, 43);
-            this.pnlSampleBgClr.Name = "pnlSampleBgClr";
-            this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlSampleBgClr.TabIndex = 12;
-            // 
-            // pnlSampleFClr
-            // 
-            this.pnlSampleFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlSampleFClr.Location = new System.Drawing.Point(263, 43);
-            this.pnlSampleFClr.Name = "pnlSampleFClr";
-            this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlSampleFClr.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(118, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(26, 25);
-            this.panel1.TabIndex = 13;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel2.Location = new System.Drawing.Point(263, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(26, 25);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(118, 42);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(26, 25);
-            this.panel3.TabIndex = 14;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel4.Location = new System.Drawing.Point(263, 42);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(26, 25);
-            this.panel4.TabIndex = 6;
             // 
             // fSetting
             // 
@@ -546,12 +552,12 @@
         private System.Windows.Forms.CheckBox chkboxHiragana;
         private System.Windows.Forms.Label lblHiraganaFColor;
         private System.Windows.Forms.Label lblHiraganaBgColor;
-        private System.Windows.Forms.Panel pnlSampleBgClr;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnlSampleFClr;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlKanjiBgClr;
+        private System.Windows.Forms.Panel pnlMeaningFClr;
+        private System.Windows.Forms.Panel pnlMeaningBgClr;
+        private System.Windows.Forms.Panel pnlKanjiFClr;
+        private System.Windows.Forms.Panel pnlHiraganaFClr;
+        private System.Windows.Forms.Panel pnlHiraganaBgClr;
 
 
 

@@ -19,7 +19,7 @@ namespace JCard
         public fSetting()
         {
             InitializeComponent();
-           // strFilePath = fPath;
+            // strFilePath = fPath;
             SetDisplayLabel();
         }
 
@@ -35,18 +35,31 @@ namespace JCard
                 dtoSetting.PositionVOC = "BR";
                 dtoSetting.DisplayTimeVOC = int.Parse(comDisTime.Text);
                 dtoSetting.WaitingTimeVOC = int.Parse(comDeplayTime.Text);
+                //Kanji
                 dtoSetting.Kanji_Fontsize = int.Parse(comFontKanji.Text);
-                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);                
-                busSetting.SaveSetting(dtoSetting,strFileSettingPath);
-                
+                dtoSetting.Kanji_BackColor = pnlKanjiBgClr.BackColor.ToArgb();
+                dtoSetting.Kanji_FontColor = pnlKanjiFClr.BackColor.ToArgb();
+                dtoSetting.Kanji_IsDisplayed = chkboxKanji.Checked;
+                //Hiragana
+                dtoSetting.Hiragana_Fontsize = int.Parse(comFontKana.Text);
+                dtoSetting.Hiragana_BackColor = pnlHiraganaBgClr.BackColor.ToArgb();
+                dtoSetting.Hiragana_FontColor = pnlHiraganaFClr.BackColor.ToArgb();
+                dtoSetting.Hiragana_IsDisplayed = chkboxHiragana.Checked;
+                //Meaning
+                dtoSetting.Meaning_Fontsize = int.Parse(comFontMeaning.Text);
+                dtoSetting.Meaning_BackColor = pnlMeaningBgClr.BackColor.ToArgb();
+                dtoSetting.Meaning_FontColor = pnlMeaningFClr.BackColor.ToArgb();
+                dtoSetting.Meaning_IsDisplayed = chkboxMeaning.Checked;
+                //
+                busSetting.SaveSetting(dtoSetting, strFileSettingPath);
             }
             catch (Exception ex)
             {
                 Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
             }
 
-            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME, 
-                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);            
+            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME,
+                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);
             this.Close();
         }
 
@@ -60,11 +73,24 @@ namespace JCard
             DTO_Setting dtoSetting = new DTO_Setting();
             BUS_Setting bus = new BUS_Setting();
             dtoSetting = bus.ReadSetting(strFileSettingPath);
+            //
             comDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
             comDeplayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
-            comFontKanji.Text = dtoSetting.Kanji_Fontsize.ToString();
+            //Kanji
+            pnlKanjiBgClr.BackColor = Color.FromArgb(dtoSetting.Kanji_BackColor);
+            pnlKanjiFClr.BackColor = Color.FromArgb(dtoSetting.Kanji_FontColor);
+            chkboxKanji.Checked = dtoSetting.Kanji_IsDisplayed;
+            comFontKanji.Text = dtoSetting.Kanji_Fontsize.ToString();           
+            //Hiragana
+            pnlHiraganaBgClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_BackColor);
+            pnlHiraganaFClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_FontColor);
+            chkboxHiragana.Checked = dtoSetting.Hiragana_IsDisplayed;
             comFontKana.Text = dtoSetting.Hiragana_Fontsize.ToString();
-            comFontMeaning.Text = dtoSetting.Meaning_Fontsize.ToString();            
+            //Meaning
+            pnlMeaningBgClr.BackColor = Color.FromArgb(dtoSetting.Meaning_BackColor);
+            pnlMeaningFClr.BackColor = Color.FromArgb(dtoSetting.Meaning_FontColor);
+            chkboxMeaning.Checked = dtoSetting.Meaning_IsDisplayed;
+            comFontMeaning.Text = dtoSetting.Meaning_Fontsize.ToString();                                   
         }
 
         private void fSetting_Load(object sender, EventArgs e)
@@ -101,5 +127,85 @@ namespace JCard
             chkboxHiragana.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
             chkboxMeaning.Text = Common.GetResourceValue(Constants.RES_CHKBOXISDISPLAYED_NAME, objCulInfo, objResourceManager, Constants.RES_CHKBOXISDISPLAYED_VALUE);
         }
+
+        #region Kanji
+        private void pnlKanjiBgClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlKanjiBgClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlKanjiBgClr.BackColor = colorDialog.Color;
+            }
+        }
+
+        private void pnlKanjiFClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlKanjiFClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlKanjiFClr.BackColor = colorDialog.Color;
+            }
+        }
+        #endregion
+
+
+        #region Hiragana
+
+        private void pnlHiraganaBgClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlHiraganaBgClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlHiraganaBgClr.BackColor = colorDialog.Color;
+            }
+        }
+
+        private void pnlHiraganaFClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlHiraganaFClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlHiraganaFClr.BackColor = colorDialog.Color;
+            }
+        }
+        #endregion
+
+        #region Meaning
+        private void pnlMeaningBgClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlMeaningBgClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlMeaningBgClr.BackColor = colorDialog.Color;
+            }
+        }
+
+        private void pnlMeaningFClr_DoubleClick(object sender, EventArgs e)
+        {
+            //Create a ColorDialog
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = pnlMeaningFClr.BackColor;
+            //Change the color
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                pnlMeaningFClr.BackColor = colorDialog.Color;
+            }
+        }
+        #endregion
     }
 }

@@ -144,7 +144,7 @@
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
             this.pnlSampleBgClr.TabIndex = 1;
-            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
+            this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);           
             // 
             // lblSampleFclr
             // 
@@ -437,8 +437,8 @@
             0,
             0,
             0});
-            this.numDelayTim.Enter += new System.EventHandler(this.numNoDis_Enter);
             this.numDelayTim.Leave += new System.EventHandler(this.numNoDis_Leave);
+            this.numDelayTim.Enter += new System.EventHandler(this.numNoDis_Enter);
             // 
             // numDisTim
             // 
@@ -461,8 +461,8 @@
             0,
             0,
             0});
-            this.numDisTim.Enter += new System.EventHandler(this.numNoDis_Enter);
             this.numDisTim.Leave += new System.EventHandler(this.numNoDis_Leave);
+            this.numDisTim.Enter += new System.EventHandler(this.numNoDis_Enter);
             // 
             // numNoDis
             // 
@@ -480,8 +480,8 @@
             0,
             0,
             0});
-            this.numNoDis.Enter += new System.EventHandler(this.numNoDis_Enter);
             this.numNoDis.Leave += new System.EventHandler(this.numNoDis_Leave);
+            this.numNoDis.Enter += new System.EventHandler(this.numNoDis_Enter);
             // 
             // pnlExFClr
             // 

@@ -241,7 +241,6 @@ namespace JCard
             btnSave.Text = Common.GetResourceValue(Constants.RES_BTNSAVE_NAME, objCulInfo, objResourceManager, Constants.RES_BTNSAVE_VALUE);
             btnCancel.Text = Common.GetResourceValue(Constants.RES_BTNCANCEL_NAME, objCulInfo, objResourceManager, Constants.RES_BTNCANCEL_VALUE);
             lblFontsize.Text = lblJapFontSize.Text = lblVieFontSize.Text = lblExFontSize.Text = Common.GetResourceValue(Constants.RES_FONTSIZE_NAME, objCulInfo, objResourceManager, Constants.RES_FONTSIZE_VALUE);
-        }
-
+        }      
     }
 }
