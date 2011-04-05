@@ -52,6 +52,13 @@ namespace JCard
             set { str_Meaning_VN = value; }
         }
 
+        bool bl_IsLastSelected = false;
+        public bool BL_IsLastSelected
+        {
+            get { return bl_IsLastSelected; }
+            set { bl_IsLastSelected = value; }
+        }
+
         ArrayList arrExampleVN;
         public ArrayList ArrExampleVN
         {
@@ -77,6 +84,7 @@ namespace JCard
             str_Syntax = "";
             str_Meaning_JP = "";
             str_Meaning_VN = "";
+            bl_IsLastSelected = false;
 
             arrExampleVN = new ArrayList();
             arrExampleJP = new ArrayList();
@@ -109,6 +117,7 @@ namespace JCard
             str_Meaning_JP = grammar.STR_Meaning_JP;
             str_Meaning_VN = grammar.STR_Meaning_VN;
             str_Syntax = grammar.STR_Syntax;
+            bl_IsLastSelected = grammar.BL_IsLastSelected;
             arrExampleJP = new ArrayList();
             arrExampleVN = new ArrayList();
 

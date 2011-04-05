@@ -96,8 +96,14 @@ namespace JCard
                 node.Name = dtoGram.LGR_ID.ToString();
                 node.Text = dtoGram.STR_Sample;
                 node.Tag = dtoGram;
+                node.Checked = dtoGram.BL_IsLastSelected;
 
                 lstCards[rootIndex].Nodes.Add(node);
+
+                if (!lstCards[rootIndex].Checked && node.Checked)
+                {
+                    lstCards[rootIndex].Checked = true;
+                }
             }
 
             return lstCards;
@@ -137,6 +143,16 @@ namespace JCard
             }
 
             return -1;
+        }
+
+        /// <summary>
+        /// Reset all values of field IsLastSelected become to false
+        /// </summary>
+        /// <param name="arrDtoGrams">Arraylist of updated Grammar</param>
+        public void UpdateIsLastSelected(ArrayList arrDtoGrams)
+        {
+            DAO_Grammar daoGram = new DAO_Grammar(str_datasource);
+            daoGram.UpdateIsLastSelected(arrDtoGrams);
         }
         #endregion
 
