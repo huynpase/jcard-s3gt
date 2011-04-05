@@ -162,11 +162,11 @@
   <data name="grbjap" xml:space="preserve">
     <value>Nghĩa Tiếng Nhật</value>
   </data>
-  <data name="grbpos" xml:space="preserve">
-    <value>Vị Trí Hiển Thị</value>
+  <data name="grbgen" xml:space="preserve">
+    <value>Cấu Hình Chung</value>
   </data>
-  <data name="grbprop" xml:space="preserve">
-    <value>Các Thiết Lập</value>
+  <data name="grbmeaning" xml:space="preserve">
+    <value>Ý Nghĩa</value>
   </data>
   <data name="grbsample" xml:space="preserve">
     <value>Mẫu Ngữ Pháp</value>
