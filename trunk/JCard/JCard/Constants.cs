@@ -35,7 +35,11 @@ namespace JCard
         public const int MIN_WIDTH = 100;
         public const int MAX_WIDTH = 500;
         public const int MinFontSizeVOC = 13;
-        public const double RatioSizeGRAM = 1.7;        
+        public const double RatioSizeGRAM = 1.7;
+        public const int TOP_BOTTOM_SPACE_LABEL_PANEL = 5;
+        public const int LEFT_RIGHT_SPACE_LABEL_PANEL = 5;
+        public const int MIN_HEIGHT = 38;
+        public const int MIN_FONT_SIZE = 6;
 
         //Vocabulary Card
         public const string PositionVOC = "BR";

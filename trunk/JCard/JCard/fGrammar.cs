@@ -189,6 +189,8 @@ namespace JCard
         // Set thuộc tính hiển thị cho các area.
         private void SetDisplayProperties()
         {
+            int samHeight = 0, meanHeight = 0, examHeight = 0;
+
             // Display position
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
@@ -199,77 +201,92 @@ namespace JCard
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
             lblSample.BackColor = pnlSample.BackColor;
             lblSample.Font = ChangeFontSize(lblSample.Font, dto_gramSetting.Fontsize);
-            lblSample.Height = (int)(lblSample.Font.Size * Constants.RatioSizeGRAM);
+            lblSample.Height = (int)(lblSample.Font.Size * Constants.RatioSizeGRAM) + 1;
+            samHeight = lblSample.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
 
             // JP Meaning area
             pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
             pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
             lblJPMeaning.Font = ChangeFontSize(lblJPMeaning.Font, dto_gramSetting.JP_Fontsize);
-            lblJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM);
-            pnlJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM * 2);
+            lblJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;            
 
             // VN Meaning area
             pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
             pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
             lblVNMeaning.Font = ChangeFontSize(lblVNMeaning.Font, dto_gramSetting.VN_Fontsize);
-            lblVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM);
-            pnlVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM * 2);
+            lblVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;
 
+            if (dto_gramSetting.JP_Isdisplayed && dto_gramSetting.VN_IsDisplayed)
+            {
+                meanHeight = lblJPMeaning.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
+                meanHeight += lblVNMeaning.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
+            }
+            else if (dto_gramSetting.JP_Isdisplayed)
+            {
+                meanHeight = lblJPMeaning.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
+            }
+            else if (dto_gramSetting.VN_IsDisplayed)
+            {
+                meanHeight = lblVNMeaning.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
+            }
+            
             // Example area
             pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
             pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
             lblExample.Font = ChangeFontSize(lblExample.Font, dto_gramSetting.Ex_Fontsize);
-            lblExample.Height = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM);
+            lblExample.Height = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM) + 1;
 
-            //Adjust the height of JGrammar
-            this.Height = pnlJPMeaning.Height + pnlVNMeaning.Height;
-            pnlSample.Height = this.Height;
-            pnlExample.Height = this.Height;
-            //
-            btnExampleNxt.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
-            btnExampleNxt.Height = this.Height / 2;
+            examHeight = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM) + 1 + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
 
-            btnExamplePrev.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
-            btnExamplePrev.Height = this.Height / 2;
+            int height = Common.GetMaxValue(samHeight, meanHeight, examHeight, Constants.MIN_HEIGHT);
+            this.Height = height;
+            pnlSample.Height = height;
+            pnlExample.Height = height;
 
-            btnNext.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
-            btnNext.Height = this.Height / 2;
-
-            btnPrevious.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
-            btnPrevious.Height = this.Height / 2;
-
-            //Set top, left and height of JP /VN Meaning            
-            lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-            lblJPMeaning.Left = 2;
-            //
-            lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
-            lblVNMeaning.Left = 2;
-            //
-            pnlVNMeaning.Top = pnlJPMeaning.Height;
-            pnlVNMeaning.Left = pnlJPMeaning.Left;
-
-            // Execute when undisplay parts
-            if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
+            // Resize
+            if (dto_gramSetting.JP_Isdisplayed && dto_gramSetting.VN_IsDisplayed)
             {
-                // Display or Non-Display JP/VN Meaning area
-                if (dto_gramSetting.VN_IsDisplayed)
-                {
-                    pnlVNMeaning.Height = this.Height;
-                    lblVNMeaning.Height = pnlVNMeaning.Height - 16;
-                    lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
-                }
-                else if (dto_gramSetting.JP_Isdisplayed)
-                {
-                    pnlJPMeaning.Height = this.Height;
-                    lblJPMeaning.Height = pnlJPMeaning.Height - 16;
-                    lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-                }
-                //
-                if (!dto_gramSetting.Ex_VN_IsDisplayed || dto_gramSetting.Ex_NoOfDisplay == 0)
-                {
-                    pnlJPMeaning.Height = pnlVNMeaning.Height = this.Height;
-                }
+                pnlJPMeaning.Height = lblJPMeaning.Height + 2 * Constants.TOP_BOTTOM_SPACE_LABEL_PANEL +
+                                        (height - meanHeight) / 2;
+                pnlVNMeaning.Height = height - pnlJPMeaning.Height;
+
+                pnlVNMeaning.Top = pnlJPMeaning.Height;
+
+                // Set top, left and height of Meaning            
+                lblJPMeaning.Top = Constants.TOP_BOTTOM_SPACE_LABEL_PANEL;
+                lblJPMeaning.Left = Constants.LEFT_RIGHT_SPACE_LABEL_PANEL;
+
+                lblVNMeaning.Top = lblJPMeaning.Top;
+                lblVNMeaning.Left = lblJPMeaning.Left;
             }
+            else if (dto_gramSetting.JP_Isdisplayed)
+            {
+                pnlJPMeaning.Height = height;
+
+                lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+                lblJPMeaning.Left = Constants.LEFT_RIGHT_SPACE_LABEL_PANEL;
+            }
+            else if (dto_gramSetting.VN_IsDisplayed)
+            {
+                pnlVNMeaning.Height = height;
+                pnlVNMeaning.Top = pnlJPMeaning.Top;
+
+                lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+                lblVNMeaning.Left = Constants.LEFT_RIGHT_SPACE_LABEL_PANEL;
+            }
+
+            // Set button size and fontsize
+            float fontsize = height / Constants.MIN_HEIGHT * Constants.MIN_FONT_SIZE;
+            btnNext.Font = ChangeFontSize(btnNext.Font, fontsize);
+            btnPrevious.Font = ChangeFontSize(btnPrevious.Font, fontsize);
+            btnExampleNxt.Font = ChangeFontSize(btnExampleNxt.Font, fontsize);
+            btnExamplePrev.Font = ChangeFontSize(btnExamplePrev.Font, fontsize);
+            
+            btnNext.Height = height / 2;
+            btnPrevious.Height = height - (height / 2);
+            btnExampleNxt.Height = btnNext.Height;
+            btnExamplePrev.Height = btnPrevious.Height;
+
             // Set width
             SetWidthOfArea();
         }
