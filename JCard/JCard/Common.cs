@@ -26,6 +26,21 @@ namespace JCard
         }
 
         /// <summary>
+        /// Get Max Value of array of Integer Number.
+        /// </summary>
+        /// <param name="args">Array of Integer Number</param>
+        /// <returns>Max Value</returns>
+        public static int GetMaxValue(params int[] args)
+        {
+            int res = int.MinValue;
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] > res) res = args[i];
+            }
+            return res;
+        }
+
+        /// <summary>
         /// Get value from App.Config file
         /// </summary>
         /// <param name="strKey">Config Key</param>
