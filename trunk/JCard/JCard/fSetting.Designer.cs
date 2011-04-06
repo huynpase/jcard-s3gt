@@ -134,6 +134,8 @@
             0,
             0,
             0});
+            this.numMeaningFontsize.Enter += new System.EventHandler(this.numDelayTime_Enter);
+            this.numMeaningFontsize.Leave += new System.EventHandler(this.numDelayTime_Leave);
             // 
             // pnlMeaningFClr
             // 
@@ -265,10 +267,12 @@
             0,
             0,
             0});
+            this.numDisTime.Enter += new System.EventHandler(this.numDelayTime_Enter);
+            this.numDisTime.Leave += new System.EventHandler(this.numDelayTime_Leave);
             // 
             // numDelayTime
             // 
-            this.numDelayTime.Location = new System.Drawing.Point(99, 73);
+            this.numDelayTime.Location = new System.Drawing.Point(118, 73);
             this.numDelayTime.Maximum = new decimal(new int[] {
             15,
             0,
@@ -287,6 +291,8 @@
             0,
             0,
             0});
+            this.numDelayTime.Enter += new System.EventHandler(this.numDelayTime_Enter);
+            this.numDelayTime.Leave += new System.EventHandler(this.numDelayTime_Leave);
             // 
             // radTopLeft
             // 
@@ -368,6 +374,8 @@
             0,
             0,
             0});
+            this.numKanjiFontsize.Enter += new System.EventHandler(this.numDelayTime_Enter);
+            this.numKanjiFontsize.Leave += new System.EventHandler(this.numDelayTime_Leave);
             // 
             // pnlKanjiFClr
             // 
@@ -453,6 +461,8 @@
             0,
             0,
             0});
+            this.numHiraganaFontsize.Enter += new System.EventHandler(this.numDelayTime_Enter);
+            this.numHiraganaFontsize.Leave += new System.EventHandler(this.numDelayTime_Leave);
             // 
             // pnlHiraganaFClr
             // 
@@ -517,7 +527,6 @@
             this.Name = "fSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting Vocabulary";
-            this.Load += new System.EventHandler(this.fSetting_Load);
             this.grbMeaning.ResumeLayout(false);
             this.grbMeaning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMeaningFontsize)).EndInit();
