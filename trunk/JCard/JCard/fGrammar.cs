@@ -251,25 +251,23 @@ namespace JCard
             // Execute when undisplay parts
             if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
             {
-                if (!dto_gramSetting.Ex_VN_IsDisplayed || dto_gramSetting.Ex_NoOfDisplay == 0)
-                {                    
-                    pnlJPMeaning.Height = pnlVNMeaning.Height = this.Height;
-                }
-                else
+                // Display or Non-Display JP/VN Meaning area
+                if (dto_gramSetting.VN_IsDisplayed)
                 {
-                    // Display or Non-Display JP/VN Meaning area
-                    if (dto_gramSetting.VN_IsDisplayed)
-                    {
-                        pnlVNMeaning.Height = this.Height;
-                        lblVNMeaning.Height = pnlVNMeaning.Height - 16;
-                        lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
-                    }
-                    else if (dto_gramSetting.JP_Isdisplayed)
-                    {
-                        pnlJPMeaning.Height = this.Height;
-                        lblJPMeaning.Height = pnlJPMeaning.Height - 16;
-                        lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
-                    }
+                    pnlVNMeaning.Height = this.Height;
+                    lblVNMeaning.Height = pnlVNMeaning.Height - 16;
+                    lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+                }
+                else if (dto_gramSetting.JP_Isdisplayed)
+                {
+                    pnlJPMeaning.Height = this.Height;
+                    lblJPMeaning.Height = pnlJPMeaning.Height - 16;
+                    lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
+                }
+                //
+                if (!dto_gramSetting.Ex_VN_IsDisplayed || dto_gramSetting.Ex_NoOfDisplay == 0)
+                {
+                    pnlJPMeaning.Height = pnlVNMeaning.Height = this.Height;
                 }
             }
             // Set width
