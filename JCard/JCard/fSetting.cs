@@ -24,50 +24,6 @@ namespace JCard
             InitializeComponent();
             // strFilePath = fPath;
             SetDisplayLabel();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dtoSetting.PositionVOC = CheckValueRadioButton();
-                dtoSetting.DisplayTimeVOC = int.Parse(numDisTime.Text);
-                dtoSetting.WaitingTimeVOC = int.Parse(numDelayTime.Text);
-                //Kanji
-                dtoSetting.Kanji_Fontsize = int.Parse(numKanjiFontsize.Text);
-                dtoSetting.Kanji_BackColor = pnlKanjiBgClr.BackColor.ToArgb();
-                dtoSetting.Kanji_FontColor = pnlKanjiFClr.BackColor.ToArgb();
-                dtoSetting.Kanji_IsDisplayed = chkboxKanji.Checked;
-                //Hiragana
-                dtoSetting.Hiragana_Fontsize = int.Parse(numHiraganaFontsize.Text);
-                dtoSetting.Hiragana_BackColor = pnlHiraganaBgClr.BackColor.ToArgb();
-                dtoSetting.Hiragana_FontColor = pnlHiraganaFClr.BackColor.ToArgb();
-                dtoSetting.Hiragana_IsDisplayed = chkboxHiragana.Checked;
-                //Meaning
-                dtoSetting.Meaning_Fontsize = int.Parse(numMeaningFontsize.Text);
-                dtoSetting.Meaning_BackColor = pnlMeaningBgClr.BackColor.ToArgb();
-                dtoSetting.Meaning_FontColor = pnlMeaningFClr.BackColor.ToArgb();
-                dtoSetting.Meaning_IsDisplayed = chkboxMeaning.Checked;
-                //
-                busSetting.SaveSetting(dtoSetting, strFileSettingPath);
-            }
-            catch (Exception ex)
-            {
-                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
-            }
-
-            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME,
-                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void InitValue()
-        {
             dtoSetting = bus.ReadSetting(strFileSettingPath);
             //
             AssignValueRadioButton();
@@ -90,9 +46,43 @@ namespace JCard
             numMeaningFontsize.Text = dtoSetting.Meaning_Fontsize.ToString();
         }
 
-        private void fSetting_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            InitValue();
+            dtoSetting.PositionVOC = CheckValueRadioButton();
+            dtoSetting.DisplayTimeVOC = int.Parse(numDisTime.Text);
+            dtoSetting.WaitingTimeVOC = int.Parse(numDelayTime.Text);
+            //Kanji
+            dtoSetting.Kanji_Fontsize = int.Parse(numKanjiFontsize.Text);
+            dtoSetting.Kanji_BackColor = pnlKanjiBgClr.BackColor.ToArgb();
+            dtoSetting.Kanji_FontColor = pnlKanjiFClr.BackColor.ToArgb();
+            dtoSetting.Kanji_IsDisplayed = chkboxKanji.Checked;
+            //Hiragana
+            dtoSetting.Hiragana_Fontsize = int.Parse(numHiraganaFontsize.Text);
+            dtoSetting.Hiragana_BackColor = pnlHiraganaBgClr.BackColor.ToArgb();
+            dtoSetting.Hiragana_FontColor = pnlHiraganaFClr.BackColor.ToArgb();
+            dtoSetting.Hiragana_IsDisplayed = chkboxHiragana.Checked;
+            //Meaning
+            dtoSetting.Meaning_Fontsize = int.Parse(numMeaningFontsize.Text);
+            dtoSetting.Meaning_BackColor = pnlMeaningBgClr.BackColor.ToArgb();
+            dtoSetting.Meaning_FontColor = pnlMeaningFClr.BackColor.ToArgb();
+            dtoSetting.Meaning_IsDisplayed = chkboxMeaning.Checked;
+            try
+            {
+                busSetting.SaveSetting(dtoSetting, strFileSettingPath);
+            }
+            catch (Exception ex)
+            {
+                Common.ShowErrorMsg(objCulInfo, objResourceManager, ex.Message);
+            }
+
+            Common.ShowInfoMsg(objCulInfo, objResourceManager, Constants.RES_SAVE_SETTING_SUCESSFULL_NAME,
+                Constants.RES_SAVE_SETTING_SUCESSFULL_VALUE);
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         public void SetDisplayLabel()
@@ -236,5 +226,21 @@ namespace JCard
             }
         }
         #endregion
+
+        private decimal saveNumVal = 0;
+        private void numDelayTime_Enter(object sender, EventArgs e)
+        {
+            saveNumVal = ((NumericUpDown)sender).Value;
+        }
+
+        private void numDelayTime_Leave(object sender, EventArgs e)
+        {
+            NumericUpDown nudTemp = (NumericUpDown)sender;
+            if (nudTemp.Text == "" || nudTemp.Text == "-")
+            {
+                nudTemp.Text = saveNumVal.ToString();
+            }
+        }
+
     }
 }

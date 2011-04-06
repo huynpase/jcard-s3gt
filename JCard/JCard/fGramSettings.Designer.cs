@@ -202,6 +202,8 @@
             0,
             0,
             0});
+            this.numJapFontsize.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numJapFontsize.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // lblJapFontSize
             // 
@@ -296,6 +298,8 @@
             0,
             0,
             0});
+            this.numVieFontsize.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numVieFontsize.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // pnlVieFClr
             // 
@@ -396,6 +400,8 @@
             0,
             0,
             0});
+            this.numExFontsize.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numExFontsize.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // lblExFontSize
             // 

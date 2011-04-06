@@ -56,25 +56,25 @@ namespace JCard
            }
            return dto;
        }
-        public void SaveSetting(DTO_Setting settingDTO, string filePath)
+        public void SaveSetting(DTO_Setting dto, string filePath)
         {
             IniFile ini = new IniFile(filePath);
-            ini.WriteValue("Vocabulary", "PositionVOC", settingDTO.PositionVOC);
-            ini.WriteValue("Vocabulary", "DisplayTimeVOC", settingDTO.DisplayTimeVOC.ToString());
-            ini.WriteValue("Vocabulary", "WaitingTimeVOC", settingDTO.WaitingTimeVOC.ToString());
-            ini.WriteValue("Vocabulary", "Width", settingDTO.Width.ToString());
-            ini.WriteValue("Kanji", "Kanji_BackColor", settingDTO.Kanji_BackColor.ToString());
-            ini.WriteValue("Kanji", "Kanji_FontColor", settingDTO.Kanji_FontColor.ToString());
-            ini.WriteValue("Kanji", "Kanji_Fontsize", settingDTO.Kanji_Fontsize.ToString());
-            ini.WriteValue("Kanji", "Kanji_IsDisplayed", settingDTO.Kanji_IsDisplayed.ToString());
-            ini.WriteValue("Hiragana", "Hiragana_BackColor", settingDTO.Hiragana_BackColor.ToString());
-            ini.WriteValue("Hiragana", "Hiragana_FontColor", settingDTO.Hiragana_FontColor.ToString());
-            ini.WriteValue("Hiragana", "Hiragana_Fontsize", settingDTO.Hiragana_Fontsize.ToString());
-            ini.WriteValue("Hiragana", "Hiragana_IsDisplayed", settingDTO.Hiragana_IsDisplayed.ToString());
-            ini.WriteValue("Meaning", "Meaning_BackColor", settingDTO.Meaning_BackColor.ToString());
-            ini.WriteValue("Meaning", "Meaning_FontColor", settingDTO.Meaning_FontColor.ToString());
-            ini.WriteValue("Meaning", "Meaning_Fontsize", settingDTO.Meaning_Fontsize.ToString());
-            ini.WriteValue("Meaning", "Meaning_IsDisplayed", settingDTO.Meaning_IsDisplayed.ToString());
+            ini.WriteValue("Vocabulary", "PositionVOC", dto.PositionVOC);
+            ini.WriteValue("Vocabulary", "DisplayTimeVOC", dto.DisplayTimeVOC.ToString());
+            ini.WriteValue("Vocabulary", "WaitingTimeVOC", dto.WaitingTimeVOC.ToString());
+            ini.WriteValue("Vocabulary", "Width", dto.Width.ToString());
+            ini.WriteValue("Kanji", "Kanji_BackColor", dto.Kanji_BackColor.ToString());
+            ini.WriteValue("Kanji", "Kanji_FontColor", dto.Kanji_FontColor.ToString());
+            ini.WriteValue("Kanji", "Kanji_Fontsize", dto.Kanji_Fontsize.ToString());
+            ini.WriteValue("Kanji", "Kanji_IsDisplayed", dto.Kanji_IsDisplayed.ToString());
+            ini.WriteValue("Hiragana", "Hiragana_BackColor", dto.Hiragana_BackColor.ToString());
+            ini.WriteValue("Hiragana", "Hiragana_FontColor", dto.Hiragana_FontColor.ToString());
+            ini.WriteValue("Hiragana", "Hiragana_Fontsize", dto.Hiragana_Fontsize.ToString());
+            ini.WriteValue("Hiragana", "Hiragana_IsDisplayed", dto.Hiragana_IsDisplayed.ToString());
+            ini.WriteValue("Meaning", "Meaning_BackColor", dto.Meaning_BackColor.ToString());
+            ini.WriteValue("Meaning", "Meaning_FontColor", dto.Meaning_FontColor.ToString());
+            ini.WriteValue("Meaning", "Meaning_Fontsize", dto.Meaning_Fontsize.ToString());
+            ini.WriteValue("Meaning", "Meaning_IsDisplayed", dto.Meaning_IsDisplayed.ToString());
         }
     }
 }
