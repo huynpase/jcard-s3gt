@@ -31,6 +31,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.grbMeaning = new System.Windows.Forms.GroupBox();
+            this.numMeaningFontsize = new System.Windows.Forms.NumericUpDown();
             this.pnlMeaningFClr = new System.Windows.Forms.Panel();
             this.pnlMeaningBgClr = new System.Windows.Forms.Panel();
             this.chkboxMeaning = new System.Windows.Forms.CheckBox();
@@ -42,36 +43,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.numDisTime = new System.Windows.Forms.NumericUpDown();
+            this.numDelayTime = new System.Windows.Forms.NumericUpDown();
+            this.radTopLeft = new System.Windows.Forms.RadioButton();
             this.radBottRight = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radTopRight = new System.Windows.Forms.RadioButton();
+            this.radBottLeft = new System.Windows.Forms.RadioButton();
             this.grbKanji = new System.Windows.Forms.GroupBox();
+            this.numKanjiFontsize = new System.Windows.Forms.NumericUpDown();
             this.pnlKanjiFClr = new System.Windows.Forms.Panel();
             this.pnlKanjiBgClr = new System.Windows.Forms.Panel();
             this.chkboxKanji = new System.Windows.Forms.CheckBox();
             this.lblKanjiFColor = new System.Windows.Forms.Label();
             this.lblKanjiBgColor = new System.Windows.Forms.Label();
             this.grbHiragana = new System.Windows.Forms.GroupBox();
+            this.numHiraganaFontsize = new System.Windows.Forms.NumericUpDown();
             this.pnlHiraganaFClr = new System.Windows.Forms.Panel();
             this.pnlHiraganaBgClr = new System.Windows.Forms.Panel();
             this.chkboxHiragana = new System.Windows.Forms.CheckBox();
             this.lblHiraganaFColor = new System.Windows.Forms.Label();
             this.lblHiraganaBgColor = new System.Windows.Forms.Label();
-            this.numDelayTime = new System.Windows.Forms.NumericUpDown();
-            this.numDisTime = new System.Windows.Forms.NumericUpDown();
-            this.numKanjiFontsize = new System.Windows.Forms.NumericUpDown();
-            this.numHiraganaFontsize = new System.Windows.Forms.NumericUpDown();
-            this.numMeaningFontsize = new System.Windows.Forms.NumericUpDown();
             this.grbMeaning.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.grbKanji.SuspendLayout();
-            this.grbHiragana.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDelayTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDisTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numKanjiFontsize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHiraganaFontsize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMeaningFontsize)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayTime)).BeginInit();
+            this.grbKanji.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numKanjiFontsize)).BeginInit();
+            this.grbHiragana.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numHiraganaFontsize)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -112,6 +112,28 @@
             this.grbMeaning.TabIndex = 1;
             this.grbMeaning.TabStop = false;
             this.grbMeaning.Text = "Meaning";
+            // 
+            // numMeaningFontsize
+            // 
+            this.numMeaningFontsize.Location = new System.Drawing.Point(263, 15);
+            this.numMeaningFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numMeaningFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMeaningFontsize.Name = "numMeaningFontsize";
+            this.numMeaningFontsize.Size = new System.Drawing.Size(52, 20);
+            this.numMeaningFontsize.TabIndex = 14;
+            this.numMeaningFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // pnlMeaningFClr
             // 
@@ -209,12 +231,12 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.numDisTime);
             this.groupBox1.Controls.Add(this.numDelayTime);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radTopLeft);
             this.groupBox1.Controls.Add(this.radBottRight);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radTopRight);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radBottLeft);
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(359, 100);
@@ -222,15 +244,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display";
             // 
-            // radioButton1
+            // numDisTime
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Top Left";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.numDisTime.Location = new System.Drawing.Point(263, 73);
+            this.numDisTime.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numDisTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDisTime.Name = "numDisTime";
+            this.numDisTime.Size = new System.Drawing.Size(52, 20);
+            this.numDisTime.TabIndex = 9;
+            this.numDisTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numDelayTime
+            // 
+            this.numDelayTime.Location = new System.Drawing.Point(99, 73);
+            this.numDelayTime.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numDelayTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDelayTime.Name = "numDelayTime";
+            this.numDelayTime.Size = new System.Drawing.Size(52, 20);
+            this.numDelayTime.TabIndex = 8;
+            this.numDelayTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // radTopLeft
+            // 
+            this.radTopLeft.AutoSize = true;
+            this.radTopLeft.Location = new System.Drawing.Point(12, 20);
+            this.radTopLeft.Name = "radTopLeft";
+            this.radTopLeft.Size = new System.Drawing.Size(65, 17);
+            this.radTopLeft.TabIndex = 0;
+            this.radTopLeft.Text = "Top Left";
+            this.radTopLeft.UseVisualStyleBackColor = true;
             // 
             // radBottRight
             // 
@@ -244,25 +310,25 @@
             this.radBottRight.Text = "Bottom Right";
             this.radBottRight.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radTopRight
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(180, 20);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(72, 17);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.Text = "Top Right";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radTopRight.AutoSize = true;
+            this.radTopRight.Location = new System.Drawing.Point(180, 20);
+            this.radTopRight.Name = "radTopRight";
+            this.radTopRight.Size = new System.Drawing.Size(72, 17);
+            this.radTopRight.TabIndex = 1;
+            this.radTopRight.Text = "Top Right";
+            this.radTopRight.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radBottLeft
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.Text = "Bottom Left";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radBottLeft.AutoSize = true;
+            this.radBottLeft.Location = new System.Drawing.Point(12, 42);
+            this.radBottLeft.Name = "radBottLeft";
+            this.radBottLeft.Size = new System.Drawing.Size(79, 17);
+            this.radBottLeft.TabIndex = 2;
+            this.radBottLeft.Text = "Bottom Left";
+            this.radBottLeft.UseVisualStyleBackColor = true;
             // 
             // grbKanji
             // 
@@ -280,6 +346,28 @@
             this.grbKanji.TabIndex = 4;
             this.grbKanji.TabStop = false;
             this.grbKanji.Text = "Kanji";
+            // 
+            // numKanjiFontsize
+            // 
+            this.numKanjiFontsize.Location = new System.Drawing.Point(263, 16);
+            this.numKanjiFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numKanjiFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numKanjiFontsize.Name = "numKanjiFontsize";
+            this.numKanjiFontsize.Size = new System.Drawing.Size(52, 20);
+            this.numKanjiFontsize.TabIndex = 9;
+            this.numKanjiFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // pnlKanjiFClr
             // 
@@ -344,6 +432,28 @@
             this.grbHiragana.TabStop = false;
             this.grbHiragana.Text = "Hiragana";
             // 
+            // numHiraganaFontsize
+            // 
+            this.numHiraganaFontsize.Location = new System.Drawing.Point(263, 16);
+            this.numHiraganaFontsize.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numHiraganaFontsize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numHiraganaFontsize.Name = "numHiraganaFontsize";
+            this.numHiraganaFontsize.Size = new System.Drawing.Size(52, 20);
+            this.numHiraganaFontsize.TabIndex = 10;
+            this.numHiraganaFontsize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // pnlHiraganaFClr
             // 
             this.pnlHiraganaFClr.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -390,116 +500,6 @@
             this.lblHiraganaBgColor.TabIndex = 0;
             this.lblHiraganaBgColor.Text = "Background Color";
             // 
-            // numDelayTime
-            // 
-            this.numDelayTime.Location = new System.Drawing.Point(99, 73);
-            this.numDelayTime.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numDelayTime.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDelayTime.Name = "numDelayTime";
-            this.numDelayTime.Size = new System.Drawing.Size(52, 20);
-            this.numDelayTime.TabIndex = 8;
-            this.numDelayTime.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numDisTime
-            // 
-            this.numDisTime.Location = new System.Drawing.Point(263, 73);
-            this.numDisTime.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numDisTime.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDisTime.Name = "numDisTime";
-            this.numDisTime.Size = new System.Drawing.Size(52, 20);
-            this.numDisTime.TabIndex = 9;
-            this.numDisTime.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numKanjiFontsize
-            // 
-            this.numKanjiFontsize.Location = new System.Drawing.Point(263, 16);
-            this.numKanjiFontsize.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numKanjiFontsize.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numKanjiFontsize.Name = "numKanjiFontsize";
-            this.numKanjiFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numKanjiFontsize.TabIndex = 9;
-            this.numKanjiFontsize.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // numHiraganaFontsize
-            // 
-            this.numHiraganaFontsize.Location = new System.Drawing.Point(263, 16);
-            this.numHiraganaFontsize.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numHiraganaFontsize.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numHiraganaFontsize.Name = "numHiraganaFontsize";
-            this.numHiraganaFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numHiraganaFontsize.TabIndex = 10;
-            this.numHiraganaFontsize.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // numMeaningFontsize
-            // 
-            this.numMeaningFontsize.Location = new System.Drawing.Point(263, 15);
-            this.numMeaningFontsize.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numMeaningFontsize.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numMeaningFontsize.Name = "numMeaningFontsize";
-            this.numMeaningFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numMeaningFontsize.TabIndex = 14;
-            this.numMeaningFontsize.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // fSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,17 +520,17 @@
             this.Load += new System.EventHandler(this.fSetting_Load);
             this.grbMeaning.ResumeLayout(false);
             this.grbMeaning.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMeaningFontsize)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDisTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayTime)).EndInit();
             this.grbKanji.ResumeLayout(false);
             this.grbKanji.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numKanjiFontsize)).EndInit();
             this.grbHiragana.ResumeLayout(false);
             this.grbHiragana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDelayTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDisTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numKanjiFontsize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHiraganaFontsize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMeaningFontsize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,9 +544,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radBottRight;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radTopRight;
+        private System.Windows.Forms.RadioButton radBottLeft;
+        private System.Windows.Forms.RadioButton radTopLeft;
         private System.Windows.Forms.Label lblKanjiFontsize;
         private System.Windows.Forms.Label lblHiraganaFontsize;
         private System.Windows.Forms.Label lblMeaningFontsize;
