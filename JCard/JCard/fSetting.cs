@@ -15,6 +15,7 @@ namespace JCard
         string strFileSettingPath = Application.StartupPath + @"\Setting.ini";
         DTO_Setting dtoSetting = new DTO_Setting();
         BUS_Setting busSetting = new BUS_Setting();
+        BUS_Setting bus = new BUS_Setting();
         ResourceManager objResourceManager;
         CultureInfo objCulInfo;
 
@@ -29,7 +30,7 @@ namespace JCard
         {
             try
             {
-                dtoSetting.PositionVOC = "BR";
+                dtoSetting.PositionVOC = CheckValueRadioButton();
                 dtoSetting.DisplayTimeVOC = int.Parse(numDisTime.Text);
                 dtoSetting.WaitingTimeVOC = int.Parse(numDelayTime.Text);
                 //Kanji
@@ -67,27 +68,26 @@ namespace JCard
 
         private void InitValue()
         {
-            DTO_Setting dtoSetting = new DTO_Setting();
-            BUS_Setting bus = new BUS_Setting();
             dtoSetting = bus.ReadSetting(strFileSettingPath);
             //
+            AssignValueRadioButton();
             numDisTime.Text = dtoSetting.DisplayTimeVOC.ToString();
             numDelayTime.Text = dtoSetting.WaitingTimeVOC.ToString();
             //Kanji
             pnlKanjiBgClr.BackColor = Color.FromArgb(dtoSetting.Kanji_BackColor);
             pnlKanjiFClr.BackColor = Color.FromArgb(dtoSetting.Kanji_FontColor);
             chkboxKanji.Checked = dtoSetting.Kanji_IsDisplayed;
-            numKanjiFontsize.Text = dtoSetting.Kanji_Fontsize.ToString();           
+            numKanjiFontsize.Text = dtoSetting.Kanji_Fontsize.ToString();
             //Hiragana
             pnlHiraganaBgClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_BackColor);
             pnlHiraganaFClr.BackColor = Color.FromArgb(dtoSetting.Hiragana_FontColor);
             chkboxHiragana.Checked = dtoSetting.Hiragana_IsDisplayed;
-            numKanjiFontsize.Text = dtoSetting.Hiragana_Fontsize.ToString();
+            numHiraganaFontsize.Text = dtoSetting.Hiragana_Fontsize.ToString();
             //Meaning
             pnlMeaningBgClr.BackColor = Color.FromArgb(dtoSetting.Meaning_BackColor);
             pnlMeaningFClr.BackColor = Color.FromArgb(dtoSetting.Meaning_FontColor);
             chkboxMeaning.Checked = dtoSetting.Meaning_IsDisplayed;
-            numMeaningFontsize.Text = dtoSetting.Meaning_Fontsize.ToString();                                   
+            numMeaningFontsize.Text = dtoSetting.Meaning_Fontsize.ToString();
         }
 
         private void fSetting_Load(object sender, EventArgs e)
@@ -102,9 +102,9 @@ namespace JCard
             this.Text = Common.GetResourceValue(Constants.RES_VOCABSETT_NAME, objCulInfo, objResourceManager, Constants.RES_VOCABSETT_VALUE);
             groupBox1.Text = Common.GetResourceValue(Constants.RES_GRBGEN_NAME, objCulInfo, objResourceManager, Constants.RES_GRBGEN_VALUE);
             grbMeaning.Text = Common.GetResourceValue(Constants.RES_GRBPROP_NAME, objCulInfo, objResourceManager, Constants.RES_GRBPROP_VALUE);
-            radioButton1.Text = Common.GetResourceValue(Constants.RES_RADTL_NAME, objCulInfo, objResourceManager, Constants.RES_RADTL_VALUE);
-            radioButton2.Text = Common.GetResourceValue(Constants.RES_RADBL_NAME, objCulInfo, objResourceManager, Constants.RES_RADBL_VALUE);
-            radioButton4.Text = Common.GetResourceValue(Constants.RES_RADTR_NAME, objCulInfo, objResourceManager, Constants.RES_RADTR_VALUE);
+            radTopLeft.Text = Common.GetResourceValue(Constants.RES_RADTL_NAME, objCulInfo, objResourceManager, Constants.RES_RADTL_VALUE);
+            radBottLeft.Text = Common.GetResourceValue(Constants.RES_RADBL_NAME, objCulInfo, objResourceManager, Constants.RES_RADBL_VALUE);
+            radTopRight.Text = Common.GetResourceValue(Constants.RES_RADTR_NAME, objCulInfo, objResourceManager, Constants.RES_RADTR_VALUE);
             radBottRight.Text = Common.GetResourceValue(Constants.RES_RADBR_NAME, objCulInfo, objResourceManager, Constants.RES_RADBR_VALUE);
             label2.Text = Common.GetResourceValue(Constants.RES_LBLDISPLAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDISPLAY_VALUE);
             label3.Text = Common.GetResourceValue(Constants.RES_LBLDELAY_NAME, objCulInfo, objResourceManager, Constants.RES_LBLDELAY_VALUE);
@@ -200,6 +200,39 @@ namespace JCard
             if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 pnlMeaningFClr.BackColor = colorDialog.Color;
+            }
+        }
+        #endregion
+
+        #region RadioButton
+        private string CheckValueRadioButton()
+        {
+            if (radTopLeft.Checked == true)
+                return "TL";
+            else if (radTopRight.Checked == true)
+                return "TR";
+            else if (radBottLeft.Checked == true)
+                return "BL";
+            else
+                return "BR";
+        }
+
+        private void AssignValueRadioButton()
+        {
+            switch (dtoSetting.PositionVOC)
+            {
+                case "TL":
+                    radTopLeft.Checked = true;
+                    break;
+                case "TR":
+                    radTopRight.Checked = true;
+                    break;
+                case "BL":
+                    radBottLeft.Checked = true;
+                    break;
+                default:
+                    radBottRight.Checked = true;
+                    break;
             }
         }
         #endregion
