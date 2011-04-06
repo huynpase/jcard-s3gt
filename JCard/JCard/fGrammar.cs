@@ -199,53 +199,60 @@ namespace JCard
             pnlSample.ForeColor = Color.FromArgb(dto_gramSetting.ForeColor);
             lblSample.BackColor = pnlSample.BackColor;
             lblSample.Font = ChangeFontSize(lblSample.Font, dto_gramSetting.Fontsize);
-            lblSample.Height = (int)(lblSample.Font.Size * Constants.RatioSizeGRAM) + 1;
+            lblSample.Height = (int)(lblSample.Font.Size * Constants.RatioSizeGRAM);
 
             // JP Meaning area
             pnlJPMeaning.BackColor = Color.FromArgb(dto_gramSetting.JP_BackColor);
             pnlJPMeaning.ForeColor = Color.FromArgb(dto_gramSetting.JP_ForeColor);
             lblJPMeaning.Font = ChangeFontSize(lblJPMeaning.Font, dto_gramSetting.JP_Fontsize);
-            lblJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;            
+            lblJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM);
+            pnlJPMeaning.Height = (int)(lblJPMeaning.Font.Size * Constants.RatioSizeGRAM * 2);
 
             // VN Meaning area
             pnlVNMeaning.BackColor = Color.FromArgb(dto_gramSetting.VN_BackColor);
             pnlVNMeaning.ForeColor = Color.FromArgb(dto_gramSetting.VN_ForeColor);
             lblVNMeaning.Font = ChangeFontSize(lblVNMeaning.Font, dto_gramSetting.VN_Fontsize);
-            lblVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM) + 1;
+            lblVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM);
+            pnlVNMeaning.Height = (int)(lblVNMeaning.Font.Size * Constants.RatioSizeGRAM * 2);
 
             // Example area
             pnlExample.BackColor = Color.FromArgb(dto_gramSetting.Ex_BackColor);
             pnlExample.ForeColor = Color.FromArgb(dto_gramSetting.Ex_ForeColor);
             lblExample.Font = ChangeFontSize(lblExample.Font, dto_gramSetting.Ex_Fontsize);
-            lblExample.Height = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM) + 1;
+            lblExample.Height = (int)(lblExample.Font.Size * Constants.RatioSizeGRAM);
 
-            // Set top, left and height of Meaning            
+            //Adjust the height of JGrammar
+            this.Height = pnlJPMeaning.Height + pnlVNMeaning.Height;
+            pnlSample.Height = this.Height;
+            pnlExample.Height = this.Height;
+            //
+            btnExampleNxt.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
+            btnExampleNxt.Height = this.Height / 2;
+
+            btnExamplePrev.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
+            btnExamplePrev.Height = this.Height / 2;
+
+            btnNext.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
+            btnNext.Height = this.Height / 2;
+
+            btnPrevious.Font = ChangeFontSize(btnExampleNxt.Font, (float)(lblSample.Font.Size * 1.2));
+            btnPrevious.Height = this.Height / 2;
+
+            //Set top, left and height of JP /VN Meaning            
             lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
             lblJPMeaning.Left = 2;
+            //
+            lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
+            lblVNMeaning.Left = 2;
+            //
+            pnlVNMeaning.Top = pnlJPMeaning.Height;
+            pnlVNMeaning.Left = pnlJPMeaning.Left;
 
-            lblVNMeaning.Top = lblJPMeaning.Top;
-            lblVNMeaning.Left = lblJPMeaning.Left;
-            // Resize
+            // Execute when undisplay parts
             if ((!dto_gramSetting.JP_Isdisplayed || !dto_gramSetting.VN_IsDisplayed))
             {
                 if (!dto_gramSetting.Ex_VN_IsDisplayed || dto_gramSetting.Ex_NoOfDisplay == 0)
-                {
-                    this.Height = 38;
-
-                    btnExampleNxt.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
-                    btnExampleNxt.Height = this.Height / 2;
-
-                    btnExamplePrev.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
-                    btnExamplePrev.Height = this.Height / 2;
-
-                    btnNext.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
-                    btnNext.Height = this.Height / 2;
-
-                    btnPrevious.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
-                    btnPrevious.Height = this.Height / 2;
-
-                    pnlSample.Height = this.Height;
-                    pnlExample.Height = this.Height;
+                {                    
                     pnlJPMeaning.Height = pnlVNMeaning.Height = this.Height;
                 }
                 else
@@ -253,14 +260,14 @@ namespace JCard
                     // Display or Non-Display JP/VN Meaning area
                     if (dto_gramSetting.VN_IsDisplayed)
                     {
-                        pnlVNMeaning.Height = pnlVNMeaning.Height * 2;
-                        lblVNMeaning.Height = lblVNMeaning.Height * 2;
+                        pnlVNMeaning.Height = this.Height;
+                        lblVNMeaning.Height = pnlVNMeaning.Height - 16;
                         lblVNMeaning.Top = (pnlVNMeaning.Height - lblVNMeaning.Height) / 2;
                     }
                     else if (dto_gramSetting.JP_Isdisplayed)
                     {
-                        pnlJPMeaning.Height = pnlJPMeaning.Height * 2;
-                        lblJPMeaning.Height = lblJPMeaning.Height * 2;
+                        pnlJPMeaning.Height = this.Height;
+                        lblJPMeaning.Height = pnlJPMeaning.Height - 16;
                         lblJPMeaning.Top = (pnlJPMeaning.Height - lblJPMeaning.Height) / 2;
                     }
                 }
