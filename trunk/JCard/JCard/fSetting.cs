@@ -12,7 +12,7 @@ namespace JCard
 {
     public partial class fSetting : Form
     {
-        string strFileSettingPath = Application.StartupPath + @"\Setting.ini";
+        string strFileSettingPath = Application.StartupPath + @"\Setting.ini";        
         DTO_Setting dtoSetting = new DTO_Setting();
         BUS_Setting busSetting = new BUS_Setting();
         BUS_Setting bus = new BUS_Setting();
