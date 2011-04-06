@@ -162,8 +162,8 @@ namespace JCard
             this.pnlImi_Left.Name = "pnlImi_Left";
             this.pnlImi_Left.Size = new System.Drawing.Size(2, 50);
             this.pnlImi_Left.TabIndex = 2;
-            this.pnlImi_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlImi_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlImi_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlImi_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // pnlImi_Right
@@ -174,8 +174,8 @@ namespace JCard
             this.pnlImi_Right.Name = "pnlImi_Right";
             this.pnlImi_Right.Size = new System.Drawing.Size(2, 50);
             this.pnlImi_Right.TabIndex = 10008;
-            this.pnlImi_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlImi_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlImi_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlImi_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtMeaning
@@ -185,10 +185,9 @@ namespace JCard
             this.txtMeaning.Name = "txtMeaning";
             this.txtMeaning.Size = new System.Drawing.Size(180, 30);
             this.txtMeaning.TabIndex = 1;
-            this.txtMeaning.Text = "label2";
             this.txtMeaning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtMeaning.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtMeaning.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtMeaning.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtMeaning.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // pnlHiragana
@@ -200,7 +199,7 @@ namespace JCard
             this.pnlHiragana.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHiragana.Location = new System.Drawing.Point(0, 50);
             this.pnlHiragana.Name = "pnlHiragana";
-            this.pnlHiragana.Size = new System.Drawing.Size(194, 50);
+            this.pnlHiragana.Size = new System.Drawing.Size(194, 100);
             this.pnlHiragana.TabIndex = 104;
             // 
             // pnlHiragana_Left
@@ -209,10 +208,10 @@ namespace JCard
             this.pnlHiragana_Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlHiragana_Left.Location = new System.Drawing.Point(0, 0);
             this.pnlHiragana_Left.Name = "pnlHiragana_Left";
-            this.pnlHiragana_Left.Size = new System.Drawing.Size(2, 50);
+            this.pnlHiragana_Left.Size = new System.Drawing.Size(2, 100);
             this.pnlHiragana_Left.TabIndex = 2;
-            this.pnlHiragana_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlHiragana_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlHiragana_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlHiragana_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // pnlHiragana_Right
@@ -221,10 +220,10 @@ namespace JCard
             this.pnlHiragana_Right.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlHiragana_Right.Location = new System.Drawing.Point(192, 0);
             this.pnlHiragana_Right.Name = "pnlHiragana_Right";
-            this.pnlHiragana_Right.Size = new System.Drawing.Size(2, 50);
+            this.pnlHiragana_Right.Size = new System.Drawing.Size(2, 100);
             this.pnlHiragana_Right.TabIndex = 10006;
-            this.pnlHiragana_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlHiragana_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlHiragana_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlHiragana_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtHiragana
@@ -234,10 +233,9 @@ namespace JCard
             this.txtHiragana.Name = "txtHiragana";
             this.txtHiragana.Size = new System.Drawing.Size(180, 30);
             this.txtHiragana.TabIndex = 0;
-            this.txtHiragana.Text = "label2";
             this.txtHiragana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtHiragana.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtHiragana.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtHiragana.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtHiragana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // pnlKanji
@@ -261,8 +259,8 @@ namespace JCard
             this.pnlKanji_Left.Name = "pnlKanji_Left";
             this.pnlKanji_Left.Size = new System.Drawing.Size(2, 50);
             this.pnlKanji_Left.TabIndex = 0;
-            this.pnlKanji_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlKanji_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove2);
+            this.pnlKanji_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlKanji_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // pnlKanji_Right
@@ -273,8 +271,8 @@ namespace JCard
             this.pnlKanji_Right.Name = "pnlKanji_Right";
             this.pnlKanji_Right.Size = new System.Drawing.Size(2, 50);
             this.pnlKanji_Right.TabIndex = 10005;
-            this.pnlKanji_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlKanji_Right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnlKanji_Right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.pnlKanji_Right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseUp);
             // 
             // txtKanji
@@ -284,10 +282,9 @@ namespace JCard
             this.txtKanji.Name = "txtKanji";
             this.txtKanji.Size = new System.Drawing.Size(180, 30);
             this.txtKanji.TabIndex = 1;
-            this.txtKanji.Text = "label2";
             this.txtKanji.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtKanji.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtKanji.MouseLeave += new System.EventHandler(this.label_MouseLeave);
+            this.txtKanji.Paint += new System.Windows.Forms.PaintEventHandler(this.Ellipsis_Label_Paint);
             this.txtKanji.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label_MouseMove);
             // 
             // label1
@@ -312,12 +309,12 @@ namespace JCard
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fJCard";
-            this.Opacity = 0D;
+            this.Opacity = 0;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCard- Vocabulary";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fJCard_FormClosing);
             this.Load += new System.EventHandler(this.FJCardLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fJCard_FormClosing);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.pnlMeaning.ResumeLayout(false);
