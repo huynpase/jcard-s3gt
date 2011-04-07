@@ -242,5 +242,15 @@ namespace JCard
             }
         }
 
+        private void chkboxKanji_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (!chkboxKanji.Checked &&
+                !chkboxHiragana.Checked &&
+                !chkboxMeaning.Checked)
+            {
+                ((CheckBox)sender).Checked = true;
+            }
+        }
+
     }
 }

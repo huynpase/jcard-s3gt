@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="about" xml:space="preserve">
     <value>Thông Tin J-Card</value>
@@ -349,5 +349,9 @@ Vui lòng kiểm tra lại chương trình trên thanh Taskbar hoặc System Tra
   </data>
   <data name="fontsize" xml:space="preserve">
     <value>Cỡ Chữ:</value>
+  </data>
+  <data name="MsgInvalidVocList" xml:space="preserve">
+    <value>Nội dung cần hiển thị của tất cả từ vựng đều rỗng.
+Vui lòng kiểm tra lại cấu hình hiển thị và list từ vựng đã chọn.</value>
   </data>
 </root>

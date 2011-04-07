@@ -241,6 +241,8 @@ namespace JCard
         public const string RES_CLOSE_PROGRAM_VALUE = "Bạn có muốn thoát khỏi chương trình hay không?";     
         public const string RES_START_PROGRAM_NAME = "MsgStartProgram";
         public const string RES_START_PROGRAM_VALUE = "Chương trình J-Card đang mở.\nVui lòng kiểm tra lại chương trình trên thanh Taskbar hoặc System Tray.";
+        public const string RES_INVALID_VOC_LIST_NAME = "MsgInvalidVocList";
+        public const string RES_INVALID_VOC_LIST_VALUE = "Nội dung cần hiển thị của tất cả từ vựng đều rỗng.\nVui lòng kiểm tra lại cấu hình hiển thị và list từ vựng đã chọn.";
 
         // Resource DTO_Grammar
         public const int MAX_LENGTH_JP_NEWLINE = 25;
