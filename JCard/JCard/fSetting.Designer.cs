@@ -164,6 +164,7 @@
             this.chkboxMeaning.TabIndex = 0;
             this.chkboxMeaning.Text = "Is Displayed";
             this.chkboxMeaning.UseVisualStyleBackColor = true;
+            this.chkboxMeaning.CheckStateChanged += new System.EventHandler(this.chkboxKanji_CheckStateChanged);
             // 
             // lblMeaningFColor
             // 
@@ -404,6 +405,7 @@
             this.chkboxKanji.TabIndex = 0;
             this.chkboxKanji.Text = "Is Displayed";
             this.chkboxKanji.UseVisualStyleBackColor = true;
+            this.chkboxKanji.CheckStateChanged += new System.EventHandler(this.chkboxKanji_CheckStateChanged);
             // 
             // lblKanjiFColor
             // 
@@ -491,6 +493,7 @@
             this.chkboxHiragana.TabIndex = 0;
             this.chkboxHiragana.Text = "Is Displayed";
             this.chkboxHiragana.UseVisualStyleBackColor = true;
+            this.chkboxHiragana.CheckStateChanged += new System.EventHandler(this.chkboxKanji_CheckStateChanged);
             // 
             // lblHiraganaFColor
             // 
