@@ -112,12 +112,14 @@
             0});
             this.numSmplFontsize.Name = "numSmplFontsize";
             this.numSmplFontsize.Size = new System.Drawing.Size(70, 20);
-            this.numSmplFontsize.TabIndex = 16;
+            this.numSmplFontsize.TabIndex = 1;
             this.numSmplFontsize.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
+            this.numSmplFontsize.Enter += new System.EventHandler(this.numNoDis_Enter);
+            this.numSmplFontsize.Leave += new System.EventHandler(this.numNoDis_Leave);
             // 
             // pnlSampleFClr
             // 
@@ -125,7 +127,7 @@
             this.pnlSampleFClr.Location = new System.Drawing.Point(303, 42);
             this.pnlSampleFClr.Name = "pnlSampleFClr";
             this.pnlSampleFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlSampleFClr.TabIndex = 3;
+            this.pnlSampleFClr.TabIndex = 5;
             this.pnlSampleFClr.DoubleClick += new System.EventHandler(this.pnlSampleFClr_DoubleClick);
             // 
             // lblFontsize
@@ -134,7 +136,7 @@
             this.lblFontsize.Location = new System.Drawing.Point(6, 18);
             this.lblFontsize.Name = "lblFontsize";
             this.lblFontsize.Size = new System.Drawing.Size(51, 13);
-            this.lblFontsize.TabIndex = 15;
+            this.lblFontsize.TabIndex = 0;
             this.lblFontsize.Text = "Font Size";
             // 
             // pnlSampleBgClr
@@ -143,7 +145,7 @@
             this.pnlSampleBgClr.Location = new System.Drawing.Point(118, 42);
             this.pnlSampleBgClr.Name = "pnlSampleBgClr";
             this.pnlSampleBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlSampleBgClr.TabIndex = 1;
+            this.pnlSampleBgClr.TabIndex = 3;
             this.pnlSampleBgClr.DoubleClick += new System.EventHandler(this.pnlSampleBgClr_DoubleClick);
             // 
             // lblSampleFclr
@@ -152,7 +154,7 @@
             this.lblSampleFclr.Location = new System.Drawing.Point(220, 54);
             this.lblSampleFclr.Name = "lblSampleFclr";
             this.lblSampleFclr.Size = new System.Drawing.Size(58, 13);
-            this.lblSampleFclr.TabIndex = 2;
+            this.lblSampleFclr.TabIndex = 4;
             this.lblSampleFclr.Text = "Font Color:";
             // 
             // lblSampleBgClr
@@ -161,7 +163,7 @@
             this.lblSampleBgClr.Location = new System.Drawing.Point(6, 54);
             this.lblSampleBgClr.Name = "lblSampleBgClr";
             this.lblSampleBgClr.Size = new System.Drawing.Size(95, 13);
-            this.lblSampleBgClr.TabIndex = 0;
+            this.lblSampleBgClr.TabIndex = 2;
             this.lblSampleBgClr.Text = "Background Color:";
             // 
             // grbJap
@@ -196,7 +198,7 @@
             0});
             this.numJapFontsize.Name = "numJapFontsize";
             this.numJapFontsize.Size = new System.Drawing.Size(70, 20);
-            this.numJapFontsize.TabIndex = 14;
+            this.numJapFontsize.TabIndex = 2;
             this.numJapFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -211,7 +213,7 @@
             this.lblJapFontSize.Location = new System.Drawing.Point(6, 38);
             this.lblJapFontSize.Name = "lblJapFontSize";
             this.lblJapFontSize.Size = new System.Drawing.Size(51, 13);
-            this.lblJapFontSize.TabIndex = 13;
+            this.lblJapFontSize.TabIndex = 1;
             this.lblJapFontSize.Text = "Font Size";
             // 
             // pnlJapFClr
@@ -220,7 +222,7 @@
             this.pnlJapFClr.Location = new System.Drawing.Point(303, 65);
             this.pnlJapFClr.Name = "pnlJapFClr";
             this.pnlJapFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlJapFClr.TabIndex = 4;
+            this.pnlJapFClr.TabIndex = 6;
             this.pnlJapFClr.DoubleClick += new System.EventHandler(this.pnlJapFClr_DoubleClick);
             // 
             // pnlJapBgClr
@@ -229,7 +231,7 @@
             this.pnlJapBgClr.Location = new System.Drawing.Point(118, 65);
             this.pnlJapBgClr.Name = "pnlJapBgClr";
             this.pnlJapBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlJapBgClr.TabIndex = 2;
+            this.pnlJapBgClr.TabIndex = 4;
             this.pnlJapBgClr.DoubleClick += new System.EventHandler(this.pnlJapBgClr_DoubleClick);
             // 
             // lblJapFClr
@@ -238,7 +240,7 @@
             this.lblJapFClr.Location = new System.Drawing.Point(220, 77);
             this.lblJapFClr.Name = "lblJapFClr";
             this.lblJapFClr.Size = new System.Drawing.Size(58, 13);
-            this.lblJapFClr.TabIndex = 3;
+            this.lblJapFClr.TabIndex = 5;
             this.lblJapFClr.Text = "Font Color:";
             // 
             // lblJapBgClr
@@ -247,7 +249,7 @@
             this.lblJapBgClr.Location = new System.Drawing.Point(6, 77);
             this.lblJapBgClr.Name = "lblJapBgClr";
             this.lblJapBgClr.Size = new System.Drawing.Size(95, 13);
-            this.lblJapBgClr.TabIndex = 1;
+            this.lblJapBgClr.TabIndex = 3;
             this.lblJapBgClr.Text = "Background Color:";
             // 
             // chkboxJap
@@ -292,7 +294,7 @@
             0});
             this.numVieFontsize.Name = "numVieFontsize";
             this.numVieFontsize.Size = new System.Drawing.Size(70, 20);
-            this.numVieFontsize.TabIndex = 14;
+            this.numVieFontsize.TabIndex = 2;
             this.numVieFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -307,7 +309,7 @@
             this.pnlVieFClr.Location = new System.Drawing.Point(304, 59);
             this.pnlVieFClr.Name = "pnlVieFClr";
             this.pnlVieFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlVieFClr.TabIndex = 4;
+            this.pnlVieFClr.TabIndex = 6;
             this.pnlVieFClr.DoubleClick += new System.EventHandler(this.pnlVieFClr_DoubleClick);
             // 
             // lblVieFontSize
@@ -316,7 +318,7 @@
             this.lblVieFontSize.Location = new System.Drawing.Point(6, 36);
             this.lblVieFontSize.Name = "lblVieFontSize";
             this.lblVieFontSize.Size = new System.Drawing.Size(51, 13);
-            this.lblVieFontSize.TabIndex = 13;
+            this.lblVieFontSize.TabIndex = 1;
             this.lblVieFontSize.Text = "Font Size";
             // 
             // pnlVieBgClr
@@ -325,7 +327,7 @@
             this.pnlVieBgClr.Location = new System.Drawing.Point(117, 59);
             this.pnlVieBgClr.Name = "pnlVieBgClr";
             this.pnlVieBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlVieBgClr.TabIndex = 2;
+            this.pnlVieBgClr.TabIndex = 4;
             this.pnlVieBgClr.DoubleClick += new System.EventHandler(this.pnlVieBgClr_DoubleClick);
             // 
             // lblVieFClr
@@ -334,7 +336,7 @@
             this.lblVieFClr.Location = new System.Drawing.Point(219, 71);
             this.lblVieFClr.Name = "lblVieFClr";
             this.lblVieFClr.Size = new System.Drawing.Size(58, 13);
-            this.lblVieFClr.TabIndex = 3;
+            this.lblVieFClr.TabIndex = 5;
             this.lblVieFClr.Text = "Font Color:";
             // 
             // lblVieBgClr
@@ -343,7 +345,7 @@
             this.lblVieBgClr.Location = new System.Drawing.Point(5, 71);
             this.lblVieBgClr.Name = "lblVieBgClr";
             this.lblVieBgClr.Size = new System.Drawing.Size(95, 13);
-            this.lblVieBgClr.TabIndex = 1;
+            this.lblVieBgClr.TabIndex = 3;
             this.lblVieBgClr.Text = "Background Color:";
             // 
             // chkboxVie
@@ -394,7 +396,7 @@
             0});
             this.numExFontsize.Name = "numExFontsize";
             this.numExFontsize.Size = new System.Drawing.Size(70, 20);
-            this.numExFontsize.TabIndex = 12;
+            this.numExFontsize.TabIndex = 2;
             this.numExFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -409,7 +411,7 @@
             this.lblExFontSize.Location = new System.Drawing.Point(7, 41);
             this.lblExFontSize.Name = "lblExFontSize";
             this.lblExFontSize.Size = new System.Drawing.Size(51, 13);
-            this.lblExFontSize.TabIndex = 11;
+            this.lblExFontSize.TabIndex = 1;
             this.lblExFontSize.Text = "Font Size";
             // 
             // chkboxEx
@@ -437,7 +439,7 @@
             0});
             this.numDelayTim.Name = "numDelayTim";
             this.numDelayTim.Size = new System.Drawing.Size(71, 20);
-            this.numDelayTim.TabIndex = 10;
+            this.numDelayTim.TabIndex = 12;
             this.numDelayTim.Value = new decimal(new int[] {
             1,
             0,
@@ -461,7 +463,7 @@
             0});
             this.numDisTim.Name = "numDisTim";
             this.numDisTim.Size = new System.Drawing.Size(70, 20);
-            this.numDisTim.TabIndex = 8;
+            this.numDisTim.TabIndex = 10;
             this.numDisTim.Value = new decimal(new int[] {
             1,
             0,
@@ -480,7 +482,7 @@
             0});
             this.numNoDis.Name = "numNoDis";
             this.numNoDis.Size = new System.Drawing.Size(71, 20);
-            this.numNoDis.TabIndex = 6;
+            this.numNoDis.TabIndex = 8;
             this.numNoDis.Value = new decimal(new int[] {
             1,
             0,
@@ -495,7 +497,7 @@
             this.pnlExFClr.Location = new System.Drawing.Point(304, 68);
             this.pnlExFClr.Name = "pnlExFClr";
             this.pnlExFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlExFClr.TabIndex = 4;
+            this.pnlExFClr.TabIndex = 6;
             this.pnlExFClr.DoubleClick += new System.EventHandler(this.pnlExFClr_DoubleClick);
             // 
             // pnlExBgClr
@@ -504,7 +506,7 @@
             this.pnlExBgClr.Location = new System.Drawing.Point(118, 68);
             this.pnlExBgClr.Name = "pnlExBgClr";
             this.pnlExBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlExBgClr.TabIndex = 2;
+            this.pnlExBgClr.TabIndex = 4;
             this.pnlExBgClr.DoubleClick += new System.EventHandler(this.pnlExBgClr_DoubleClick);
             // 
             // lblDelayTim
@@ -513,7 +515,7 @@
             this.lblDelayTim.Location = new System.Drawing.Point(220, 134);
             this.lblDelayTim.Name = "lblDelayTim";
             this.lblDelayTim.Size = new System.Drawing.Size(77, 13);
-            this.lblDelayTim.TabIndex = 9;
+            this.lblDelayTim.TabIndex = 11;
             this.lblDelayTim.Text = "Delay Time (s):";
             // 
             // lblDisTim
@@ -522,7 +524,7 @@
             this.lblDisTim.Location = new System.Drawing.Point(6, 134);
             this.lblDisTim.Name = "lblDisTim";
             this.lblDisTim.Size = new System.Drawing.Size(84, 13);
-            this.lblDisTim.TabIndex = 7;
+            this.lblDisTim.TabIndex = 9;
             this.lblDisTim.Text = "Display Time (s):";
             // 
             // lblExNoDis
@@ -531,7 +533,7 @@
             this.lblExNoDis.Location = new System.Drawing.Point(6, 103);
             this.lblExNoDis.Name = "lblExNoDis";
             this.lblExNoDis.Size = new System.Drawing.Size(96, 13);
-            this.lblExNoDis.TabIndex = 5;
+            this.lblExNoDis.TabIndex = 7;
             this.lblExNoDis.Text = "Number of Display:";
             // 
             // lblExFClr
@@ -540,7 +542,7 @@
             this.lblExFClr.Location = new System.Drawing.Point(220, 80);
             this.lblExFClr.Name = "lblExFClr";
             this.lblExFClr.Size = new System.Drawing.Size(58, 13);
-            this.lblExFClr.TabIndex = 3;
+            this.lblExFClr.TabIndex = 5;
             this.lblExFClr.Text = "Font Color:";
             // 
             // lblExBgClr
@@ -549,7 +551,7 @@
             this.lblExBgClr.Location = new System.Drawing.Point(7, 80);
             this.lblExBgClr.Name = "lblExBgClr";
             this.lblExBgClr.Size = new System.Drawing.Size(95, 13);
-            this.lblExBgClr.TabIndex = 1;
+            this.lblExBgClr.TabIndex = 3;
             this.lblExBgClr.Text = "Background Color:";
             // 
             // btnSave
