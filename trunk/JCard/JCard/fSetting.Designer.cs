@@ -80,7 +80,7 @@
             this.button2.Location = new System.Drawing.Point(188, 360);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(73, 30);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 5;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -91,7 +91,7 @@
             this.button1.Location = new System.Drawing.Point(109, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 30);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 4;
             this.button1.Text = "&Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -109,7 +109,7 @@
             this.grbMeaning.Location = new System.Drawing.Point(10, 280);
             this.grbMeaning.Name = "grbMeaning";
             this.grbMeaning.Size = new System.Drawing.Size(359, 74);
-            this.grbMeaning.TabIndex = 1;
+            this.grbMeaning.TabIndex = 3;
             this.grbMeaning.TabStop = false;
             this.grbMeaning.Text = "Meaning";
             // 
@@ -128,7 +128,7 @@
             0});
             this.numMeaningFontsize.Name = "numMeaningFontsize";
             this.numMeaningFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numMeaningFontsize.TabIndex = 14;
+            this.numMeaningFontsize.TabIndex = 2;
             this.numMeaningFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -152,7 +152,7 @@
             this.pnlMeaningBgClr.Location = new System.Drawing.Point(118, 42);
             this.pnlMeaningBgClr.Name = "pnlMeaningBgClr";
             this.pnlMeaningBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlMeaningBgClr.TabIndex = 14;
+            this.pnlMeaningBgClr.TabIndex = 4;
             this.pnlMeaningBgClr.DoubleClick += new System.EventHandler(this.pnlMeaningBgClr_DoubleClick);
             // 
             // chkboxMeaning
@@ -161,7 +161,7 @@
             this.chkboxMeaning.Location = new System.Drawing.Point(12, 16);
             this.chkboxMeaning.Name = "chkboxMeaning";
             this.chkboxMeaning.Size = new System.Drawing.Size(83, 17);
-            this.chkboxMeaning.TabIndex = 10;
+            this.chkboxMeaning.TabIndex = 0;
             this.chkboxMeaning.Text = "Is Displayed";
             this.chkboxMeaning.UseVisualStyleBackColor = true;
             // 
@@ -171,7 +171,7 @@
             this.lblMeaningFColor.Location = new System.Drawing.Point(177, 54);
             this.lblMeaningFColor.Name = "lblMeaningFColor";
             this.lblMeaningFColor.Size = new System.Drawing.Size(55, 13);
-            this.lblMeaningFColor.TabIndex = 9;
+            this.lblMeaningFColor.TabIndex = 5;
             this.lblMeaningFColor.Text = "Font Color";
             // 
             // lblMeaningFontsize
@@ -180,7 +180,7 @@
             this.lblMeaningFontsize.Location = new System.Drawing.Point(177, 17);
             this.lblMeaningFontsize.Name = "lblMeaningFontsize";
             this.lblMeaningFontsize.Size = new System.Drawing.Size(54, 13);
-            this.lblMeaningFontsize.TabIndex = 10;
+            this.lblMeaningFontsize.TabIndex = 1;
             this.lblMeaningFontsize.Text = "Font Size:";
             // 
             // lblMeaningBgColor
@@ -189,7 +189,7 @@
             this.lblMeaningBgColor.Location = new System.Drawing.Point(9, 54);
             this.lblMeaningBgColor.Name = "lblMeaningBgColor";
             this.lblMeaningBgColor.Size = new System.Drawing.Size(92, 13);
-            this.lblMeaningBgColor.TabIndex = 8;
+            this.lblMeaningBgColor.TabIndex = 3;
             this.lblMeaningBgColor.Text = "Background Color";
             // 
             // lblHiraganaFontsize
@@ -198,7 +198,7 @@
             this.lblHiraganaFontsize.Location = new System.Drawing.Point(177, 18);
             this.lblHiraganaFontsize.Name = "lblHiraganaFontsize";
             this.lblHiraganaFontsize.Size = new System.Drawing.Size(54, 13);
-            this.lblHiraganaFontsize.TabIndex = 6;
+            this.lblHiraganaFontsize.TabIndex = 1;
             this.lblHiraganaFontsize.Text = "Font Size:";
             // 
             // lblKanjiFontsize
@@ -207,7 +207,7 @@
             this.lblKanjiFontsize.Location = new System.Drawing.Point(177, 18);
             this.lblKanjiFontsize.Name = "lblKanjiFontsize";
             this.lblKanjiFontsize.Size = new System.Drawing.Size(54, 13);
-            this.lblKanjiFontsize.TabIndex = 4;
+            this.lblKanjiFontsize.TabIndex = 1;
             this.lblKanjiFontsize.Text = "Font Size:";
             // 
             // label3
@@ -216,16 +216,16 @@
             this.label3.Location = new System.Drawing.Point(177, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Display Time (s):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 75);
+            this.label2.Location = new System.Drawing.Point(9, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Delay Time (s):";
             // 
             // groupBox1
@@ -261,7 +261,7 @@
             0});
             this.numDisTime.Name = "numDisTime";
             this.numDisTime.Size = new System.Drawing.Size(52, 20);
-            this.numDisTime.TabIndex = 9;
+            this.numDisTime.TabIndex = 7;
             this.numDisTime.Value = new decimal(new int[] {
             1,
             0,
@@ -285,7 +285,7 @@
             0});
             this.numDelayTime.Name = "numDelayTime";
             this.numDelayTime.Size = new System.Drawing.Size(52, 20);
-            this.numDelayTime.TabIndex = 8;
+            this.numDelayTime.TabIndex = 5;
             this.numDelayTime.Value = new decimal(new int[] {
             1,
             0,
@@ -349,7 +349,7 @@
             this.grbKanji.Location = new System.Drawing.Point(10, 116);
             this.grbKanji.Name = "grbKanji";
             this.grbKanji.Size = new System.Drawing.Size(359, 76);
-            this.grbKanji.TabIndex = 4;
+            this.grbKanji.TabIndex = 1;
             this.grbKanji.TabStop = false;
             this.grbKanji.Text = "Kanji";
             // 
@@ -368,7 +368,7 @@
             0});
             this.numKanjiFontsize.Name = "numKanjiFontsize";
             this.numKanjiFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numKanjiFontsize.TabIndex = 9;
+            this.numKanjiFontsize.TabIndex = 2;
             this.numKanjiFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -383,7 +383,7 @@
             this.pnlKanjiFClr.Location = new System.Drawing.Point(263, 43);
             this.pnlKanjiFClr.Name = "pnlKanjiFClr";
             this.pnlKanjiFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlKanjiFClr.TabIndex = 4;
+            this.pnlKanjiFClr.TabIndex = 6;
             this.pnlKanjiFClr.DoubleClick += new System.EventHandler(this.pnlKanjiFClr_DoubleClick);
             // 
             // pnlKanjiBgClr
@@ -392,7 +392,7 @@
             this.pnlKanjiBgClr.Location = new System.Drawing.Point(118, 43);
             this.pnlKanjiBgClr.Name = "pnlKanjiBgClr";
             this.pnlKanjiBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlKanjiBgClr.TabIndex = 12;
+            this.pnlKanjiBgClr.TabIndex = 4;
             this.pnlKanjiBgClr.DoubleClick += new System.EventHandler(this.pnlKanjiBgClr_DoubleClick);
             // 
             // chkboxKanji
@@ -401,7 +401,7 @@
             this.chkboxKanji.Location = new System.Drawing.Point(12, 17);
             this.chkboxKanji.Name = "chkboxKanji";
             this.chkboxKanji.Size = new System.Drawing.Size(83, 17);
-            this.chkboxKanji.TabIndex = 4;
+            this.chkboxKanji.TabIndex = 0;
             this.chkboxKanji.Text = "Is Displayed";
             this.chkboxKanji.UseVisualStyleBackColor = true;
             // 
@@ -411,7 +411,7 @@
             this.lblKanjiFColor.Location = new System.Drawing.Point(177, 55);
             this.lblKanjiFColor.Name = "lblKanjiFColor";
             this.lblKanjiFColor.Size = new System.Drawing.Size(55, 13);
-            this.lblKanjiFColor.TabIndex = 1;
+            this.lblKanjiFColor.TabIndex = 5;
             this.lblKanjiFColor.Text = "Font Color";
             // 
             // lblKanjiBgColor
@@ -420,7 +420,7 @@
             this.lblKanjiBgColor.Location = new System.Drawing.Point(9, 55);
             this.lblKanjiBgColor.Name = "lblKanjiBgColor";
             this.lblKanjiBgColor.Size = new System.Drawing.Size(92, 13);
-            this.lblKanjiBgColor.TabIndex = 0;
+            this.lblKanjiBgColor.TabIndex = 3;
             this.lblKanjiBgColor.Text = "Background Color";
             // 
             // grbHiragana
@@ -436,7 +436,7 @@
             this.grbHiragana.Location = new System.Drawing.Point(10, 198);
             this.grbHiragana.Name = "grbHiragana";
             this.grbHiragana.Size = new System.Drawing.Size(359, 76);
-            this.grbHiragana.TabIndex = 5;
+            this.grbHiragana.TabIndex = 2;
             this.grbHiragana.TabStop = false;
             this.grbHiragana.Text = "Hiragana";
             // 
@@ -455,7 +455,7 @@
             0});
             this.numHiraganaFontsize.Name = "numHiraganaFontsize";
             this.numHiraganaFontsize.Size = new System.Drawing.Size(52, 20);
-            this.numHiraganaFontsize.TabIndex = 10;
+            this.numHiraganaFontsize.TabIndex = 2;
             this.numHiraganaFontsize.Value = new decimal(new int[] {
             10,
             0,
@@ -470,7 +470,7 @@
             this.pnlHiraganaFClr.Location = new System.Drawing.Point(263, 43);
             this.pnlHiraganaFClr.Name = "pnlHiraganaFClr";
             this.pnlHiraganaFClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlHiraganaFClr.TabIndex = 5;
+            this.pnlHiraganaFClr.TabIndex = 6;
             this.pnlHiraganaFClr.DoubleClick += new System.EventHandler(this.pnlHiraganaFClr_DoubleClick);
             // 
             // pnlHiraganaBgClr
@@ -479,7 +479,7 @@
             this.pnlHiraganaBgClr.Location = new System.Drawing.Point(118, 43);
             this.pnlHiraganaBgClr.Name = "pnlHiraganaBgClr";
             this.pnlHiraganaBgClr.Size = new System.Drawing.Size(26, 25);
-            this.pnlHiraganaBgClr.TabIndex = 13;
+            this.pnlHiraganaBgClr.TabIndex = 4;
             this.pnlHiraganaBgClr.DoubleClick += new System.EventHandler(this.pnlHiraganaBgClr_DoubleClick);
             // 
             // chkboxHiragana
@@ -488,7 +488,7 @@
             this.chkboxHiragana.Location = new System.Drawing.Point(12, 17);
             this.chkboxHiragana.Name = "chkboxHiragana";
             this.chkboxHiragana.Size = new System.Drawing.Size(83, 17);
-            this.chkboxHiragana.TabIndex = 4;
+            this.chkboxHiragana.TabIndex = 0;
             this.chkboxHiragana.Text = "Is Displayed";
             this.chkboxHiragana.UseVisualStyleBackColor = true;
             // 
@@ -498,7 +498,7 @@
             this.lblHiraganaFColor.Location = new System.Drawing.Point(177, 55);
             this.lblHiraganaFColor.Name = "lblHiraganaFColor";
             this.lblHiraganaFColor.Size = new System.Drawing.Size(55, 13);
-            this.lblHiraganaFColor.TabIndex = 1;
+            this.lblHiraganaFColor.TabIndex = 5;
             this.lblHiraganaFColor.Text = "Font Color";
             // 
             // lblHiraganaBgColor
@@ -507,7 +507,7 @@
             this.lblHiraganaBgColor.Location = new System.Drawing.Point(9, 55);
             this.lblHiraganaBgColor.Name = "lblHiraganaBgColor";
             this.lblHiraganaBgColor.Size = new System.Drawing.Size(92, 13);
-            this.lblHiraganaBgColor.TabIndex = 0;
+            this.lblHiraganaBgColor.TabIndex = 3;
             this.lblHiraganaBgColor.Text = "Background Color";
             // 
             // fSetting
