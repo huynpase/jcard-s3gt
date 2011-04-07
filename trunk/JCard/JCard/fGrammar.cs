@@ -276,7 +276,7 @@ namespace JCard
             }
 
             // Set button size and fontsize
-            float fontsize = height / Constants.MIN_HEIGHT * Constants.MIN_FONT_SIZE;
+            float fontsize = height / Constants.MIN_HEIGHT * Constants.MIN_FONT_SIZE;            
             btnNext.Font = ChangeFontSize(btnNext.Font, fontsize);
             btnPrevious.Font = ChangeFontSize(btnPrevious.Font, fontsize);
             btnExampleNxt.Font = ChangeFontSize(btnExampleNxt.Font, fontsize);
