@@ -97,7 +97,7 @@ namespace JCard
         public const string RES_S3GTLABEL_VALUE = "CSDL S3GT:";
         public const string RES_TABGRAM_VALUE = "Ngữ Pháp";
         public const string RES_GROUPBOXVOCAB_VALUE = "Chọn mẫu từ vựng để học";
-        public const string RES_GROUPBOXGRAMMAR_VALUE = "Chọn mẫu ngữ pháp để học";
+        public const string RES_GROUPBOXGRAMMAR_VALUE = "Chọn chủ đề ngữ pháp để học";
         public const string RES_CHKBOXALL_VALUE = "Tất Cả";
         public const string RES_CHKBOXCOLLAPSE_VALUE = "Thu Gọn";
         public const string RES_GROUPBOXVOCABLEARN_VALUE = "Học Từ Vựng";
