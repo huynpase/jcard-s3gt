@@ -117,22 +117,22 @@ namespace JCard
             // radDelete
             // 
             this.radDelete.AutoSize = true;
-            this.radDelete.Checked = true;
-            this.radDelete.Location = new System.Drawing.Point(15, 15);
+            this.radDelete.Location = new System.Drawing.Point(15, 47);
             this.radDelete.Name = "radDelete";
             this.radDelete.Size = new System.Drawing.Size(316, 17);
             this.radDelete.TabIndex = 0;
-            this.radDelete.TabStop = true;
             this.radDelete.Text = "Delete existing grammars of this category and insert new data.";
             this.radDelete.UseVisualStyleBackColor = true;
             // 
             // radKeep
             // 
             this.radKeep.AutoSize = true;
-            this.radKeep.Location = new System.Drawing.Point(15, 47);
+            this.radKeep.Checked = true;
+            this.radKeep.Location = new System.Drawing.Point(15, 15);
             this.radKeep.Name = "radKeep";
             this.radKeep.Size = new System.Drawing.Size(310, 17);
             this.radKeep.TabIndex = 1;
+            this.radKeep.TabStop = true;
             this.radKeep.Text = "Keep existing grammars of this category and insert new data.";
             this.radKeep.UseVisualStyleBackColor = true;
             // 
